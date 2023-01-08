@@ -49,6 +49,13 @@
   </main>
 
   <footer>
+
+    <ul class="photostream">
+        {%- for photo in flickrphotos -%}
+        <li><a href="{{ photo.link }}"><img width="150" height="150" alt="thumbnail" src="{{ photo.img }}"></a></li>&nbsp;&nbsp;&nbsp;
+        {%- endfor -%}
+    </ul>
+
     {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
     <nav>
       <ul>

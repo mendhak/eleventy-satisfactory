@@ -72,13 +72,13 @@ time {
   display: inline-block;
 }
 
-footer nav ul {
+footer ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
-footer nav li {
+footer li {
   display: inline-block;
   padding-top: 5px;
   padding-bottom: 5px;
