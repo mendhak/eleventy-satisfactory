@@ -56,15 +56,6 @@
         {%- endfor -%}
     </ul>
 
-    {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-    <nav>
-      <ul>
-        {%- for entry in collections.all | eleventyNavigation %}
-        <li><a href="{{ entry.url | url }}">{{
-            entry.title }}</a></li>
-        {%- endfor %}
-      </ul>
-    </nav>
 
     <p>&mdash; &copy; {% year %} {{ metadata.author.name }} &mdash;</p>
 
@@ -73,9 +64,6 @@
         <li><a href="{{ photo.link }}"><img width="150" height="150" alt="thumbnail" src="{{ photo.img }}"></a></li>&nbsp;&nbsp;&nbsp;
         {%- endfor -%}
     </ul>
-
-
-
 
 
   </footer>
