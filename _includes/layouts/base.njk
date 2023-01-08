@@ -18,8 +18,8 @@
     font-style: normal;
     font-weight: 700;
     src: local(''),
-        url('{{ "../fonts/lora-v26-latin-700.woff2" | url }}') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('{{ "../fonts/lora-v26-latin-700.woff" | url }}') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+        url('{{ "/fonts/lora-v26-latin-700.woff2" | url }}') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('{{ "/fonts/lora-v26-latin-700.woff" | url }}') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
   </style>
 
@@ -60,7 +60,7 @@
 
 <body>
   <header>
-    <a href="/"><site-title>{{ metadata.title }}</site-title></a>
+    <a href="{{ '/' | url }}"><site-title>{{ metadata.title }}</site-title></a>
   </header>
   <main>
     <h1><a href="">{%- if title %}{{ title }}{%- endif %}</a></h1>
