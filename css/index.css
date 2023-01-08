@@ -99,3 +99,9 @@ article a {
   font-family: 'Lora';
   font-size: 1.5rem;
 }
+
+.externallinks {
+  font-variant: small-caps;
+  font-weight: bolder;
+  font-size: 1.1rem;
+}

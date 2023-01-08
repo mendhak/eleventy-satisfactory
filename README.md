@@ -10,7 +10,8 @@ I've made the following modifications:
 * Increase text size for readability, increase main body width, simpler layout
 * Smaller header
 * Simpler post list page with headings and shortened excerpts
-
+* External links and flickr photos and navigation links in the footer
+* Copyright in the footer
 
 ## Running it
 

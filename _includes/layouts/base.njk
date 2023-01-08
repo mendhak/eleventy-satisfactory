@@ -50,11 +50,18 @@
 
   <footer>
 
+    <ul class="externallinks">
+        {%- for item in externallinks -%}
+        <li><a href="{{ item.link }}">{{ item.text }}</a></li>&nbsp;&nbsp;&nbsp;
+        {%- endfor -%}
+    </ul>
+
     <ul class="photostream">
         {%- for photo in flickrphotos -%}
         <li><a href="{{ photo.link }}"><img width="150" height="150" alt="thumbnail" src="{{ photo.img }}"></a></li>&nbsp;&nbsp;&nbsp;
         {%- endfor -%}
     </ul>
+
 
     {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
     <nav>
@@ -65,9 +72,8 @@
         {%- endfor %}
       </ul>
     </nav>
-    <p><a href="https://simplecss.org">Simple.css</a> was created by <a href="https://kevq.uk">Kev Quirk</a> and is
-      licensed under the MIT license.</p>
-    <p>Starter template by <a href="https://www.lkhrs.com">Luke Harris</a>.</p>
+
+    <p>&mdash; &copy; {% year %} {{ metadata.author.name }} &mdash;</p>
   </footer>
 
   <!-- Current page: {{ page.url | url }} -->

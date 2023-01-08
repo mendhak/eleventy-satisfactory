@@ -65,6 +65,9 @@ module.exports = function(eleventyConfig) {
     extractExcerpt(article)
   );
 
+  // Show the current year using a shortcode
+  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+
   // Create an array of all tags
   eleventyConfig.addCollection("tagList", function(collection) {
     let tagSet = new Set();
