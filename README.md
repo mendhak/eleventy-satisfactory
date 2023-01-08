@@ -2,6 +2,8 @@
 
 A blog starter using [11ty](https://github.com/11ty/eleventy) and [Simple.css](https://github.com/kevquirk/simple.css). Based on [eleventy-base-blog](https://github.com/11ty/eleventy-base-blog).
 
+Simplified layout without a lot of cruft.
+
 I've made the following modifications:
 
 * The CSS is now inline in the page, instead of a link to a stylesheet.

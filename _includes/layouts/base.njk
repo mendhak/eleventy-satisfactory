@@ -53,7 +53,7 @@
   <meta property="og:title" content="{{ title or metadata.title }}"/>
   <meta property="og:url" content="{{ page.url }}" />
   <meta property="og:description" content="{{ description or renderData.description }}" />
-  <meta property="og:image" content="{{ header.teaser or 'img/default.png' }}" />
+  <meta property="og:image" content="{{ header.teaser or 'img/default.png' | url }}" />
   <meta property="og:type" content="article" />
 
 </head>
