@@ -2,9 +2,9 @@
   "title": "Mendhak / Code",
   "url": "https://code.mendhak.com/",
   "language": "en",
-  "description": "I am writing about my experiences as a naval navel-gazer.",
+  "description": "Development notes, technical notes, and blog posts",
   "feed": {
-    "subtitle": "I am writing about my experiences as a naval navel-gazer.",
+    "subtitle": "Development notes, technical notes, and blog posts",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
     "id": "https://code.mendhak.com/"
