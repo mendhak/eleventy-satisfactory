@@ -15,6 +15,12 @@ I've made the following modifications:
 * External links and flickr photos in the footer
 * Copyright in the footer
 
+
+## TODO
+
+The posts aren't appearing in date order, why is that?
+
+
 ## Running it
 
 
