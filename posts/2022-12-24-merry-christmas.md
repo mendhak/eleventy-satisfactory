@@ -7,6 +7,14 @@ header:
   teaser: https://live.staticflickr.com/1932/30454355997_287063f84b_q.jpg
 ---
 
+```json
+  "dependencies": {
+    "concat-stream": "^2.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^9.0.0",
+    "morgan": "^1.10.0"
+  }
+```
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Gravida in fermentum et sollicitudin ac orci phasellus egestas. Non tellus orci ac auctor augue mauris augue. Amet consectetur adipiscing elit duis tristique. Arcu ac tortor dignissim convallis aenean. A cras semper auctor neque vitae. Donec massa sapien faucibus et molestie ac. Platea dictumst vestibulum rhoncus est pellentesque. Viverra nam libero justo laoreet sit amet cursus sit. Amet volutpat consequat mauris nunc congue nisi. Cras ornare arcu dui vivamus arcu.
 

@@ -1,5 +1,5 @@
 ---
-title: This is my fourth post, it has a date in the title and has many things to say
+title: This is my fourth post
 description: This is a post on My Blog about touchpoints and circling wagons.
 tags: second tag
 layout: layouts/post.njk
