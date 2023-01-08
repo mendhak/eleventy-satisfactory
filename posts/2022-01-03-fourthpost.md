@@ -1,7 +1,6 @@
 ---
-title: This is my fourth post, it has a long title and has many things to say
+title: This is my fourth post, it has a date in the title and has many things to say
 description: This is a post on My Blog about touchpoints and circling wagons.
-date: 2018-09-30
 tags: second tag
 layout: layouts/post.njk
 ---
