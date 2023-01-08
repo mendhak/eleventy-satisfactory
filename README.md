@@ -1,51 +1,29 @@
 # eleventy-simple
 
-A blog starter using [11ty](https://github.com/11ty/eleventy) and [Simple.css](https://github.com/kevquirk/simple.css). Based on [eleventy-base-blog](https://github.com/11ty/eleventy-base-blog)
+A blog starter using [11ty](https://github.com/11ty/eleventy) and [Simple.css](https://github.com/kevquirk/simple.css). Based on [eleventy-base-blog](https://github.com/11ty/eleventy-base-blog).
 
-## Demo
+I've made the following modifications:
 
-[eleventy-simple.pages.dev](https://eleventy-simple.pages.dev)
+* The CSS is now inline in the page, instead of a link to a stylesheet.
+* Make the headings permalinks
+* Some color changes and font changes to resemble Hylia: yellowish links and Lora font
+* Increase text size for readability, increase main body width, simpler layout
+* Smaller header
 
-## Getting Started
 
-### 1. Clone this Repository
+## Running it
 
-```
-git clone https://github.com/lkhrs/eleventy-simple.git my-blog-name
-```
-
-### 2. Navigate to the directory
-
-```
-cd my-blog-name
-```
-
-Specifically have a look at `.eleventy.js` to see if you want to configure any Eleventy options differently.
-
-### 3. Install dependencies
 
 ```
 npm install
-```
-
-### 4. Edit \_data/metadata.json
-
-### 5. Run Eleventy
-
-```
 npx @11ty/eleventy
 ```
 
-Or build and host locally for local development
+Or build and host locally for local development, refreshes when template changes:
 
 ```
-npx @11ty/eleventy --serve
-```
-
-Or build automatically when a template changes:
-
-```
-npx @11ty/eleventy --watch
+npm install
+npx @11ty/eleventy --serve --watch
 ```
 
 Or in debug mode:
