@@ -1,4 +1,4 @@
-# eleventy-simple
+# Mendhak's Eleventy Blog Theme
 
 A blog starter using [11ty](https://github.com/11ty/eleventy) and [Simple.css](https://github.com/kevquirk/simple.css). Based on [eleventy-base-blog](https://github.com/11ty/eleventy-base-blog).
 
