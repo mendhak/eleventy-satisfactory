@@ -60,6 +60,11 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter("filterTagList", filterTagList)
 
+  // Generate excerpt from first paragraph
+  eleventyConfig.addShortcode("excerpt", (article) =>
+    extractExcerpt(article)
+  );
+
   // Create an array of all tags
   eleventyConfig.addCollection("tagList", function(collection) {
     let tagSet = new Set();
@@ -98,6 +103,9 @@ module.exports = function(eleventyConfig) {
     ui: false,
     ghostMode: false
   });
+
+  //Since moving the CSS inline eleventy no longer watches it (because it's not being copied to output), so I had to include it as a watch target.
+  eleventyConfig.addWatchTarget("./css/");
 
   return {
     // Control which files Eleventy will process
@@ -138,3 +146,20 @@ module.exports = function(eleventyConfig) {
     }
   };
 };
+
+// Adopted from => https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/
+// Gets the first 30 words as the excerpt
+function extractExcerpt(article) {
+  if (!Object.prototype.hasOwnProperty.call(article, "templateContent")) {
+      console.warn(
+          'Failed to extract excerpt: Document has no property "templateContent".'
+      );
+      return null;
+  }
+
+  const content = article.templateContent;
+
+  const excerpt = content.slice(0, content.indexOf("\n")).split(/\s+/).slice(0, 30).join(' ') + '...';
+
+  return excerpt;
+}

@@ -83,3 +83,19 @@ footer nav li {
   padding-top: 5px;
   padding-bottom: 5px;
 }
+
+.excerpt {
+  font-size: 1rem;
+}
+
+article {
+  border: none;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+article a {
+  font-weight: bolder;
+  font-family: 'Lora';
+  font-size: 1.5rem;
+}
