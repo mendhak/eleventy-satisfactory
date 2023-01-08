@@ -8,10 +8,31 @@
   <meta name="description" content="{{ description or metadata.description }}">
   <meta name="generator" content="{{ eleventy.generator }}">
 
-  <link rel="stylesheet" href="{{ '/css/simple.min.css' | url }}">
-  <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
-  <link rel="stylesheet" href="{{ '/css/prism-base16-monokai.dark.css' | url }}">
-  <link rel="stylesheet" href="{{ '/css/prism-diff.css' | url }}">
+  <style>{% include "node_modules/simpledotcss/simple.min.css" %}</style>
+
+  {% set cssoverrides %}
+  {% include "css/index.css" %}
+  {% endset %}
+
+  <style>
+    {{ cssoverrides | cssmin | safe }}
+  </style>
+
+  {% set cssprism %}
+  {% include "css/prism-base16-monokai.dark.css" %}
+  {% endset %}
+
+  <style>
+    {{ cssprism | cssmin | safe }}
+  </style>
+
+  {% set cssprismdiff %}
+  {% include "css/prism-diff.css" %}
+  {% endset %}
+
+  <style>
+    {{ cssprismdiff | cssmin | safe }}
+  </style>
 
   <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
   <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">

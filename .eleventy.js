@@ -8,17 +8,25 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 
+const CleanCSS = require("clean-css");
+
 module.exports = function(eleventyConfig) {
   // Copy the `img`, `css`, and `simpledotcss` folders to the output
   eleventyConfig.addPassthroughCopy("img");
-  eleventyConfig.addPassthroughCopy("css");
+  //eleventyConfig.addPassthroughCopy("css");
+  //eleventyConfig.addPassthroughCopy({"node_modules/simpledotcss/simple.min.css": "css/simple.min.css"});
   eleventyConfig.addPassthroughCopy("fonts");
-  eleventyConfig.addPassthroughCopy({"node_modules/simpledotcss/simple.min.css": "css/simple.min.css"});
+
 
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
+
+  // CSS inline minifier helper
+  eleventyConfig.addFilter("cssmin", function(code) {
+    return new CleanCSS({}).minify(code).styles;
+  });
 
   eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
