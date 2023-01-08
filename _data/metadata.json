@@ -1,17 +1,17 @@
 {
   "title": "Mendhak's Eleventy Theme",
-  "url": "https://code.mendhak.com/",
+  "url": "https://code.mendhak.com/eleventy-mendhak-blog-theme/",
   "language": "en",
   "description": "Development notes, technical notes, and blog posts",
   "feed": {
     "subtitle": "Development notes, technical notes, and blog posts",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
-    "id": "https://code.mendhak.com/"
+    "id": "https://code.mendhak.com/eleventy-mendhak-blog-theme/"
   },
   "jsonfeed": {
     "path": "/feed/feed.json",
-    "url": "https://code.mendhak.com/feed/feed.json"
+    "url": "https://code.mendhak.com/eleventy-mendhak-blog-theme/feed/feed.json"
   },
   "author": {
     "name": "mendhak",
