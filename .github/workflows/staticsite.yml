@@ -34,7 +34,7 @@ jobs:
         continue-on-error: true
 
       - name: Build the static site
-        run: /bin/bash -c 'npm install;npm build'
+        run: /bin/bash -c 'npm install;npm run build'
 
       - name: Setup Github Pages
         uses: actions/configure-pages@v2
