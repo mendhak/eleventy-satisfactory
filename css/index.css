@@ -64,3 +64,10 @@ h1,h2,h3 {
 a.header-anchor {
   color: unset;
 }
+
+time {
+  color: var(--text-light);
+  font-size: 1rem;
+  padding-top: 1.5rem;
+  display: inline-block;
+}
