@@ -1,0 +1,22 @@
+[
+  {
+    "link": "https://flickr.com/photos/mendhak",
+    "text": "📷 Photography"
+  },
+  {
+    "link": "https://gpslogger.app",
+    "text": "🛰️ GPSLogger"
+  },
+  {
+    "link": "https://example.com",
+    "text": "🍜 Noodles"
+  },
+  {
+    "link": "https://github.com/mendhak",
+    "text": "⌨️ Github"
+  },
+  {
+    "link": "/feed.xml",
+    "text": "🌐 Feed"
+  }
+]
