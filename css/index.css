@@ -15,7 +15,6 @@
 @media (prefers-color-scheme: dark) {
 :root {
   --bg: #333333;
-  --accent-bg: #333333;
   --accent: #fedb8b;
 }
 }
@@ -72,6 +71,12 @@ time {
   display: inline-block;
 }
 
+footer {
+  grid-column: 1/-1;
+  background-color: var(--accent-bg);
+  padding-top: 3rem;
+}
+
 footer ul {
   margin: 0;
   padding: 0;
@@ -104,4 +109,9 @@ article a {
   font-variant: small-caps;
   font-weight: bolder;
   font-size: 1.1rem;
+}
+
+.photostream {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
