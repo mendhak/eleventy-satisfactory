@@ -161,7 +161,7 @@ function extractExcerpt(article) {
 
   const content = article.templateContent;
 
-  const excerpt = content.slice(0, content.indexOf("\n")).split(/\s+/).slice(0, 30).join(' ') + '...';
+  const excerpt = content.slice(0, content.indexOf("\n")).replace(/<[^>]*>?/gm, '').split(/\s+/).slice(0, 30).join(' ') + '...';
 
   return excerpt;
 }
