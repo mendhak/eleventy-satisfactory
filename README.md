@@ -9,6 +9,7 @@ I've made the following modifications:
 * Some color changes and font changes to resemble Hylia: yellowish links and Lora font
 * Increase text size for readability, increase main body width, simpler layout
 * Smaller header
+* Simpler post list page with headings and shortened excerpts
 
 
 ## Running it
