@@ -3,6 +3,7 @@
   "url": "https://code.mendhak.com/eleventy-mendhak-blog-theme/",
   "language": "en",
   "description": "Development notes, technical notes, and blog posts",
+  "tags": "development, programming, science, technology",
   "feed": {
     "subtitle": "Development notes, technical notes, and blog posts",
     "filename": "feed.xml",
@@ -17,5 +18,9 @@
     "name": "mendhak",
     "email": "youremailaddress@example.com",
     "url": "https://code.mendhak.com/about-me/"
+  },
+  "opengraph": {
+    "image": "/img/default.png",
+    "type": "article"
   }
 }

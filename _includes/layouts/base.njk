@@ -5,9 +5,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title or metadata.title }}</title>
-  <meta name="description" content="{{ description or metadata.description }}">
-  <meta name="generator" content="{{ eleventy.generator }}">
-  <meta name="keywords" content="{{ tags }}">
 
   <style>{% include "node_modules/simpledotcss/simple.min.css" %}</style>
 
@@ -51,10 +48,16 @@
   <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
 
   <meta property="og:title" content="{{ title or metadata.title }}"/>
-  <meta property="og:url" content="{{ page.url }}" />
+  <meta property="og:url" content="{{ page.url | url | absoluteUrl(metadata.url) }}" />
   <meta property="og:description" content="{{ description or renderData.description }}" />
-  <meta property="og:image" content="{{ header.teaser or '/img/default.png' | url }}" />
-  <meta property="og:type" content="article" />
+  <meta property="og:image" content="{{ header.teaser or metadata.opengraph.image | url | absoluteUrl(metadata.url) }}" />
+  <meta property="og:type" content="{{ metadata.opengraph.type }}" />
+  <meta property="og:article:author" content="{{ metadata.author.name }}" />
+  <meta property="og:article:tag" content="{{ tags or metadata.tags }}" />
+  <meta name="description" content="{{ description or metadata.description }}">
+  <meta name="keywords" content="{{ tags or metadata.tags }}">
+
+  <meta name="generator" content="{{ eleventy.generator }}">
 
 </head>
 

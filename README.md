@@ -14,11 +14,8 @@ I've made the following modifications:
 * Simpler post list page with headings and shortened excerpts
 * External links and flickr photos in the footer
 * Copyright in the footer
+* Opengraph tags generated for each page, including default image (see metadata.json)
 
-
-## TODO
-
-The posts aren't appearing in date order, why is that?
 
 
 ## Running it

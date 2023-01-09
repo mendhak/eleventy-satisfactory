@@ -135,7 +135,7 @@ module.exports = function(eleventyConfig) {
 
     // You can also pass this in on the command line using `--pathprefix`
 
-    // Optional (default is shown)
+    // Optional (default is "/")
     pathPrefix: "/eleventy-mendhak-blog-theme/",
     // -----------------------------------------------------------------
 
