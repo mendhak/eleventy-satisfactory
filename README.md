@@ -18,7 +18,7 @@ I've made the following modifications:
 * Removed site navigation, just use the 'external links'
 * Copyright in the footer
 * Opengraph tags generated for each page, including default image (see metadata.json)
-
+* Flatten post URL to top level
 
 
 ## Running it
