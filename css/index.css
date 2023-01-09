@@ -38,7 +38,7 @@ a {
   text-decoration: none;
 }
 
-/* H1s should have the accent color */
+/* H1s should have the accent color, to make it stand out */
 h1 {
   color: var(--accent);
 }
@@ -56,7 +56,7 @@ h1,h2,h3 {
   margin: 2rem 0;
 }
 
-/* Remove the hyperlink color from headers */
+/* This class is added by the markdown-it-anchor library. Removing the hyperlink color from headers */
 a.header-anchor {
   color: unset;
 }

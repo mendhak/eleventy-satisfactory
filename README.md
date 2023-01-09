@@ -2,17 +2,20 @@
 
 A blog starter using [11ty](https://github.com/11ty/eleventy) and [Simple.css](https://github.com/kevquirk/simple.css). Based on [eleventy-base-blog](https://github.com/11ty/eleventy-base-blog).
 
-Simplified layout without a lot of cruft.
+Simplified layout, the focus is on content first, and less on the cruft around it (like tags, dates, about me, etc)
 
 I've made the following modifications:
 
 * The CSS is now inline in the page, instead of a link to a stylesheet.
 * Make the headings permalinks
 * Some color changes and font changes to resemble Hylia: yellowish links and Lora font
-* Increase text size for readability, increase main body width, simpler layout
-* Smaller header
+* Increase text size for readability, increase main body width
+* Smaller header at the top of the page
 * Simpler post list page with headings and shortened excerpts
+* Moved date to bottom of article
+* Removed tags
 * External links and flickr photos in the footer
+* Removed site navigation, just use the 'external links'
 * Copyright in the footer
 * Opengraph tags generated for each page, including default image (see metadata.json)
 
