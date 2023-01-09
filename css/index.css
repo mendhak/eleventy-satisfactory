@@ -56,6 +56,11 @@ h1,h2,h3 {
   margin: 2rem 0;
 }
 
+/* Remove the hyperlink color from headers */
+a.header-anchor {
+  color: unset;
+}
+
 /* Time text slightly grayed out */
 time {
   color: var(--text-light);
