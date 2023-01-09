@@ -6,9 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title or metadata.title }}</title>
 
-  <style>{% include "node_modules/simpledotcss/simple.min.css" %}</style>
-
   <style>
+
+  {% include "node_modules/simpledotcss/simple.min.css" %}
+
   /* lora-700 - latin */
   @font-face {
     font-family: 'Lora';
@@ -18,31 +19,27 @@
         url('{{ "/fonts/lora-v26-latin-700.woff2" | url }}') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
         url('{{ "/fonts/lora-v26-latin-700.woff" | url }}') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
   }
-  </style>
 
   {% set cssoverrides %}
   {% include "css/index.css" %}
   {% endset %}
 
-  <style>
-    {{ cssoverrides | cssmin | safe }}
-  </style>
+  {{ cssoverrides | cssmin | safe }}
 
   {% set cssprism %}
   {% include "css/prism-base16-monokai.dark.css" %}
   {% endset %}
 
-  <style>
-    {{ cssprism | cssmin | safe }}
-  </style>
+  {{ cssprism | cssmin | safe }}
 
   {% set cssprismdiff %}
   {% include "css/prism-diff.css" %}
   {% endset %}
 
-  <style>
-    {{ cssprismdiff | cssmin | safe }}
+  {{ cssprismdiff | cssmin | safe }}
+
   </style>
+
 
   <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
   <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
