@@ -19,6 +19,7 @@ I've made the following modifications:
 * Copyright in the footer
 * Opengraph tags generated for each page, including default image (see metadata.json)
 * Flatten post URL to top level
+* Favicon feature
 
 
 ## Running it
