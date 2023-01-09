@@ -2,6 +2,7 @@
   "title": "Mendhak's Eleventy Theme",
   "url": "https://code.mendhak.com/eleventy-mendhak-blog-theme/",
   "language": "en",
+  "favicon": "img/frog.png",
   "description": "Development notes, technical notes, and blog posts",
   "tags": "development, programming, science, technology",
   "feed": {
