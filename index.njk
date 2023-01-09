@@ -5,10 +5,10 @@ layout: layouts/home.njk
 ---
 
 
-{% set maxPosts = collections.posts.length | min(4) %}
+{% set maxPosts = collections.posts.length | min(metadata.homePageItems) %}
 Recent posts
 
-{% set postslist = collections.posts | head(-4) %}
+{% set postslist = collections.posts | head(-metadata.homePageItems) %}
 {% set postslistCounter = collections.posts | length %}
 {% include "postslist.njk" %}
 

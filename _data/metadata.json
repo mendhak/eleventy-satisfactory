@@ -5,6 +5,7 @@
   "favicon": "/img/web.png",
   "description": "Development notes, technical notes, and blog posts",
   "tags": "development, programming, science, technology",
+  "homePageItems": 4,
   "feed": {
     "filename": "feed.xml",
     "path": "/feed.xml"

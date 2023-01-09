@@ -75,6 +75,7 @@ footer {
   grid-column: 1/-1;
   background-color: var(--accent-bg);
   padding-top: 3rem;
+  box-shadow: 0 50vh 0 50vh var(--accent-bg);
 }
 
 /* Don't show bullet points for lists in footers */
