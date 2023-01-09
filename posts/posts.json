@@ -1,4 +1,5 @@
 {
+  "permalink": "/{{ page.fileSlug }}/index.html",
   "tags": [
     "posts"
   ]
