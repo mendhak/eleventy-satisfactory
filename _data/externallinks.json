@@ -12,7 +12,7 @@
     "text": "⌨️ Github"
   },
   {
-    "link": "https://code.mendhak.com/eleventy-mendhak-blog-theme/feed.xml",
+    "link": "/feed.xml",
     "text": "🌐 Feed"
   }
 ]

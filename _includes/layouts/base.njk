@@ -75,7 +75,7 @@
 
     <ul class="externallinks">
         {%- for item in externallinks -%}
-        <li><a href="{{ item.link }}">{{ item.text }}</a></li>&nbsp;&nbsp;&nbsp;
+        <li><a href="{{ item.link | url }}">{{ item.text }}</a></li>&nbsp;&nbsp;&nbsp;
         {%- endfor -%}
     </ul>
 
