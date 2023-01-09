@@ -22,13 +22,13 @@ body > header {
   padding: 0;
 }
 /* Styling for site title */
-body > header site-title {
+body > header > a {
   max-width: 1200px;
   margin: 1rem auto;
   font-size: 1.5rem;
   display: block;
   font-weight: 700;
-  color: var(--text);
+  color: var(--text) !important;
   font-family: 'Lora';
   padding-left: 0.5rem;
 }
