@@ -83,7 +83,7 @@
     <p>&mdash; &copy; {% year %} {{ metadata.author.name }} &mdash;</p>
 
     <ul class="photostream">
-        {%- for photo in flickrphotos -%}
+        {%- for photo in photostream -%}
         <li><a href="{{ photo.link }}"><img width="150" height="150" alt="thumbnail" src="{{ photo.img }}"></a></li>&nbsp;&nbsp;&nbsp;
         {%- endfor -%}
     </ul>
