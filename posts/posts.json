@@ -1,5 +1,4 @@
 {
-  "permalink": "{{ title | slugify }}/index.html",
   "tags": [
     "posts"
   ]
