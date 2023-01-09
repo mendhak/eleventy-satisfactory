@@ -5,19 +5,16 @@
   "description": "Development notes, technical notes, and blog posts",
   "tags": "development, programming, science, technology",
   "feed": {
-    "subtitle": "Development notes, technical notes, and blog posts",
     "filename": "feed.xml",
-    "path": "/feed.xml",
-    "id": "https://code.mendhak.com/eleventy-mendhak-blog-theme/"
+    "path": "/feed.xml"
   },
   "jsonfeed": {
-    "path": "/feed.json",
-    "url": "https://code.mendhak.com/eleventy-mendhak-blog-theme/feed/feed.json"
+    "path": "/feed.json"
   },
   "author": {
     "name": "mendhak",
     "email": "youremailaddress@example.com",
-    "url": "https://code.mendhak.com/about-me/"
+    "url": "https://code.mendhak.com/"
   },
   "opengraph": {
     "image": "/img/default.png",

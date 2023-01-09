@@ -8,7 +8,7 @@ eleventyExcludeFromCollections: true
   "title": "{{ metadata.title }}",
   "language": "{{ metadata.language }}",
   "home_page_url": "{{ metadata.url }}",
-  "feed_url": "{{ metadata.jsonfeed.url }}",
+  "feed_url": "{{ metadata.jsonfeed.path | url | absoluteUrl(metadata.url) }}",
   "description": "{{ metadata.description }}",
   "author": {
     "name": "{{ metadata.author.name }}",
