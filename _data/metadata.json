@@ -7,11 +7,11 @@
   "feed": {
     "subtitle": "Development notes, technical notes, and blog posts",
     "filename": "feed.xml",
-    "path": "/feed/feed.xml",
+    "path": "/feed.xml",
     "id": "https://code.mendhak.com/eleventy-mendhak-blog-theme/"
   },
   "jsonfeed": {
-    "path": "/feed/feed.json",
+    "path": "/feed.json",
     "url": "https://code.mendhak.com/eleventy-mendhak-blog-theme/feed/feed.json"
   },
   "author": {
