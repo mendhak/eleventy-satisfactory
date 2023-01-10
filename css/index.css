@@ -99,8 +99,6 @@ footer li {
 /* Styling for the article listing on the index page */
 article {
   border: none;
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
 }
 
 article a {
