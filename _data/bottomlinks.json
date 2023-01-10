@@ -1,0 +1,18 @@
+[
+  {
+    "link": "https://11ty.dev",
+    "text": "1️⃣ Eleventy"
+  },
+  {
+    "link": "https://simplecss.org/",
+    "text": "📜 Simple.css"
+  },
+  {
+    "link": "https://github.com/mendhak/eleventy-mendhak-blog-theme",
+    "text": "⌨️ Github"
+  },
+  {
+    "link": "/feed.xml",
+    "text": "🌐 Feed"
+  }
+]
