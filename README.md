@@ -21,6 +21,19 @@ I've made the following modifications:
 * Flatten post URL to top level
 * Favicon feature
 
+## TODO
+
+- Some more posts to flesh it out
+- A way of adding images
+- A post with code samples
+- A post with a video
+- A post with an image
+- Image with lightbox, [can I use this post?](https://www.markllobrera.com/posts/eleventy-building-image-gallery-photoswipe/)
+- Github repo card?
+- Button to switch light/dark mode, persist in localStorage
+- Remove description from post view
+- 'Usage guide' in the README
+
 
 ## Running it
 
