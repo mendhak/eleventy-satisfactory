@@ -108,7 +108,7 @@ article a {
 }
 
 /* Styling for the external links appearing in the footer */
-.externallinks {
+.bottomlinks {
   font-variant: small-caps;
   font-weight: bolder;
   font-size: 1rem;
