@@ -7,6 +7,9 @@ tags:
   - markdown
 layout: layouts/post.njk
 
+header:
+  teaser: /img/image001.jpg
+
 ---
 
 There are a few different ways to display an image in a post.
