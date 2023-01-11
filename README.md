@@ -28,11 +28,12 @@ I've made the following modifications:
 - A post with code samples
 - A post with a video
 - A post with an image
-- Image with lightbox, [can I use this post?](https://www.markllobrera.com/posts/eleventy-building-image-gallery-photoswipe/) and [this one](https://www.markllobrera.com/posts/eleventy-paired-shortcodes-and-markdown-rendering/)?
+- Image with lightbox, [can I use this post?](https://www.markllobrera.com/posts/eleventy-building-image-gallery-photoswipe/)
 - Github repo card?
 - Button to switch light/dark mode, persist in localStorage
 - Remove description from post view
 - 'Usage guide' in the README
+- Docker Compose file
 
 
 ## Running it
@@ -80,3 +81,4 @@ TBD
 - [Simple.css](https://github.com/kevquirk/simple.css/wiki)
 - [Favicon created by Uniconlabs](https://www.flaticon.com/free-icons/website)
 - [Blog icon created by BomSymbols](https://www.flaticon.com/free-icons/blog)
+- [Paired shortcode](https://www.markllobrera.com/posts/eleventy-paired-shortcodes-and-markdown-rendering/)

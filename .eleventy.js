@@ -8,12 +8,15 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 const CleanCSS = require("clean-css");
+const path = require("path");
+
+// Change this to match the actual path prefix.
+const pathPrefix = process.env.PATH_PREFIX || '/eleventy-mendhak-blog-theme/';
 
 module.exports = function(eleventyConfig) {
-  // Copy the `img`, `css`, and `simpledotcss` folders to the output
+  // Copy the `img`, `css`, and `fonts` folders to the output
+  // CSS isn't copied over, that's done inline via the base template.
   eleventyConfig.addPassthroughCopy("img");
-  //eleventyConfig.addPassthroughCopy("css");
-  //eleventyConfig.addPassthroughCopy({"node_modules/simpledotcss/simple.min.css": "css/simple.min.css"});
   eleventyConfig.addPassthroughCopy("fonts");
 
 
@@ -58,6 +61,25 @@ module.exports = function(eleventyConfig) {
   }
 
   eleventyConfig.addFilter("filterTagList", filterTagList)
+
+  // Paired shortcode to display a figure with caption.
+  eleventyConfig.addPairedShortcode(
+    "figure",
+    (data, image, altText) => {
+
+      data = data.trim();
+      if (data !== undefined && data !== "") {
+        data = markdownLibrary.renderInline(data);
+        captionMarkup = `<figcaption>${data}</figcaption>`;
+      } else {
+        captionMarkup = "";
+      }
+
+      let imgPath = path.join(pathPrefix, image);
+
+      return `<figure><img src="${imgPath}" alt="${altText}" />${captionMarkup}</figure>`;
+    }
+  );
 
   // Generate excerpt from first paragraph
   eleventyConfig.addShortcode("excerpt", (article) =>
