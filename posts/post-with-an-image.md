@@ -37,7 +37,15 @@ This ~~image~~ figure, has a `caption` which supports **markdown**.
 
 ## Using regular Markdown syntax
 
-Using regular Markdown syntax is possible, but in some cases it might be necessary to specify the image path in a template syntax like so:
+Using regular Markdown syntax is possible.
+
+```
+{% raw %}
+![photo from above](/img/image001.jpg)
+{% endraw %}
+```
+
+If the site sits in a subfolder, specify the image path in a template syntax like so:
 
 ```
 {% raw %}
@@ -50,9 +58,9 @@ Which results in:
 ![photo from above]({{ '/img/image001.jpg' | url }})
 
 
-### The same image but using `<figure>` HTML
+### Using `<figure>` HTML
 
-This image is served using regular HTML, again with the template syntax:
+This image is served using regular HTML:
 
 ```
 {% raw %}
