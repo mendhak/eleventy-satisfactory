@@ -24,14 +24,16 @@ I've made the following modifications:
 ## TODO
 
 - Some more posts to flesh it out
-- A way of adding images
+- A way of adding an image
+- A post with one image
+- An image with lightbox, [can I use this post?](https://www.markllobrera.com/posts/eleventy-building-image-gallery-photoswipe/)
+- A gallery of images
+- A gallery of images with lightbox?
 - A post with code samples
 - A post with a video
-- A post with an image
-- Image with lightbox, [can I use this post?](https://www.markllobrera.com/posts/eleventy-building-image-gallery-photoswipe/)
 - Github repo card?
 - Button to switch light/dark mode, persist in localStorage
-- Remove description from post view
+- ~~Remove description from post view~~
 - 'Usage guide' in the README
 - Docker Compose file
 
