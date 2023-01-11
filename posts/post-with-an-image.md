@@ -1,6 +1,6 @@
 ---
 title: Post with an image
-description: Have a nice christmas
+description: There are different ways to post images!
 tags:
   - xmas
   - netherlands
