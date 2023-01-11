@@ -2,7 +2,7 @@
 
 A blog starter using [11ty](https://github.com/11ty/eleventy) and [Simple.css](https://github.com/kevquirk/simple.css). Based on [eleventy-base-blog](https://github.com/11ty/eleventy-base-blog).
 
-Simplified layout, the focus is on content first, and less on the cruft around it (like tags, dates, about me, etc)
+It's a simplified opinionated layout, the focus is on content first, and less on other things (such as the author, social, tags, dates, about me, etc)
 
 I've made the following modifications:
 
