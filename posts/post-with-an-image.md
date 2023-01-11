@@ -35,7 +35,7 @@ This ~~image~~ figure, has a `caption` which supports **markdown**.
 {% endfigure %}
 
 
-## Display an image using (almost) regular Markdown syntax
+## Using regular Markdown syntax
 
 Using regular Markdown syntax is possible, but in some cases it might be necessary to specify the image path in a template syntax like so:
 
@@ -50,7 +50,7 @@ Which results in:
 ![photo from above]({{ '/img/image001.jpg' | url }})
 
 
-### The same photo but using `<figure>` HTML
+### The same image but using `<figure>` HTML
 
 This image is served using regular HTML, again with the template syntax:
 
