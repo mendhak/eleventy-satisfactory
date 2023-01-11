@@ -17,7 +17,7 @@ There are a few different ways to display an image in a post.
 
 ## Using paired shortcodes
 
-This image is served using a paired shortcode, as a figure with a figcaption, and the image loading set to lazy.
+This image is served using a paired shortcode. It produces a figure with an image, a figure caption that supports Markdown, and the image loading set to lazy.
 
 It takes arguments image path, alt text, and inside is the caption.  There is no need to use template syntax, the URL is adjusted.
 
