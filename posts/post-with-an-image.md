@@ -14,7 +14,7 @@ I visited the Netherlands.  It was nice.
 
 ## Here is a photo.
 
-Using regular Markdown syntax.
+Using regular Markdown syntax is possible, but in some cases it might be necessary to specify the image path in a template syntax like so:
 
 ```
 {% raw %}
@@ -29,7 +29,7 @@ Which results in:
 
 ### The same photo but using `<figure>` HTML
 
-This image is served using regular HTML.
+This image is served using regular HTML, again with the template syntax:
 
 ```
 {% raw %}
@@ -55,7 +55,11 @@ Which results in:
 
 ### Using paired shortcodes
 
-This image is served using a paired shortcode, `figure`.  Here is the code:
+This image is served using a paired shortcode, as a figure with a figcaption, and the image loading set to lazy.
+
+It takes arguments image path, alt text, and inside is the caption.  There is no need to use template syntax, the URL is adjusted.
+
+Here is the code:
 
 ```
 {% raw %}

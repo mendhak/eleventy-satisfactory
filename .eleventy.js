@@ -77,7 +77,7 @@ module.exports = function(eleventyConfig) {
 
       let imgPath = path.join(pathPrefix, image);
 
-      return `<figure><img src="${imgPath}" alt="${altText}" />${captionMarkup}</figure>`;
+      return `<figure><img src="${imgPath}" alt="${altText}" loading="lazy" />${captionMarkup}</figure>`;
     }
   );
 
