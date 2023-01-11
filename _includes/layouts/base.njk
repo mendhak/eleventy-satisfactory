@@ -82,7 +82,7 @@
 
     <ul class="photostream">
         {%- for photo in photostream -%}
-        <li><a href="{{ photo.link }}"><img width="150" height="150" alt="thumbnail" src="{{ photo.img }}"></a></li>&nbsp;&nbsp;&nbsp;
+        <li><a href="{{ photo.link }}"><img width="150" height="150" alt="thumbnail" src="{{ photo.img }}" loading="lazy"></a></li>&nbsp;&nbsp;&nbsp;
         {%- endfor -%}
     </ul>
 
