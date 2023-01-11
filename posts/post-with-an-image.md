@@ -9,10 +9,33 @@ layout: layouts/post.njk
 
 ---
 
-I visited the Netherlands.  It was nice.
+There are a few different ways to display an image in a post.
 
 
-## Here is a photo.
+## Using paired shortcodes
+
+This image is served using a paired shortcode, as a figure with a figcaption, and the image loading set to lazy.
+
+It takes arguments image path, alt text, and inside is the caption.  There is no need to use template syntax, the URL is adjusted.
+
+Here is the code:
+
+```
+{% raw %}
+{% figure "/img/image001.jpg", "Road from overhead" %}
+This ~~image~~ figure, has a `caption` which supports **markdown**.
+{% endfigure %}
+{% endraw %}
+```
+
+Here is the output:
+
+{% figure "/img/image001.jpg", "Road from overhead" %}
+This ~~image~~ figure, has a `caption` which supports **markdown**.
+{% endfigure %}
+
+
+## Display an image using (almost) regular Markdown syntax
 
 Using regular Markdown syntax is possible, but in some cases it might be necessary to specify the image path in a template syntax like so:
 
@@ -51,26 +74,3 @@ Which results in:
     An image served using HTML figure and figcaption
   </figcaption>
 </figure>
-
-
-### Using paired shortcodes
-
-This image is served using a paired shortcode, as a figure with a figcaption, and the image loading set to lazy.
-
-It takes arguments image path, alt text, and inside is the caption.  There is no need to use template syntax, the URL is adjusted.
-
-Here is the code:
-
-```
-{% raw %}
-{% figure "/img/image001.jpg", "Road from overhead" %}
-This ~~image~~ figure, has a `caption` which supports **markdown**.
-{% endfigure %}
-{% endraw %}
-```
-
-Here is the output:
-
-{% figure "/img/image001.jpg", "Road from overhead" %}
-This ~~image~~ figure, has a `caption` which supports **markdown**.
-{% endfigure %}
