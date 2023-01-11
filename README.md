@@ -28,7 +28,7 @@ I've made the following modifications:
 - A post with code samples
 - A post with a video
 - A post with an image
-- Image with lightbox, [can I use this post?](https://www.markllobrera.com/posts/eleventy-building-image-gallery-photoswipe/)
+- Image with lightbox, [can I use this post?](https://www.markllobrera.com/posts/eleventy-building-image-gallery-photoswipe/) and [this one](https://www.markllobrera.com/posts/eleventy-paired-shortcodes-and-markdown-rendering/)?
 - Github repo card?
 - Button to switch light/dark mode, persist in localStorage
 - Remove description from post view
