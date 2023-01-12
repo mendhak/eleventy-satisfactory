@@ -17,24 +17,24 @@ There are a few different ways to display an image in a post.
 
 ## Using paired shortcodes
 
-This image is served using a paired shortcode. It produces a figure with an image, a figure caption that supports Markdown, and the image loading set to lazy.
+This image is served using a paired shortcode. It produces a figure with an image, a figure caption that supports Markdown, and the image loading set to lazy.  Clicking the image displays it in a lightbox.
 
-It takes arguments image path, alt text, and inside is the caption.  There is no need to use template syntax, the URL is adjusted.
+
 
 Here is the code:
 
 ```
 {% raw %}
-{% figure "/img/image001.jpg", "Road from overhead" %}
-This ~~image~~ figure, has a `caption` which supports **markdown**.
+{% figure "/img/image001.jpg", "This is an optional alt text" %}
+This ~~image~~ figure, has a `figcaption` which supports **markdown**.
 {% endfigure %}
 {% endraw %}
 ```
 
 Here is the output:
 
-{% figure "/img/image001.jpg", "Road from overhead" %}
-This ~~image~~ figure, has a `caption` which supports **markdown**.
+{% figure "/img/image001.jpg", "This is an optional alt text" %}
+This ~~image~~ figure, has a `figcaption` which supports **markdown**.
 {% endfigure %}
 
 

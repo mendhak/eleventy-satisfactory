@@ -7,6 +7,7 @@ const markdownItAnchor = require("markdown-it-anchor");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
+// For minifying the CSS
 const CleanCSS = require("clean-css");
 const path = require("path");
 
@@ -75,11 +76,37 @@ module.exports = function(eleventyConfig) {
         captionMarkup = "";
       }
 
+      if(!altText){
+        altText = "";
+      }
+
       let imgPath = path.join(pathPrefix, image);
 
-      return `<figure><img src="${imgPath}" alt="${altText}" loading="lazy" />${captionMarkup}</figure>`;
+      let rendered = `<figure><a href="${imgPath}"><img src="${imgPath}" title="${altText}" alt="${altText}" loading="lazy" style="width:calc(50% - 0.5em);" /></a>${captionMarkup}</figure>`;
+
+      return rendered;
     }
   );
+
+  // If the post contains a figure shortcode (defined above), add the Lightbox JS/CSS and render lightboxes for it.
+  eleventyConfig.addShortcode("addLightBoxRefIfNecessary", function(){
+    const str = fs.readFileSync(this.page.inputPath, 'utf8')
+    if(str.includes('{% figure')){
+      return `
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/andreknieriem/simplelightbox@master/dist/simple-lightbox.min.css?v2.12.0" />
+      <script src="https://cdn.jsdelivr.net/gh/andreknieriem/simplelightbox@master/dist/simple-lightbox.min.js?v2.12.0"></script>
+
+      <script>
+          (function() {
+              var $gallery = new SimpleLightbox('figure a', {'overlayOpacity':0.5});
+          })();
+      </script>
+      `;
+    }
+
+    return ``;
+
+  });
 
   // Generate excerpt from first paragraph
   eleventyConfig.addShortcode("excerpt", (article) =>
