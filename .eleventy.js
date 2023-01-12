@@ -19,6 +19,8 @@ module.exports = function(eleventyConfig) {
   // CSS isn't copied over, that's done inline via the base template.
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("fonts");
+  eleventyConfig.addPassthroughCopy({"node_modules/simplelightbox/dist/simple-lightbox.min.css": "simplelightbox/simple-lightbox.min.css"});
+  eleventyConfig.addPassthroughCopy({"node_modules/simplelightbox/dist/simple-lightbox.min.js": "simplelightbox/simple-lightbox.min.js"});
 
 
   // Add plugins
@@ -82,7 +84,7 @@ module.exports = function(eleventyConfig) {
 
       let imgPath = path.join(pathPrefix, image);
 
-      let rendered = `<figure><a href="${imgPath}"><img src="${imgPath}" title="${altText}" alt="${altText}" loading="lazy" style="width:calc(50% - 0.5em);" /></a>${captionMarkup}</figure>`;
+      let rendered = `<figure><a href="${imgPath}"><img src="${imgPath}" title="${altText}" alt="${altText}" loading="lazy" /></a>${captionMarkup}</figure>`;
 
       return rendered;
     }
@@ -92,9 +94,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addShortcode("addLightBoxRefIfNecessary", function(){
     const str = fs.readFileSync(this.page.inputPath, 'utf8')
     if(str.includes('{% figure')){
+      let jsPath = path.join(pathPrefix, 'simplelightbox/simple-lightbox.min.js');
+      let cssPath = path.join(pathPrefix, 'simplelightbox/simple-lightbox.min.css');
       return `
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/andreknieriem/simplelightbox@master/dist/simple-lightbox.min.css?v2.12.1" />
-      <script src="https://cdn.jsdelivr.net/gh/andreknieriem/simplelightbox@master/dist/simple-lightbox.min.js?v2.12.1"></script>
+      <link rel="stylesheet" href="${cssPath}" />
+      <script src="${jsPath}"></script>
 
       <script>
           (function() {
