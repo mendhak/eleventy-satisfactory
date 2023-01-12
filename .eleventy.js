@@ -143,6 +143,19 @@ module.exports = function(eleventyConfig) {
     level: [1,2,3,4],
     slugify: eleventyConfig.getFilter("slugify")
   });
+
+  // Wrap images in a figure, a, and figcaption.
+  // This lets the simplelightbox code serve it up too!
+  markdownLibrary.renderer.rules.image = function (tokens, idx, options, env, slf) {
+    const token = tokens[idx];
+    token.attrSet('loading', 'lazy');
+
+    return `<figure><a href="${token.attrs[token.attrIndex('src')][1]}">
+    ${slf.renderToken(tokens, idx, options)}</a>
+    <figcaption>${markdownLibrary.renderInline(token.content)}</figcaption>
+  </figure>`;
+  }
+
   eleventyConfig.setLibrary("md", markdownLibrary);
 
   // Override Browsersync defaults (used only with --serve)

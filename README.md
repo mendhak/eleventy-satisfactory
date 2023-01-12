@@ -24,10 +24,10 @@ I've made the following modifications:
 ## TODO
 
 - Some more posts to flesh it out
-- A way of adding an image
-- A post with one image
-- An image with lightbox, [can I use this post?](https://www.markllobrera.com/posts/eleventy-building-image-gallery-photoswipe/)
-- Image can specify a half size and third size
+- ~~A way of adding an image~~
+- ~~A post with one image~~
+- ~~An image with lightbox~~
+- ~~Image can specify a half size and third size~~
 - A gallery of images
 - A gallery of images with lightbox?
 - A post with code samples
@@ -38,6 +38,7 @@ I've made the following modifications:
 - 'Usage guide' in the README
 - Docker Compose file
 - Smashtests
+- A notice/warning type panel
 
 
 ## Running it
@@ -86,3 +87,4 @@ TBD
 - [Favicon created by Uniconlabs](https://www.flaticon.com/free-icons/website)
 - [Blog icon created by BomSymbols](https://www.flaticon.com/free-icons/blog)
 - [Paired shortcode](https://www.markllobrera.com/posts/eleventy-paired-shortcodes-and-markdown-rendering/)
+- [Shortcode with image gallery](https://www.markllobrera.com/posts/eleventy-building-image-gallery-photoswipe/)
