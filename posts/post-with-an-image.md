@@ -43,13 +43,13 @@ This image is served using a shortcode. It produces a figure with an image, and 
 Here is the code:
 
 ```
-{% raw %}{% figure "/img/image003.jpg", "This **image** has a `figcaption`, but it's optional" %}{% endraw %}
+{% raw %}{% figure "/img/image002.jpg", "This **image** has a `figcaption`, but it's optional" %}{% endraw %}
 ```
 
 
 Here is the output:
 
-{% figure "/img/image003.jpg", "This **image** has a `figcaption`, but it's optional" %}
+{% figure "/img/image002.jpg", "This **image** has a `figcaption`, but it's optional" %}
 
 
 ### Smaller figure with half or third size
