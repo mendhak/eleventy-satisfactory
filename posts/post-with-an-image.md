@@ -45,7 +45,7 @@ Here is the code:
 
 
 ```
-{% raw %}{% figure "/img/image001.jpg", "", "third" %}{% endraw %}
+{% raw %}{% figure "/img/image001.jpg", "Your **caption**", "third" %}{% endraw %}
 ```
 
 Here is the output:
