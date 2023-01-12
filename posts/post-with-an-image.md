@@ -34,7 +34,7 @@ Here is the output:
 
 ### Smaller figure with half or third size
 
-The image width can also be set to 'half' or 'third'.
+The image width can also be set to `half` or `third`.
 
 ```
 {% raw %}{% figure "/img/image001.jpg", "", "third" %}{% endraw %}
