@@ -37,24 +37,12 @@ Which results in:
 
 ## Using the `figure` shortcode
 
-This image is served using a shortcode. It produces a figure with an image, and a figcaption that supports Markdown.  Clicking the image displays it in a lightbox.
+This image is served using a shortcode. It produces a figure with an image, and a figcaption that supports Markdown.  The image width can also be set to `half` or `third`. Clicking the image displays it in a lightbox.
 
 
 Here is the code:
 
-```
-{% raw %}{% figure "/img/image002.jpg", "This **image** has a `figcaption`, but it's optional" %}{% endraw %}
-```
 
-
-Here is the output:
-
-{% figure "/img/image002.jpg", "This **image** has a `figcaption`, but it's optional" %}
-
-
-### Smaller figure with half or third size
-
-The image width can also be set to `half` or `third`.
 
 ```
 {% raw %}{% figure "/img/image001.jpg", "", "third" %}{% endraw %}
@@ -62,7 +50,7 @@ The image width can also be set to `half` or `third`.
 
 Here is the output:
 
-{% figure "/img/image001.jpg", "", "third" %}
+{% figure "/img/image001.jpg", "Your **caption**", "third" %}
 
 
 
