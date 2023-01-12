@@ -70,7 +70,7 @@ This image is served using regular HTML:
 
 ```
 {% raw %}<figure>
-  <img src="{{ '/img/image001.jpg' | url }}" alt="Image served using HTML">
+  <img src="{{ '/img/image002.jpg' | url }}" alt="Image served using HTML">
   <figcaption>
     An image served using HTML figure and figcaption
   </figcaption>
@@ -81,7 +81,7 @@ Which results in:
 
 
 <figure>
-  <img src="{{ '/img/image001.jpg' | url }}" alt="Image served using HTML">
+  <img src="{{ '/img/image002.jpg' | url }}" alt="Image served using HTML">
   <figcaption>
     An image served using HTML figure and figcaption
   </figcaption>
