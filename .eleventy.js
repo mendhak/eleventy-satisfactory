@@ -66,25 +66,18 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("filterTagList", filterTagList)
 
   // Paired shortcode to display a figure with caption.
-  eleventyConfig.addPairedShortcode(
+  eleventyConfig.addShortcode(
     "figure",
-    (data, image, altText) => {
+    function(image, caption) {
 
-      data = data.trim();
-      if (data !== undefined && data !== "") {
-        data = markdownLibrary.renderInline(data);
-        captionMarkup = `<figcaption>${data}</figcaption>`;
-      } else {
-        captionMarkup = "";
-      }
-
-      if(!altText){
-        altText = "";
+      let captionMarkup = "";
+      if(caption !== undefined && caption !== ""){
+        captionMarkup = markdownLibrary.renderInline(caption);
       }
 
       let imgPath = path.join(pathPrefix, image);
 
-      let rendered = `<figure><a href="${imgPath}"><img src="${imgPath}" title="${altText}" alt="${altText}" loading="lazy" /></a>${captionMarkup}</figure>`;
+      let rendered = `<figure><a href="${imgPath}"><img src="${imgPath}" alt="${caption}" loading="lazy" /></a><figcaption>${captionMarkup}</figcaption></figure>`;
 
       return rendered;
     }
@@ -102,7 +95,7 @@ module.exports = function(eleventyConfig) {
 
       <script>
           (function() {
-              var $gallery = new SimpleLightbox('figure a', {'overlayOpacity':0.5});
+              var $gallery = new SimpleLightbox('figure a', {'overlayOpacity':0.6});
           })();
       </script>
       `;

@@ -119,3 +119,8 @@ article a {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+
+/* Simple lightbox overlay */
+.sl-overlay {
+  background: black !important;
+}
