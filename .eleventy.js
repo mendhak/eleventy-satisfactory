@@ -93,8 +93,8 @@ module.exports = function(eleventyConfig) {
     const str = fs.readFileSync(this.page.inputPath, 'utf8')
     if(str.includes('{% figure')){
       return `
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/andreknieriem/simplelightbox@master/dist/simple-lightbox.min.css?v2.12.0" />
-      <script src="https://cdn.jsdelivr.net/gh/andreknieriem/simplelightbox@master/dist/simple-lightbox.min.js?v2.12.0"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/andreknieriem/simplelightbox@master/dist/simple-lightbox.min.css?v2.12.1" />
+      <script src="https://cdn.jsdelivr.net/gh/andreknieriem/simplelightbox@master/dist/simple-lightbox.min.js?v2.12.1"></script>
 
       <script>
           (function() {
