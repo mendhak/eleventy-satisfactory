@@ -68,7 +68,18 @@ module.exports = function(eleventyConfig) {
   // Paired shortcode to display a figure with caption.
   eleventyConfig.addShortcode(
     "figure",
-    function(image, caption) {
+    function(image, caption, widthName) {
+
+      let width = '';
+      switch (widthName) {
+        case 'half':
+          width = 'width: calc(50% - 0.5em);';
+          break;
+        case 'third':
+          width = 'width: calc(33% - 0.5em);';
+        default:
+          break;
+      }
 
       let captionMarkup = "";
       if(caption !== undefined && caption !== ""){
@@ -77,7 +88,7 @@ module.exports = function(eleventyConfig) {
 
       let imgPath = path.join(pathPrefix, image);
 
-      let rendered = `<figure><a href="${imgPath}"><img src="${imgPath}" alt="${caption}" loading="lazy" /></a><figcaption>${captionMarkup}</figcaption></figure>`;
+      let rendered = `<figure><a href="${imgPath}"><img src="${imgPath}" alt="${caption}" loading="lazy" style="${width}" /></a><figcaption>${captionMarkup}</figcaption></figure>`;
 
       return rendered;
     }

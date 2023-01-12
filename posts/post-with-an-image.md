@@ -17,7 +17,7 @@ There are a few different ways to display an image in a post.
 
 ## Using the `figure` shortcode
 
-This image is served using a shortcode. It produces a figure with an image, a figcaption that supports Markdown, and the image loading set to lazy.  Clicking the image displays it in a lightbox.
+This image is served using a shortcode. It produces a figure with an image, and a figcaption that supports Markdown.  Clicking the image displays it in a lightbox.
 
 
 Here is the code:
@@ -30,6 +30,19 @@ Here is the code:
 Here is the output:
 
 {% figure "/img/image003.jpg", "This **image** has a `figcaption`, but it's optional" %}
+
+
+### Smaller figure with half or third size
+
+The image width can also be set to 'half' or 'third'.
+
+```
+{% raw %}{% figure "/img/image001.jpg", "", "third" %}{% endraw %}
+```
+
+Here is the output:
+
+{% figure "/img/image001.jpg", "", "third" %}
 
 
 ## Using regular Markdown syntax
