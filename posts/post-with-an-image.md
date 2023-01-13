@@ -31,7 +31,7 @@ Which results in:
 
 ## Using the `figure` shortcode
 
-This image is served using a shortcode. It produces a figure with an image, and a figcaption that supports Markdown.  The image width can also be set to `half` or `third`. Clicking the image displays it in a lightbox.
+This image is served using a shortcode. It produces a figure with an image, and a figcaption that supports Markdown.  The image width can also be set to `half` or `third`, or just leave it blank for full width. Clicking the image displays it in a lightbox.
 
 
 Here is the code:
