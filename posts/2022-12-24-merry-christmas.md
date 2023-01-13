@@ -26,7 +26,7 @@ Malesuada fames ac turpis egestas. Porta nibh venenatis cras sed felis eget veli
 
 > Scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada. Viverra justo nec ultrices dui sapien eget mi proin. Tortor at risus viverra adipiscing at in tellus. Elementum curabitur vitae nunc sed velit dignissim. Accumsan lacus vel facilisis volutpat est. Pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum odio. Viverra ipsum nunc aliquet bibendum enim facilisis gravida neque. Turpis nunc eget lorem dolor sed viverra ipsum nunc. Cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque. Donec et odio pellentesque diam. Tempus quam pellentesque nec nam aliquam. Fringilla est ullamcorper eget nulla facilisi etiam dignissim. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget. Tellus id interdum velit laoreet id donec ultrices tincidunt. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Faucibus et molestie ac feugiat.
 
-![A forest in Norway, [credit Mendhak](https://www.flickr.com/photos/mendhak/30454355997/in/dateposted-public/)]({{ '/img/image003.jpg' | url }})
+![A forest in Norway, [credit Mendhak](https://www.flickr.com/photos/mendhak/30454355997/in/dateposted-public/)](/img/image003.jpg)
 
 #### Amet purus gravida
 

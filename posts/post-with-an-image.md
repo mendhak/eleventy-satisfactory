@@ -24,15 +24,9 @@ Using regular Markdown syntax is possible. The image gets rendered as a figure w
 {% raw %}![A little `markdown` can work be used _here_](/img/image003.jpg){% endraw %}
 ```
 
-If the site sits in a subfolder, specify the image path using the `| url` syntax like so:
-
-```
-{% raw %}![A little `markdown` can work be used _here_]({{ '/img/image003.jpg' | url }}){% endraw %}
-```
-
 Which results in:
 
-![A little `markdown` can work be used _here_]({{ '/img/image003.jpg' | url }})
+![A little `markdown` can work be used _here_](/img/image003.jpg)
 
 
 ## Using the `figure` shortcode
@@ -57,7 +51,7 @@ Here is the output:
 
 ### Using `<figure>` HTML
 
-This image is served using regular HTML:
+This image is served using regular HTML. No lightbox is produced.
 
 ```
 {% raw %}<figure>

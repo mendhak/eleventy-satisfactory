@@ -68,6 +68,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("filterTagList", filterTagList)
 
   // Paired shortcode to display a figure with caption.
+  // This is very similar to the regular Markdown image,
+  // But I'll keep this around in case the other way ever breaks in the future
+  // Plus, this has the 'width' flexibility, and maybe more future features.
   eleventyConfig.addShortcode(
     "figure",
     function(image, caption, widthName) {
@@ -151,10 +154,23 @@ module.exports = function(eleventyConfig) {
 
   // Wrap images in a figure, a, and figcaption.
   // This lets the simplelightbox code serve it up too!
+  // Also adds loading lazy attribute
   markdownLibrary.renderer.rules.image = function (tokens, idx, options, env, slf) {
+
     const token = tokens[idx];
+    // Set the loading=lazy attribute
     token.attrSet('loading', 'lazy');
 
+    // Adjust the path so it works with the pathPrefix
+    // This can be / or /my-blog for example
+    let imgPath = token.attrGet('src');
+    if(!imgPath.includes(pathPrefix)){
+      imgPath = path.join(pathPrefix, imgPath);
+    }
+    token.attrSet('src', imgPath);
+
+    // Return figure with figcaption.
+    // The 'a' is the image linking to itself, which then gets picked up by simplelightbox
     return `<figure><a href="${token.attrs[token.attrIndex('src')][1]}">
     ${slf.renderToken(tokens, idx, options)}</a>
     <figcaption>${markdownLibrary.renderInline(token.content)}</figcaption>
