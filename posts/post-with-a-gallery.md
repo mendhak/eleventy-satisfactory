@@ -18,7 +18,7 @@ The image caption will also appear in the lightbox.  A little Markdown might in 
 
 ```
 {% raw %}{% gallery %}
-- ![_First_ image](/img/image001.jpg)
+- ![](/img/image001.jpg)
 - ![**Second** image](/img/image002.jpg)
 - ![`Third` image](/img/image003.jpg)
 {% endgallery %}{% endraw %}
@@ -27,7 +27,7 @@ The image caption will also appear in the lightbox.  A little Markdown might in 
 Produces this:
 
 {% gallery %}
-- ![_First_ image](/img/image001.jpg)
+- ![](/img/image001.jpg)
 - ![**Second** image](/img/image002.jpg)
 - ![`Third` image](/img/image003.jpg)
 {% endgallery %}
