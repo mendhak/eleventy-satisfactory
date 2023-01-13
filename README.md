@@ -37,7 +37,7 @@ So far I've made the following modifications:
 - Button to switch light/dark mode, persist in localStorage
 - ~~Remove description from post view~~
 - 'Usage guide' in the README
-- Docker Compose file
+- ~~Docker Compose file~~
 - Smashtests
 - A notice/warning type panel
 * ~~Github Action to build it~~

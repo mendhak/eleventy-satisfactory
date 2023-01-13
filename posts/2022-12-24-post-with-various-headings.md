@@ -7,10 +7,11 @@ header:
   teaser: https://live.staticflickr.com/1932/30454355997_287063f84b_q.jpg
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Gravida in fermentum et sollicitudin ac orci phasellus egestas. Non tellus orci ac auctor augue mauris augue. Amet consectetur adipiscing elit duis tristique. Arcu ac tortor dignissim convallis aenean. A cras semper auctor neque vitae. Donec massa sapien faucibus et molestie ac. Platea dictumst vestibulum rhoncus est pellentesque. Viverra nam libero justo laoreet sit amet cursus sit. Amet volutpat consequat mauris nunc congue nisi. Cras ornare arcu dui vivamus arcu.
-
+A few different heading levels from H2 to H6.  H1 is already used by the post title.  H2 to H4 get permalinks, but H5 and H6 don't.
 
 ## Malesuada fames
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Gravida in fermentum et sollicitudin ac orci phasellus egestas. Non tellus orci ac auctor augue mauris augue. Amet consectetur adipiscing elit duis tristique. Arcu ac tortor dignissim convallis aenean. A cras semper auctor neque vitae. Donec massa sapien faucibus et molestie ac. Platea dictumst vestibulum rhoncus est pellentesque. Viverra nam libero justo laoreet sit amet cursus sit. Amet volutpat consequat mauris nunc congue nisi. Cras ornare arcu dui vivamus arcu.
 
 Malesuada fames ac turpis egestas. Porta nibh venenatis cras sed felis eget velit aliquet. Sagittis id consectetur purus ut faucibus pulvinar elementum integer enim. Arcu odio ut sem nulla pharetra. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Sed vulputate mi sit amet mauris commodo quis imperdiet massa. Ut etiam sit amet nisl purus in mollis nunc. Elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Etiam tempor orci eu lobortis elementum nibh tellus molestie nunc. Integer feugiat scelerisque varius morbi. Velit ut tortor pretium viverra suspendisse. Lectus quam id leo in vitae turpis. Consequat id porta nibh venenatis cras sed felis eget.
 
