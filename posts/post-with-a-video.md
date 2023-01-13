@@ -1,5 +1,5 @@
 ---
-title: Post with some videos
+title: Post with some third party media
 description: This post contains sample videos using iframe
 tags:
   - xmas
@@ -10,7 +10,7 @@ layout: layouts/post.njk
 
 ---
 
-To place audio and video on the page, just paste the iframe code directly into the post. To make videos fit responsively, remove the height and width attributes and set its `class="video"`.
+It's common to place third party audio, video, gists, etc. on a page using iframes. Just paste the iframe code directly into the post. To make videos fit responsively, remove the height and width attributes and set its `class="video"`.
 
 ### Youtube Video
 
