@@ -127,7 +127,7 @@ module.exports = function(eleventyConfig) {
   // This paired shortcode shows a set of images and displays it in a grid.
   eleventyConfig.addPairedShortcode(
     "gallery", (data) => {
-      const galleryContent = markdownLibrary.render(data,{'inGallery': true});
+      const galleryContent = markdownLibrary.render(data, {'inGallery': true});
       return `<div class="gallery">${galleryContent}</div>`;
     }
   );
