@@ -27,16 +27,10 @@
   {{ cssoverrides | cssmin | safe }}
 
   {% set cssprism %}
-  {% include "css/prism-base16-monokai.dark.css" %}
+  {% include "css/prism-a11y-dark.css" %}
   {% endset %}
 
   {{ cssprism | cssmin | safe }}
-
-  {% set cssprismdiff %}
-  {% include "css/prism-diff.css" %}
-  {% endset %}
-
-  {{ cssprismdiff | cssmin | safe }}
 
   </style>
 
