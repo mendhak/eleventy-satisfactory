@@ -124,6 +124,14 @@ module.exports = function(eleventyConfig) {
 
   });
 
+  // This paired shortcode shows a set of images and displays it in a grid.
+  eleventyConfig.addPairedShortcode(
+    "gallery", (data) => {
+      const galleryContent = markdownLibrary.render(data);
+      return `<div class="gallery">${galleryContent}</div>`;
+    }
+  );
+
   // Generate excerpt from first paragraph
   eleventyConfig.addShortcode("excerpt", (article) =>
     extractExcerpt(article)
