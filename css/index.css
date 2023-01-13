@@ -166,3 +166,11 @@ article {
   object-fit: cover;
   object-position: 50% 50%;
 }
+
+
+/* Video */
+
+.video {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}

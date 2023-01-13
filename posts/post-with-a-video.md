@@ -1,0 +1,63 @@
+---
+title: Post with some videos
+description: This post contains sample videos using iframe
+tags:
+  - xmas
+  - netherlands
+  - markdown
+layout: layouts/post.njk
+
+
+---
+
+To place audio and video on the page, just paste the iframe code directly into the post. To make videos fit responsively, remove the height and width attributes and set its `class="video"`.
+
+### Youtube Video
+
+For YouTube, this code:
+
+```html
+<iframe
+  class="video"
+  src="https://www.youtube.com/embed/9qOvG9KeJ6c"
+  frameborder="0"
+  allow="accelerometer; autoplay; encrypted-media; gyroscope;"
+  allowfullscreen></iframe>
+```
+
+Produces:
+
+<iframe
+  class="video"
+  src="https://www.youtube.com/embed/9qOvG9KeJ6c"
+  frameborder="0"
+  allow="accelerometer; autoplay; encrypted-media; gyroscope;"
+  allowfullscreen></iframe>
+
+### Vimeo video
+
+Similarly for Vimeo,
+
+```html
+<iframe class="video" src="https://player.vimeo.com/video/35396305?h=6ba64096f6" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+
+```
+
+Produces:
+
+<iframe class="video" src="https://player.vimeo.com/video/35396305?h=6ba64096f6" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+
+
+
+
+### Soundcloud audio
+
+For Soundcloud, there's no need to change the height and width.
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/65462299&color=%23544d2d&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+
+
+
+### Github Gists
+
+<script src="https://gist.github.com/mendhak/8d67b2412d97f593dbbb3abee06e5293.js"></script>
