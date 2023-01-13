@@ -14,18 +14,20 @@ header:
 
 To display a set of images in a gallery, write the images as a set of list items, and then surround it with the gallery shortcode.
 
-```njk
+The image caption will also appear in the lightbox.  A little Markdown might in the caption might also work.
+
+```
 {% raw %}{% gallery %}
-- ![First image](/img/image001.jpg)
-- ![Second image](/img/image002.jpg)
-- ![Third image](/img/image003.jpg)
+- ![_First_ image](/img/image001.jpg)
+- ![**Second** image](/img/image002.jpg)
+- ![`Third` image](/img/image003.jpg)
 {% endgallery %}{% endraw %}
 ```
 
 Produces this:
 
 {% gallery %}
-- ![First image](/img/image001.jpg)
-- ![Second image](/img/image002.jpg)
-- ![Third image](/img/image003.jpg)
+- ![_First_ image](/img/image001.jpg)
+- ![**Second** image](/img/image002.jpg)
+- ![`Third` image](/img/image003.jpg)
 {% endgallery %}

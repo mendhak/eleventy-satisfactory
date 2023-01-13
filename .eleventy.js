@@ -127,7 +127,7 @@ module.exports = function(eleventyConfig) {
   // This paired shortcode shows a set of images and displays it in a grid.
   eleventyConfig.addPairedShortcode(
     "gallery", (data) => {
-      const galleryContent = markdownLibrary.render(data);
+      const galleryContent = markdownLibrary.render(data,{'inGallery': true});
       return `<div class="gallery">${galleryContent}</div>`;
     }
   );
@@ -177,11 +177,25 @@ module.exports = function(eleventyConfig) {
     }
     token.attrSet('src', imgPath);
 
+    let captionRendered = markdownLibrary.renderInline(token.content);
+    let figCaption = '';
+
+    // If it's a gallery of images, display the caption in the lightbox.
+    // Otherwise display it on the page inside figcaption.
+    // This is because the caption might be too long and awkward to display
+    // in a crowded area.
+    if(env.inGallery){
+      token.attrSet('title', captionRendered);
+    }
+    else {
+      figCaption = captionRendered;
+    }
+
     // Return figure with figcaption.
     // The 'a' is the image linking to itself, which then gets picked up by simplelightbox
     return `<figure><a href="${token.attrs[token.attrIndex('src')][1]}">
     ${slf.renderToken(tokens, idx, options)}</a>
-    <figcaption>${markdownLibrary.renderInline(token.content)}</figcaption>
+    <figcaption>${figCaption}</figcaption>
   </figure>`;
   }
 
