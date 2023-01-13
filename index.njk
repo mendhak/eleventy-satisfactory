@@ -6,7 +6,6 @@ layout: layouts/home.njk
 
 
 {% set maxPosts = collections.posts.length | min(metadata.homePageItems) %}
-Recent posts
 
 {% set postslist = collections.posts | head(-metadata.homePageItems) %}
 {% set postslistCounter = collections.posts | length %}

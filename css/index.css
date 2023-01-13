@@ -45,8 +45,9 @@ h1 {
 }
 
 /* Use the nice Lora font for headings */
-h1,h2,h3 {
+h1,h2,h3,h4,h5,h6 {
   font-family: Lora,serif;
+  margin-bottom: 0.25em;
 }
 
 .notice {
@@ -93,19 +94,21 @@ footer li {
 
 /* Styling for the excerpts appear below article titles on the index page */
 .excerpt {
-  font-size: 1rem;
+  font-size: 1.2rem;
+  padding-bottom: 1.2rem;
 }
 
 /* Styling for the article listing on the index page */
 article {
   border: none;
+  padding: 0;
 }
 
-article a {
+/* article a {
   font-weight: bolder;
   font-family: 'Lora';
   font-size: 1.5rem;
-}
+} */
 
 /* Styling for the external links appearing in the footer */
 .bottomlinks {

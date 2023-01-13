@@ -3,8 +3,9 @@ layout: layouts/base.njk
 ---
 
 
-
+<article>
 {{ content | safe }}
+</article>
 
 {%- if collections.posts %}
 {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
