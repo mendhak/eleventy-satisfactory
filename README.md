@@ -64,6 +64,12 @@ Or in debug mode:
 DEBUG=* npx @11ty/eleventy
 ```
 
+Or in docker compose:
+
+```
+docker-compose up
+```
+
 ## Usage
 
 TBD
