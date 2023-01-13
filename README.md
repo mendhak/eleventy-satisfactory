@@ -21,6 +21,7 @@ So far I've made the following modifications:
 * Flatten post URL to top level
 * Favicon feature
 * Image is written as figure, and has lightbox.
+* Image galleries
 * Change the code theme
 
 ## TODO
@@ -33,7 +34,7 @@ So far I've made the following modifications:
 - ~~A gallery of images~~
 - ~~A gallery of images with lightbox?~~
 - ~~A post with code samples~~
-- A post with a video
+- ~~A post with a video~~
 - Github repo card?
 - Button to switch light/dark mode, persist in localStorage
 - ~~Remove description from post view~~
@@ -41,7 +42,8 @@ So far I've made the following modifications:
 - ~~Docker Compose file~~
 - Smashtests
 - A notice/warning type panel
-* ~~Github Action to build it~~
+- ~~Github Action to build it~~
+- Github Gists, but not rubbish looking.
 
 
 ## Running it
