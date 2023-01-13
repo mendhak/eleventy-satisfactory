@@ -39,6 +39,11 @@ a {
   text-decoration: none;
 }
 
+/* Don't italicize blockquote */
+blockquote {
+  font-style: normal;
+}
+
 /* H1s should have the accent color, to make it stand out */
 h1 {
   color: var(--accent);
