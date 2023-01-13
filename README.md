@@ -21,6 +21,7 @@ So far I've made the following modifications:
 * Flatten post URL to top level
 * Favicon feature
 * Image is written as figure, and has lightbox.
+* Change the code theme
 
 ## TODO
 
@@ -29,9 +30,9 @@ So far I've made the following modifications:
 - ~~A post with one image~~
 - ~~An image with lightbox~~
 - ~~Image can specify a half size and third size~~
-- A gallery of images
-- A gallery of images with lightbox?
-- A post with code samples
+- ~~A gallery of images~~
+- ~~A gallery of images with lightbox?~~
+- ~~A post with code samples~~
 - A post with a video
 - Github repo card?
 - Button to switch light/dark mode, persist in localStorage
