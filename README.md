@@ -40,6 +40,7 @@ So far I've made the following modifications:
 - Docker Compose file
 - Smashtests
 - A notice/warning type panel
+* ~~Github Action to build it~~
 
 
 ## Running it
