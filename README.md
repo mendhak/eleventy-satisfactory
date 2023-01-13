@@ -1,10 +1,10 @@
 # Mendhak's Eleventy Blog Theme
 
-A blog starter using [11ty](https://github.com/11ty/eleventy) and [Simple.css](https://github.com/kevquirk/simple.css). Based on [eleventy-base-blog](https://github.com/11ty/eleventy-base-blog).
+A blog theme I'm working on based on [11ty](https://github.com/11ty/eleventy).  I am planning to move over from Jekyll and minimal-mistakes, so I will need to build in some features first.
 
-It's a simplified opinionated layout, the focus is on content first, and less on other things (such as the author, social, tags, dates, about me, etc)
+It's a simplified opinionated layout, the focus is on content first, and less on other things (such as the author, social, tags, dates, about me, etc).
 
-I've made the following modifications:
+So far I've made the following modifications:
 
 * The CSS is now inline in the page, instead of a link to a stylesheet.
 * Make the headings permalinks
@@ -20,6 +20,7 @@ I've made the following modifications:
 * Opengraph tags generated for each page, including default image (see metadata.json)
 * Flatten post URL to top level
 * Favicon feature
+* Image is written as figure, and has lightbox.
 
 ## TODO
 

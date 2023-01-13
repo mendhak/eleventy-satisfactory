@@ -15,13 +15,15 @@ const path = require("path");
 const pathPrefix = process.env.PATH_PREFIX || '/eleventy-mendhak-blog-theme/';
 
 module.exports = function(eleventyConfig) {
-  // Copy the `img`, `css`, and `fonts` folders to the output
+  // Copy the `img`, and `fonts` folders to the output
   // CSS isn't copied over, that's done inline via the base template.
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("fonts");
   eleventyConfig.addPassthroughCopy({"node_modules/simplelightbox/dist/simple-lightbox.min.css": "simplelightbox/simple-lightbox.min.css"});
   eleventyConfig.addPassthroughCopy({"node_modules/simplelightbox/dist/simple-lightbox.min.js": "simplelightbox/simple-lightbox.min.js"});
 
+  //Since moving the CSS inline eleventy no longer watches it (because it's not being copied to output), so I had to include it as a watch target.
+  eleventyConfig.addWatchTarget("./css/");
 
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
@@ -94,10 +96,13 @@ module.exports = function(eleventyConfig) {
     }
   );
 
-  // If the post contains a figure shortcode (defined above), add the Lightbox JS/CSS and render lightboxes for it.
+  // If the post contains a figure shortcode (defined above),
+  // Or a markdown image ![
+  // Then add the Lightbox JS/CSS and render lightboxes for it.
   eleventyConfig.addShortcode("addLightBoxRefIfNecessary", function(){
-    const str = fs.readFileSync(this.page.inputPath, 'utf8')
-    if(str.includes('{% figure')){
+    const str = fs.readFileSync(this.page.inputPath, 'utf8');
+
+    if(str.includes('{% figure') || str.includes('![')){
       let jsPath = path.join(pathPrefix, 'simplelightbox/simple-lightbox.min.js');
       let cssPath = path.join(pathPrefix, 'simplelightbox/simple-lightbox.min.css');
       return `
@@ -176,8 +181,6 @@ module.exports = function(eleventyConfig) {
     ghostMode: false
   });
 
-  //Since moving the CSS inline eleventy no longer watches it (because it's not being copied to output), so I had to include it as a watch target.
-  eleventyConfig.addWatchTarget("./css/");
 
   return {
     // Control which files Eleventy will process
@@ -220,7 +223,7 @@ module.exports = function(eleventyConfig) {
 };
 
 // Adopted from => https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/
-// Gets the first 30 words as the excerpt
+// Gets the first 30 words as the excerpt or until the newline, whichever comes first.
 function extractExcerpt(article) {
   if (!Object.prototype.hasOwnProperty.call(article, "templateContent")) {
       console.warn(
