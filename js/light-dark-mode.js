@@ -80,7 +80,14 @@ function applyPreferredColorScheme(scheme) {
   }
 
   // Change the toggle button to be the opposite of the current scheme
-  document.getElementById("schemeToggler").text = (scheme === "dark" ? "☀️" : "🌘" );
+  if(scheme === "dark"){
+    document.getElementById("icon-sun").style.display='inline';
+    document.getElementById("icon-moon").style.display='none';
+  }
+  else {
+    document.getElementById("icon-moon").style.display='inline';
+    document.getElementById("icon-sun").style.display='none';
+  }
 }
 
 applyPreferredColorScheme(getPreferredColorScheme());

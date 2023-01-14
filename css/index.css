@@ -195,3 +195,13 @@ nav :is(ol,ul) li {
   float: right;
 
 }
+
+svg#icon-sun {
+  width: 2rem;
+  height: 2rem;
+}
+
+svg#icon-moon {
+  width: 2rem;
+  height: 2rem;
+}
