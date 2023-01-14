@@ -24,6 +24,7 @@ So far I've made the following modifications:
 * Image galleries
 * Change the code theme
 * Removed tag listing pages, tags only get used in the HTML metadata
+* Pagination on the page list and post list
 
 ## TODO
 
