@@ -7,7 +7,7 @@ permalink: /
 
 {% set maxPosts = collections.posts.length | min(metadata.homePageItems) %}
 
-{% set postslist = collections.posts | head(-metadata.homePageItems) %}
+{% set postslist = collections.posts | head(-metadata.homePageItems) | reverse %}
 {% set postslistCounter = collections.posts | length %}
 {% include "postslist.njk" %}
 

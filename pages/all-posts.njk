@@ -5,6 +5,7 @@ pagination:
   data: collections.posts
   size: 5
   alias: postslist
+  reverse: true
 
 permalink: /posts/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber }}/{% endif %}
 ---
