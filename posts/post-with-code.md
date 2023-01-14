@@ -1,10 +1,11 @@
 ---
 title: Post with some sample code
 description: This post contains sample code blocks
+date: 2023-01-05
 tags:
-  - xmas
-  - netherlands
+  - eleventy
   - markdown
+  - code
 layout: layouts/post.njk
 
 

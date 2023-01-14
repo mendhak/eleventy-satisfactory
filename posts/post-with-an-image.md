@@ -2,9 +2,11 @@
 title: Post with an image
 description: There are different ways to post images!
 tags:
-  - xmas
-  - netherlands
+  - eleventy
   - markdown
+  - shortcode
+  - images
+  - lightbox
 layout: layouts/post.njk
 
 header:

@@ -1,10 +1,12 @@
 ---
 title: Post with some third party media
 description: This post contains sample videos using iframe
+date: 2023-01-05
 tags:
-  - xmas
-  - netherlands
-  - markdown
+  - eleventy
+  - iframe
+  - videos
+  - third-party
 layout: layouts/post.njk
 
 

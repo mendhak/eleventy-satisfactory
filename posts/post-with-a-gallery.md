@@ -1,10 +1,13 @@
 ---
-title: Post with a gallery
-description: This post contains a gallery
+title: Post with an image gallery
+description: This post contains an image gallery in Markdown as well as shortcodes.
 tags:
-  - xmas
-  - netherlands
+  - eleventy
   - markdown
+  - shortcode
+  - images
+  - gallery
+  - lightbox
 layout: layouts/post.njk
 
 header:
@@ -30,7 +33,8 @@ Produces this:
 ![`Third` image](/img/image003.jpg)
 {% endgallery %}
 
-The images are constrained to a fixed size. The captions don't appear on the page because it's crowded and can get awkward quickly.
+The images are constrained to a fixed size. The captions don't appear on the page, as they would for standalone images, because it's crowded and can get awkward quickly.
+
 
 ## Using gallery and figure shortcodes together
 
@@ -54,4 +58,4 @@ Produces this:
 {% figure "/img/image003.jpg", "Third `caption`" %}
 {% endgallery %}
 
-In this case, the caption appears below the images, but not in the lightbox.
+In this case, the caption appears below the images, but not in the lightbox.  This is because the shortcodes are rendered independently. This can get crowded and awkward, I'm not sure if this is a good idea.
