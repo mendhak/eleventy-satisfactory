@@ -25,6 +25,7 @@ So far I've made the following modifications:
 * Change the code theme
 * Removed tag listing pages, tags only get used in the HTML metadata
 * Pagination on the page list and post list
+* Light and Dark mode toggle
 
 ## TODO
 
@@ -38,7 +39,7 @@ So far I've made the following modifications:
 - ~~A post with code samples~~
 - ~~A post with a video~~
 - Github repo card?
-- Button to switch light/dark mode, persist in localStorage
+- ~~Button to switch light/dark mode, persist in localStorage~~
 - ~~Remove description from post view~~
 - 'Usage guide' in the README
 - ~~Docker Compose file~~
