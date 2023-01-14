@@ -88,9 +88,12 @@
   {% addLightBoxRefIfNecessary %}
 
 
-<script>
-  {% include 'js/light-dark-mode.js' %}
-</script>
+  <script>
+  {% set lightdarkjs %}
+  {% include "js/light-dark-mode.js" %}
+  {% endset %}
+  {{ lightdarkjs | jsmin | safe }}
+  </script>
 
 
   <!-- Current page: {{ page.url | url }} -->

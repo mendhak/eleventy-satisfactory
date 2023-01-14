@@ -1,3 +1,4 @@
+// https://stackoverflow.com/questions/56300132/how-to-override-css-prefers-color-scheme-setting
 // Return the system level color scheme, but if something's in local storage, return that
 // Unless the system scheme matches the the stored scheme, in which case... remove from local storage
 function getPreferredColorScheme(){
@@ -79,7 +80,7 @@ function applyPreferredColorScheme(scheme) {
   }
 
   // Change the toggle button to be the opposite of the current scheme
-  document.getElementById("schemeToggler").text = (scheme === "dark" ? "☀️" : "🌙" );
+  document.getElementById("schemeToggler").text = (scheme === "dark" ? "☀️" : "🌘" );
 }
 
 applyPreferredColorScheme(getPreferredColorScheme());
