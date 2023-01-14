@@ -197,11 +197,11 @@ nav :is(ol,ul) li {
 }
 
 svg#icon-sun {
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 svg#icon-moon {
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
