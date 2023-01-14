@@ -1,9 +1,15 @@
 ---
 title: All posts
 layout: layouts/home.njk
-permalink: /posts/
+pagination:
+  data: collections.posts
+  size: 5
+  alias: postslist
 
+permalink: /posts/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber }}/{% endif %}
 ---
 
-{% set postslist = collections.posts %}
+
 {% include "postslist.njk" %}
+
+{% include "pagination.njk" %}

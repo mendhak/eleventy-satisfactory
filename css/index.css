@@ -179,13 +179,19 @@ article {
 /* Navigation for Pagination */
 
 nav {
+  display: inline;
   text-align: center;
+  margin-top: 2rem;
+  width: 100%;
+
 }
 
-nav ol li {
-  display: inline-block;
+nav :is(ol,ul) li {
+  display: inline;
+  list-style-type: none;
   padding: 0.2rem 0.5rem;
   text-decoration: none;
   margin: 0 0.5rem;
-}
+  float: right;
 
+}
