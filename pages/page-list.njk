@@ -23,3 +23,12 @@ permalink: /page-list/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber
 {%- endfor %}
   </tbody>
 </table>
+
+
+<nav aria-labelledby="pagination">
+  <ol>
+    <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous | url }}">⬅ Previous</a>{% else %}⬅ Previous{% endif %}</li>
+
+    <li>{% if pagination.href.next %}<a href="{{ pagination.href.next | url }}">Next ➡</a>{% else %}Next ➡{% endif %}</li>
+  </ol>
+</nav>
