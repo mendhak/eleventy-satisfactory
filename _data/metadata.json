@@ -4,7 +4,7 @@
   "language": "en",
   "favicon": "/img/web.png",
   "description": "Development notes, technical notes, and blog posts",
-  "tags": "development, programming, science, technology",
+  "tags": ["development, programming, science, technology"],
   "homePageItems": 4,
   "feed": {
     "filename": "feed.xml",

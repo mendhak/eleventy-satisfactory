@@ -23,6 +23,7 @@ So far I've made the following modifications:
 * Image is written as figure, and has lightbox.
 * Image galleries
 * Change the code theme
+* Removed tag listing pages, tags only get used in the HTML metadata
 
 ## TODO
 
@@ -44,6 +45,7 @@ So far I've made the following modifications:
 - A notice/warning type panel
 - ~~Github Action to build it~~
 - Github Gists, but not rubbish looking.
+- ~~Remove /tags/ listing pages~~
 
 
 ## Running it

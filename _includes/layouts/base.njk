@@ -46,7 +46,7 @@
   <meta property="og:article:author" content="{{ metadata.author.name }}" />
   <meta property="og:article:tag" content="{{ tags or metadata.tags }}" />
   <meta name="description" content="{{ description or metadata.description }}">
-  <meta name="keywords" content="{{ tags or metadata.tags }}">
+  <meta name="keywords" content="{{ tags or metadata.tags | filterTagList }}">
 
   <meta name="generator" content="{{ eleventy.generator }}">
 
