@@ -24,6 +24,7 @@ module.exports = function(eleventyConfig) {
 
   //Since moving the CSS inline eleventy no longer watches it (because it's not being copied to output), so I had to include it as a watch target.
   eleventyConfig.addWatchTarget("./css/");
+  eleventyConfig.addWatchTarget("./js/");
 
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);

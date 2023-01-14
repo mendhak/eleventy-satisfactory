@@ -71,6 +71,7 @@
         {%- endfor -%}
     </ul>
 
+    <a id="schemeToggler" href="javascript:toggleColorScheme();"></a>
 
     <p>&mdash; &copy; {% year %} {{ metadata.author.name }} &mdash;</p>
 
@@ -85,6 +86,12 @@
 
 
   {% addLightBoxRefIfNecessary %}
+
+
+<script>
+  {% include 'js/light-dark-mode.js' %}
+</script>
+
 
   <!-- Current page: {{ page.url | url }} -->
 </body>
