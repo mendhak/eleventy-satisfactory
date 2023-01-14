@@ -48,6 +48,7 @@ So far I've made the following modifications:
 - ~~Github Action to build it~~
 - Github Gists, but not rubbish looking.
 - ~~Remove /tags/ listing pages~~
+- Undo the dark/light mode toggle - the effort and workarounds aren't worth it.  Brief flashing workaround is a step too far, too much undocumented JS for switching, not friendly to CSS media prefers queries.
 
 
 ## Running it
