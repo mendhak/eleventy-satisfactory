@@ -99,7 +99,7 @@ TBD
 - [Eleventy](https://www.11ty.dev/docs/)
 - [Simple.css](https://github.com/kevquirk/simple.css/wiki)
 - [Favicon created by Uniconlabs](https://www.flaticon.com/free-icons/website)
-- [Blog icon created by BomSymbols](https://www.flaticon.com/free-icons/blog)
+- [Article icon by Freepik](https://www.flaticon.com/free-icons/blog)
 - [Paired shortcode](https://www.markllobrera.com/posts/eleventy-paired-shortcodes-and-markdown-rendering/)
 - [Shortcode with image gallery](https://www.markllobrera.com/posts/eleventy-building-image-gallery-photoswipe/)
 - [Customizing markdown-it](https://publishing-project.rivendellweb.net/customizing-markdown-it/)
