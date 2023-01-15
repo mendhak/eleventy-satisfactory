@@ -1,7 +1,7 @@
 {
-  "name": "eleventy-simple",
+  "name": "eleventy-mendhak-blog-theme",
   "version": "1.0.0",
-  "description": "A blog starter using 11ty and Simple.css.",
+  "description": "My simplified opinionated eleventy theme, the focus is on content first, and less on other things.",
   "scripts": {
     "build": "npx @11ty/eleventy",
     "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
@@ -13,18 +13,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/11ty/eleventy-base-blog.git"
+    "url": "https://github.com/mendhak/eleventy-mendhak-blog-theme.git"
   },
   "author": {
-    "name": "Zach Leatherman",
-    "email": "zachleatherman@gmail.com",
-    "url": "https://zachleat.com/"
+    "name": "mendhak",
+    "email": "mendhak@users.noreply.github.com",
+    "url": "https://code.mendhak.com/"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/11ty/eleventy-base-blog/issues"
+    "url": "https://github.com/mendhak/eleventy-mendhak-blog-theme/issues"
   },
-  "homepage": "https://github.com/11ty/eleventy-base-blog#readme",
+  "homepage": "https://code.mendhak.com/eleventy-mendhak-blog-theme/",
   "dependencies": {
     "@11ty/eleventy": "^1.0.2",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
