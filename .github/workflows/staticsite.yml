@@ -33,6 +33,11 @@ jobs:
         # Ignore the failure of a step and avoid terminating the job.
         continue-on-error: true
 
+      - name: Use Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
       - name: Build the static site
         run: /bin/bash -c 'npm install;npm run build'
 
