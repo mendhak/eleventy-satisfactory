@@ -77,6 +77,17 @@ module.exports = function(eleventyConfig) {
     }
   );
 
+  //Paired shortcode to display a notice panel like standard, error, warning, etc.
+  eleventyConfig.addPairedShortcode(
+    "notice", (data, noticeType) => {
+      if(!noticeType){
+        noticeType = "";
+      }
+      let noticeMarkup = markdownLibrary.renderInline(data);
+      return `<div class="notice ${noticeType}">${noticeMarkup}</div>`;
+    }
+  );
+
   // Paired shortcode to display a figure with caption.
   // This is very similar to the regular Markdown image,
   // But I'll keep this around in case the other way ever breaks in the future

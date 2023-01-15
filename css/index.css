@@ -194,8 +194,8 @@ nav :is(ol,ul) li {
 :root {
   --notice-color: var(--text);
   --notice-bg: var(--accent-bg);
-  --notice-primary-color: var(--text);
-  --notice-primary-bg: #d8ebf1;
+  --notice-info-color: var(--text);
+  --notice-info-bg: #d8ebf1;
   --notice-success-color: var(--text);
   --notice-success-bg: #d9edd9;
   --notice-warning-color: var(--text);
@@ -208,8 +208,8 @@ nav :is(ol,ul) li {
   :root {
     --notice-color: var(--text);
     --notice-bg: var(--accent-bg);
-    --notice-primary-color: #76a9fa;
-    --notice-primary-bg: var(--accent-bg);
+    --notice-info-color: #76a9fa;
+    --notice-info-bg: var(--accent-bg);
     --notice-success-color: #31c48d;
     --notice-success-bg: var(--accent-bg);
     --notice-warning-color: #faca15;
@@ -227,9 +227,14 @@ nav :is(ol,ul) li {
   font-size: 1rem;
 }
 
-.notice.primary {
-  color: var(--notice-primary-color);
-  background-color: var(--notice-primary-bg);
+.notice a {
+  color: unset;
+  text-decoration: underline;
+}
+
+.notice.info {
+  color: var(--notice-info-color);
+  background-color: var(--notice-info-bg);
 }
 
 .notice.success {
