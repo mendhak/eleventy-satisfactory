@@ -56,6 +56,7 @@ So far I've made the following modifications:
 
 ## Running it
 
+Requires Node 18.
 
 ```
 npm install

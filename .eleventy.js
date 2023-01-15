@@ -7,9 +7,6 @@ const markdownItAnchor = require("markdown-it-anchor");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
-// For API and URL calls
-const EleventyFetch = require("@11ty/eleventy-fetch");
-
 // For minifying the CSS
 const CleanCSS = require("clean-css");
 
@@ -164,16 +161,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addNunjucksAsyncShortcode("gist", async (gistId) => {
 
       let url = `https://api.github.com/gists/${gistId}`;
-      //let url = "https://api.github.com/gists/8d67b2412d97f593dbbb3abee06e5293";
-      //let url = "https://api.github.com/gists/a6ff4941e60ca09fa16481e077b462fe";
+
       let mdCode = '';
 
-      /* This returns a promise, but await can be used inside addNunjucksAsyncShortcode */
-      /* EleventyFetch stores the response in a .cache folder */
-      let gistJson = await EleventyFetch(url, {
-        duration: "1d",
-        type: "json"
-      });
+      /* fetch() returns a promise, but await can be used inside addNunjucksAsyncShortcode */
+      let gistJson = await (await fetch(url)).json();
 
       let description = gistJson.description;
 

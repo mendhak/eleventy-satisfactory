@@ -1,7 +1,7 @@
 version: "3"
 services:
   eleventy:
-    image: node:16-slim
+    image: node:18-slim
     volumes:
       - ${PWD}/node_modules
       - ${PWD}:/app
