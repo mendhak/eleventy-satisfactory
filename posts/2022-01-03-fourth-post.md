@@ -2,7 +2,6 @@
 title: This is my fourth post
 description: This is a post on My Blog about touchpoints and circling wagons.
 tags: second tag
-layout: layouts/post.njk
 header:
   teaser: /img/default.png
 ---

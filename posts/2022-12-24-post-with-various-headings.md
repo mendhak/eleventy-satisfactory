@@ -2,7 +2,6 @@
 title: Post with various headings
 description: From H1 to  H5
 tags: xmas
-layout: layouts/post.njk
 header:
   teaser: https://live.staticflickr.com/1932/30454355997_287063f84b_q.jpg
 ---

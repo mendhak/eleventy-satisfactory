@@ -2,5 +2,6 @@
   "permalink": "/{{ page.fileSlug }}/index.html",
   "tags": [
     "posts"
-  ]
+  ],
+  "layout": "layouts/post.njk"
 }

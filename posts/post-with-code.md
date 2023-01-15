@@ -6,8 +6,6 @@ tags:
   - eleventy
   - markdown
   - code
-layout: layouts/post.njk
-
 
 ---
 

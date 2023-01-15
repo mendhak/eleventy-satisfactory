@@ -8,7 +8,6 @@ tags:
   - images
   - gallery
   - lightbox
-layout: layouts/post.njk
 
 header:
   teaser: /img/image001.jpg

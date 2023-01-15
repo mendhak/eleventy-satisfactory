@@ -7,7 +7,6 @@ tags:
   - shortcode
   - images
   - lightbox
-layout: layouts/post.njk
 
 header:
   teaser: /img/image001.jpg

@@ -2,7 +2,6 @@
 title: It's almost kafkaesque
 description: What is even happening here
 tags: kafka
-layout: layouts/post.njk
 
 ---
 

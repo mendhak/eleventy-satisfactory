@@ -3,7 +3,7 @@ title: Post with a notice or alert box
 description: I want to display what notice boxes would look like.
 tags:
  - notice
-layout: layouts/post.njk
+
 ---
 
 This post will show how to create different kinds of notice or alert boxes such as a regular box, as well as info, success, warning, and danger.

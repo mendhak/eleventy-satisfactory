@@ -7,7 +7,6 @@ tags:
   - iframe
   - videos
   - third-party
-layout: layouts/post.njk
 
 
 ---
