@@ -25,6 +25,7 @@ So far I've made the following modifications:
 * Change the code theme
 * Removed tag listing pages, tags only get used in the HTML metadata
 * Pagination on the page list and post list
+* Notice boxes like info, warning, success, etc.
 
 
 ## TODO
@@ -44,7 +45,7 @@ So far I've made the following modifications:
 - 'Usage guide' in the README
 - ~~Docker Compose file~~
 - Smashtests
-- A notice/warning type panel
+- ~~A notice/warning type panel~~
 - ~~Github Action to build it~~
 - Github Gists, but not rubbish looking.
 - ~~Remove /tags/ listing pages~~
