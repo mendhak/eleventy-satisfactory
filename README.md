@@ -49,6 +49,7 @@ So far I've made the following modifications:
 - Github Gists, but not rubbish looking.
 - ~~Remove /tags/ listing pages~~
 - Undo the dark/light mode toggle - the effort and workarounds aren't worth it.  Brief flashing workaround is a step too far, too much undocumented JS for switching, not friendly to CSS media prefers queries.
+- Use CSSMin to combine multiple CSS files in one go, instead of minifiying each file separately - can shortcodes take an array of file paths?
 
 
 ## Running it
