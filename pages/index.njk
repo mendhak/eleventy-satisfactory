@@ -4,11 +4,7 @@ layout: layouts/home.njk
 permalink: /
 ---
 
-
-{% set maxPosts = collections.posts.length | min(metadata.homePageItems) %}
-
-{% set postslist = collections.posts | head(-metadata.homePageItems) | reverse %}
-{% set postslistCounter = collections.posts | length %}
+{% set postslist = collections.posts | reverse | head(metadata.homePageItems) %}
 {% include "postslist.njk" %}
 
 <nav><ul><li><a href="{{ '/posts/' | url }}">More posts ➡</a></li></ul></nav>

@@ -7,15 +7,4 @@ layout: layouts/base.njk
 {{ content | safe }}
 </article>
 
-{%- if collections.posts %}
-{%- set nextPost = collections.posts | getNextCollectionItem(page) %}
-{%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
-
-{%- if tags.length > 1 or nextPost or previousPost %}
-
-{%- endif %}
-
 <p><time datetime="{{ page.date | htmlDateString }}">Updated: {{ page.date | readableDate }}</time></p>
-
-
-{%- endif %}
