@@ -22,7 +22,7 @@ This is an info notice. Info means [information](https://en.wikipedia.org/wiki/I
 
 
 {% notice "success" %}
-This is a success notice. 👍 Great Success 👍
+This is a success notice. Great Success.
 {% endnotice %}
 
 
@@ -55,7 +55,7 @@ For a success notice box,
 
 ```liquid
 {% raw %}{% notice "success" %}
-This is a success notice. 👍 Great Success 👍
+This is a success notice. Great Success.
 {% endnotice %}{% endraw %}
 ```
 
