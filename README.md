@@ -49,7 +49,7 @@ So far I've made the following modifications:
 - Github Gists, but not rubbish looking.
 - ~~Remove /tags/ listing pages~~
 - ~~Undo the dark/light mode toggle~~ - [Issue #2](https://github.com/mendhak/eleventy-mendhak-blog-theme/issues/2)
-- Use CSSMin to combine multiple CSS files in one go, instead of minifiying each file separately - can shortcodes take an array of file paths?
+- ~~Use CSSMin to combine multiple CSS files in one go, instead of minifiying each file separately~~
 
 
 ## Running it
