@@ -40,13 +40,11 @@ The images are constrained to a fixed size. The captions don't appear on the pag
 It's also possible to use the `figure` shortcode inside the `gallery` shortcode.
 
 ```
-{% raw %}
-{% gallery %}
+{% raw %}{% gallery %}
 {% figure "/img/image001.jpg", "First **caption**" %}
 {% figure "/img/image002.jpg", "Second *caption*" %}
 {% figure "/img/image003.jpg", "Third `caption`" %}
-{% endgallery %}
-{% endraw %}
+{% endgallery %}{% endraw %}
 ```
 
 Produces this:

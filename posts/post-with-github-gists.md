@@ -17,7 +17,7 @@ Although it's possible to embed a gist using the shortcode that Github provides,
 
 Just use the gist shortcode and give it the Gist ID which is easily visible in the URL.
 
-```liquid
+```
 {% raw %}{% gist "37b74037637b5752741160058e243094" %}{% endraw %}
 ```
 
