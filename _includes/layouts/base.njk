@@ -73,31 +73,15 @@
 
     <p>&mdash; &copy; {% year %} {{ metadata.author.name }} &mdash;</p>
 
-    <a href="javascript:toggleColorScheme();">
-      <svg id="icon-sun" viewBox="0 0 36 36"><g fill="#FFAC33"><path d="M16 2s0-2 2-2 2 2 2 2v2s0 2-2 2-2-2-2-2V2zm18 14s2 0 2 2-2 2-2 2h-2s-2 0-2-2 2-2 2-2h2zM4 16s2 0 2 2-2 2-2 2H2s-2 0-2-2 2-2 2-2h2zm5.121-8.707s1.414 1.414 0 2.828-2.828 0-2.828 0L4.878 8.708s-1.414-1.414 0-2.829c1.415-1.414 2.829 0 2.829 0l1.414 1.414zm21 21s1.414 1.414 0 2.828-2.828 0-2.828 0l-1.414-1.414s-1.414-1.414 0-2.828 2.828 0 2.828 0l1.414 1.414zm-.413-18.172s-1.414 1.414-2.828 0 0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0 0 2.828 0 2.828l-1.414 1.414zm-21 21s-1.414 1.414-2.828 0 0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0 0 2.828 0 2.828l-1.414 1.414zM16 32s0-2 2-2 2 2 2 2v2s0 2-2 2-2-2-2-2v-2z"/><circle cx="18" cy="18" r="10"/></g><title>Click for light theme</title></svg>
-      <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M10.895 7.574c0 7.55 5.179 13.67 11.567 13.67 1.588 0 3.101-.38 4.479-1.063-1.695 4.46-5.996 7.636-11.051 7.636-6.533 0-11.83-5.297-11.83-11.83 0-4.82 2.888-8.959 7.023-10.803a16.16 16.16 0 0 0-.188 2.39z"/><title>Click for dark theme</title></svg>
-    </a>
-
     <ul class="photostream">
         {%- for photo in photostream -%}
         <li><a href="{{ photo.link }}"><img width="150" height="150" alt="thumbnail" src="{{ photo.img }}" loading="lazy"></a></li>&nbsp;&nbsp;&nbsp;
         {%- endfor -%}
     </ul>
-
-
   </footer>
 
 
   {% addLightBoxRefIfNecessary %}
-
-
-  <script>
-  {% set lightdarkjs %}
-  {% include "js/light-dark-mode.js" %}
-  {% endset %}
-  {{ lightdarkjs | jsmin | safe }}
-  </script>
-
 
   <!-- Current page: {{ page.url | url }} -->
 </body>

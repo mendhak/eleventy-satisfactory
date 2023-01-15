@@ -25,7 +25,7 @@ So far I've made the following modifications:
 * Change the code theme
 * Removed tag listing pages, tags only get used in the HTML metadata
 * Pagination on the page list and post list
-* Light and Dark mode toggle
+
 
 ## TODO
 
@@ -48,7 +48,7 @@ So far I've made the following modifications:
 - ~~Github Action to build it~~
 - Github Gists, but not rubbish looking.
 - ~~Remove /tags/ listing pages~~
-- Undo the dark/light mode toggle - the effort and workarounds aren't worth it.  Brief flashing workaround is a step too far, too much undocumented JS for switching, not friendly to CSS media prefers queries.
+- ~~Undo the dark/light mode toggle~~ - [Issue #2](https://github.com/mendhak/eleventy-mendhak-blog-theme/issues/2)
 - Use CSSMin to combine multiple CSS files in one go, instead of minifiying each file separately - can shortcodes take an array of file paths?
 
 
