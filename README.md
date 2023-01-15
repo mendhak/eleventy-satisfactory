@@ -53,7 +53,8 @@ So far I've made the following modifications:
 - ~~Remove /tags/ listing pages~~
 - ~~Undo the dark/light mode toggle~~ - [Issue #2](https://github.com/mendhak/eleventy-mendhak-blog-theme/issues/2)
 - ~~Use CSSMin to combine multiple CSS files in one go, instead of minifiying each file separately~~
-
+- External links
+- Drafts should not be published, but only visible locally.
 
 ## Running it
 
