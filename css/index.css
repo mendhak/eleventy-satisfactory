@@ -1,5 +1,5 @@
 /* Overriding simple.css values */
-/* Visible at file:///home/mendhak/Projects/eleventy-simplecss-test/node_modules/simpledotcss/simple.css */
+/* Visible at file:///home/mendhak/Projects/eleventy-mendhak-blog-theme/node_modules/simpledotcss/simple.css */
 
 
 /* Change some colors for dark mode */
@@ -55,13 +55,7 @@ h1,h2,h3,h4,h5,h6 {
   margin-bottom: 0.25em;
 }
 
-.notice {
-  background: var(--accent-bg);
-  border: 1px solid var(--border);
-  border-radius: 5px;
-  padding: 1.5rem;
-  margin: 2rem 0;
-}
+
 
 /* This class is added by the markdown-it-anchor library. Removing the hyperlink color from headers */
 a.header-anchor {
@@ -194,4 +188,61 @@ nav :is(ol,ul) li {
   margin: 0 0.5rem;
   float: right;
 
+}
+
+/* Alert info warning error panels */
+:root {
+  --alert-color: var(--text);
+  --alert-bg: var(--accent-bg);
+  --alert-primary-color: #1a56db;
+  --alert-primary-bg: #e1effe;
+  --alert-success-color: #046c4e;
+  --alert-success-bg: #def7ec;
+  --alert-warning-color: #8e4b10;
+  --alert-warning-bg: #fdf6b2;
+  --alert-danger-color: #c81e1e;
+  --alert-danger-bg: #fde8e8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --alert-color: var(--text);
+    --alert-bg: var(--accent-bg);
+    --alert-primary-color: #76a9fa;
+    --alert-primary-bg: var(--accent-bg);
+    --alert-success-color: #31c48d;
+    --alert-success-bg: var(--accent-bg);
+    --alert-warning-color: #faca15;
+    --alert-warning-bg: var(--accent-bg);
+    --alert-danger-color: #f98080;
+    --alert-danger-bg: var(--accent-bg);
+  }
+}
+
+.alert {
+  background: var(--accent-bg);
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 2rem 0;
+  font-size: 1rem;
+}
+
+.alert.primary {
+  color: var(--alert-primary-color);
+  background-color: var(--alert-primary-bg);
+}
+
+.alert.success {
+  color: var(--alert-success-color);
+  background-color: var(--alert-success-bg);
+}
+
+.alert.warning {
+  color: var(--alert-warning-color);
+  background-color: var(--alert-warning-bg);
+}
+
+.alert.danger {
+  color: var(--alert-danger-color);
+  background-color: var(--alert-danger-bg);
 }
