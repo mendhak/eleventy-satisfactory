@@ -192,34 +192,34 @@ nav :is(ol,ul) li {
 
 /* Alert info warning error panels */
 :root {
-  --alert-color: var(--text);
-  --alert-bg: var(--accent-bg);
-  --alert-primary-color: var(--text);
-  --alert-primary-bg: #d8ebf1;
-  --alert-success-color: var(--text);
-  --alert-success-bg: #d9edd9;
-  --alert-warning-color: var(--text);
-  --alert-warning-bg: #f7e5cd;
-  --alert-danger-color: var(--text);
-  --alert-danger-bg: #fcdfde;
+  --notice-color: var(--text);
+  --notice-bg: var(--accent-bg);
+  --notice-primary-color: var(--text);
+  --notice-primary-bg: #d8ebf1;
+  --notice-success-color: var(--text);
+  --notice-success-bg: #d9edd9;
+  --notice-warning-color: var(--text);
+  --notice-warning-bg: #f7e5cd;
+  --notice-danger-color: var(--text);
+  --notice-danger-bg: #fcdfde;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --alert-color: var(--text);
-    --alert-bg: var(--accent-bg);
-    --alert-primary-color: #76a9fa;
-    --alert-primary-bg: var(--accent-bg);
-    --alert-success-color: #31c48d;
-    --alert-success-bg: var(--accent-bg);
-    --alert-warning-color: #faca15;
-    --alert-warning-bg: var(--accent-bg);
-    --alert-danger-color: #f98080;
-    --alert-danger-bg: var(--accent-bg);
+    --notice-color: var(--text);
+    --notice-bg: var(--accent-bg);
+    --notice-primary-color: #76a9fa;
+    --notice-primary-bg: var(--accent-bg);
+    --notice-success-color: #31c48d;
+    --notice-success-bg: var(--accent-bg);
+    --notice-warning-color: #faca15;
+    --notice-warning-bg: var(--accent-bg);
+    --notice-danger-color: #f98080;
+    --notice-danger-bg: var(--accent-bg);
   }
 }
 
-.alert {
+.notice {
   background: var(--accent-bg);
   border-radius: 5px;
   padding: 1rem;
@@ -227,22 +227,22 @@ nav :is(ol,ul) li {
   font-size: 1rem;
 }
 
-.alert.primary {
-  color: var(--alert-primary-color);
-  background-color: var(--alert-primary-bg);
+.notice.primary {
+  color: var(--notice-primary-color);
+  background-color: var(--notice-primary-bg);
 }
 
-.alert.success {
-  color: var(--alert-success-color);
-  background-color: var(--alert-success-bg);
+.notice.success {
+  color: var(--notice-success-color);
+  background-color: var(--notice-success-bg);
 }
 
-.alert.warning {
-  color: var(--alert-warning-color);
-  background-color: var(--alert-warning-bg);
+.notice.warning {
+  color: var(--notice-warning-color);
+  background-color: var(--notice-warning-bg);
 }
 
-.alert.danger {
-  color: var(--alert-danger-color);
-  background-color: var(--alert-danger-bg);
+.notice.danger {
+  color: var(--notice-danger-color);
+  background-color: var(--notice-danger-bg);
 }

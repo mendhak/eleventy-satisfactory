@@ -10,23 +10,23 @@ This post will include some content along with various different types of panels
 
 Let's start with a regular notice box.
 
-<div class="alert">
+<div class="notice">
 This is a regular notice.
 </div>
 
 
-<div class="alert primary">
+<div class="notice primary">
 This is an **info** type notice
 </div>
 
-<div class="alert success">
+<div class="notice success">
 This is a success type notice
 </div>
 
-<div class="alert warning">
+<div class="notice warning">
 This is a warning type notice
 </div>
 
-<div class="alert danger">
+<div class="notice danger">
 This is a danger type notice
 </div>
