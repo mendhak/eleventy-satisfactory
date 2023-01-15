@@ -1,4 +1,4 @@
-# Mendhak's Eleventy Blog Theme
+# Mendhak's Eleventy Blog Theme [![Build and Publish Github Pages](https://github.com/mendhak/eleventy-mendhak-blog-theme/actions/workflows/staticsite.yml/badge.svg?branch=main)](https://github.com/mendhak/eleventy-mendhak-blog-theme/actions/workflows/staticsite.yml)
 
 A blog theme I'm working on based on [11ty](https://github.com/11ty/eleventy).  I am planning to move over from Jekyll and minimal-mistakes, so I will need to build in some features first.
 
@@ -46,7 +46,7 @@ So far I've made the following modifications:
 - 'Usage guide' in the README
 - ~~Docker Compose file~~
 - Smashtests
-- Build badge
+- ~~Build badge~~
 - ~~A notice/warning type panel~~
 - ~~Github Action to build it~~
 - ~~Github Gists, but not rubbish looking.~~
