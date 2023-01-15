@@ -194,14 +194,14 @@ nav :is(ol,ul) li {
 :root {
   --alert-color: var(--text);
   --alert-bg: var(--accent-bg);
-  --alert-primary-color: #1a56db;
-  --alert-primary-bg: #e1effe;
-  --alert-success-color: #046c4e;
-  --alert-success-bg: #def7ec;
-  --alert-warning-color: #8e4b10;
-  --alert-warning-bg: #fdf6b2;
-  --alert-danger-color: #c81e1e;
-  --alert-danger-bg: #fde8e8;
+  --alert-primary-color: var(--text);
+  --alert-primary-bg: #d8ebf1;
+  --alert-success-color: var(--text);
+  --alert-success-bg: #d9edd9;
+  --alert-warning-color: var(--text);
+  --alert-warning-bg: #f7e5cd;
+  --alert-danger-color: var(--text);
+  --alert-danger-bg: #fcdfde;
 }
 
 @media (prefers-color-scheme: dark) {
