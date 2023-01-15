@@ -42,7 +42,7 @@ module.exports = function(eleventyConfig) {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
   });
 
-  // Get the first `n` elements of a collection.
+  // Get the first `n` elements of a collection. Used on the home page to limit number of items to display.
   eleventyConfig.addFilter("head", (array, n) => {
     if(!Array.isArray(array) || array.length === 0) {
       return [];
@@ -54,10 +54,6 @@ module.exports = function(eleventyConfig) {
     return array.slice(0, n);
   });
 
-  // Return the smallest number argument
-  eleventyConfig.addFilter("min", (...numbers) => {
-    return Math.min.apply(null, numbers);
-  });
 
   // Filters out irrelevant tags that aren't really related to content, only used for organising things
   function filterTagList(tags) {
