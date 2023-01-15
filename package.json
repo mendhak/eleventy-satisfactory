@@ -27,6 +27,7 @@
   "homepage": "https://code.mendhak.com/eleventy-mendhak-blog-theme/",
   "dependencies": {
     "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
     "clean-css": "^5.3.1",

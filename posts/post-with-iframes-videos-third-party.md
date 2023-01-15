@@ -59,6 +59,3 @@ For Soundcloud, there's no need to change the height and width.
 
 
 
-### Github Gists
-
-<script src="https://gist.github.com/mendhak/8d67b2412d97f593dbbb3abee06e5293.js"></script>

@@ -7,6 +7,9 @@ const markdownItAnchor = require("markdown-it-anchor");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
+// For API and URL calls
+const EleventyFetch = require("@11ty/eleventy-fetch");
+
 // For minifying the CSS
 const CleanCSS = require("clean-css");
 
@@ -156,6 +159,53 @@ module.exports = function(eleventyConfig) {
 
   // Show the current year using a shortcode
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+
+  // Shortcode to fetch and display a gist
+  eleventyConfig.addNunjucksAsyncShortcode("gist", async (gistId) => {
+
+      let url = `https://api.github.com/gists/${gistId}`;
+      //let url = "https://api.github.com/gists/8d67b2412d97f593dbbb3abee06e5293";
+      //let url = "https://api.github.com/gists/a6ff4941e60ca09fa16481e077b462fe";
+      let mdCode = '';
+
+      /* This returns a promise, but await can be used inside addNunjucksAsyncShortcode */
+      /* EleventyFetch stores the response in a .cache folder */
+      let gistJson = await EleventyFetch(url, {
+        duration: "1d",
+        type: "json"
+      });
+
+      let description = gistJson.description;
+
+      for (var f in gistJson.files){
+        let language = gistJson.files[f].language;
+        let content = gistJson.files[f].content
+        let fileName = gistJson.files[f].filename;
+
+        if(!language){
+          language = "text"
+        }
+        if(language==="C#"){
+          language = "csharp";
+        }
+
+        language = language.toLowerCase();
+
+
+        if(language==="markdown"){
+          //Special case for MD, just render it outright.
+          mdCode += `\n${content}\n`;
+        }
+        else {
+          //Surround by code tags so it gets rendered with prism
+          mdCode += `\`${fileName}\`\n\`\`\`${language}\n${content}\n\`\`\`\n`;
+        }
+
+      }
+
+      return `${description}\n${markdownLibrary.render(mdCode)}`;
+
+  });
 
   // Create an array of all tags
   eleventyConfig.addCollection("tagList", function(collection) {
