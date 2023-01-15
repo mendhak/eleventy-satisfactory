@@ -15,6 +15,7 @@ const path = require("path");
 // Change this to match the actual path prefix.
 const pathPrefix = process.env.PATH_PREFIX || '/eleventy-mendhak-blog-theme/';
 
+/** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 module.exports = function(eleventyConfig) {
   // Copy the `img`, and `fonts` folders to the output
   // CSS isn't copied over, that's done inline via the base template.
@@ -31,11 +32,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
 
-
-  // CSS inline minifier helper
-  eleventyConfig.addFilter("cssmin", function(code) {
-    return new CleanCSS({}).minify(code).styles;
-  });
 
   eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
@@ -69,6 +65,17 @@ module.exports = function(eleventyConfig) {
   }
 
   eleventyConfig.addFilter("filterTagList", filterTagList)
+
+  // Paired shortcode that takes a JSON array of CSS file paths
+  // It then combines them, which includes reconciles overriden values!
+  // And returns the output.
+  eleventyConfig.addPairedShortcode(
+    "cssminification", (data) => {
+      let filesToCombine = JSON.parse(data);
+      let output = new CleanCSS().minify(filesToCombine).styles;
+      return output;
+    }
+  );
 
   // Paired shortcode to display a figure with caption.
   // This is very similar to the regular Markdown image,
