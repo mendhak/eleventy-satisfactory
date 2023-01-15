@@ -46,6 +46,7 @@ So far I've made the following modifications:
 - 'Usage guide' in the README
 - ~~Docker Compose file~~
 - Smashtests
+- Build badge
 - ~~A notice/warning type panel~~
 - ~~Github Action to build it~~
 - ~~Github Gists, but not rubbish looking.~~
