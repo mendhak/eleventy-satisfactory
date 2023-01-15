@@ -195,7 +195,7 @@ module.exports = function(eleventyConfig) {
 
       }
 
-      return `${description}\n${markdownLibrary.render(mdCode)}`;
+      return `**${description}**\n${markdownLibrary.render(mdCode)}`;
 
   });
 
