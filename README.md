@@ -26,6 +26,7 @@ So far I've made the following modifications:
 * Removed tag listing pages, tags only get used in the HTML metadata
 * Pagination on the page list and post list
 * Notice boxes like info, warning, success, etc.
+* A gist shortcode to add gist seamlessly as codeblocks on a page.
 
 
 ## TODO
