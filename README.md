@@ -48,7 +48,7 @@ So far I've made the following modifications:
 - Smashtests
 - ~~A notice/warning type panel~~
 - ~~Github Action to build it~~
-- Github Gists, but not rubbish looking.
+- ~~Github Gists, but not rubbish looking.~~
 - ~~Remove /tags/ listing pages~~
 - ~~Undo the dark/light mode toggle~~ - [Issue #2](https://github.com/mendhak/eleventy-mendhak-blog-theme/issues/2)
 - ~~Use CSSMin to combine multiple CSS files in one go, instead of minifiying each file separately~~
