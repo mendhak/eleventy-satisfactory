@@ -169,6 +169,7 @@ module.exports = function(eleventyConfig) {
       // Otherwise, without this, sometimes the API call fails due to a low rate limit.
       // To pass the token, npm run build --ghtoken=${{ secrets.GITHUB_TOKEN }}
       if (process.env.npm_config_ghtoken){
+        console.log('in the if block')
         fetchOptions.headers = { 'Authorization': `Bearer ${process.env.npm_config_ghtoken}`}
       }
 
