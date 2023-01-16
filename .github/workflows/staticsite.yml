@@ -42,7 +42,7 @@ jobs:
           node-version: 18
 
       - name: Build the static site
-        run: /bin/bash -c 'npm install;npm run build --ghtoken=${{ secrets.GITHUB_TOKEN }}'
+        run: /bin/bash -c 'npm install;npm run build'
 
       - name: Setup Github Pages
         uses: actions/configure-pages@v2
