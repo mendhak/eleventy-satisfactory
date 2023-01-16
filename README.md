@@ -56,6 +56,7 @@ So far I've made the following modifications:
 - External links
 - Drafts should not be published, but only visible locally.
 - ~~Better expand the code samples page~~
+- [Add GITHUB_TOKEN](https://docs.github.com/en/actions/security-guides/automatic-token-authentication) to authorization: bearer header for Gist fetch
 
 ## Running it
 

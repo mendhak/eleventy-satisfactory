@@ -159,13 +159,29 @@ module.exports = function(eleventyConfig) {
 
   // Shortcode to fetch and display a gist
   eleventyConfig.addNunjucksAsyncShortcode("gist", async (gistId) => {
-
       let url = `https://api.github.com/gists/${gistId}`;
+      let fetchOptions = {};
 
+      let gistJson = {};
       let mdCode = '';
 
+      // If we're running in a Github Action, the token can be used to make Github API calls with better rate limits.
+      // Otherwise, without this, sometimes the API call fails due to a low rate limit.
+      // To pass the token, npm run build --ghtoken=${{ secrets.GITHUB_TOKEN }}
+      if (process.env.npm_config_ghtoken){
+        fetchOptions.headers = { 'Authorization': `Bearer ${process.env.npm_config_ghtoken}`}
+      }
+
       /* fetch() returns a promise, but await can be used inside addNunjucksAsyncShortcode */
-      let gistJson = await (await fetch(url)).json();
+      let response = await fetch(url, fetchOptions);
+
+      if(response.ok){
+        gistJson = await response.json();
+      }
+      else {
+        console.log(await response.json());
+      }
+
 
       let description = gistJson.description;
 
