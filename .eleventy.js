@@ -230,7 +230,8 @@ module.exports = function(eleventyConfig) {
   // Customize Markdown library and settings:
   let markdownLibrary = markdownIt({
     html: true,
-    linkify: true
+    linkify: true,
+    typographer: true
   }).use(markdownItAnchor, {
     permalink: markdownItAnchor.permalink.headerLink(),
     level: [1,2,3,4],
@@ -249,7 +250,7 @@ module.exports = function(eleventyConfig) {
     // Adjust the path so it works with the pathPrefix
     // This can be / or /my-blog for example
     let imgPath = token.attrGet('src');
-    if(!imgPath.includes(pathPrefix)){
+    if(!imgPath.includes(pathPrefix) && !imgPath.includes('://')){
       imgPath = path.join(pathPrefix, imgPath);
     }
     token.attrSet('src', imgPath);
