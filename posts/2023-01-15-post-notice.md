@@ -37,7 +37,7 @@ This is a danger notice. **Smoking is fatal**.
 
 For a regular notice box,
 
-```liquid
+```
 {% raw %}{% notice %}
 This is the default notice. You _can_ use Markdown.
 {% endnotice %}{% endraw %}
@@ -45,7 +45,7 @@ This is the default notice. You _can_ use Markdown.
 
 For an info notice box,
 
-```liquid
+```
 {% raw %}{% notice "info" %}
 This is an info notice. Info means [information](https://en.wikipedia.org/wiki/Information)
 {% endnotice %}{% endraw %}
@@ -53,7 +53,7 @@ This is an info notice. Info means [information](https://en.wikipedia.org/wiki/I
 
 For a success notice box,
 
-```liquid
+```
 {% raw %}{% notice "success" %}
 This is a success notice. Great Success.
 {% endnotice %}{% endraw %}
@@ -61,7 +61,7 @@ This is a success notice. Great Success.
 
 For a warning notice box,
 
-```liquid
+```
 {% raw %}{% notice "warning" %}
 This is a warning notice.  Don't use `GOTO` statements!
 {% endnotice %}{% endraw %}
@@ -69,7 +69,7 @@ This is a warning notice.  Don't use `GOTO` statements!
 
 For a danger notice box,
 
-```liquid
+```
 {% raw %}{% notice "danger" %}
 This is a danger notice. **Smoking is fatal**.
 {% endnotice %}{% endraw %}
