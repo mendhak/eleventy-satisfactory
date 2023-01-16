@@ -55,7 +55,7 @@ So far I've made the following modifications:
 - ~~Use CSSMin to combine multiple CSS files in one go, instead of minifiying each file separately~~
 - External links
 - Drafts should not be published, but only visible locally.
-- Better expand the code samples page
+- ~~Better expand the code samples page~~
 
 ## Running it
 
