@@ -1,10 +1,13 @@
 
-name: Build and Publish Github Pages
+name: Build and Publish
 
 # Trigger this workflow only when the main branches, assets folder is modified.
 on:
   push:
     branches: [ "main", "master" ]
+    paths-ignore:
+      - '**/README.md'
+
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
