@@ -42,7 +42,7 @@ jobs:
           node-version: 18
 
       - name: Build the static site
-        run: /bin/bash -c 'npm install;npm run build --ghtoken=${{ secrets.GH_GIST_TOKEN }}'
+        run: /bin/bash -c 'npm install;npm run build --ghtoken=${{ secrets.WHAT_IF_DOESNT_EXIST }}'
 
       - name: Setup Github Pages
         uses: actions/configure-pages@v2
