@@ -33,3 +33,13 @@ If a Github Gist file contains Markdown, it'll be rendered directly onto the pag
 
 {% gist "770907f98223b22b422be8b5e09803ab" %}
 
+
+### Special note about Github Gists and rate limits
+
+If the Gists start to appear empty sometimes, this could be because the IP address you ran the build from was rate limited by Github. This can commonly happen when running from Github Actions.  
+
+To get gists to more reliably appear, [generate a token on Github](https://github.com/settings/tokens) with the `gists` permission.  
+
+Under `Security > Secrets and variables > Actions` create a new secret named `GH_GIST_TOKEN` and paste that value in there. 
+
+This secret value should get picked up the next time the action runs.  

@@ -181,6 +181,7 @@ module.exports = function(eleventyConfig) {
       }
       else {
         console.log(await response.json());
+        return '';
       }
 
 
