@@ -11,6 +11,18 @@ tags:
 
 A post with some code samples. These are using the Prism CSS library.
 
+
+## Basic code blocks
+
+Any text that is indented by 4 spaces will be treated as a preformatted block.
+
+    console.log("hello");
+
+## Code blocks with syntax highlighting
+
+To add code to a page with syntax highlighting, surround the code with 3 backticks followed by an optional language name.  
+For example, ` ```javascript`, then add the code, and close the block with ` ``` `
+
 Here is some Javascript
 
 ```javascript
@@ -28,7 +40,7 @@ if (process.env.JWT_HEADER) {
 
 ```
 
-Here is some C#
+Similarly for C#, use ` ```csharp`
 
 ```csharp
 static async Task<string> FindBucketLocationAsync(IAmazonS3 client)
@@ -45,7 +57,7 @@ static async Task<string> FindBucketLocationAsync(IAmazonS3 client)
 ```
 
 
-Here is some Bash
+Have some  ` ```bash`
 
 ```bash
 #!/usr/bin/env bash
