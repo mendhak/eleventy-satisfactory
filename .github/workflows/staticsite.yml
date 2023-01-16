@@ -42,6 +42,9 @@ jobs:
           node-version: 18
 
       - name: Build the static site
+        # If GH_GIST_TOKEN doesn't exist, empty value gets passed.
+        # Unauthenticated call gets made to Gist API which can result in rate limits,
+        # Especially in Github Actions
         run: /bin/bash -c 'npm install;npm run build --ghtoken=${{ secrets.GH_GIST_TOKEN }}'
 
       - name: Setup Github Pages
