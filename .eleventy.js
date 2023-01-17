@@ -209,9 +209,11 @@ module.exports = function(eleventyConfig) {
   // Show the current year using a shortcode
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
-  var GistShortCode = require('./_configs/gist.shortcode');
-  let gist = new GistShortCode(markdownLibrary);
-  eleventyConfig.addNunjucksAsyncShortcode("gist", async(gistId) => { return await gist.getGist(gistId); } );
+  // The `gist` shortcode renders the gist's files as code blocks
+  // For some reason calling the method directly isn't possible, I have to wrap it.
+  // This only works with Nunjucks because the fetch call inside is async.
+  var gist = require('./_configs/gist.shortcode');
+  eleventyConfig.addNunjucksAsyncShortcode("gist", async(gistId) => { return await gist(gistId, markdownLibrary) });
 
   // Create an array of all tags
   eleventyConfig.addCollection("tagList", function(collection) {
