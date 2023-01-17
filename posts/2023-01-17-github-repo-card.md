@@ -10,15 +10,13 @@ Display a Github repo card.  Fetches the description, stars and forks.
   .github-repo-card {
     --gh-bg-color: #fff;
     --gh-color: #586069;
+    --gh-heading-color: #0366d6;
     font-family: var(--sans-font);
     width: 50%;
-    height: 100% !important;
-    text-align: left !important;
     background-color: var(--gh-bg-color) !important;
-    border: 1px solid #8b949e !important;
+    border: 1px solid var(--gh-color) !important;
     border-radius: 6px !important;
     padding: 16px !important;
-    margin-bottom: 16px;
     color: var(--gh-color) !important;
 }
 
@@ -26,6 +24,7 @@ Display a Github repo card.  Fetches the description, stars and forks.
   .github-repo-card {
     --gh-bg-color: #212224;
     --gh-color: #8b949e;
+    --gh-heading-color: #58a6ff;
   }
 }
 
@@ -41,8 +40,7 @@ Display a Github repo card.  Fetches the description, stars and forks.
 }
 
 .github-repo-card a { 
-    color: #58a6ff !important;
-    text-decoration: unset;
+    color: var(--gh-heading-color) !important;
 }
 
 .github-repo-card .stats-icons a {
@@ -55,7 +53,6 @@ Display a Github repo card.  Fetches the description, stars and forks.
 .github-repo-card .github-repo-text {
     color: var(--gh-color) !important;
     font-size: 1rem;
-    line-height: 21px;
     display: flex !important;
     white-space: normal !important;
     margin-bottom: 8px !important;
@@ -101,7 +98,7 @@ Display a Github repo card.  Fetches the description, stars and forks.
 gpslogger
 </a>
 </div>
-<div class="github-repo-text">Description goes here</div>
+<div class="github-repo-text">Description goes here.  It's a pretty long description lol. Should I continue typing? </div>
 <div class="stats-icons">
 <a href="/stargazers"><svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 576 512"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/></svg> 55
 </a>
