@@ -168,29 +168,10 @@ module.exports = function(eleventyConfig) {
     }
   );
 
-  // If the post contains a figure shortcode (defined above),
-  // Or a markdown image ![
-  // Then add the Lightbox JS/CSS and render lightboxes for it.
+  // If the post contains images, then add the Lightbox JS/CSS and render lightboxes for it.
   eleventyConfig.addShortcode("addLightBoxRefIfNecessary", function(){
-    const str = fs.readFileSync(this.page.inputPath, 'utf8');
-
-    if(str.includes('{% figure') || str.includes('![')){
-      let jsPath = path.join(pathPrefix, 'simplelightbox/simple-lightbox.min.js');
-      let cssPath = path.join(pathPrefix, 'simplelightbox/simple-lightbox.min.css');
-      return `
-      <link rel="stylesheet" href="${cssPath}" />
-      <script src="${jsPath}"></script>
-
-      <script>
-          (function() {
-              var $gallery = new SimpleLightbox('figure a', {'overlayOpacity':0.6, 'uniqueImages': false});
-          })();
-      </script>
-      `;
-    }
-
-    return ``;
-
+    let lightbox = require('./_configs/lightboxref.shortcode');
+    return lightbox(this.page, pathPrefix);
   });
 
   // The `gallery` paired shortcode shows a set of images and displays it in a grid.
