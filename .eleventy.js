@@ -145,9 +145,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPairedShortcode( "gallery", (data) => { return gallery.gallery(data); } );
 
   // Generate excerpt from first paragraph
-  eleventyConfig.addShortcode("excerpt", (article) =>
-    extractExcerpt(article)
-  );
+  eleventyConfig.addShortcode("excerpt", require('./_configs/excerpt.shortcode'));
 
   // Show the current year using a shortcode
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
@@ -231,27 +229,3 @@ module.exports = function (eleventyConfig) {
     }
   };
 };
-
-// Adopted from => https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/
-// Gets the first 30 words as the excerpt or until the newline, whichever comes first.
-function extractExcerpt(article) {
-  if (!Object.prototype.hasOwnProperty.call(article, "templateContent")) {
-    console.warn(
-      'Failed to extract excerpt: Document has no property "templateContent".'
-    );
-    return null;
-  }
-
-  const content = article.templateContent;
-
-  //Take the first paragraph until newline, remove HTML
-  let words = content.slice(0, content.indexOf("\n")).replace(/<[^>]*>?/gm, '').split(/\s+/);
-  let suffix = '';
-
-  if (words.length > 30) {
-    suffix = '…';
-  }
-
-  let excerpt = words.slice(0, 30).join(' ') + suffix;
-  return excerpt;
-}
