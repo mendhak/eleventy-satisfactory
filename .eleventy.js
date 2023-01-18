@@ -129,33 +129,9 @@ module.exports = function (eleventyConfig) {
   // This is very similar to the regular Markdown image,
   // But I'll keep this around in case the other way ever breaks in the future
   // Plus, this has the 'width' flexibility, and maybe more future features.
-  eleventyConfig.addShortcode(
-    "figure",
-    function (image, caption, widthName) {
-
-      let width = '';
-      switch (widthName) {
-        case 'half':
-          width = 'width: calc(50% - 0.5em);';
-          break;
-        case 'third':
-          width = 'width: calc(33% - 0.5em);';
-        default:
-          break;
-      }
-
-      let captionMarkup = "";
-      if (caption !== undefined && caption !== "") {
-        captionMarkup = markdownLibrary.renderInline(caption);
-      }
-
-      let imgPath = path.join(pathPrefix, image);
-
-      let rendered = `<figure><a href="${imgPath}"><img src="${imgPath}" alt="${caption}" loading="lazy" style="${width}" /></a><figcaption>${captionMarkup}</figcaption></figure>`;
-
-      return rendered;
-    }
-  );
+  let FigureShortCode = require('./_configs/figure.shortcode');
+  let figure = new FigureShortCode(pathPrefix, markdownLibrary);
+  eleventyConfig.addShortcode("figure", (image, caption, widthName) => { return figure.figure(image, caption, widthName); });
 
   // If the post contains images, then add the Lightbox JS/CSS and render lightboxes for it.
   eleventyConfig.addShortcode("addLightBoxRefIfNecessary", function () {
