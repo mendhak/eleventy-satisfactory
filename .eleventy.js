@@ -16,69 +16,69 @@ const path = require("path");
 const pathPrefix = process.env.PATH_PREFIX || '/eleventy-mendhak-blog-theme/';
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   // Copy the `img`, and `fonts` folders to the output
   // CSS isn't copied over, that's done inline via the base template.
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("fonts");
-  eleventyConfig.addPassthroughCopy({"node_modules/simplelightbox/dist/simple-lightbox.min.css": "simplelightbox/simple-lightbox.min.css"});
-  eleventyConfig.addPassthroughCopy({"node_modules/simplelightbox/dist/simple-lightbox.min.js": "simplelightbox/simple-lightbox.min.js"});
+  eleventyConfig.addPassthroughCopy({ "node_modules/simplelightbox/dist/simple-lightbox.min.css": "simplelightbox/simple-lightbox.min.css" });
+  eleventyConfig.addPassthroughCopy({ "node_modules/simplelightbox/dist/simple-lightbox.min.js": "simplelightbox/simple-lightbox.min.js" });
 
   //Since moving the CSS inline eleventy no longer watches it (because it's not being copied to output), so I had to include it as a watch target.
   eleventyConfig.addWatchTarget("./css/");
   eleventyConfig.addWatchTarget("./js/");
 
-    // Customize Markdown library and settings:
+  // Customize Markdown library and settings:
   let markdownLibrary = markdownIt({
-      html: true,
-      linkify: true,
-      typographer: true
-    }).use(markdownItAnchor, {
-      permalink: markdownItAnchor.permalink.headerLink(),
-      level: [1,2,3,4],
-      slugify: eleventyConfig.getFilter("slugify")
-    });
+    html: true,
+    linkify: true,
+    typographer: true
+  }).use(markdownItAnchor, {
+    permalink: markdownItAnchor.permalink.headerLink(),
+    level: [1, 2, 3, 4],
+    slugify: eleventyConfig.getFilter("slugify")
+  });
 
-    // Wrap images in a figure, a, and figcaption.
-    // This lets the simplelightbox code serve it up too!
-    // Also adds loading lazy attribute
-    markdownLibrary.renderer.rules.image = function (tokens, idx, options, env, slf) {
+  // Wrap images in a figure, a, and figcaption.
+  // This lets the simplelightbox code serve it up too!
+  // Also adds loading lazy attribute
+  markdownLibrary.renderer.rules.image = function (tokens, idx, options, env, slf) {
 
-      const token = tokens[idx];
-      // Set the loading=lazy attribute
-      token.attrSet('loading', 'lazy');
+    const token = tokens[idx];
+    // Set the loading=lazy attribute
+    token.attrSet('loading', 'lazy');
 
-      // Adjust the path so it works with the pathPrefix
-      // This can be / or /my-blog for example
-      let imgPath = token.attrGet('src');
-      if(!imgPath.includes(pathPrefix) && !imgPath.includes('://')){
-        imgPath = path.join(pathPrefix, imgPath);
-      }
-      token.attrSet('src', imgPath);
+    // Adjust the path so it works with the pathPrefix
+    // This can be / or /my-blog for example
+    let imgPath = token.attrGet('src');
+    if (!imgPath.includes(pathPrefix) && !imgPath.includes('://')) {
+      imgPath = path.join(pathPrefix, imgPath);
+    }
+    token.attrSet('src', imgPath);
 
-      let captionRendered = markdownLibrary.renderInline(token.content);
-      let figCaption = '';
+    let captionRendered = markdownLibrary.renderInline(token.content);
+    let figCaption = '';
 
-      // If it's a gallery of images, display the caption in the lightbox.
-      // Otherwise display it on the page inside figcaption.
-      // This is because the caption might be too long and awkward to display
-      // in a crowded area.
-      if(env.inGallery){
-        token.attrSet('title', captionRendered);
-      }
-      else {
-        figCaption = captionRendered;
-      }
+    // If it's a gallery of images, display the caption in the lightbox.
+    // Otherwise display it on the page inside figcaption.
+    // This is because the caption might be too long and awkward to display
+    // in a crowded area.
+    if (env.inGallery) {
+      token.attrSet('title', captionRendered);
+    }
+    else {
+      figCaption = captionRendered;
+    }
 
-      // Return figure with figcaption.
-      // The 'a' is the image linking to itself, which then gets picked up by simplelightbox
-      return `<figure><a href="${token.attrs[token.attrIndex('src')][1]}">
+    // Return figure with figcaption.
+    // The 'a' is the image linking to itself, which then gets picked up by simplelightbox
+    return `<figure><a href="${token.attrs[token.attrIndex('src')][1]}">
       ${slf.renderToken(tokens, idx, options)}</a>
       <figcaption>${figCaption}</figcaption>
     </figure>`;
-    }
+  }
 
-    eleventyConfig.setLibrary("md", markdownLibrary);
+  eleventyConfig.setLibrary("md", markdownLibrary);
 
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
@@ -86,20 +86,20 @@ module.exports = function(eleventyConfig) {
 
 
   eleventyConfig.addFilter("readableDate", dateObj => {
-    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
+    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat("dd LLL yyyy");
   });
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter('htmlDateString', (dateObj) => {
-    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
+    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
   });
 
   // Get the first `n` elements of a collection. Used on the home page to limit number of items to display.
   eleventyConfig.addFilter("head", (array, n) => {
-    if(!Array.isArray(array) || array.length === 0) {
+    if (!Array.isArray(array) || array.length === 0) {
       return [];
     }
-    if( n < 0 ) {
+    if (n < 0) {
       return array.slice(n);
     }
 
@@ -128,7 +128,7 @@ module.exports = function(eleventyConfig) {
   //Paired shortcode to display a notice panel like standard, error, warning, etc.
   eleventyConfig.addPairedShortcode(
     "notice", (data, noticeType) => {
-      if(!noticeType){
+      if (!noticeType) {
         noticeType = "";
       }
       let noticeMarkup = markdownLibrary.renderInline(data);
@@ -142,7 +142,7 @@ module.exports = function(eleventyConfig) {
   // Plus, this has the 'width' flexibility, and maybe more future features.
   eleventyConfig.addShortcode(
     "figure",
-    function(image, caption, widthName) {
+    function (image, caption, widthName) {
 
       let width = '';
       switch (widthName) {
@@ -156,7 +156,7 @@ module.exports = function(eleventyConfig) {
       }
 
       let captionMarkup = "";
-      if(caption !== undefined && caption !== ""){
+      if (caption !== undefined && caption !== "") {
         captionMarkup = markdownLibrary.renderInline(caption);
       }
 
@@ -169,7 +169,7 @@ module.exports = function(eleventyConfig) {
   );
 
   // If the post contains images, then add the Lightbox JS/CSS and render lightboxes for it.
-  eleventyConfig.addShortcode("addLightBoxRefIfNecessary", function(){
+  eleventyConfig.addShortcode("addLightBoxRefIfNecessary", function () {
     let lightbox = require('./_configs/lightboxref.shortcode');
     return lightbox(this.page, pathPrefix);
   });
@@ -177,7 +177,7 @@ module.exports = function(eleventyConfig) {
   // The `gallery` paired shortcode shows a set of images and displays it in a grid.
   eleventyConfig.addPairedShortcode(
     "gallery", (data) => {
-      const galleryContent = markdownLibrary.renderInline(data, {'inGallery': true});
+      const galleryContent = markdownLibrary.renderInline(data, { 'inGallery': true });
       return `<div class="gallery">${galleryContent}</div>`;
     }
   );
@@ -197,10 +197,10 @@ module.exports = function(eleventyConfig) {
   // For some reason calling the method directly isn't possible, I have to wrap it.
   // This only works with Nunjucks because the fetch call inside is async.
   var gist = require('./_configs/gist.shortcode');
-  eleventyConfig.addNunjucksAsyncShortcode("gist", async(gistId) => { return await gist(gistId, markdownLibrary) });
+  eleventyConfig.addNunjucksAsyncShortcode("gist", async (gistId) => { return await gist(gistId, markdownLibrary) });
 
   // Create an array of all tags
-  eleventyConfig.addCollection("tagList", function(collection) {
+  eleventyConfig.addCollection("tagList", function (collection) {
     let tagSet = new Set();
     collection.getAll().forEach(item => {
       (item.data.tags || []).forEach(tag => tagSet.add(tag));
@@ -214,12 +214,12 @@ module.exports = function(eleventyConfig) {
   // Override Browsersync defaults (used only with --serve)
   eleventyConfig.setBrowserSyncConfig({
     callbacks: {
-      ready: function(err, browserSync) {
+      ready: function (err, browserSync) {
         const content_404 = fs.readFileSync('_site/404.html');
 
         browserSync.addMiddleware("*", (req, res) => {
           // Provides the 404 content without redirect.
-          res.writeHead(404, {"Content-Type": "text/html; charset=UTF-8"});
+          res.writeHead(404, { "Content-Type": "text/html; charset=UTF-8" });
           res.write(content_404);
           res.end();
         });
@@ -274,10 +274,10 @@ module.exports = function(eleventyConfig) {
 // Gets the first 30 words as the excerpt or until the newline, whichever comes first.
 function extractExcerpt(article) {
   if (!Object.prototype.hasOwnProperty.call(article, "templateContent")) {
-      console.warn(
-          'Failed to extract excerpt: Document has no property "templateContent".'
-      );
-      return null;
+    console.warn(
+      'Failed to extract excerpt: Document has no property "templateContent".'
+    );
+    return null;
   }
 
   const content = article.templateContent;
@@ -286,7 +286,7 @@ function extractExcerpt(article) {
   let words = content.slice(0, content.indexOf("\n")).replace(/<[^>]*>?/gm, '').split(/\s+/);
   let suffix = '';
 
-  if(words.length > 30) {
+  if (words.length > 30) {
     suffix = '…';
   }
 
