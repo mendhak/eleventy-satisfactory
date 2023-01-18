@@ -117,13 +117,7 @@ module.exports = function (eleventyConfig) {
   // Paired shortcode that takes a JSON array of CSS file paths
   // It then combines them, which includes reconciles overriden values!
   // And returns the output.
-  eleventyConfig.addPairedShortcode(
-    "cssminification", (data) => {
-      let filesToCombine = JSON.parse(data);
-      let output = new CleanCSS().minify(filesToCombine).styles;
-      return output;
-    }
-  );
+  eleventyConfig.addPairedShortcode( "cssminification", require('./_configs/cssminification.shortcode'));
 
   //Paired shortcode to display a notice panel like standard, error, warning, etc.
   eleventyConfig.addPairedShortcode(
