@@ -36,4 +36,4 @@ Only H1 to H4s get permalinks.  Don't want to go overboard.
 
 ###### Amet purus gravida
 
-That's as far s we'll go.
+That's as far as we'll go.
