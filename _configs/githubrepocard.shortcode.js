@@ -2,9 +2,36 @@ const CleanCSS = require("clean-css");
 const nunjucks = require("nunjucks");
 
 module.exports = async function(repoSlug){
-  css = new CleanCSS().minify(['css/github.repocard.css']).styles;
-  css = `<style>${css}</style>`;
 
+  let css = getCss();
+
+  let repo = await getGithubApiRepoResponse(repoSlug);
+
+  if(!repo){
+    return '';
+  }
+
+  let html = getHtml(repo);
+
+  return  css + html;
+}
+
+class GithubApiRepoResponse{
+  repoSlug;
+  repoLink;
+  description;
+  stargazers;
+  stargazersLink;
+  forks;
+  networkLink;
+}
+
+/**
+ *
+ * @param {String} repoSlug - the username/reponame format slug of the Github repo
+ * @returns {GithubApiRepoResponse}
+ */
+async function getGithubApiRepoResponse(repoSlug){
   let url = `https://api.github.com/repos/${repoSlug}`;
   let fetchOptions = {};
 
@@ -19,32 +46,49 @@ module.exports = async function(repoSlug){
   let response = await fetch(url, fetchOptions);
   let githubJson = {};
 
-  if (response.ok) {
-    githubJson = await response.json();
-  }
-  else {
+  if(!response.ok){
     console.log(await response.json());
-    return '';
+    return null;
   }
 
-  let repoLink = `https://github.com/${repoSlug}`;
-  let stargazers = githubJson.stargazers_count;
-  let stargazersLink = `${repoLink}/stargazers`;
-  let forks = githubJson.forks_count;
-  let networkLink = `${repoLink}/network/members`;
-  let description = githubJson.description;
+  githubJson = await response.json();
 
+  let repo = new GithubApiRepoResponse();
+  repo.repoSlug = repoSlug;
+  repo.repoLink = `https://github.com/${repoSlug}`;
+  repo.stargazers = githubJson.stargazers_count;
+  repo.stargazersLink = `${repo.repoLink}/stargazers`;
+  repo.forks = githubJson.forks_count;
+  repo.networkLink = `${repo.repoLink}/network/members`;
+  repo.description = githubJson.description;
+
+  return repo;
+}
+
+/**
+ *
+ * @param {GithubApiRepoResponse} repo
+ * @returns {String} - Single line HTML containing the markup for a Github repo card
+ */
+function getHtml(repo){
   nunjucks.configure({ trimBlocks: true, lstripBlocks: true });
   let htmlBox = nunjucks.render('_includes/github.repocard.njk',
                                 {
-                                  repoSlug: repoSlug,
-                                  repoLink: repoLink,
-                                  description: description,
-                                  stargazers: stargazers,
-                                  stargazersLink: stargazersLink,
-                                  forks: forks,
-                                  networkLink: networkLink
+                                  repoSlug: repo.repoSlug,
+                                  repoLink: repo.repoLink,
+                                  description: repo.description,
+                                  stargazers: repo.stargazers,
+                                  stargazersLink: repo.stargazersLink,
+                                  forks: repo.forks,
+                                  networkLink: repo.networkLink
                                 }
-                              ).replace(/(\r\n|\n|\r)/gm, "");
-  return  css + htmlBox;
+                              );
+  htmlBox = htmlBox.replace(/(\r\n|\n|\r)/gm, "");
+  return htmlBox;
+}
+
+function getCss(){
+  let css = new CleanCSS().minify(['css/github.repocard.css']).styles;
+  css = `<style>${css}</style>`;
+  return css;
 }
