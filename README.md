@@ -27,7 +27,7 @@ So far I've made the following modifications:
 * Pagination on the page list and post list
 * Notice boxes like info, warning, success, etc.
 * A gist shortcode to add gist seamlessly as codeblocks on a page.
-
+* Github Repo Card shortcode. 
 
 ## TODO
 
