@@ -3,7 +3,8 @@
   --gh-color: #586069;
   --gh-heading-color: #0366d6;
   font-family: var(--sans-font);
-  width: 50%;
+  width: fit-content;
+  max-width: 50%;
   background-color: var(--gh-bg-color) !important;
   border: 1px solid var(--gh-color) !important;
   border-radius: 6px !important;
@@ -13,13 +14,13 @@
 
 @media screen and (max-width: 1200px) {
   .github-repo-card {
-      width: 60%;
+      max-width: 80%;
   }
 }
 
 @media screen and (max-width: 800px) {
   .github-repo-card {
-      width: 80%;
+      max-width: 100%;
   }
 }
 
