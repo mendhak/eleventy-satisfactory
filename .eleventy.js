@@ -48,15 +48,18 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.setLibrary("md", markdownLibrary);
 
-  // Add plugins
+  // RSS
   eleventyConfig.addPlugin(pluginRss);
+  // Code syntax with Prism JS
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
 
 
+  // Date used below posts
   eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat("dd LLL yyyy");
   });
 
+  // Date used in sitemap and data attribute
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter('htmlDateString', (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
@@ -76,11 +79,9 @@ module.exports = function (eleventyConfig) {
 
 
   // Filters out irrelevant tags that aren't really related to content, only used for organising things
-  function filterTagList(tags) {
+  eleventyConfig.addFilter("filterTagList", function(tags) {
     return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
-  }
-
-  eleventyConfig.addFilter("filterTagList", filterTagList)
+  });
 
   // Paired shortcode that takes a JSON array of CSS file paths
   // It then combines them, which includes reconciles overriden values!
@@ -117,6 +118,7 @@ module.exports = function (eleventyConfig) {
   // Show the current year using a shortcode
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
+  // Shortcode for Github Repo Card
   let ghRepoCard = require('./_configs/githubrepocard.shortcode');
   eleventyConfig.addNunjucksAsyncShortcode("githubrepocard", ghRepoCard);
 
@@ -126,15 +128,6 @@ module.exports = function (eleventyConfig) {
   var gist = require('./_configs/gist.shortcode');
   eleventyConfig.addNunjucksAsyncShortcode("gist", async (gistId) => { return await gist(gistId, markdownLibrary) });
 
-  // Create an array of all tags
-  eleventyConfig.addCollection("tagList", function (collection) {
-    let tagSet = new Set();
-    collection.getAll().forEach(item => {
-      (item.data.tags || []).forEach(tag => tagSet.add(tag));
-    });
-
-    return filterTagList([...tagSet]);
-  });
 
 
 

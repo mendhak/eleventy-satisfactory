@@ -1,6 +1,12 @@
 const CleanCSS = require("clean-css");
 const nunjucks = require("nunjucks");
 
+/**
+ * Generates a Github Repo Card for a repository given a repo slug.
+ * It calls the Github API to get the information out.
+ * If this returns empty strings, you might be rate limited. See comment below.
+ * @returns
+ */
 module.exports = async function(repoSlug){
 
   let css = getCss();
