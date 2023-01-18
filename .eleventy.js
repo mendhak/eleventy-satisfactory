@@ -28,6 +28,58 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("./css/");
   eleventyConfig.addWatchTarget("./js/");
 
+    // Customize Markdown library and settings:
+  let markdownLibrary = markdownIt({
+      html: true,
+      linkify: true,
+      typographer: true
+    }).use(markdownItAnchor, {
+      permalink: markdownItAnchor.permalink.headerLink(),
+      level: [1,2,3,4],
+      slugify: eleventyConfig.getFilter("slugify")
+    });
+
+    // Wrap images in a figure, a, and figcaption.
+    // This lets the simplelightbox code serve it up too!
+    // Also adds loading lazy attribute
+    markdownLibrary.renderer.rules.image = function (tokens, idx, options, env, slf) {
+
+      const token = tokens[idx];
+      // Set the loading=lazy attribute
+      token.attrSet('loading', 'lazy');
+
+      // Adjust the path so it works with the pathPrefix
+      // This can be / or /my-blog for example
+      let imgPath = token.attrGet('src');
+      if(!imgPath.includes(pathPrefix) && !imgPath.includes('://')){
+        imgPath = path.join(pathPrefix, imgPath);
+      }
+      token.attrSet('src', imgPath);
+
+      let captionRendered = markdownLibrary.renderInline(token.content);
+      let figCaption = '';
+
+      // If it's a gallery of images, display the caption in the lightbox.
+      // Otherwise display it on the page inside figcaption.
+      // This is because the caption might be too long and awkward to display
+      // in a crowded area.
+      if(env.inGallery){
+        token.attrSet('title', captionRendered);
+      }
+      else {
+        figCaption = captionRendered;
+      }
+
+      // Return figure with figcaption.
+      // The 'a' is the image linking to itself, which then gets picked up by simplelightbox
+      return `<figure><a href="${token.attrs[token.attrIndex('src')][1]}">
+      ${slf.renderToken(tokens, idx, options)}</a>
+      <figcaption>${figCaption}</figcaption>
+    </figure>`;
+    }
+
+    eleventyConfig.setLibrary("md", markdownLibrary);
+
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
@@ -116,29 +168,10 @@ module.exports = function(eleventyConfig) {
     }
   );
 
-  // If the post contains a figure shortcode (defined above),
-  // Or a markdown image ![
-  // Then add the Lightbox JS/CSS and render lightboxes for it.
+  // If the post contains images, then add the Lightbox JS/CSS and render lightboxes for it.
   eleventyConfig.addShortcode("addLightBoxRefIfNecessary", function(){
-    const str = fs.readFileSync(this.page.inputPath, 'utf8');
-
-    if(str.includes('{% figure') || str.includes('![')){
-      let jsPath = path.join(pathPrefix, 'simplelightbox/simple-lightbox.min.js');
-      let cssPath = path.join(pathPrefix, 'simplelightbox/simple-lightbox.min.css');
-      return `
-      <link rel="stylesheet" href="${cssPath}" />
-      <script src="${jsPath}"></script>
-
-      <script>
-          (function() {
-              var $gallery = new SimpleLightbox('figure a', {'overlayOpacity':0.6, 'uniqueImages': false});
-          })();
-      </script>
-      `;
-    }
-
-    return ``;
-
+    let lightbox = require('./_configs/lightboxref.shortcode');
+    return lightbox(this.page, pathPrefix);
   });
 
   // The `gallery` paired shortcode shows a set of images and displays it in a grid.
@@ -157,65 +190,14 @@ module.exports = function(eleventyConfig) {
   // Show the current year using a shortcode
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
-  // Shortcode to fetch and display a gist
-  eleventyConfig.addNunjucksAsyncShortcode("gist", async (gistId) => {
-      let url = `https://api.github.com/gists/${gistId}`;
-      let fetchOptions = {};
+  let ghRepoCard = require('./_configs/githubrepocard.shortcode');
+  eleventyConfig.addNunjucksAsyncShortcode("githubrepocard", ghRepoCard);
 
-      let gistJson = {};
-      let mdCode = '';
-
-      // If we're running in a Github Action, the token can be used to make Github API calls with better rate limits.
-      // Otherwise, without this, sometimes the API call fails due to a low rate limit.
-      // To pass the token, npm run build --ghtoken=${{ secrets.GITHUB_TOKEN }}
-      if (process.env.npm_config_ghtoken){
-        console.log('in the if block')
-        fetchOptions.headers = { 'Authorization': `Bearer ${process.env.npm_config_ghtoken}`}
-      }
-
-      /* fetch() returns a promise, but await can be used inside addNunjucksAsyncShortcode */
-      let response = await fetch(url, fetchOptions);
-
-      if(response.ok){
-        gistJson = await response.json();
-      }
-      else {
-        console.log(await response.json());
-        return '';
-      }
-
-
-      let description = gistJson.description;
-
-      for (var f in gistJson.files){
-        let language = gistJson.files[f].language;
-        let content = gistJson.files[f].content
-        let fileName = gistJson.files[f].filename;
-
-        if(!language){
-          language = "text"
-        }
-        if(language==="C#"){
-          language = "csharp";
-        }
-
-        language = language.toLowerCase();
-
-
-        if(language==="markdown"){
-          //Special case for MD, just render it outright.
-          mdCode += `\n${content}\n`;
-        }
-        else {
-          //Surround by code tags so it gets rendered with prism
-          mdCode += `\`${fileName}\`\n\`\`\`${language}\n${content}\n\`\`\`\n`;
-        }
-
-      }
-
-      return `**${description}**\n${markdownLibrary.render(mdCode)}`;
-
-  });
+  // The `gist` shortcode renders the gist's files as code blocks
+  // For some reason calling the method directly isn't possible, I have to wrap it.
+  // This only works with Nunjucks because the fetch call inside is async.
+  var gist = require('./_configs/gist.shortcode');
+  eleventyConfig.addNunjucksAsyncShortcode("gist", async(gistId) => { return await gist(gistId, markdownLibrary) });
 
   // Create an array of all tags
   eleventyConfig.addCollection("tagList", function(collection) {
@@ -227,57 +209,7 @@ module.exports = function(eleventyConfig) {
     return filterTagList([...tagSet]);
   });
 
-  // Customize Markdown library and settings:
-  let markdownLibrary = markdownIt({
-    html: true,
-    linkify: true,
-    typographer: true
-  }).use(markdownItAnchor, {
-    permalink: markdownItAnchor.permalink.headerLink(),
-    level: [1,2,3,4],
-    slugify: eleventyConfig.getFilter("slugify")
-  });
 
-  // Wrap images in a figure, a, and figcaption.
-  // This lets the simplelightbox code serve it up too!
-  // Also adds loading lazy attribute
-  markdownLibrary.renderer.rules.image = function (tokens, idx, options, env, slf) {
-
-    const token = tokens[idx];
-    // Set the loading=lazy attribute
-    token.attrSet('loading', 'lazy');
-
-    // Adjust the path so it works with the pathPrefix
-    // This can be / or /my-blog for example
-    let imgPath = token.attrGet('src');
-    if(!imgPath.includes(pathPrefix) && !imgPath.includes('://')){
-      imgPath = path.join(pathPrefix, imgPath);
-    }
-    token.attrSet('src', imgPath);
-
-    let captionRendered = markdownLibrary.renderInline(token.content);
-    let figCaption = '';
-
-    // If it's a gallery of images, display the caption in the lightbox.
-    // Otherwise display it on the page inside figcaption.
-    // This is because the caption might be too long and awkward to display
-    // in a crowded area.
-    if(env.inGallery){
-      token.attrSet('title', captionRendered);
-    }
-    else {
-      figCaption = captionRendered;
-    }
-
-    // Return figure with figcaption.
-    // The 'a' is the image linking to itself, which then gets picked up by simplelightbox
-    return `<figure><a href="${token.attrs[token.attrIndex('src')][1]}">
-    ${slf.renderToken(tokens, idx, options)}</a>
-    <figcaption>${figCaption}</figcaption>
-  </figure>`;
-  }
-
-  eleventyConfig.setLibrary("md", markdownLibrary);
 
   // Override Browsersync defaults (used only with --serve)
   eleventyConfig.setBrowserSyncConfig({

@@ -40,7 +40,7 @@ So far I've made the following modifications:
 - ~~A gallery of images with lightbox?~~
 - ~~A post with code samples~~
 - ~~A post with a video~~
-- Github repo card?
+- ~~Github repo card - use px in the SVG heights, move CSS/JS into their own files, change gist's token to another name, ~~
 - ~~Button to switch light/dark mode, persist in localStorage~~
 - ~~Remove description from post view~~
 - 'Usage guide' in the README
@@ -56,7 +56,7 @@ So far I've made the following modifications:
 - External links
 - Drafts should not be published, but only visible locally.
 - ~~Better expand the code samples page~~
-- [Add GITHUB_TOKEN](https://docs.github.com/en/actions/security-guides/automatic-token-authentication) to authorization: bearer header for Gist fetch
+- ~~[Add GITHUB_TOKEN](https://docs.github.com/en/actions/security-guides/automatic-token-authentication) to authorization: bearer header for Gist fetch~~
 
 ## Running it
 

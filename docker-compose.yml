@@ -6,7 +6,8 @@ services:
       - ${PWD}/node_modules
       - ${PWD}:/app
     working_dir: /app
-    # environment:
+    environment:
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
     #   - DEBUG=Eleventy*
     ports:
       - 8080:8080

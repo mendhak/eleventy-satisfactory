@@ -45,7 +45,7 @@ jobs:
         # If GH_GIST_TOKEN doesn't exist, empty value gets passed.
         # Unauthenticated call gets made to Gist API which can result in rate limits,
         # Especially in Github Actions
-        run: /bin/bash -c 'npm install;npm run build --ghtoken=${{ secrets.GH_GIST_TOKEN }}'
+        run: /bin/bash -c 'npm install;npm run build --gisttoken=${{ secrets.GH_GIST_TOKEN }} --githubtoken=${{ secrets.GITHUB_TOKEN }}'
 
       - name: Setup Github Pages
         uses: actions/configure-pages@v2

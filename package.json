@@ -37,7 +37,7 @@
     "simpledotcss": "^2.1.1",
     "simplelightbox": "^2.12.1"
   },
-  "engines" : {
-    "node" : ">=18.0.0"
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
