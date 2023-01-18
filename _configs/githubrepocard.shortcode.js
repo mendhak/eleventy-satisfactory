@@ -2,78 +2,9 @@ const outdent = require('outdent')
 const CleanCSS = require("clean-css");
 
 module.exports = async function(repoSlug){
-  let css = `
-  .github-repo-card {
-    --gh-bg-color: #fff;
-    --gh-color: #586069;
-    --gh-heading-color: #0366d6;
-    font-family: var(--sans-font);
-    width: 50%;
-    background-color: var(--gh-bg-color) !important;
-    border: 1px solid var(--gh-color) !important;
-    border-radius: 6px !important;
-    padding: 16px !important;
-    color: var(--gh-color) !important;
-  }
-
-  @media screen and (max-width: 1200px) {
-    .github-repo-card {
-        width: 60%;
-    }
-  }
-
-  @media screen and (max-width: 800px) {
-    .github-repo-card {
-        width: 80%;
-    }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .github-repo-card {
-      --gh-bg-color: #212224;
-      --gh-color: #8b949e;
-      --gh-heading-color: #58a6ff;
-    }
-  }
-
-  .github-repo-card svg {
-    fill: var(--gh-color);
-  }
-
-  .github-repo-card .d-flex {
-    display: flex !important;
-    margin-bottom: 4px !important;
-    align-items: flex-start !important;
-    justify-content: space-between !important;
-  }
-
-  .github-repo-card a {
-    color: var(--gh-heading-color) !important;
-  }
-
-  .github-repo-card .stats-icons a {
-    display: inline-block !important;
-    margin-right: 24px !important;
-    color: var(--gh-color) !important;
-    font-size: 0.95rem !important;
-  }
-
-  .github-repo-card .github-repo-text {
-    color: var(--gh-color) !important;
-    font-size: 1rem;
-    display: flex !important;
-    white-space: normal !important;
-    margin-bottom: 8px !important;
-  }
-
-  .github-repo-card .github-repo-title {
-    font-weight: bolder;
-  }`;
-
-  css = new CleanCSS().minify(css).styles;
+  css = new CleanCSS().minify(['css/github.repocard.css']).styles;
   css = `<style>${css}</style>`;
 
-  /* fetch() returns a promise, but await can be used inside addNunjucksAsyncShortcode */
   let url = `https://api.github.com/repos/${repoSlug}`;
   let fetchOptions = {};
 
