@@ -42,41 +42,9 @@ module.exports = function (eleventyConfig) {
   // Wrap images in a figure, a, and figcaption.
   // This lets the simplelightbox code serve it up too!
   // Also adds loading lazy attribute
-  markdownLibrary.renderer.rules.image = function (tokens, idx, options, env, slf) {
-
-    const token = tokens[idx];
-    // Set the loading=lazy attribute
-    token.attrSet('loading', 'lazy');
-
-    // Adjust the path so it works with the pathPrefix
-    // This can be / or /my-blog for example
-    let imgPath = token.attrGet('src');
-    if (!imgPath.includes(pathPrefix) && !imgPath.includes('://')) {
-      imgPath = path.join(pathPrefix, imgPath);
-    }
-    token.attrSet('src', imgPath);
-
-    let captionRendered = markdownLibrary.renderInline(token.content);
-    let figCaption = '';
-
-    // If it's a gallery of images, display the caption in the lightbox.
-    // Otherwise display it on the page inside figcaption.
-    // This is because the caption might be too long and awkward to display
-    // in a crowded area.
-    if (env.inGallery) {
-      token.attrSet('title', captionRendered);
-    }
-    else {
-      figCaption = captionRendered;
-    }
-
-    // Return figure with figcaption.
-    // The 'a' is the image linking to itself, which then gets picked up by simplelightbox
-    return `<figure><a href="${token.attrs[token.attrIndex('src')][1]}">
-      ${slf.renderToken(tokens, idx, options)}</a>
-      <figcaption>${figCaption}</figcaption>
-    </figure>`;
-  }
+  let MarkdownLibraryImageRender = require('./_configs/markdownlibrary.renderer.image');
+  let imageRenderer = new MarkdownLibraryImageRender(markdownLibrary, pathPrefix);
+  markdownLibrary.renderer.rules.image = (tokens, idx, options, env, slf) => { return imageRenderer.image(tokens, idx, options, env, slf); }
 
   eleventyConfig.setLibrary("md", markdownLibrary);
 
@@ -117,13 +85,12 @@ module.exports = function (eleventyConfig) {
   // Paired shortcode that takes a JSON array of CSS file paths
   // It then combines them, which includes reconciles overriden values!
   // And returns the output.
-  eleventyConfig.addPairedShortcode( "cssminification", require('./_configs/cssminification.shortcode'));
+  eleventyConfig.addPairedShortcode("cssminification", require('./_configs/cssminification.shortcode'));
 
   //Paired shortcode to display a notice panel like standard, error, warning, etc.
   let NoticeShortCode = require('./_configs/notice.shortcode');
-
   let notice = new NoticeShortCode(markdownLibrary);
-  eleventyConfig.addPairedShortcode( "notice", (data, noticeType) => {  return notice.notice(data, noticeType);  }  );
+  eleventyConfig.addPairedShortcode("notice", (data, noticeType) => { return notice.notice(data, noticeType); });
 
   // Paired shortcode to display a figure with caption.
   // This is very similar to the regular Markdown image,
@@ -142,7 +109,7 @@ module.exports = function (eleventyConfig) {
   // The `gallery` paired shortcode shows a set of images and displays it in a grid.
   let GalleryShortCode = require('./_configs/gallery.shortcode');
   let gallery = new GalleryShortCode(markdownLibrary);
-  eleventyConfig.addPairedShortcode( "gallery", (data) => { return gallery.gallery(data); } );
+  eleventyConfig.addPairedShortcode("gallery", (data) => { return gallery.gallery(data); });
 
   // Generate excerpt from first paragraph
   eleventyConfig.addShortcode("excerpt", require('./_configs/excerpt.shortcode'));
