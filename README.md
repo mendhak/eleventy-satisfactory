@@ -40,7 +40,7 @@ So far I've made the following modifications:
 - ~~A gallery of images with lightbox?~~
 - ~~A post with code samples~~
 - ~~A post with a video~~
-- Github repo card - use px in the SVG heights, move CSS/JS into their own files, change gist's token to another name, 
+- ~~Github repo card - use px in the SVG heights, move CSS/JS into their own files, change gist's token to another name, ~~
 - ~~Button to switch light/dark mode, persist in localStorage~~
 - ~~Remove description from post view~~
 - 'Usage guide' in the README
