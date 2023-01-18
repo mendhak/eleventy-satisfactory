@@ -190,6 +190,10 @@ module.exports = function(eleventyConfig) {
   // Show the current year using a shortcode
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
+  // For some reason calling the method directly isn't possible, I have to wrap it.
+  let ghRepoCard = require('./_configs/githubrepocard.shortcode');
+  eleventyConfig.addNunjucksAsyncShortcode("githubrepocard", async(repoSlug) => { return await ghRepoCard(repoSlug); });
+
   // The `gist` shortcode renders the gist's files as code blocks
   // For some reason calling the method directly isn't possible, I have to wrap it.
   // This only works with Nunjucks because the fetch call inside is async.

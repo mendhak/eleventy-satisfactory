@@ -42,3 +42,9 @@ To get gists to more reliably appear, [generate a token on Github](https://githu
 Under `Security > Secrets and variables > Actions` create a new secret named `GH_GIST_TOKEN` and paste that value in there. 
 
 This secret value should get picked up the next time the action runs.  
+
+If not running on Github Actions, you'll need to [generate a token on Github](https://github.com/settings/tokens) with the `gists` permission. Then pass that as a `--gisttoken` argument when running the `npm run build` or `npm run serve` commands, for example:
+
+```bash
+npm run serve --gisttoken=xxxxxxxxxxxxxxxxx
+```
