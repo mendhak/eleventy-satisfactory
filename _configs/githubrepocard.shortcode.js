@@ -24,6 +24,7 @@ class GithubApiRepoResponse{
   stargazersLink;
   forks;
   networkLink;
+  language;
 }
 
 /**
@@ -61,6 +62,7 @@ async function getGithubApiRepoResponse(repoSlug){
   repo.forks = githubJson.forks_count;
   repo.networkLink = `${repo.repoLink}/network/members`;
   repo.description = githubJson.description;
+  repo.language = githubJson.language;
 
   return repo;
 }
@@ -80,7 +82,8 @@ function getHtml(repo){
                                   stargazers: repo.stargazers,
                                   stargazersLink: repo.stargazersLink,
                                   forks: repo.forks,
-                                  networkLink: repo.networkLink
+                                  networkLink: repo.networkLink,
+                                  language: repo.language
                                 }
                               );
   htmlBox = htmlBox.replace(/(\r\n|\n|\r)/gm, "");
