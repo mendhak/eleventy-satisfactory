@@ -120,15 +120,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPairedShortcode( "cssminification", require('./_configs/cssminification.shortcode'));
 
   //Paired shortcode to display a notice panel like standard, error, warning, etc.
-  eleventyConfig.addPairedShortcode(
-    "notice", (data, noticeType) => {
-      if (!noticeType) {
-        noticeType = "";
-      }
-      let noticeMarkup = markdownLibrary.renderInline(data);
-      return `<div class="notice ${noticeType}">${noticeMarkup}</div>`;
-    }
-  );
+  let NoticeShortCode = require('./_configs/notice.shortcode');
+
+  let notice = new NoticeShortCode(markdownLibrary);
+  eleventyConfig.addPairedShortcode( "notice", (data, noticeType) => {  return notice.notice(data, noticeType);  }  );
 
   // Paired shortcode to display a figure with caption.
   // This is very similar to the regular Markdown image,
