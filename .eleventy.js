@@ -113,7 +113,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPairedShortcode("gallery", (data) => gallery.gallery(data));
 
   // Generate excerpt from first paragraph
-  eleventyConfig.addShortcode("excerpt", require('./_configs/excerpt.shortcode'));
+  let excerpt = require('./_configs/excerpt.shortcode')
+  eleventyConfig.addShortcode("excerpt", excerpt);
 
   // Show the current year using a shortcode
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
@@ -125,8 +126,8 @@ module.exports = function (eleventyConfig) {
   // The `gist` shortcode renders the gist's files as code blocks
   // For some reason calling the method directly isn't possible, I have to wrap it.
   // This only works with Nunjucks because the fetch call inside is async.
-  var gist = require('./_configs/gist.shortcode');
-  eleventyConfig.addNunjucksAsyncShortcode("gist", async (gistId) => { return await gist(gistId, markdownLibrary) });
+  let gist = require('./_configs/gist.shortcode');
+  eleventyConfig.addNunjucksAsyncShortcode("gist", async (gistId) => gist(gistId, markdownLibrary));
 
 
 
