@@ -7,14 +7,11 @@ const markdownItAnchor = require("markdown-it-anchor");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
-// For minifying the CSS
-const CleanCSS = require("clean-css");
-
-const path = require("path");
-const UserConfig = require("@11ty/eleventy/src/UserConfig");
-
+const metadata = require('./_data/metadata.json');
 // Change this to match the actual path prefix.
-const pathPrefix = process.env.PATH_PREFIX || '/eleventy-mendhak-blog-theme/';
+const pathPrefix = process.env.PATH_PREFIX || metadata.pathPrefix;
+
+const UserConfig = require("@11ty/eleventy/src/UserConfig");
 
 /**
  * @param {UserConfig} eleventyConfig
@@ -166,7 +163,7 @@ module.exports = function (eleventyConfig) {
     htmlTemplateEngine: "njk",
 
     // -----------------------------------------------------------------
-    // If your site deploys to a subdirectory, change `pathPrefix`.
+    // If your site deploys to a subdirectory, change `pathPrefix` in metadata.json.
     // Don’t worry about leading and trailing slashes, we normalize these.
 
     // If you don’t have a subdirectory, use "" or "/" (they do the same thing)
