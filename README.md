@@ -54,7 +54,6 @@ So far I've made the following modifications:
 - ~~Remove /tags/ listing pages~~
 - ~~Undo the dark/light mode toggle~~ - [Issue #2](https://github.com/mendhak/eleventy-mendhak-blog-theme/issues/2)
 - ~~Use CSSMin to combine multiple CSS files in one go, instead of minifiying each file separately~~
-- External links
 - ~~Drafts should not be published, but only visible locally.~~
 - ~~Better expand the code samples page~~
 - ~~[Add GITHUB_TOKEN](https://docs.github.com/en/actions/security-guides/automatic-token-authentication) to authorization: bearer header for Gist fetch~~
