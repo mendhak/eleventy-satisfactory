@@ -28,6 +28,7 @@ So far I've made the following modifications:
 * Notice boxes like info, warning, success, etc.
 * A gist shortcode to add gist seamlessly as codeblocks on a page.
 * Github Repo Card shortcode. 
+* Ability to create draft posts
 
 ## TODO
 
@@ -54,10 +55,10 @@ So far I've made the following modifications:
 - ~~Undo the dark/light mode toggle~~ - [Issue #2](https://github.com/mendhak/eleventy-mendhak-blog-theme/issues/2)
 - ~~Use CSSMin to combine multiple CSS files in one go, instead of minifiying each file separately~~
 - External links
-- Drafts should not be published, but only visible locally.
+- ~~Drafts should not be published, but only visible locally.~~
 - ~~Better expand the code samples page~~
 - ~~[Add GITHUB_TOKEN](https://docs.github.com/en/actions/security-guides/automatic-token-authentication) to authorization: bearer header for Gist fetch~~
-- Refactor eleventy shortcodes into separate files
+- ~~Refactor eleventy shortcodes into separate files~~
 
 ## Running it
 
