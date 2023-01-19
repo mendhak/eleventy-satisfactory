@@ -108,9 +108,8 @@ module.exports = function (eleventyConfig) {
   });
 
   // The `gallery` paired shortcode shows a set of images and displays it in a grid.
-  let GalleryShortCode = require('./_configs/gallery.shortcode');
-  let gallery = new GalleryShortCode(markdownLibrary);
-  eleventyConfig.addPairedShortcode("gallery", (data) => gallery.gallery(data));
+  let gallery = require('./_configs/gallery.shortcode');
+  eleventyConfig.addPairedShortcode("gallery", (data) => gallery(data, markdownLibrary));
 
   // Generate excerpt from first paragraph
   let excerpt = require('./_configs/excerpt.shortcode')
