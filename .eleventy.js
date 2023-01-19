@@ -97,9 +97,8 @@ module.exports = function (eleventyConfig) {
   // This is very similar to the regular Markdown image,
   // But I'll keep this around in case the other way ever breaks in the future
   // Plus, this has the 'width' flexibility, and maybe more future features.
-  let FigureShortCode = require('./_configs/figure.shortcode');
-  let figure = new FigureShortCode(pathPrefix, markdownLibrary);
-  eleventyConfig.addShortcode("figure", (image, caption, widthName) => { return figure.figure(image, caption, widthName); });
+  let figure = require('./_configs/figure.shortcode');
+  eleventyConfig.addShortcode("figure", (image, caption, widthName) => figure(image, caption, widthName, markdownLibrary, pathPrefix));
 
   // If the post contains images, then add the Lightbox JS/CSS and render lightboxes for it.
   // Since it needs access to the `page` object, we can't use arrow notation here.
