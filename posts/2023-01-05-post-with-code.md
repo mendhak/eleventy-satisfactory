@@ -20,8 +20,20 @@ Any text that is indented by 4 spaces will be treated as a preformatted block.
 
 ## Code blocks with syntax highlighting
 
-To add code to a page with syntax highlighting, surround the code with 3 backticks followed by an optional language name.  
-For example, ` ```javascript`, then add the code, and close the block with ` ``` `
+Another way to do the same thing is surround the code with 3 backticks. 
+
+
+` ``` `  
+`console.log('hello');  `  
+` ``` `
+
+```  
+console.log('hello');
+```
+
+To get colorful syntax highlighting, follow the 3 backtickes with a [language name](https://prismjs.com/#languages-list).  
+
+For example ` ```javascript`, then add the code, and close the block with ` ``` `
 
 Here is some Javascript
 

@@ -1,6 +1,6 @@
 ---
-title: This is my second post.
-description: This is a post on My Blog about leveraging agile frameworks.
+title: Showcase of various Markdown features
+description: Trying out various Markdown features on a post
 date: 2018-07-04
 tags:
   - number 2
@@ -136,11 +136,11 @@ Right aligned columns
 
 ## Links
 
-[link text](http://dev.nodeca.com)
+[link text](https://example.com)
 
-[link with title](http://nodeca.github.io/pica/demo/ "title text!")
+[link with title](https://example.com "title text!")
 
-Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
+[link to another post]({{ '/first-post/' | url }})
 
 
 ## Images

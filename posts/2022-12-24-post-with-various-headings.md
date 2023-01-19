@@ -1,6 +1,6 @@
 ---
 title: Post with various headings
-description: From H1 to  H5
+description: From H1 to  H5 and some blockquotes
 tags: xmas
 header:
   teaser: https://live.staticflickr.com/1932/30454355997_287063f84b_q.jpg

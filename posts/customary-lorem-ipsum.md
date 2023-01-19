@@ -1,6 +1,6 @@
 ---
-title: This is my first post.
-description: This is a post on My Blog about agile frameworks.
+title: Customary Lorem Ipsum post
+description: This is a post on My Blog with a wall of text.
 date: 2018-05-01
 tags:
   - another tag
