@@ -102,10 +102,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("figure", (image, caption, widthName) => { return figure.figure(image, caption, widthName); });
 
   // If the post contains images, then add the Lightbox JS/CSS and render lightboxes for it.
-  eleventyConfig.addShortcode("addLightBoxRefIfNecessary", function () {
-    let lightbox = require('./_configs/lightboxref.shortcode');
-    return lightbox(this.page, pathPrefix);
-  });
+  // Since it needs access to the `page` object, we can't use arrow notation here.
+  let lightbox = require('./_configs/lightboxref.shortcode');
+  eleventyConfig.addShortcode("addLightBoxRefIfNecessary", function () { return lightbox(this.page, pathPrefix); });
 
   // The `gallery` paired shortcode shows a set of images and displays it in a grid.
   let gallery = require('./_configs/gallery.shortcode');
