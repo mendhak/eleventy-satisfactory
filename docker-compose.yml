@@ -8,6 +8,7 @@ services:
     working_dir: /app
     environment:
       - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - ELEVENTY_ENV=development
     #   - DEBUG=Eleventy*
     ports:
       - 8080:8080
