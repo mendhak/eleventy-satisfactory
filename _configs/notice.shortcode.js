@@ -1,14 +1,8 @@
-class NoticeShortCode{
-  constructor(mdLib){
-    this.markdownLibrary = mdLib;
+module.exports = function (data, noticeType, markdownLibrary) {
+  if (!noticeType) {
+    noticeType = "";
   }
-  notice(data, noticeType) {
-    if (!noticeType) {
-      noticeType = "";
-    }
-    let noticeMarkup = this.markdownLibrary.renderInline(data);
-    return `<div class="notice ${noticeType}">${noticeMarkup}</div>`;
-  }
+  let noticeMarkup = markdownLibrary.renderInline(data);
+  return `<div class="notice ${noticeType}">${noticeMarkup}</div>`;
 }
 
-module.exports = NoticeShortCode;
