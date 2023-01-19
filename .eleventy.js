@@ -11,11 +11,14 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const CleanCSS = require("clean-css");
 
 const path = require("path");
+const UserConfig = require("@11ty/eleventy/src/UserConfig");
 
 // Change this to match the actual path prefix.
 const pathPrefix = process.env.PATH_PREFIX || '/eleventy-mendhak-blog-theme/';
 
-/** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
+/**
+ * @param {UserConfig} eleventyConfig
+ */
 module.exports = function (eleventyConfig) {
   // Copy the `img`, and `fonts` folders to the output
   // CSS isn't copied over, that's done inline via the base template.
@@ -42,9 +45,8 @@ module.exports = function (eleventyConfig) {
   // Wrap images in a figure, a, and figcaption.
   // This lets the simplelightbox code serve it up too!
   // Also adds loading lazy attribute
-  let MarkdownLibraryImageRender = require('./_configs/markdownlibrary.renderer.image');
-  let imageRenderer = new MarkdownLibraryImageRender(markdownLibrary, pathPrefix);
-  markdownLibrary.renderer.rules.image = (tokens, idx, options, env, slf) => { return imageRenderer.image(tokens, idx, options, env, slf); }
+  let imageRenderer = require('./_configs/markdownlibrary.renderer.image');
+  markdownLibrary.renderer.rules.image = (tokens, idx, options, env, slf) => imageRenderer(tokens, idx, options, env, slf, pathPrefix, markdownLibrary);
 
   eleventyConfig.setLibrary("md", markdownLibrary);
 
@@ -79,7 +81,7 @@ module.exports = function (eleventyConfig) {
 
 
   // Filters out irrelevant tags that aren't really related to content, only used for organising things
-  eleventyConfig.addFilter("filterTagList", function(tags) {
+  eleventyConfig.addFilter("filterTagList", function (tags) {
     return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
   });
 
