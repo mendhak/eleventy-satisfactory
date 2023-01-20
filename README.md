@@ -122,7 +122,7 @@ So far I've made the following modifications:
 * Favicon feature
 * Image is written as figure, and has lightbox.
 * Image galleries
-* Links are adjusted to include the blog prefix
+* Links are adjusted to include the blog prefix (/post-url or filename.md)
 * Change the code theme
 * Removed tag listing pages, tags only get used in the HTML metadata
 * Pagination on the page list and post list
@@ -130,6 +130,7 @@ So far I've made the following modifications:
 * A gist shortcode to add gist seamlessly as codeblocks on a page.
 * Github Repo Card shortcode. 
 * Ability to create draft posts
+
 
 ##  References
 
