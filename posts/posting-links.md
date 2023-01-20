@@ -8,46 +8,55 @@ tags:
 
 ---
 
-Various ways to post links to other posts in the same blog and external links too. 
+Various ways to post links to other posts in the same blog, and external links too. 
 
-### Link to another post
+### Link to another post by its file name
 
-Linking to another post in the same blog can be done with the usual Markdown syntax. If the path starts with `/`, the blog's `pathPrefix` gets added in. 
+This is a local editor friendly way, just link straight to the Markdown file.  
+If the link ends with `.md`, the renderer will try to find and convert it to the matching output URL. 
 
 ```markdown
-[Link to another page](/customary-lorem-ipsum)
+[Link using Markdown path](./customary-lorem-ipsum.md)
 ```
 
 Produces:
 
-[Link to another page](/customary-lorem-ipsum)
+[Link using Markdown path](./customary-lorem-ipsum.md)
 
-Another way to do it is to use a `| url` filter like this:
+
+
+### Link to another post by URL
+
+You can also link to the output URL of the post. 
+If the path starts with `/`, the blog's `pathPrefix` gets added on, if necessary. 
 
 ```markdown
-{% raw %}[Link to another page]({{ '/customary-lorem-ipsum' | url }}){% endraw %}
+[Link using post's URL](/customary-lorem-ipsum)
 ```
 
 Produces:
 
-[Link to another page](/customary-lorem-ipsum)
+[Link using post's URL](/customary-lorem-ipsum)
+
+
 
 
 ### External links
 
+
 ```markdown
-[Link text](https://example.com)
+[External link](https://example.com)
 ```
 
 Produces:
 
-[Link text](https://example.com)
+[External link](https://example.com)
 
 ### Link with a title
 
 ```markdown
-[Link with title](https://example.com "title text!")
+[Link with a title](https://example.com "title text!")
 ```
 Produces:
 
-[Link with title](https://example.com "title text!")
+[Link with a title](https://example.com "title text!")
