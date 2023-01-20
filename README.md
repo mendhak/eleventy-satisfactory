@@ -75,7 +75,7 @@ The `language`, `favicon`, `description`, `opengraph`, and `author` bits appear 
 
 ### Write a post
 
-The posts go in the `posts` folder.  Drafts can go in the `drafts` folder and will only appear when running locally (`npm run start`) but not when building. 
+The posts go in the `posts` folder.  Drafts can go in the `drafts` folder and will only appear when running locally (`npm run start` or `docker-compose up`) but not when building (`npm run build`). 
 
 - [Add an image](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-with-an-image/) 
 - [Or an image gallery](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-with-a-gallery/)
