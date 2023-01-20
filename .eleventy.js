@@ -45,6 +45,10 @@ module.exports = function (eleventyConfig) {
   let imageRenderer = require('./_configs/markdownlibrary.renderer.image');
   markdownLibrary.renderer.rules.image = (tokens, idx, options, env, slf) => imageRenderer(tokens, idx, options, env, slf, pathPrefix, markdownLibrary);
 
+  // If the Markdown link starts with "/", add the pathPrefix of the blog to it.
+  let linkRenderer = require('./_configs/markdownlibrary.renderer.links');
+  markdownLibrary.renderer.rules.link_open = (tokens, idx, options, env, self) => linkRenderer(tokens, idx, options, env, self, pathPrefix);
+
   eleventyConfig.setLibrary("md", markdownLibrary);
 
   // RSS

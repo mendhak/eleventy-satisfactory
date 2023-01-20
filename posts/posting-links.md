@@ -10,32 +10,44 @@ tags:
 
 Various ways to post links to other posts in the same blog and external links too. 
 
-Linking to another post in the same blog requires using a `| url` filter like this:
+### Link to another post
+
+Linking to another post in the same blog can be done with the usual Markdown syntax. If the path starts with `/`, the blog's `pathPrefix` gets added in. 
 
 ```markdown
-[Link to another page]({{ '/second-post' | url }})
+[Link to another page](/customary-lorem-ipsum)
 ```
 
 Produces:
 
-[Link to another page]({{ '/second-post' | url }})
+[Link to another page](/customary-lorem-ipsum)
+
+Another way to do it is to use a `| url` filter like this:
+
+```markdown
+{% raw %}[Link to another page]({{ '/customary-lorem-ipsum' | url }}){% endraw %}
+```
+
+Produces:
+
+[Link to another page](/customary-lorem-ipsum)
 
 
 ### External links
 
 ```markdown
-[link text](https://example.com)
+[Link text](https://example.com)
 ```
 
 Produces:
 
-[link text](https://example.com)
+[Link text](https://example.com)
 
 ### Link with a title
 
 ```markdown
-[link with title](https://example.com "title text!")
+[Link with title](https://example.com "title text!")
 ```
 Produces:
 
-[link with title](https://example.com "title text!")
+[Link with title](https://example.com "title text!")

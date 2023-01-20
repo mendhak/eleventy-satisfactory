@@ -140,7 +140,7 @@ Right aligned columns
 
 [link with title](https://example.com "title text!")
 
-[link to another post]({{ '/first-post/' | url }})
+[link to another post](/customary-lorem-ipsum/)
 
 
 ## Images
