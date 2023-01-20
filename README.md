@@ -69,7 +69,7 @@ Most of the configuration is in [`_data/metadata.json`](_data/metadata.json).  S
 
 The rest of it should be self explanatory.  
 
-The `language`, `favicon`, `description`, `opengraph`, and `author` bits appear in the HTML opengraph metadata. 
+The `language`, `favicon`, `description`, `opengraph`, and `author` bits appear in the HTML head and Opengraph metadata. 
 
 `feed` and `jsonfeed` determine the path of the RSS feed and JSON feed. 
 
