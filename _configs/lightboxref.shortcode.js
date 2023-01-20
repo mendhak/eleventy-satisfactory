@@ -8,13 +8,13 @@ const path = require("path");
  * @param {String} pathPrefix - the path prefix that is used to serve URLs on the site. Usually `/`, but can be `/blog`, etc.
  * @returns
  */
-module.exports = function getLightBoxIfNecessary(page, pathPrefix){
+module.exports = function getLightBoxIfNecessary(page){
 
   const str = fs.readFileSync(page.inputPath, 'utf8');
 
   if (str.includes('{% figure') || str.includes('![')) {
-    let jsPath = path.join(pathPrefix, 'simplelightbox/simple-lightbox.min.js');
-    let cssPath = path.join(pathPrefix, 'simplelightbox/simple-lightbox.min.css');
+    let jsPath = '/simplelightbox/simple-lightbox.min.js';
+    let cssPath = '/simplelightbox/simple-lightbox.min.css';
     return `
       <link rel="stylesheet" href="${cssPath}" />
       <script src="${jsPath}"></script>

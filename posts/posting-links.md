@@ -27,8 +27,7 @@ Produces:
 
 ### Link to another post by URL
 
-You can also link to the output URL of the post. 
-If the path starts with `/`, the blog's `pathPrefix` gets added on, if necessary. 
+You can also link to the output URL of the post. The blog's `pathPrefix` gets added on automatically. 
 
 ```markdown
 [Link using post's URL](/customary-lorem-ipsum)
@@ -37,8 +36,6 @@ If the path starts with `/`, the blog's `pathPrefix` gets added on, if necessary
 Produces:
 
 [Link using post's URL](/customary-lorem-ipsum)
-
-
 
 
 ### External links

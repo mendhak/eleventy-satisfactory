@@ -18,7 +18,7 @@ To display a set of images in a gallery, just surround the images (written as Ma
 
 ```
 {% raw %}{% gallery %}
-![](/img/image001.jpg)
+![First image](/img/image001.jpg)
 ![**Second** image](/img/image002.jpg)
 ![`Third` image](/img/image003.jpg)
 {% endgallery %}{% endraw %}

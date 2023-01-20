@@ -5,7 +5,7 @@
   "scripts": {
     "build": "npx @11ty/eleventy",
     "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
-    "start": "ELEVENTY_ENV=development npx @11ty/eleventy --serve --watch",
+    "start": "ELEVENTY_ENV=development npx @11ty/eleventy --serve --watch --incremental",
     "debug": "DEBUG=* npx @11ty/eleventy"
   },
   "repository": {
@@ -23,7 +23,7 @@
   },
   "homepage": "https://code.mendhak.com/eleventy-mendhak-blog-theme/",
   "dependencies": {
-    "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy": "^2.0.0-beta.1",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
     "clean-css": "^5.3.1",

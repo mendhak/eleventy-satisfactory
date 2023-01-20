@@ -7,6 +7,8 @@ const markdownItAnchor = require("markdown-it-anchor");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
+const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+
 const metadata = require('./_data/metadata.json');
 // Change this to match the actual path prefix.
 const pathPrefix = process.env.PATH_PREFIX || metadata.pathPrefix;
@@ -43,19 +45,22 @@ module.exports = function (eleventyConfig) {
   // This lets the simplelightbox code serve it up too!
   // Also adds loading lazy attribute
   let imageRenderer = require('./_configs/markdownlibrary.renderer.image');
-  markdownLibrary.renderer.rules.image = (tokens, idx, options, env, slf) => imageRenderer(tokens, idx, options, env, slf, pathPrefix, markdownLibrary);
+  markdownLibrary.renderer.rules.image = (tokens, idx, options, env, slf) => imageRenderer(tokens, idx, options, env, slf, markdownLibrary);
 
-  // If the Markdown link starts with "/", add the pathPrefix of the blog to it.
+  // If a Markdown link points at an .md file, convert it to its corresponding post URL
   let linkRenderer = require('./_configs/markdownlibrary.renderer.links');
-  markdownLibrary.renderer.rules.link_open = (tokens, idx, options, env, self) => linkRenderer(tokens, idx, options, env, self, pathPrefix);
+  markdownLibrary.renderer.rules.link_open = linkRenderer;
 
   eleventyConfig.setLibrary("md", markdownLibrary);
+  // Re-enable the indented code block feature
+  eleventyConfig.amendLibrary("md", mdLib => mdLib.enable("code"))
 
   // RSS
   eleventyConfig.addPlugin(pluginRss);
   // Code syntax with Prism JS
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
 
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
   // Date used below posts
   eleventyConfig.addFilter("readableDate", dateObj => {
@@ -100,12 +105,12 @@ module.exports = function (eleventyConfig) {
   // But I'll keep this around in case the other way ever breaks in the future
   // Plus, this has the 'width' flexibility, and maybe more future features.
   let figure = require('./_configs/figure.shortcode');
-  eleventyConfig.addShortcode("figure", (image, caption, widthName) => figure(image, caption, widthName, markdownLibrary, pathPrefix));
+  eleventyConfig.addShortcode("figure", (image, caption, widthName) => figure(image, caption, widthName, markdownLibrary));
 
   // If the post contains images, then add the Lightbox JS/CSS and render lightboxes for it.
   // Since it needs access to the `page` object, we can't use arrow notation here.
   let lightbox = require('./_configs/lightboxref.shortcode');
-  eleventyConfig.addShortcode("addLightBoxRefIfNecessary", function () { return lightbox(this.page, pathPrefix); });
+  eleventyConfig.addShortcode("addLightBoxRefIfNecessary", function () { return lightbox(this.page); });
 
   // The `gallery` paired shortcode shows a set of images and displays it in a grid.
   let gallery = require('./_configs/gallery.shortcode');
@@ -130,24 +135,6 @@ module.exports = function (eleventyConfig) {
 
 
 
-
-  // Override Browsersync defaults (used only with --serve)
-  eleventyConfig.setBrowserSyncConfig({
-    callbacks: {
-      ready: function (err, browserSync) {
-        const content_404 = fs.readFileSync('_site/404.html');
-
-        browserSync.addMiddleware("*", (req, res) => {
-          // Provides the 404 content without redirect.
-          res.writeHead(404, { "Content-Type": "text/html; charset=UTF-8" });
-          res.write(content_404);
-          res.end();
-        });
-      },
-    },
-    ui: false,
-    ghostMode: false
-  });
 
 
   return {

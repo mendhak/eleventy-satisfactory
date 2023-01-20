@@ -6,19 +6,11 @@ const path = require("path");
  * Also adds loading lazy attribute
  */
 
-module.exports = function (tokens, idx, options, env, slf, pathPrefix, markdownLibrary) {
+module.exports = function (tokens, idx, options, env, slf, markdownLibrary) {
 
   const token = tokens[idx];
   // Set the loading=lazy attribute
   token.attrSet('loading', 'lazy');
-
-  // Adjust the path so it works with the pathPrefix
-  // This can be / or /my-blog for example
-  let imgPath = token.attrGet('src');
-  if (!imgPath.includes(pathPrefix) && !imgPath.includes('://')) {
-    imgPath = path.join(pathPrefix, imgPath);
-  }
-  token.attrSet('src', imgPath);
 
   let captionRendered = markdownLibrary.renderInline(token.content);
   let figCaption = '';

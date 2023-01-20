@@ -6,7 +6,7 @@ const path = require("path");
  * But I'll keep this around in case the other way ever breaks in the future
  * Plus, this has the 'width' flexibility, and maybe more future features.
  */
-module.exports = function (image, caption, widthName, markdownLibrary, pathPrefix) {
+module.exports = function (image, caption, widthName, markdownLibrary) {
 
   let width = '';
   switch (widthName) {
@@ -24,9 +24,7 @@ module.exports = function (image, caption, widthName, markdownLibrary, pathPrefi
     captionMarkup = markdownLibrary.renderInline(caption);
   }
 
-  let imgPath = path.join(pathPrefix, image);
-
-  let rendered = `<figure><a href="${imgPath}"><img src="${imgPath}" alt="${caption}" loading="lazy" style="${width}" /></a><figcaption>${captionMarkup}</figcaption></figure>`;
+  let rendered = `<figure><a href="${image}"><img src="${image}" alt="${caption}" loading="lazy" style="${width}" /></a><figcaption>${captionMarkup}</figcaption></figure>`;
 
   return rendered;
 }

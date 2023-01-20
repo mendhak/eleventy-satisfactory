@@ -65,7 +65,7 @@ This image is served using regular HTML. No lightbox is produced.
 
 ```
 {% raw %}<figure>
-  <img src="{{ '/img/image002.jpg' | url }}" alt="Image served using HTML">
+  <img src="/img/image002.jpg" alt="Image served using HTML">
   <figcaption>
     An image served using HTML figure and figcaption
   </figcaption>
@@ -76,7 +76,7 @@ Which results in:
 
 
 <figure>
-  <img src="{{ '/img/image002.jpg' | url }}" alt="Image served using HTML">
+  <img src="/img/image002.jpg" alt="Image served using HTML">
   <figcaption>
     An image served using HTML figure and figcaption
   </figcaption>
@@ -88,7 +88,7 @@ Adding a hyperlink to the image will make it appear in a lightbox.
 
 ```
 {% raw %}<figure>
-  <a href="{{ '/img/image002.jpg' | url }}"><img src="{{ '/img/image002.jpg' | url }}" alt="Image served using HTML"></a>
+  <a href="/img/image002.jpg"><img src="/img/image002.jpg" alt="Image served using HTML"></a>
   <figcaption>
     An image served using HTML figure and figcaption
   </figcaption>
@@ -98,7 +98,7 @@ Adding a hyperlink to the image will make it appear in a lightbox.
 Which results in:
 
 <figure>
-  <a href="{{ '/img/image002.jpg' | url }}"><img src="{{ '/img/image002.jpg' | url }}" alt="Image served using HTML"></a>
+  <a href="/img/image002.jpg"><img src="/img/image002.jpg" alt="Image served using HTML"></a>
   <figcaption>
     An image served using HTML figure and figcaption
   </figcaption>
