@@ -122,6 +122,7 @@ So far I've made the following modifications:
 * Favicon feature
 * Image is written as figure, and has lightbox.
 * Image galleries
+* Links are adjusted to include the blog prefix
 * Change the code theme
 * Removed tag listing pages, tags only get used in the HTML metadata
 * Pagination on the page list and post list
