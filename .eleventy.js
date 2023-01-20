@@ -60,6 +60,7 @@ module.exports = function (eleventyConfig) {
   // Code syntax with Prism JS
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
 
+  //Converts most URLs to URLs with pathPrefix
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
   // Date used below posts
