@@ -12,7 +12,7 @@ My focus is on content first, and less on everything else (such as the author, s
 
 
 Pending some posts on: 
-How to set opengraph header, 
+
 How to set the bottom links, 
 How to set the photo stream, 
 How to create a standalone page,
@@ -80,7 +80,7 @@ The posts go in the `posts` folder.  Drafts can go in the `drafts` folder and wi
 - [Add a notice panel with info, warning, success, danger](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-notice/)
 - [Add a code sample](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-with-code/)
 - [Add videos and audio](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-with-iframes-videos-third-party/)
-
+- [Set Opengraph preview image and metadata](https://code.mendhak.com/eleventy-mendhak-blog-theme/opengraph-preview-data/)
 
 
 
