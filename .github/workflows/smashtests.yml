@@ -42,12 +42,12 @@ jobs:
 
       - name: Just checking
         run: |
-        which firefox
-        which google-chrome
-        which chromium-browser
-        cat /etc/issue
-        cat /etc/os-release
-        pwd
+            which firefox
+            which google-chrome
+            which chromium-browser
+            cat /etc/issue
+            cat /etc/os-release
+            pwd
 
 
       - uses: actions/upload-artifact@v3
