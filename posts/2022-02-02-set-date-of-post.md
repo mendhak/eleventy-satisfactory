@@ -1,13 +1,12 @@
 ---
 title: Set the date of a post
-date: git Last Modified
 ---
 
 When writing a new post, you can set the date of the post in a few different ways.  
 
 ### In the filename
 
-The date can be set in the post's filename.  For example, `{{ page.inputPath }}` will be published to `{{ page.url }}` and the date appears as `{{ page.date | readableDate }}`.  This is the best way to write posts, since having the date at the beginning helps organize the posts in order. 
+The date can be set in the post's filename.  For example, `{{ page.inputPath }}` will be published to the URL `{{ page.url }}` and the date appears as `{{ page.date | readableDate }}`.  This is the best way to write posts, since having the date at the beginning helps organize the posts in order. 
 
 ### In the frontmatter
 
