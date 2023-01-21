@@ -1,7 +1,7 @@
 
 name: Build and Publish
 
-# Trigger this workflow only when the main branches, assets folder is modified.
+# Trigger this workflow only when the main branches is modified.
 on:
   push:
     branches: [ "main", "master" ]
@@ -9,7 +9,6 @@ on:
       - '**/README.md'
       - '.github/workflows/smashtests.yml'
       - 'tests/**'
-
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -22,8 +21,11 @@ permissions:
   deployments: write
 
 jobs:
-  build:
+  tests:
+    uses: ./.github/workflows/smashtests.yml
+  deploy:
     runs-on: ubuntu-latest
+    needs: [tests] # require tests to pass before deploy runs
 
     environment:
       name: github-pages
@@ -32,11 +34,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-
-      - name: Set up Docker Layer caching
-        uses: jpribyl/action-docker-layer-caching@v0.1.1
-        # Ignore the failure of a step and avoid terminating the job.
-        continue-on-error: true
 
       - name: Use Node.js 18
         uses: actions/setup-node@v3
