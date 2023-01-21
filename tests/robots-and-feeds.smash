@@ -1,0 +1,17 @@
+* Test robots.txt and Feeds are available
+
+    Navigate to '{baseUrl}/eleventy-mendhak-blog-theme/robots.txt'
+
+        Verify ['Allow: /'] is visible
+
+            Verify ['Sitemap: https://code.mendhak.com/eleventy-mendhak-blog-theme/sitemap.xml'] is visible
+
+                Navigate to '{baseUrl}/eleventy-mendhak-blog-theme/feed.xml'
+
+                    Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/feed.xml'
+
+                        Navigate to '{baseUrl}/eleventy-mendhak-blog-theme/feed.json'
+
+                            Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/feed.json'
+
+                                Verify ['https://code.mendhak.com/eleventy-mendhak-blog-theme/feed.json'] is visible

@@ -1,12 +1,14 @@
 Open Firefox
 
-    - Test the home page and navigation
+    - Test the home page and site navigation
 
         Test Home Page
 
-            Test All Pages Navigation
+            Test robots.txt and Feeds are available
 
-                Test Draft Post Only Visible Locally
+                Test All Pages Navigation
+
+                    Test Draft Post Only Visible Locally
 
     - Test images and links
 

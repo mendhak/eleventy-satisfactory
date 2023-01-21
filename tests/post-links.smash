@@ -1,6 +1,6 @@
 * Test Post Relative links
 
-    $ Navigate to '{baseUrl}/eleventy-mendhak-blog-theme/posting-links/'
+    Navigate to '{baseUrl}/eleventy-mendhak-blog-theme/posting-links/'
 
         Click [a, 'Link using Markdown path']
 
