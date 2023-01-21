@@ -7,8 +7,6 @@ My focus is on content first, and less on everything else (such as the author, s
 
 ## TODO
 
-- Add link rel sitemap link to sitemap.xml
-- robots.txt, also with `Sitemap: https://code.mendhak.com/sitemap.xml`
 - Can the simplelightbox code be moved to a Nunjucks template
 - Can the cssmin shortcode adjust the inline url() paths? 
 
@@ -125,6 +123,7 @@ So far I've made the following modifications:
 * A gist shortcode to add gist seamlessly as codeblocks on a page.
 * Github Repo Card shortcode. 
 * Ability to create draft posts
+* Robots.txt
 
 
 ##  References
