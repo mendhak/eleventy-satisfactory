@@ -1,20 +1,23 @@
 * Test Home Page
-    Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/'
 
-        Click ["Mendhak's Eleventy Theme"]
+    Navigate to {baseUrl}
 
-            Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/'
+        Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/'
 
-                On Home Page {
-                    props({
-                        'Bottom Links': `ul.photostream a img`,
-                        'Photostream': `ul.bottomlinks li a`,
-                        'Simple CSS Link': `'Simple.css'`
-                    })
-                }
+            Click ["Mendhak's Eleventy Theme"]
 
-                    Verify 'Bottom Links' is visible
+                Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/'
 
-                        Verify 'Photostream' is visible
+                    On Home Page {
+                        props({
+                            'Bottom Links': `ul.photostream a img`,
+                            'Photostream': `ul.bottomlinks li a`,
+                            'Simple CSS Link': `'Simple.css'`
+                        })
+                    }
 
-                            Verify 'Simple CSS Link' is visible
+                        Verify 'Bottom Links' is visible
+
+                            Verify 'Photostream' is visible
+
+                                Verify 'Simple CSS Link' is visible

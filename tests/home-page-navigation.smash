@@ -1,11 +1,15 @@
 * Test All Pages Navigation
 
-    Click ['More posts']
+    Navigate to {baseUrl}
 
-        Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/posts/'
+        Click ['More posts']
 
-            Click ['Next']
+            Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/posts/'
 
-                Verify ['Previous'] is visible
+                Click ['Next']
 
-                    Verify ['Next'] is visible
+                    Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/posts/1/'
+
+                        Verify ['Previous'] is visible
+
+                            Verify ['Next'] is visible

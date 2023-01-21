@@ -1,24 +1,18 @@
 Open Firefox
 
-    - Test the home page, navigation and image and gallery pages
+    - Test the home page and navigation
 
-        Navigate to {baseUrl}
+        Test Home Page
 
-            Test Home Page
+            Test All Pages Navigation
 
-                Navigate to {baseUrl}
+                Test Draft Post Only Visible Locally
 
-                    Test Draft Post Only Visible Locally
+    - Test images and links
 
-                        Navigate to {baseUrl}
+        Test Images page
 
-                            Test All Pages Navigation
-
-            Test Images page
-
-                Navigate to {baseUrl}
-
-                    Test Image Gallery page
+            Test Image Gallery page
 
     - Test specific pages directly
 

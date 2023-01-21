@@ -1,32 +1,30 @@
 * Test Images page
 
-    Click ['Post with an image']
+    Navigate to '{baseUrl}/eleventy-mendhak-blog-theme/post-with-an-image/'
 
-        Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/post-with-an-image/'
+        On post {
+            props({
+                'Clickable Image': `figure a`,
+                'Lightbox': `.sl-wrapper`
+            })
+        }
 
-            On post {
-                props({
-                    'Clickable Image': `figure a`,
-                    'Lightbox': `.sl-wrapper`
-                })
-            }
+            Scroll To '1st Clickable Image'
 
-                Scroll To '1st Clickable Image'
+                Click '1st Clickable Image'
 
-                    Click '1st Clickable Image'
+                    Verify 'Lightbox' is visible
 
-                        Verify 'Lightbox' is visible
+                        Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/post-with-an-image/'
 
-                            Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/post-with-an-image/'
+                            Type '[Escape]' into 'Lightbox'
 
-                                Type '[Escape]' into 'Lightbox'
+                                Scroll To '3rd Clickable Image'
 
-                                    Scroll To '3rd Clickable Image'
+                                    Wait '5' secs
 
-                                        Wait '5' secs
+                                        Click '3rd Clickable Image'
 
-                                            Click '3rd Clickable Image'
+                                            Verify 'Lightbox' is visible
 
-                                                Verify 'Lightbox' is visible
-
-                                                    Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/post-with-an-image/'
+                                                Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/post-with-an-image/'

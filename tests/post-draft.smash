@@ -1,8 +1,8 @@
 * Test Draft Post Only Visible Locally
 
-    Click ['This draft post should only appear locally']
+    Navigate to '{baseUrl}/eleventy-mendhak-blog-theme/a-draft-post/'
 
-        Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/a-draft-post/'
+        Click ['This draft post should only appear locally']
 
             Navigate to 'https://code.mendhak.com/eleventy-mendhak-blog-theme/a-draft-post/'
 
