@@ -7,7 +7,8 @@
     "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
     "start": "ELEVENTY_ENV=development npx @11ty/eleventy --serve --watch --incremental",
     "debug": "DEBUG=* npx @11ty/eleventy",
-    "test": "cd tests;npx smashtest"
+    "test": "cd tests;npx smashtest",
+    "stop": "kill -9 $(lsof -t -i :8080)"
   },
   "repository": {
     "type": "git",
