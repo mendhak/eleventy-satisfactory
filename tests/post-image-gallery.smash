@@ -1,0 +1,32 @@
+* Test Image Gallery page
+
+    Click ['Post with an image gallery']
+
+        Verify at page 'http://localhost:8080/eleventy-mendhak-blog-theme/post-with-a-gallery/'
+
+            On post {
+                props({
+                    'Clickable Image': `figure a`,
+                    'Lightbox': `.sl-wrapper`,
+                    'Second Image Caption': `'Second image'`,
+                    'Lightbox Caption Box': `.sl-caption`
+                })
+            }
+
+                Scroll To '2nd Clickable Image'
+
+                    Click '2nd Clickable Image'
+
+                        Verify 'Lightbox' is visible
+
+                            Verify 'Second Image Caption' is visible
+
+                                Type '[Escape]' into 'Lightbox'
+
+                                    Scroll To '5th Clickable Image'
+
+                                        Click '5th Clickable Image'
+
+                                            Verify 'Lightbox' is visible
+
+                                                Verify 'Lightbox Caption Box' is not visible

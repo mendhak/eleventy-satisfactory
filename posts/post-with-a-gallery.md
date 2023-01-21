@@ -41,18 +41,18 @@ It's also possible to use the `figure` shortcode inside the `gallery` shortcode.
 
 ```
 {% raw %}{% gallery %}
-{% figure "/images/image001.jpg", "First **caption**" %}
-{% figure "/images/image002.jpg", "Second *caption*" %}
-{% figure "/images/image003.jpg", "Third `caption`" %}
+{% figure "/images/image001.jpg", "Fourth **caption**" %}
+{% figure "/images/image002.jpg", "Fifth *caption*" %}
+{% figure "/images/image003.jpg", "Sixth `caption`" %}
 {% endgallery %}{% endraw %}
 ```
 
 Produces this:
 
 {% gallery %}
-{% figure "/images/image001.jpg", "First **caption**" %}
-{% figure "/images/image002.jpg", "Second *caption*" %}
-{% figure "/images/image003.jpg", "Third `caption`" %}
+{% figure "/images/image001.jpg", "Fourth **caption**" %}
+{% figure "/images/image002.jpg", "Fifth *caption*" %}
+{% figure "/images/image003.jpg", "Sixth `caption`" %}
 {% endgallery %}
 
 In this case, the caption appears below the images, but not in the lightbox.  This is because the shortcodes are rendered independently. This can get crowded and awkward, I'm not sure if this is a good idea.

@@ -9,4 +9,8 @@ Open Firefox
                 Verify at page 'http://localhost:8080/eleventy-mendhak-blog-theme/'
 
 
-        Test Post Images page
+        Test Images page
+
+            Navigate to 'http://localhost:8080/'
+
+                Test Image Gallery page
