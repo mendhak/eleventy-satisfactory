@@ -27,15 +27,15 @@ Produces:
 
 ### Link to another post by URL
 
-You can also link to the output URL of the post. The blog's `pathPrefix` gets added on automatically. 
+You can also link to the output URL of the post. The blog's `pathPrefix` gets added on automatically. Remember to include the trailing slash.
 
 ```markdown
-[Link using post's URL](/customary-lorem-ipsum)
+[Link using root-relative URL](/customary-lorem-ipsum/)
 ```
 
 Produces:
 
-[Link using post's URL](/customary-lorem-ipsum)
+[Link using root-relative URL](/customary-lorem-ipsum/)
 
 
 ### External links

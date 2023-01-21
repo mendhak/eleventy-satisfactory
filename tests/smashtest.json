@@ -1,5 +1,5 @@
 {
-    "headless": true,
+    "headless": false,
     "screenshots": true,
     "max-parallel": 1,
     "g:baseUrl": "http://localhost:8080"
