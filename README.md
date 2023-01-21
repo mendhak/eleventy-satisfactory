@@ -17,7 +17,20 @@ How to set the photo stream,
 How to create a standalone page,
 
 
-## Running it locally
+## Running it with Docker
+
+To serve the site in Docker, and watch for changes:
+
+```
+docker-compose up
+```
+
+This will do the npm install and npm start. 
+
+Then browse to http://localhost:8080/
+
+
+## Running it with Node
 
 Requires Node 18. First get all the dependencies. 
 
@@ -27,7 +40,7 @@ npm install
 
 ### Serve the site
 
-To serve the site: 
+To serve the site, and watch for changes: 
 
 ```
 npm run start
@@ -36,24 +49,19 @@ npm run start
 Then browse to http://localhost:8080/
 
 
-Or serve the site in Docker
+
+## Build the site
+
+
+To just build the site once (normally used for Github Actions): 
 
 ```
-docker-compose up
-```
-
-### Build the site
-
-
-To just build the site: 
-
-```
+npm install
 npm run build
 ```
 
 
-
-## Usage
+## Setup and usage
 
 ### Edit the metadata
 

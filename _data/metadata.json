@@ -4,8 +4,8 @@
   "pathPrefix": "/eleventy-mendhak-blog-theme/",
   "language": "en",
   "favicon": "/img/web.png",
-  "description": "Development notes, technical notes, and blog posts",
-  "tags": ["development, programming, science, technology"],
+  "description": "Blog theme for Eleventy with various new features",
+  "tags": ["eleventy", "blog", "theme", "template", "starter"],
   "homePageItems": 4,
   "feed": {
     "path": "/feed.xml"
@@ -15,7 +15,7 @@
   },
   "author": {
     "name": "mendhak",
-    "email": "youremailaddress@example.com",
+    "email": "",
     "url": "https://code.mendhak.com/"
   },
   "opengraph": {
