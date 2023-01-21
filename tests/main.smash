@@ -14,3 +14,7 @@ Open Firefox
             Navigate to {baseUrl}
 
                 Test Image Gallery page
+
+                    Navigate to {baseUrl}
+
+                        Test Draft Post Only Visible Locally

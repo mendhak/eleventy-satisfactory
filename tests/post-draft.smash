@@ -1,0 +1,9 @@
+* Test Draft Post Only Visible Locally
+
+    Click ['This draft post should only appear locally']
+
+        Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/a-draft-post/'
+
+            Navigate to 'https://code.mendhak.com/eleventy-mendhak-blog-theme/a-draft-post/'
+
+                Verify ['Content not found.'] is visible
