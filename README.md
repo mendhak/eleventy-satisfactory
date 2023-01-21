@@ -1,4 +1,5 @@
-# Mendhak's Eleventy Blog Theme [![Build and Publish Github Pages](https://github.com/mendhak/eleventy-mendhak-blog-theme/actions/workflows/staticsite.yml/badge.svg?branch=main)](https://github.com/mendhak/eleventy-mendhak-blog-theme/actions/workflows/staticsite.yml) [![Smashtests](https://github.com/mendhak/eleventy-mendhak-blog-theme/actions/workflows/smashtests.yml/badge.svg)](https://github.com/mendhak/eleventy-mendhak-blog-theme/actions/workflows/smashtests.yml)
+# Mendhak's Eleventy Blog Theme 
+[![Build and Publish Github Pages](https://github.com/mendhak/eleventy-mendhak-blog-theme/actions/workflows/staticsite.yml/badge.svg?branch=main)](https://github.com/mendhak/eleventy-mendhak-blog-theme/actions/workflows/staticsite.yml) [![Smashtests](https://github.com/mendhak/eleventy-mendhak-blog-theme/actions/workflows/smashtests.yml/badge.svg)](https://github.com/mendhak/eleventy-mendhak-blog-theme/actions/workflows/smashtests.yml)
 
 A blog theme I'm working on based on [11ty](https://github.com/11ty/eleventy).  I am planning to move over from Jekyll and minimal-mistakes, so I will need to build in some features first.
 
