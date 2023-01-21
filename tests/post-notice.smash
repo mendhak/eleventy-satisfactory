@@ -1,0 +1,5 @@
+* Test notice panels
+
+    Navigate to '{baseUrl}/eleventy-mendhak-blog-theme/post-notice/'
+
+        Verify '.notice.success' is visible

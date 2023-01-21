@@ -22,24 +22,13 @@ Open Firefox
 
     - Test specific pages directly
 
-        - Test Prism code blocks
+        Test Prism code blocks
 
-            Navigate to '{baseUrl}/eleventy-mendhak-blog-theme/post-with-code/'
+            Test notice panels
 
-                Verify 'pre.language-javascript' is visible
+                Test various headings
 
-                    - Test notice panels
+                    Test third party media page
 
-                        Navigate to '{baseUrl}/eleventy-mendhak-blog-theme/post-notice/'
-
-                            Verify '.notice.success' is visible
-
-                                Navigate to '{baseUrl}/eleventy-mendhak-blog-theme/post-with-various-headings/'
-
-                                    Verify 'h6' is visible
-
-                                        Navigate to '{baseUrl}/eleventy-mendhak-blog-theme/post-with-iframes-videos-third-party/'
-
-                                            Verify 'iframe[src="https://www.youtube.com/embed/9qOvG9KeJ6c"]' is visible
 
 
