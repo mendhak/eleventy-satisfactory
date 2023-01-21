@@ -12,7 +12,6 @@ My focus is on content first, and less on everything else (such as the author, s
 
 
 Pending some posts on: 
-How to set the date of a post, 
 How to set opengraph header, 
 How to set the bottom links, 
 How to set the photo stream, 
@@ -72,6 +71,7 @@ npm run build
 
 The posts go in the `posts` folder.  Drafts can go in the `drafts` folder and will only appear when running locally (`npm run start` or `docker-compose up`) but not when building (`npm run build`). 
 
+- [Set the date of a post](https://code.mendhak.com/eleventy-mendhak-blog-theme/set-date-of-post/)
 - [Add an image](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-with-an-image/) 
 - [Or an image gallery](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-with-a-gallery/)
 - [Link to another post or URL](https://code.mendhak.com/eleventy-mendhak-blog-theme/posting-links/)

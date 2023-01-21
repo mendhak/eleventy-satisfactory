@@ -1,5 +1,5 @@
 ---
-title: Set the date of a post
+title: How to set the date of a post
 ---
 
 When writing a new post, you can set the date of the post in a few different ways.  
@@ -14,7 +14,7 @@ The date can also be set in the page's frontmatter.
 
 ```
 ---
-title: Set the date of a post
+title: How to set the date of a post
 date: 2022-02-02
 ---
 ```
