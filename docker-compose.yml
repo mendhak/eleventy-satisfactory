@@ -2,6 +2,7 @@ version: "3"
 services:
   eleventy:
     image: node:18-slim
+    user: node
     volumes:
       - ${PWD}/node_modules
       - ${PWD}:/app
@@ -12,4 +13,4 @@ services:
     #   - DEBUG=Eleventy*
     ports:
       - 8080:8080
-    command: /bin/bash -c "npm install && npx eleventy --watch --serve"
+    command: /bin/bash -c "npm install && npm start"
