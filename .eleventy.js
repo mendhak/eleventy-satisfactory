@@ -126,13 +126,12 @@ module.exports = function (eleventyConfig) {
 
   // Shortcode for Github Repo Card
   let ghRepoCard = require('./_configs/githubrepocard.shortcode');
-  eleventyConfig.addNunjucksAsyncShortcode("githubrepocard", ghRepoCard);
+  eleventyConfig.addShortcode("githubrepocard", ghRepoCard);
 
   // The `gist` shortcode renders the gist's files as code blocks
   // For some reason calling the method directly isn't possible, I have to wrap it.
-  // This only works with Nunjucks because the fetch call inside is async.
   let gist = require('./_configs/gist.shortcode');
-  eleventyConfig.addNunjucksAsyncShortcode("gist", async (gistId) => gist(gistId, markdownLibrary));
+  eleventyConfig.addShortcode("gist", async (gistId) => gist(gistId, markdownLibrary));
 
 
 
