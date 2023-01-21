@@ -41,14 +41,7 @@ jobs:
           npx smashtest
 
       - name: Just checking
-        run: |
-            which firefox
-            which google-chrome
-            which chromium-browser
-            cat /etc/issue
-            cat /etc/os-release
-            pwd
-
+        run: /bin/bash -c "ps aux | grep -i node"
 
       - uses: actions/upload-artifact@v3
         with:
