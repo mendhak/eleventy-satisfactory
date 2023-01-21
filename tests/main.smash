@@ -2,12 +2,11 @@ Open Firefox
 
     Navigate to {baseUrl}
 
-        Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/'
+        Test Home Page
 
-            Click ["Mendhak's Eleventy Theme"]
+            Navigate to {baseUrl}
 
-                Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/'
-
+                Test Draft Post Only Visible Locally
 
         Test Images page
 
@@ -15,6 +14,4 @@ Open Firefox
 
                 Test Image Gallery page
 
-                    Navigate to {baseUrl}
 
-                        Test Draft Post Only Visible Locally
