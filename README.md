@@ -8,6 +8,9 @@ My focus is on content first, and less on everything else (such as the author, s
 
 - Add link rel sitemap link to sitemap.xml
 - robots.txt, also with `Sitemap: https://code.mendhak.com/sitemap.xml`
+- Can the simplelightbox code be moved to a Nunjucks template
+- Can the cssmin shortcode adjust the inline url() paths? 
+
 
 Pending some posts on: 
 How to set the date of a post, 
@@ -49,9 +52,7 @@ npm run start
 Then browse to http://localhost:8080/
 
 
-
 ## Build the site
-
 
 To just build the site once (normally used for Github Actions): 
 
@@ -61,25 +62,12 @@ npm run build
 ```
 
 
-## Setup and usage
+## How to use
 
-### Edit the metadata
+### Configuration
 
-Most of the configuration is in [`_data/metadata.json`](_data/metadata.json).  Some important ones: 
+- [Set up the metadata.json file](https://code.mendhak.com/eleventy-mendhak-blog-theme/edit-the-metadata/)
 
-`title`: Appears in the page header
-
-`url`: The full base URL of the blog, such as `https://example.com/` or `https://example/blog/`. It gets used in the feeds and sitemap. 
-
-`pathPrefix`: This is very important, it's the base path of the blog, after the domain.  `/` or `/blog`
-
-`homePageItems`: The number of items to list on the home page
-
-The rest of it should be self explanatory.  
-
-The `language`, `favicon`, `description`, `opengraph`, and `author` bits appear in the HTML head and Opengraph metadata. 
-
-`feed` and `jsonfeed` determine the path of the RSS feed and JSON feed. 
 
 ### Write a post
 
@@ -97,9 +85,7 @@ The posts go in the `posts` folder.  Drafts can go in the `drafts` folder and wi
 
 
 
-
-
-### Implementation Notes
+## Implementation Notes
 
 - `posts/` has the blog posts
 - The `css` and `img` directories in the input directory will be copied to the output folder (via `addPassthroughCopy()` in the `.eleventy.js` file).
