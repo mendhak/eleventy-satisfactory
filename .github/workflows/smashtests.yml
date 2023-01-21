@@ -24,11 +24,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - name: Set up Docker Layer caching
-        uses: jpribyl/action-docker-layer-caching@v0.1.1
-        # Ignore the failure of a step and avoid terminating the job.
-        continue-on-error: true
-
       - name: Use Node.js 18
         uses: actions/setup-node@v3
         with:

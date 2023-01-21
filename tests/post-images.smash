@@ -2,7 +2,7 @@
 
     Click ['Post with an image']
 
-        Verify at page 'http://localhost:8080/eleventy-mendhak-blog-theme/post-with-an-image/'
+        Verify at page 'http://example.com'
 
             On post {
                 props({
