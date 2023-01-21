@@ -3,7 +3,6 @@ name: Smashtests
 
 # Trigger this workflow only when the main branches, assets folder is modified.
 on:
-  workflow_call:  # allow this workflow to be called from other workflows
   push:
     paths-ignore:
       - '**/README.md'
