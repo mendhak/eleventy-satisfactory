@@ -40,8 +40,8 @@ jobs:
           cd tests
           npx smashtest
 
-      - name: Just checking
-        run: /bin/bash -c "ps aux | grep -i node"
+      - name: Kill the web server
+        run: /bin/bash -c "killall -9 node"
 
       - uses: actions/upload-artifact@v3
         with:
