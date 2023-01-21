@@ -8,7 +8,8 @@ module.exports = function (tokens, idx, options, env, self) {
   let token = tokens.find(t => t.type === 'link_open');
   let link = token?.attrGet('href');
 
-  if (link && (link.endsWith(".md") || link.includes(".md#"))) {
+  // Only process non external links that end in a markdown file name, maybe with a hash after it.
+  if (link && (!link.includes("://")) && (link.endsWith(".md") || link.includes(".md#"))) {
     let hash = '';
     let fileName = link;
     if(link.includes(".md#")){
@@ -19,8 +20,6 @@ module.exports = function (tokens, idx, options, env, self) {
         hash = `#${hash}`;
       }
     }
-    console.log(fileName);
-    console.log(hash);
     if (env.collections?.posts?.[0]) {
       // Match on the file name without extension, eg 'customary-lorem-ipsum', then use its URL in the rendered link.
       let found = env.collections.posts.find(p =>  path.parse(p.inputPath).name === path.parse(fileName).name);
