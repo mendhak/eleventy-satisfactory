@@ -23,6 +23,15 @@ Produces:
 
 [Link using Markdown path](./customary-lorem-ipsum.md)
 
+You can also link to an anchor in the target file. 
+
+```markdown
+[Link using Markdown path and heading anchor](./customary-lorem-ipsum.md#tincidunt-arcu-non-sodales)
+```
+
+Produces:
+
+[Link using Markdown path and heading anchor](./customary-lorem-ipsum.md#tincidunt-arcu-non-sodales)
 
 
 ### Link to another post by URL

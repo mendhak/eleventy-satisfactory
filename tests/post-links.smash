@@ -8,6 +8,12 @@
 
                 Go Back
 
-                    Click [a, 'Link using root-relative URL']
+                    Click [a, 'Link using Markdown path and heading anchor']
 
-                        Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/customary-lorem-ipsum/'
+                        Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/customary-lorem-ipsum/#tincidunt-arcu-non-sodales'
+
+                            Go Back
+
+                                Click [a, 'Link using root-relative URL']
+
+                                    Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/customary-lorem-ipsum/'
