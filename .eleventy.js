@@ -19,9 +19,9 @@ const UserConfig = require("@11ty/eleventy/src/UserConfig");
  * @param {UserConfig} eleventyConfig
  */
 module.exports = function (eleventyConfig) {
-  // Copy the `img`, and `fonts` folders to the output
+  // Copy the `images`, and `fonts` folders to the output
   // CSS isn't copied over, that's done inline via the base template.
-  eleventyConfig.addPassthroughCopy("img");
+  eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("fonts");
   eleventyConfig.addPassthroughCopy({ "node_modules/simplelightbox/dist/simple-lightbox.min.css": "simplelightbox/simple-lightbox.min.css" });
   eleventyConfig.addPassthroughCopy({ "node_modules/simplelightbox/dist/simple-lightbox.min.js": "simplelightbox/simple-lightbox.min.js" });

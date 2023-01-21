@@ -88,7 +88,7 @@ The posts go in the `posts` folder.  Drafts can go in the `drafts` folder and wi
 ## Implementation Notes
 
 - `posts/` has the blog posts
-- The `css` and `img` directories in the input directory will be copied to the output folder (via `addPassthroughCopy()` in the `.eleventy.js` file).
+- The `css` and `images` directories in the input directory will be copied to the output folder (via `addPassthroughCopy()` in the `.eleventy.js` file).
 - The blog post feed template is in `feed.njk`. This is also a good example of using a global data files in that it uses `_data/metadata.json`.
 - This example uses three layouts:
   - `_includes/layouts/base.njk`: the top level HTML structure

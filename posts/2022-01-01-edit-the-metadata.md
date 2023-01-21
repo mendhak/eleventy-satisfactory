@@ -53,7 +53,7 @@ Sets the HTML `lang` of the web page. It helps search engines and browsers.
 
 ### favicon
 
-Path to the favicon.  Add your own image to the `/img/` folder and update the location. 
+Path to the favicon.  Add your own image to the `/images/` folder and update the location. 
 
 
 ### feed.path
