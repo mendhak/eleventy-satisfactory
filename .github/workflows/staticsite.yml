@@ -8,7 +8,7 @@ on:
     paths-ignore:
       - '**/README.md'
       - '.github/workflows/smashtests.yml'
-      - '**/*.smash'
+      - 'tests/**'
 
 
   # Allows you to run this workflow manually from the Actions tab
