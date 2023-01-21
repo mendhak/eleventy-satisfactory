@@ -2,8 +2,8 @@
 title: Post with various headings
 description: From H1 to  H5 and some blockquotes
 tags: xmas
-header:
-  teaser: https://live.staticflickr.com/1932/30454355997_287063f84b_q.jpg
+opengraph:
+  image: https://live.staticflickr.com/1932/30454355997_287063f84b_q.jpg
 ---
 
 A few different heading levels from H2 to H6.  H1 is already used by the post title.  H2 to H4 get permalinks, but H5 and H6 don't.

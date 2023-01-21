@@ -34,7 +34,7 @@
   <meta property="og:title" content="{{ title or metadata.title }}"/>
   <meta property="og:url" content="{{ page.url | htmlBaseUrl(metadata.url) }}" />
   <meta property="og:description" content="{{ description or metadata.description }}" />
-  <meta property="og:image" content="{{ (header.teaser or metadata.opengraph.image) | htmlBaseUrl(metadata.url) }}" />
+  <meta property="og:image" content="{{ (opengraph.image or metadata.opengraph.image) | htmlBaseUrl(metadata.url) }}" />
   <meta property="og:type" content="{{ metadata.opengraph.type }}" />
   <meta property="og:article:author" content="{{ metadata.author.name }}" />
   <meta property="og:article:tag" content="{{ tags or metadata.tags }}" />

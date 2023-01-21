@@ -9,8 +9,8 @@ tags:
   - gallery
   - lightbox
 
-header:
-  teaser: /images/image001.jpg
+opengraph:
+  image: /images/image001.jpg
 
 ---
 

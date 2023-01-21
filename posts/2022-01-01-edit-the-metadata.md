@@ -2,7 +2,9 @@
 title: Set up the metadata.json 
 ---
 
-The [metadata.json file](https://github.com/mendhak/eleventy-mendhak-blog-theme/blob/main/_data/metadata.json) contains various configuration items that are needed to set up the blog. It controls things like title, URLs, tags, feeds, and some links. Starting with the important ones. 
+The [metadata.json file](https://github.com/mendhak/eleventy-mendhak-blog-theme/blob/main/_data/metadata.json) contains various configuration items that are needed to set up the blog. It controls things like title, URLs, tags, feeds, and some links. The `metadata.json` file is located under [`_data/metadata.json`](https://github.com/mendhak/eleventy-mendhak-blog-theme/blob/main/_data/metadata.json)
+
+Starting with the important ones. 
 
 ### title
 
@@ -74,7 +76,7 @@ The path where the JSON feed should be written to.
 
 Some opengraph settings. 
 
-`image`: The image to use when an OpenGraph preview is being made for a URL on this site.  If a blog post doesn't have a `header.teaser` frontmatter, then this default image gets used instead.  
+`image`: The image to use when an OpenGraph preview is being made for a URL on this site.  If a blog post doesn't have a `opengraph.image` frontmatter, then this default image gets used instead.  
 `type`: The OpenGraph content type of this content.  It's a blog so, it's an article.  
 
 
