@@ -40,6 +40,16 @@ jobs:
           cd tests
           npx smashtest
 
+      - name: Just checking
+        run: |
+        which firefox
+        which google-chrome
+        which chromium-browser
+        cat /etc/issue
+        cat /etc/os-release
+        pwd
+
+
       - uses: actions/upload-artifact@v3
         with:
           name: smashtest-report
