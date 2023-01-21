@@ -1,0 +1,20 @@
+* Test Home Page
+    Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/'
+
+        Click ["Mendhak's Eleventy Theme"]
+
+            Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/'
+
+                On Home Page {
+                    props({
+                        'Bottom Links': `ul.photostream a img`,
+                        'Photostream': `ul.bottomlinks li a`,
+                        'Simple CSS Link': `'Simple.css'`
+                    })
+                }
+
+                    Verify 'Bottom Links' is visible
+
+                        Verify 'Photostream' is visible
+
+                            Verify 'Simple CSS Link' is visible

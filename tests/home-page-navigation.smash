@@ -1,0 +1,11 @@
+* Test All Pages Navigation
+
+    Click ['More posts']
+
+        Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/posts/'
+
+            Click ['Next']
+
+                Verify ['Previous'] is visible
+
+                    Verify ['Next'] is visible
