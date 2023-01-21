@@ -3,7 +3,7 @@
   "url": "https://code.mendhak.com/eleventy-mendhak-blog-theme/",
   "pathPrefix": "/eleventy-mendhak-blog-theme/",
   "language": "en",
-  "favicon": "/images/favicon.png",
+  "favicon": "/assets/images/favicon.png",
   "description": "Blog theme for Eleventy with various new features",
   "tags": ["eleventy", "blog", "theme", "template", "starter"],
   "homePageItems": 4,
@@ -19,7 +19,7 @@
     "url": "https://code.mendhak.com/"
   },
   "opengraph": {
-    "image": "/images/article.png",
+    "image": "/assets/images/article.png",
     "type": "article"
   }
 }

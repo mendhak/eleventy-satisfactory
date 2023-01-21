@@ -19,16 +19,15 @@ const UserConfig = require("@11ty/eleventy/src/UserConfig");
  * @param {UserConfig} eleventyConfig
  */
 module.exports = function (eleventyConfig) {
-  // Copy the `images`, and `fonts` folders to the output
-  // CSS isn't copied over, that's done inline via the base template.
-  eleventyConfig.addPassthroughCopy("images");
+  // Copy the `assets` (includes css, images, fonts) folders to the output
+  eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("fonts");
   eleventyConfig.addPassthroughCopy({ "node_modules/simplelightbox/dist/simple-lightbox.min.css": "simplelightbox/simple-lightbox.min.css" });
   eleventyConfig.addPassthroughCopy({ "node_modules/simplelightbox/dist/simple-lightbox.min.js": "simplelightbox/simple-lightbox.min.js" });
 
   //Since moving the CSS inline eleventy no longer watches it (because it's not being copied to output), so I had to include it as a watch target.
-  eleventyConfig.addWatchTarget("./css/");
-  eleventyConfig.addWatchTarget("./js/");
+  eleventyConfig.addWatchTarget("assets/css/");
+  eleventyConfig.addWatchTarget("assets/js/");
 
   // Customize Markdown library and settings:
   let markdownLibrary = markdownIt({

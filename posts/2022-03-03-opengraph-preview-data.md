@@ -6,7 +6,7 @@ tags:
   - image
   - preview
 opengraph:
-  image: /images/image003.jpg
+  image: /assets/images/image003.jpg
 ---
 
 When sharing a URL, some sites will generate a preview with a title, description and image using certain [OpenGraph](https://ogp.me/) metadata. 
@@ -24,7 +24,7 @@ To override the preview image for a specific post, set the `opengraph.image` val
 ---
 title: How to set Opengraph preview image and metadata
 opengraph:
-  image: /images/image003.jpg
+  image: /assets/images/image003.jpg
 ---
 ```
 
@@ -41,7 +41,7 @@ tags:
   - image
   - preview
 opengraph:
-  image: /images/image003.jpg
+  image: /assets/images/image003.jpg
 ---
 ```
 

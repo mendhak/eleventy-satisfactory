@@ -97,7 +97,7 @@ function getHtml(repo){
 }
 
 function getCss(){
-  let css = new CleanCSS().minify(['css/github.repocard.css']).styles;
+  let css = new CleanCSS().minify(['assets/css/github.repocard.css']).styles;
   css = `<style>${css}</style>`;
   return css;
 }
