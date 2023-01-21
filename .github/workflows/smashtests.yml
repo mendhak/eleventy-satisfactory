@@ -41,7 +41,8 @@ jobs:
           npx smashtest
 
       - name: Kill the web server
-        run: /bin/bash -c "killall -9 node"
+        #run: /bin/bash -c "killall -9 node"
+        run: kill -9 $(lsof -t -i :8080)
 
       - uses: actions/upload-artifact@v3
         with:
