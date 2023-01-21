@@ -40,3 +40,7 @@ jobs:
           cd tests
           npx smashtest
 
+      - uses: actions/upload-artifact@v3
+        with:
+          name: smashtest-report
+          path: tests/smashtest
