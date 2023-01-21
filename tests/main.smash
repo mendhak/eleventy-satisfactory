@@ -1,16 +1,16 @@
 Open Firefox
 
-    Navigate to 'http://localhost:8080/'
+    Navigate to {baseUrl}
 
-        Verify at page 'http://localhost:8080/eleventy-mendhak-blog-theme/'
+        Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/'
 
             Click ["Mendhak's Eleventy Theme"]
 
-                Verify at page 'http://localhost:8080/eleventy-mendhak-blog-theme/'
+                Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/'
 
 
         Test Images page
 
-            Navigate to 'http://localhost:8080/'
+            Navigate to {baseUrl}
 
                 Test Image Gallery page

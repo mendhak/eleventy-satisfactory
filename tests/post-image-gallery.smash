@@ -2,7 +2,7 @@
 
     Click ['Post with an image gallery']
 
-        Verify at page 'http://localhost:8080/eleventy-mendhak-blog-theme/post-with-a-gallery/'
+        Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/post-with-a-gallery/'
 
             On post {
                 props({

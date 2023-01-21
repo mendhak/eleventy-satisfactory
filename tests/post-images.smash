@@ -2,7 +2,7 @@
 
     Click ['Post with an image']
 
-        Verify at page 'http://localhost:8080/eleventy-mendhak-blog-theme/post-with-an-image/'
+        Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/post-with-an-image/'
 
             On post {
                 props({
@@ -17,7 +17,7 @@
 
                         Verify 'Lightbox' is visible
 
-                            Verify at page 'http://localhost:8080/eleventy-mendhak-blog-theme/post-with-an-image/'
+                            Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/post-with-an-image/'
 
                                 Type '[Escape]' into 'Lightbox'
 
@@ -29,4 +29,4 @@
 
                                                 Verify 'Lightbox' is visible
 
-                                                    Verify at page 'http://localhost:8080/eleventy-mendhak-blog-theme/post-with-an-image/'
+                                                    Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/post-with-an-image/'
