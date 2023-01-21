@@ -6,7 +6,8 @@
     "build": "npx @11ty/eleventy",
     "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
     "start": "ELEVENTY_ENV=development npx @11ty/eleventy --serve --watch --incremental",
-    "debug": "DEBUG=* npx @11ty/eleventy"
+    "debug": "DEBUG=* npx @11ty/eleventy",
+    "test": "cd tests;npx smashtest"
   },
   "repository": {
     "type": "git",
@@ -36,5 +37,8 @@
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "smashtest": "^1.7.0"
   }
 }

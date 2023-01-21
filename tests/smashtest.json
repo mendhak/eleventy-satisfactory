@@ -1,0 +1,5 @@
+{
+    "headless": true,
+    "screenshots": true,
+    "max-parallel": 1
+}
