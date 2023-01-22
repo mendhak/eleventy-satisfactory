@@ -28,7 +28,7 @@ The Gist description appears first, followed by each file name and the contents 
 
 ### Github Gists with Markdown
 
-If a Github Gist file contains Markdown, it'll be rendered directly onto the page.
+If a Github Gist file [contains Markdown like this one](https://gist.github.com/mendhak/770907f98223b22b422be8b5e09803ab), it'll be rendered directly onto the page.
 
 {% gist "770907f98223b22b422be8b5e09803ab" %}
 
