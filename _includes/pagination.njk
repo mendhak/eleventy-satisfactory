@@ -1,7 +1,7 @@
 {# If a layout has `pagination` in its frontmatter, this partial layout can produce previous/next links.  #}
 <nav aria-labelledby="pagination">
   <ol>
-    {% if pagination.href.next %}<li><a href="{{ pagination.href.next }}">Next ➡</a></li>{% else %}{% endif %}
+    {% if pagination.href.next %}<li><a href="{{ pagination.href.next }}">{% if pagination.pageNumber == 0 %}More ➡{% else %}Next ➡{% endif %}</a></li>{% else %}{% endif %}
     {% if pagination.href.previous %}<li><a href="{{ pagination.href.previous }}">⬅ Previous</a></li>{% else %}{% endif %}
   </ol>
 </nav>

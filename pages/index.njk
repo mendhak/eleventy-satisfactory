@@ -1,10 +1,15 @@
 ---
-eleventyComputed: metadata.title
 layout: layouts/home.njk
-permalink: /
+pagination:
+  data: collections.posts
+  size: 5
+  alias: postslist
+  reverse: true
+
+permalink: /{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}
 ---
 
-{% set postslist = collections.posts | reverse | head(metadata.homePageItems) %}
+
 {% include "postslist.njk" %}
 
-<nav><ul><li><a href="/posts/">All posts ➡</a></li></ul></nav>
+{% include "pagination.njk" %}
