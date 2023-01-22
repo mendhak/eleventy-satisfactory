@@ -5,17 +5,6 @@ A blog theme I'm working on based on [11ty](https://github.com/11ty/eleventy).  
 
 My focus is on content first, and less on everything else (such as the author, social, tags, dates, about me, etc).
 
-## TODO
-
-- Can the simplelightbox code be moved to a Nunjucks template
-- Can the cssmin shortcode adjust the inline url() paths? 
-
-
-Pending some posts on: 
-
-How to set the bottom links, 
-How to set the photo stream, 
-How to create a standalone page,
 
 
 ## Running it with Docker
@@ -125,6 +114,12 @@ So far I've made the following modifications:
 * Ability to create draft posts
 * Robots.txt
 
+## TODO
+
+- Can the cssmin shortcode adjust the inline url() paths? 
+- Can the Github CSS be included just once, instead of once per card
+- Should the gallery behave the same for gallery + markdown and gallery + shortcode? 
+- In galleries should caption be below the images or only appear in the lightbox?
 
 ##  References
 
@@ -135,3 +130,4 @@ So far I've made the following modifications:
 - [Paired shortcode](https://www.markllobrera.com/posts/eleventy-paired-shortcodes-and-markdown-rendering/)
 - [Shortcode with image gallery](https://www.markllobrera.com/posts/eleventy-building-image-gallery-photoswipe/)
 - [Customizing markdown-it](https://publishing-project.rivendellweb.net/customizing-markdown-it/)
+
