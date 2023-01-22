@@ -59,6 +59,7 @@ npm test
 
 - [Set up the metadata.json file](https://code.mendhak.com/eleventy-mendhak-blog-theme/edit-the-metadata/)
 - [Set the footer links and images](https://code.mendhak.com/eleventy-mendhak-blog-theme/set-footer-links/)
+- Adjust the number of items shown per page, by editing the `navigation.size` property in [pages/index.njk](pages/index.njk). 
 
 ### Write a post
 
