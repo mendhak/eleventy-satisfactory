@@ -1,0 +1,19 @@
+/* Code blocks rendered by Prism - make it break out */
+/* https://archive.hankchizljaw.com/wrote/creating-a-full-bleed-css-utility/ */
+pre[class*='language-'],
+article > pre,
+article > figure
+{
+  width: 98vw;
+  max-width: 65rem;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+  /* border: 1px solid #ffffff1a; */
+  --border: #ffffff1a;
+}
+article > figure {
+  box-shadow: none;
+}
+

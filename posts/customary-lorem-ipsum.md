@@ -31,6 +31,19 @@ Orci nulla pellentesque dignissim enim sit. Tincidunt vitae semper quis lectus n
 
 Neque sodales ut etiam sit. Nibh venenatis cras sed felis eget velit aliquet sagittis id. Aliquet enim tortor at auctor urna nunc id. Turpis massa tincidunt dui ut ornare lectus sit amet. Id faucibus nisl tincidunt eget nullam non. Vitae ultricies leo integer malesuada nunc. Volutpat est velit egestas dui id ornare arcu odio ut. Cursus turpis massa tincidunt dui ut ornare. Neque aliquam vestibulum morbi blandit cursus risus at. Aenean vel elit scelerisque mauris. Quisque sagittis purus sit amet volutpat consequat mauris nunc congue. Nibh tortor id aliquet lectus proin. Sagittis nisl rhoncus mattis rhoncus urna neque.
 
+```java
+private void notifyByBroadcast(boolean loggingStarted) {
+        LOG.debug("Sending a custom broadcast");
+        String event = (loggingStarted) ? "started" : "stopped";
+        Intent sendIntent = new Intent();
+        sendIntent.setAction("com.mendhak.gpslogger.EVENT");
+        sendIntent.putExtra("gpsloggerevent", event);
+        sendIntent.putExtra("filename", session.getCurrentFormattedFileName());
+        sendIntent.putExtra("startedtimestamp", session.getStartTimeStamp());
+        sendBroadcast(sendIntent);
+}
+```
+
 Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Vel pharetra vel turpis nunc eget lorem dolor. Ut tellus elementum sagittis vitae et. Donec ultrices tincidunt arcu non sodales neque sodales. Dis parturient montes nascetur ridiculus mus mauris vitae. Pulvinar etiam non quam lacus suspendisse. Senectus et netus et malesuada. Sed viverra tellus in hac habitasse. Est sit amet facilisis magna etiam tempor orci eu lobortis. Ac turpis egestas integer eget. Euismod elementum nisi quis eleifend. Risus quis varius quam quisque id diam. Adipiscing elit ut aliquam purus sit amet. Tristique senectus et netus et malesuada fames ac. Fames ac turpis egestas sed tempus urna et pharetra. Vel pharetra vel turpis nunc eget lorem dolor. Augue eget arcu dictum varius duis at. Nibh tortor id aliquet lectus proin nibh.
 
 ## Bibendum ut tristique
