@@ -19,13 +19,14 @@ const UserConfig = require("@11ty/eleventy/src/UserConfig");
  * @param {UserConfig} eleventyConfig
  */
 module.exports = function (eleventyConfig) {
-  // Copy the `assets` (includes css, images, fonts) folders to the output
-  eleventyConfig.addPassthroughCopy("assets");
-  eleventyConfig.addPassthroughCopy("fonts");
+  // Copy the `assets` (includes images, fonts) folders to the output
+  eleventyConfig.addPassthroughCopy("assets/fonts");
+  eleventyConfig.addPassthroughCopy("assets/images");
   eleventyConfig.addPassthroughCopy({ "node_modules/simplelightbox/dist/simple-lightbox.min.css": "simplelightbox/simple-lightbox.min.css" });
   eleventyConfig.addPassthroughCopy({ "node_modules/simplelightbox/dist/simple-lightbox.min.js": "simplelightbox/simple-lightbox.min.js" });
 
   //Since moving the CSS inline eleventy no longer watches it (because it's not being copied to output), so I had to include it as a watch target.
+  //Adding it to addPassthroughCopy also means it's not watched.
   eleventyConfig.addWatchTarget("assets/css/");
   eleventyConfig.addWatchTarget("assets/js/");
 

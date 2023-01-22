@@ -1,5 +1,5 @@
 ---
-title: Post with some sample code
+title: Post with some code blocks
 description: This post contains sample code blocks
 date: 2023-01-05
 tags:

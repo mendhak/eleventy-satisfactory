@@ -1,5 +1,5 @@
 ---
-title: Post with various headings
+title: Showcase of various heading sizes
 description: From H1 to  H5 and some blockquotes
 tags: xmas
 opengraph:
