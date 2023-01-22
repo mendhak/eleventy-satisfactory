@@ -2,7 +2,9 @@
 /* https://archive.hankchizljaw.com/wrote/creating-a-full-bleed-css-utility/ */
 pre[class*='language-'],
 article > pre,
-article > figure
+article > figure,
+div.gallery,
+div.video
 {
   width: 98vw;
   max-width: 65rem;
@@ -13,7 +15,15 @@ article > figure
   /* border: 1px solid #ffffff1a; */
   --border: #ffffff1a;
 }
-article > figure {
+article > figure,
+div.gallery
+ {
   box-shadow: none;
 }
 
+/* Video */
+
+div.video > iframe {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
