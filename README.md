@@ -6,8 +6,9 @@ A blog theme I'm working on based on [11ty](https://github.com/11ty/eleventy).  
 My focus is on content first, and less on everything else (such as the author, social, tags, dates, about me, etc).
 
 
+## How to run the blog locally
 
-## Running it with Docker
+**Running it with Docker**
 
 To serve the site in Docker, and watch for changes:
 
@@ -20,15 +21,13 @@ This will do the npm install and npm start.
 Then browse to http://localhost:8080/
 
 
-## Running it with Node
+**Running it with Node**
 
 Requires Node 18. First get all the dependencies. 
 
 ```
 npm install
 ```
-
-### Serve the site
 
 To serve the site, and watch for changes: 
 
@@ -39,8 +38,6 @@ npm run start
 Then browse to http://localhost:8080/
 
 
-## Build the site
-
 To just build the site once (normally used for Github Actions): 
 
 ```
@@ -48,13 +45,20 @@ npm install
 npm run build
 ```
 
+**Running Smashtests**
 
-## How to use
+```
+docker-compose up -d
+npm test
+```
+
+
+## How to use this blog
 
 ### Configuration
 
 - [Set up the metadata.json file](https://code.mendhak.com/eleventy-mendhak-blog-theme/edit-the-metadata/)
-
+- [Set the footer links and images](https://code.mendhak.com/eleventy-mendhak-blog-theme/set-footer-links/)
 
 ### Write a post
 
@@ -67,26 +71,23 @@ The posts go in the `posts` folder.  Drafts can go in the `drafts` folder and wi
 - [Add a Github Gist](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-with-github-gists/)
 - [Add a Github Repo Card](https://code.mendhak.com/eleventy-mendhak-blog-theme/github-repo-card/)   
 - [Add a notice panel with info, warning, success, danger](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-notice/)
-- [Add a code sample](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-with-code/)
+- [Add a code block with syntax highlighting](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-with-code/)
 - [Add videos and audio](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-with-iframes-videos-third-party/)
 - [Set Opengraph preview image and metadata](https://code.mendhak.com/eleventy-mendhak-blog-theme/opengraph-preview-data/)
 
 
 
-## Implementation Notes
+## Notes
 
-- `posts/` has the blog posts
-- The `css` and `images` directories in the input directory will be copied to the output folder (via `addPassthroughCopy()` in the `.eleventy.js` file).
-- The blog post feed template is in `feed.njk`. This is also a good example of using a global data files in that it uses `_data/metadata.json`.
-- This example uses three layouts:
-  - `_includes/layouts/base.njk`: the top level HTML structure
-  - `_includes/layouts/home.njk`: the home page template (wrapped into `base.njk`)
-  - `_includes/layouts/post.njk`: the blog post template (wrapped into `base.njk`)
-- `_includes/postlist.njk` is a Nunjucks include and is a reusable component used to display a list of all the posts. `index.njk` has an example of how to use it.
+**TODO/Investigate**
 
-### My changes from the eleventy base starter
+- Can the cssmin shortcode adjust the inline url() paths? 
+- Can the Github CSS be included just once, instead of once per card
+- Should the gallery behave the same for gallery + markdown and gallery + shortcode? 
+- In galleries should caption be below the images or only appear in the lightbox?
 
-So far I've made the following modifications:
+**My changes from the eleventy base starter**
+
 
 * The CSS is now inline in the page, instead of a link to a stylesheet.
 * Make the headings permalinks
@@ -114,14 +115,9 @@ So far I've made the following modifications:
 * Ability to create draft posts
 * Robots.txt
 
-## TODO
 
-- Can the cssmin shortcode adjust the inline url() paths? 
-- Can the Github CSS be included just once, instead of once per card
-- Should the gallery behave the same for gallery + markdown and gallery + shortcode? 
-- In galleries should caption be below the images or only appear in the lightbox?
 
-##  References
+**References**
 
 - [Eleventy](https://www.11ty.dev/docs/)
 - [Simple.css](https://github.com/kevquirk/simple.css/wiki)

@@ -2,7 +2,7 @@
 
     Navigate to {baseUrl}
 
-        Click ['More posts']
+        Click ['All posts']
 
             Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/posts/'
 
