@@ -1,12 +1,7 @@
 ---
 layout: layouts/home.njk
-pagination:
-  data: collections.posts
-  size: 4
-  alias: postslist
-  reverse: true
-
-permalink: /{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}
+# Pagination is set in index.11tydata.js
+permalink: "/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}"
 ---
 
 

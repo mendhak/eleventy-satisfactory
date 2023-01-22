@@ -15,15 +15,19 @@ An [eleventy](https://11ty.dev) blog theme making use of [SimpleCSS](https://sim
 * Main CSS is inline in the page
 * Automatic light and dark mode
 * Simplified post layout with date at bottom
-* Simplified home page layout with post excerpts
+* Simplified home page layout
+* Adjust number of post listings
+* Post excerpts below post listings
 * Links, year, copyright, and photos in footer
 * Opengraph metadata for posts including preview image
-* No tags, no site navigation, no social
 * Code blocks rendered using Prism syntax highlighting
 * Notice boxes such as info, warning, success
 * Seamless gist integration as code blocks
 * Github repo cards generator
-* Draft posts
+* No tags listings, no site navigation, no social, no landing page
+* Draft posts appear locally
+* UI testing (for this repo)
+* Github Actions for publishing
 * Robots.txt
 * Favicon
 
@@ -32,9 +36,8 @@ An [eleventy](https://11ty.dev) blog theme making use of [SimpleCSS](https://sim
 ## How to run the blog locally
 
 **Running it with Docker**
-other
 
-This will do the npm install and npm start. 
+This will do the npm install and npm start together. 
 
 Then browse to http://localhost:8080/
 
@@ -75,9 +78,8 @@ npm test
 
 ### Configuration
 
-- [Set up the metadata.json file](https://code.mendhak.com/eleventy-mendhak-blog-theme/edit-the-metadata/)
+- [Set your values in the metadata.json file](https://code.mendhak.com/eleventy-mendhak-blog-theme/edit-the-metadata/)
 - [Set the footer links and images](https://code.mendhak.com/eleventy-mendhak-blog-theme/set-footer-links/)
-- Adjust the number of items shown per page, by editing the `pagination.size` property in [pages/index.njk](pages/index.njk). 
 
 ### Write a post
 
@@ -103,7 +105,6 @@ The posts go in the `posts` folder.  Drafts can go in the `drafts` folder and wi
 - Can the Github CSS be included just once, instead of once per card
 - Should the gallery behave the same for gallery + markdown and gallery + shortcode? 
 - In galleries should caption be below the images or only appear in the lightbox?
-- Can the pagination.size be set from a global data file? It doesn't seem possible at the moment. 
 - There isn't an easy way to give users the ability to [toggle light and dark mode](https://github.com/mendhak/eleventy-mendhak-blog-theme/issues/2)
 
 

@@ -46,6 +46,14 @@ This value gets used to construct and correct various URLs throughout all conten
 
 ## Optional, but useful
 
+### paginationSize
+
+How many post links should be shown per page. 
+
+{% notice "info" %}
+Current value: `{{ metadata.paginationSize }}`
+{% endnotice %}
+
 ### description
 
 Sets the site description in the HTML head's meta and OpenGraph descriptions, as well as the JSON and Atom feed. 
