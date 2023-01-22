@@ -59,7 +59,7 @@ npm test
 
 - [Set up the metadata.json file](https://code.mendhak.com/eleventy-mendhak-blog-theme/edit-the-metadata/)
 - [Set the footer links and images](https://code.mendhak.com/eleventy-mendhak-blog-theme/set-footer-links/)
-- Adjust the number of items shown per page, by editing the `navigation.size` property in [pages/index.njk](pages/index.njk). 
+- Adjust the number of items shown per page, by editing the `pagination.size` property in [pages/index.njk](pages/index.njk). 
 
 ### Write a post
 
@@ -86,6 +86,7 @@ The posts go in the `posts` folder.  Drafts can go in the `drafts` folder and wi
 - Can the Github CSS be included just once, instead of once per card
 - Should the gallery behave the same for gallery + markdown and gallery + shortcode? 
 - In galleries should caption be below the images or only appear in the lightbox?
+- Can the pagination.size be set from a global data file? It doesn't seem possible at the moment. 
 
 **My changes from the eleventy base starter**
 
