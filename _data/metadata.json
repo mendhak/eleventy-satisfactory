@@ -6,7 +6,6 @@
   "favicon": "/assets/images/favicon.png",
   "description": "Blog theme for Eleventy with various new features",
   "tags": ["eleventy", "blog", "theme", "template", "starter"],
-  "homePageItems": 4,
   "feed": {
     "path": "/feed.xml"
   },

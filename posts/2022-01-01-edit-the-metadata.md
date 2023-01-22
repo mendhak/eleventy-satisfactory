@@ -43,13 +43,6 @@ Current value: `{{ metadata.url }}`
 
 This value gets used to construct and correct various URLs throughout all content, such as images, links, stylesheets, etc.  
 
-### homePageItems
-
-The number of posts to show on the main page of the blog.  
-
-{% notice "info" %}
-Current value: `{{ metadata.homePageItems }}`
-{% endnotice %}
 
 ## Optional, but useful
 
