@@ -1,20 +1,38 @@
 # Mendhak's Eleventy Blog Theme 
 [![Build and Publish Github Pages](https://github.com/mendhak/eleventy-mendhak-blog-theme/actions/workflows/staticsite.yml/badge.svg?branch=main)](https://github.com/mendhak/eleventy-mendhak-blog-theme/actions/workflows/staticsite.yml) [![Smashtests](https://github.com/mendhak/eleventy-mendhak-blog-theme/actions/workflows/smashtests.yml/badge.svg)](https://github.com/mendhak/eleventy-mendhak-blog-theme/actions/workflows/smashtests.yml)
 
-A blog theme I'm working on based on [11ty](https://github.com/11ty/eleventy).  I am planning to move over from Jekyll and minimal-mistakes, so I will need to build in some features first.
+An [eleventy](https://11ty.dev) blog theme making use of [SimpleCSS](https://simplecss.org/), with inspiration from [Hylia](https://hylia.website) and [minimal-mistakes](https://mmistakes.github.io/minimal-mistakes/).  
 
-My focus is on content first, and less on everything else (such as the author, social, tags, dates, about me, etc).
+
+
+**Features**
+
+* My focus is mainly on content, and less on everything else (author, social, tags, etc).
+* Images using regular Markdown syntax are displayed with lightbox
+* Image gallery with captions
+* Link to a post's .md file is converted to final URL
+* Links and images paths automatically adjusted to match blog prefix
+* Main CSS is inline in the page
+* Automatic light and dark mode
+* Simplified post layout with date at bottom
+* Simplified home page layout with post excerpts
+* Links, year, copyright, and photos in footer
+* Opengraph metadata for posts including preview image
+* No tags, no site navigation, no social
+* Code blocks rendered using Prism syntax highlighting
+* Notice boxes such as info, warning, success
+* Seamless gist integration as code blocks
+* Github repo cards generator
+* Draft posts
+* Robots.txt
+* Favicon
+
 
 
 ## How to run the blog locally
 
 **Running it with Docker**
-
-To serve the site in Docker, and watch for changes:
-
-```
-docker-compose up
-```
+other
 
 This will do the npm install and npm start. 
 
@@ -67,15 +85,14 @@ The posts go in the `posts` folder.  Drafts can go in the `drafts` folder and wi
 
 - [Set the date of a post](https://code.mendhak.com/eleventy-mendhak-blog-theme/set-date-of-post/)
 - [Add an image](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-with-an-image/) 
-- [Or an image gallery](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-with-a-gallery/)
+- [Add an image gallery](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-with-a-gallery/)
 - [Link to another post or URL](https://code.mendhak.com/eleventy-mendhak-blog-theme/posting-links/)
-- [Add a Github Gist](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-with-github-gists/)
-- [Add a Github Repo Card](https://code.mendhak.com/eleventy-mendhak-blog-theme/github-repo-card/)   
 - [Add a notice panel with info, warning, success, danger](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-notice/)
 - [Add a code block with syntax highlighting](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-with-code/)
+- [Add a Github Gist](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-with-github-gists/)
+- [Add a Github Repo Card](https://code.mendhak.com/eleventy-mendhak-blog-theme/github-repo-card/)   
 - [Add videos and audio](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-with-iframes-videos-third-party/)
 - [Set Opengraph preview image and metadata](https://code.mendhak.com/eleventy-mendhak-blog-theme/opengraph-preview-data/)
-
 
 
 ## Notes
@@ -87,35 +104,7 @@ The posts go in the `posts` folder.  Drafts can go in the `drafts` folder and wi
 - Should the gallery behave the same for gallery + markdown and gallery + shortcode? 
 - In galleries should caption be below the images or only appear in the lightbox?
 - Can the pagination.size be set from a global data file? It doesn't seem possible at the moment. 
-
-**My changes from the eleventy base starter**
-
-
-* The CSS is now inline in the page, instead of a link to a stylesheet.
-* Make the headings permalinks
-* Some color changes and font changes to resemble Hylia: yellowish links and Lora font
-* Increase text size for readability, increase main body width
-* Smaller header at the top of the page
-* Simpler post list page with headings and shortened excerpts
-* Moved date to bottom of article
-* Removed tags
-* External links and photos in the footer
-* Removed site navigation, just use the 'external links'
-* Copyright in the footer
-* Opengraph tags generated for each page, including default image (see metadata.json)
-* Flatten post URL to top level
-* Favicon feature
-* Image is written as figure, and has lightbox.
-* Image galleries
-* Links are adjusted to include the blog prefix (/post-url or filename.md)
-* Change the code theme
-* Removed tag listing pages, tags only get used in the HTML metadata
-* Pagination on the page list and post list
-* Notice boxes like info, warning, success, etc.
-* A gist shortcode to add gist seamlessly as codeblocks on a page.
-* Github Repo Card shortcode. 
-* Ability to create draft posts
-* Robots.txt
+- There isn't an easy way to give users the ability to [toggle light and dark mode](https://github.com/mendhak/eleventy-mendhak-blog-theme/issues/2)
 
 
 

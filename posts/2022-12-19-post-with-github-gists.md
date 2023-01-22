@@ -1,5 +1,5 @@
 ---
-title: Post with Github Gists
+title: Post with seamless Github Gists
 description: Using shortcode to put Github Gists on the page
 tags:
   - eleventy
@@ -9,7 +9,7 @@ tags:
 
 ---
 
-Although it's possible to embed a gist using the shortcode that Github provides, it looks awful on dark mode.  This post makes use of the `gist` shortcode, which will render each file as a regular code block.
+Although it's possible to embed a gist using the shortcode that Github provides, it looks awful on dark mode.  This post makes use of the `gist` shortcode, which will render each file as a regular code block so that the Gist's contents look like any other blog content.
 
 
 ### Github Gists through shortcode
