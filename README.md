@@ -39,6 +39,10 @@ An [eleventy](https://11ty.dev) blog theme making use of [SimpleCSS](https://sim
 
 This will do the npm install and npm start together. 
 
+```
+docker-compose up
+```
+
 Then browse to http://localhost:8080/
 
 
