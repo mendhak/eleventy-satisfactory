@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-
+const nunjucks = require("nunjucks");
 
 /**
  * If the given post contains a figure shortcode or a markdown image, this function adds the SimpleLightbox JS and CSS so images are displayed with a lightbox.
@@ -12,18 +12,9 @@ module.exports = function getLightBoxIfNecessary(page){
   const str = fs.readFileSync(page.inputPath, 'utf8');
 
   if (str.includes('{% figure') || str.includes('![')) {
-    let jsPath = '/simplelightbox/simple-lightbox.min.js';
-    let cssPath = '/simplelightbox/simple-lightbox.min.css';
-    return `
-      <link rel="stylesheet" href="${cssPath}" />
-      <script src="${jsPath}"></script>
-
-      <script>
-          (function() {
-              var $gallery = new SimpleLightbox('figure a', {'overlayOpacity':0.6, 'uniqueImages': false});
-          })();
-      </script>
-      `;
+    nunjucks.configure({ trimBlocks: true, lstripBlocks: true });
+    let lightboxHtml = nunjucks.render('_includes/simplelightbox.njk');
+    return lightboxHtml;
   }
 
   return ``;
