@@ -6,7 +6,7 @@ tags:
   - iframe
   - videos
   - third-party
-
+fullBleedMedia: true
 
 ---
 
@@ -47,7 +47,7 @@ Similarly for Vimeo,
     frameborder="0" allow="autoplay; fullscreen; picture-in-picture" 
     allowfullscreen>
   </iframe>
-<div class="video">
+</div>
 ```
 
 Produces:
@@ -58,7 +58,7 @@ Produces:
     frameborder="0" allow="autoplay; fullscreen; picture-in-picture" 
     allowfullscreen>
   </iframe>
-<div class="video">
+</div>
 
 
 

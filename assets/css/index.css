@@ -258,3 +258,10 @@ nav :is(ol,ul) li {
 .gist td {
   all: initial;
 }
+
+/* Video */
+
+div.video > iframe {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}

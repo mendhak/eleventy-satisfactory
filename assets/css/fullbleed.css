@@ -21,9 +21,4 @@ div.gallery
   box-shadow: none;
 }
 
-/* Video */
 
-div.video > iframe {
-  aspect-ratio: 16 / 9;
-  width: 100%;
-}
