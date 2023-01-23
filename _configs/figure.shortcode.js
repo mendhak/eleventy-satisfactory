@@ -15,6 +15,10 @@ module.exports = function (image, caption, widthName, markdownLibrary) {
       break;
     case 'third':
       width = 'width: calc(33% - 0.5em);';
+      break;
+    case 'unconstrained':
+      width = 'max-width: unset';
+      break;
     default:
       break;
   }
@@ -25,6 +29,10 @@ module.exports = function (image, caption, widthName, markdownLibrary) {
   }
 
   let rendered = `<figure><a href="${image}"><img src="${image}" alt="${caption}" loading="lazy" style="${width}" /></a><figcaption>${captionMarkup}</figcaption></figure>`;
+  if(widthName==='unconstrained'){
+    //Since it's the image's 100% size anyway, there's no point in giving it a lightbox. Just wrap it in a figure tag, so it gets centered at least.
+    rendered = `<figure style="${width}"><img src="${image}" alt="${caption}" loading="lazy" /><figcaption>${captionMarkup}</figcaption></figure>`;
+  }
 
   return rendered;
 }

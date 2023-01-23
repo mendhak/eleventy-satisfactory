@@ -112,9 +112,9 @@ The posts go in the `posts` folder.  Drafts can go in the `drafts` folder and wi
 - In galleries should caption be below the images or only appear in the lightbox?
 - There isn't an easy way to give users the ability to [toggle light and dark mode](https://github.com/mendhak/eleventy-mendhak-blog-theme/issues/2)
 - Youtube/Vimeo shortcode to embed with div.video, to get the full bleed. 
-- A 'super' width argument for the `figure` shortcode which goes 100%... it basically unsets the max-width. 
-- A 'super' width argument for the video div too. 
-- A page about the fullBleedMedia property and 'super'
+- An 'unconstrained' width argument for the `figure` shortcode which goes 100%... it basically unsets the max-width. 
+- An 'unconstrained' width argument for the video div too. 
+- A page about the fullBleedMedia property and 'unconstrained'
 
 **References**
 

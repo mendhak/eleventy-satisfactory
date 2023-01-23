@@ -45,7 +45,7 @@ Here is the output:
 {% figure "/assets/images/image001.jpg", "Your **caption**" %}
 
 
-The image width can also be set to `half` or `third`.
+The image width can also be set to `half`, `third`, or `unconstrained`.
 
 
 ```
