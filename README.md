@@ -24,7 +24,7 @@ An [Eleventy](https://11ty.dev) blog theme making use of [SimpleCSS](https://sim
 * Notice boxes such as info, warning, success
 * Seamless gist integration as code blocks
 * Github repo cards generator
-* No tags listings, no site navigation, no social, no landing page
+* No tags listings, no site navigation, no social, no landing page, no analytics
 * Draft posts appear locally
 * UI testing (for this repo)
 * Github Actions for publishing
@@ -113,7 +113,7 @@ The posts go in the `posts` folder.  Drafts can go in the `drafts` folder and wi
 - Should the gallery behave the same for gallery + markdown and gallery + shortcode? 
 - In galleries should caption be below the images or only appear in the lightbox?
 - There isn't an easy way to give users the ability to [toggle light and dark mode](https://github.com/mendhak/eleventy-mendhak-blog-theme/issues/2)
-
+- I need some buttons, should I just use the button HTML
 
 **References**
 

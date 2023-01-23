@@ -15,7 +15,11 @@ Faucibus nisl tincidunt eget nullam non nisi. Tristique nulla aliquet enim torto
 
 ![lorem photum](https://live.staticflickr.com/397/31445325431_981b759c23_h.jpg)
 
-Laoreet non curabitur gravida arcu. Neque sodales ut etiam sit amet. Vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra. Ornare arcu dui vivamus arcu. Et leo duis ut diam quam nulla porttitor massa id. Diam sit amet nisl suscipit adipiscing bibendum est. Porttitor massa id neque aliquam vestibulum morbi blandit. Tellus integer feugiat scelerisque varius morbi enim nunc faucibus. Dui ut ornare lectus sit amet est placerat in egestas. Vel elit scelerisque mauris pellentesque pulvinar. Odio tempor orci dapibus ultrices in iaculis nunc sed augue. Aenean pharetra magna ac placerat vestibulum lectus mauris. Sit amet justo donec enim diam vulputate ut pharetra sit. Mi proin sed libero enim sed faucibus. Tortor at auctor urna nunc id cursus metus. In pellentesque massa placerat duis ultricies. Semper feugiat nibh sed pulvinar.
+Laoreet non curabitur gravida arcu. Neque sodales ut etiam sit amet. Vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra. Ornare arcu dui vivamus arcu. Et leo duis ut diam quam nulla porttitor massa id. Diam sit amet nisl suscipit adipiscing bibendum est. Porttitor massa id neque aliquam vestibulum morbi blandit. Tellus integer feugiat scelerisque varius morbi enim nunc faucibus. Dui ut ornare lectus sit amet est placerat in egestas. Vel elit scelerisque mauris pellentesque pulvinar. 
+
+<aside>Odio tempor orci dapibus ultrices in iaculis nunc sed augue. Aenean pharetra magna ac placerat vestibulum lectus mauris.</aside>
+
+Sit amet justo donec enim diam vulputate ut pharetra sit. Mi proin sed libero enim sed faucibus. Tortor at auctor urna nunc id cursus metus. In pellentesque massa placerat duis ultricies. Semper feugiat nibh sed pulvinar.
 
 Amet purus gravida quis blandit turpis cursus in hac. Natoque penatibus et magnis dis parturient montes nascetur. Tortor dignissim convallis aenean et tortor at. Eget est lorem ipsum dolor. Lectus nulla at volutpat diam ut venenatis tellus. Ultrices neque ornare aenean euismod elementum nisi quis eleifend. At tellus at urna condimentum mattis pellentesque id. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Etiam tempor orci eu lobortis elementum nibh tellus. Integer enim neque volutpat ac.
 
@@ -25,30 +29,27 @@ Leo urna molestie at elementum eu facilisis. Vestibulum sed arcu non odio. Torto
 
 > Mauris a diam maecenas sed enim ut sem viverra. Suspendisse faucibus interdum posuere lorem ipsum dolor sit amet. Cursus eget nunc scelerisque viverra. Id velit ut tortor pretium viverra suspendisse. Ultrices eros in cursus turpis. Quis hendrerit dolor magna eget est lorem ipsum dolor. Diam in arcu cursus euismod quis. Vitae suscipit tellus mauris a diam maecenas sed. Purus non enim praesent elementum facilisis leo vel. Porttitor massa id neque aliquam. Lectus urna duis convallis convallis tellus. Nunc consequat interdum varius sit amet mattis vulputate enim.
 
-Orci nulla pellentesque dignissim enim sit. Tincidunt vitae semper quis lectus nulla at volutpat. Molestie at elementum eu facilisis. In aliquam sem fringilla ut morbi tincidunt augue interdum. Dui nunc mattis enim ut tellus elementum. Ultricies lacus sed turpis tincidunt id aliquet risus feugiat in. Enim diam vulputate ut pharetra sit amet aliquam id. Volutpat est velit egestas dui id ornare. Eu mi bibendum neque egestas congue. Cras sed felis eget velit. Integer quis auctor elit sed vulputate mi sit amet mauris. Gravida rutrum quisque non tellus orci. Rutrum quisque non tellus orci ac auctor.
+Orci nulla pellentesque dignissim enim sit. Tincidunt vitae semper quis lectus nulla at volutpat. Molestie at elementum eu facilisis. In aliquam sem fringilla ut morbi tincidunt augue interdum. Dui nunc mattis enim ut tellus elementum. Ultricies lacus sed turpis tincidunt id aliquet risus feugiat in. Enim diam vulputate ut pharetra sit amet aliquam id. Volutpat est velit egestas dui id ornare. Eu mi bibendum neque egestas congue. Cras sed felis eget velit. Integer quis auctor elit sed vulputate mi sit amet mauris. Gravida rutrum quisque non tellus orci. Rutrum quisque non tellus orci ac <button>auctor</button>.
 
 ### Tincidunt arcu non sodales
 
 Neque sodales ut etiam sit. Nibh venenatis cras sed felis eget velit aliquet sagittis id. Aliquet enim tortor at auctor urna nunc id. Turpis massa tincidunt dui ut ornare lectus sit amet. Id faucibus nisl tincidunt eget nullam non. Vitae ultricies leo integer malesuada nunc. Volutpat est velit egestas dui id ornare arcu odio ut. Cursus turpis massa tincidunt dui ut ornare. Neque aliquam vestibulum morbi blandit cursus risus at. Aenean vel elit scelerisque mauris. Quisque sagittis purus sit amet volutpat consequat mauris nunc congue. Nibh tortor id aliquet lectus proin. Sagittis nisl rhoncus mattis rhoncus urna neque.
 
 ```java
-private void notifyByBroadcast(boolean loggingStarted) {
-        LOG.debug("Sending a custom broadcast");
-        String event = (loggingStarted) ? "started" : "stopped";
+private void loremFunction(boolean ipsum) {
+        LOG.debug("Lorem ipsum begins");
         Intent sendIntent = new Intent();
-        sendIntent.setAction("com.mendhak.gpslogger.EVENT");
-        sendIntent.putExtra("gpsloggerevent", event);
-        sendIntent.putExtra("filename", session.getCurrentFormattedFileName());
-        sendIntent.putExtra("startedtimestamp", session.getStartTimeStamp());
-        sendBroadcast(sendIntent);
+        sendIntent.putExtra("lorem ipsum dolor", "sit amet");
 }
 ```
 
-Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Vel pharetra vel turpis nunc eget lorem dolor. Ut tellus elementum sagittis vitae et. Donec ultrices tincidunt arcu non sodales neque sodales. Dis parturient montes nascetur ridiculus mus mauris vitae. Pulvinar etiam non quam lacus suspendisse. Senectus et netus et malesuada. Sed viverra tellus in hac habitasse. Est sit amet facilisis magna etiam tempor orci eu lobortis. Ac turpis egestas integer eget. Euismod elementum nisi quis eleifend. Risus quis varius quam quisque id diam. Adipiscing elit ut aliquam purus sit amet. Tristique senectus et netus et malesuada fames ac. Fames ac turpis egestas sed tempus urna et pharetra. Vel pharetra vel turpis nunc eget lorem dolor. Augue eget arcu dictum varius duis at. Nibh tortor id aliquet lectus proin nibh.
+Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Vel pharetra vel turpis nunc eget lorem dolor. Ut tellus elementum sagittis vitae et. Donec ultrices tincidunt arcu non sodales neque sodales. Dis parturient montes nascetur ridiculus <kbd>mus</kbd> mauris vitae. Pulvinar etiam non quam lacus suspendisse. Senectus et netus et malesuada. Sed viverra tellus in hac habitasse. Est sit amet facilisis magna etiam tempor orci eu lobortis. 
+
+<section>Ac turpis egestas integer eget. Euismod elementum nisi quis eleifend. Risus quis varius quam quisque id diam. Adipiscing elit ut aliquam purus sit amet. Tristique senectus et netus et malesuada fames ac. Fames ac turpis egestas sed tempus urna et pharetra. Vel pharetra vel turpis nunc eget lorem dolor. Augue eget arcu dictum varius duis at. Nibh tortor id aliquet lectus proin nibh.</section>
 
 ## Bibendum ut tristique
 
-Et egestas quis ipsum suspendisse ultrices gravida. Est placerat in egestas erat imperdiet. Imperdiet dui accumsan sit amet nulla facilisi. Quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Aliquet risus feugiat in ante metus dictum at tempor. Vel pharetra vel turpis nunc eget lorem. Suscipit tellus mauris a diam maecenas. Volutpat commodo sed egestas egestas fringilla phasellus faucibus. Justo eget magna fermentum iaculis. Sed euismod nisi porta lorem mollis aliquam ut porttitor leo. Gravida rutrum quisque non tellus orci. Cursus metus aliquam eleifend mi in. Vulputate mi sit amet mauris commodo.
+Et egestas quis ipsum suspendisse ultrices gravida. <mark>Est placerat in egestas</mark> erat imperdiet. Imperdiet dui accumsan sit amet nulla facilisi. Quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Aliquet risus feugiat in ante metus dictum at tempor. Vel pharetra vel turpis nunc eget lorem. Suscipit tellus mauris a diam maecenas. Volutpat commodo sed egestas egestas fringilla phasellus faucibus. Justo eget magna fermentum iaculis. Sed euismod nisi porta lorem mollis aliquam ut porttitor leo. Gravida rutrum quisque non tellus orci. Cursus metus aliquam eleifend mi in. Vulputate mi sit amet mauris commodo.
 
 Arcu odio ut sem nulla pharetra diam sit amet. Ipsum faucibus vitae aliquet nec ullamcorper sit. At imperdiet dui accumsan sit amet nulla facilisi. In nibh mauris cursus mattis molestie a iaculis at erat. Suspendisse in est ante in nibh. Fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Elit duis tristique sollicitudin nibh. Sagittis nisl rhoncus mattis rhoncus urna neque. Sit amet volutpat consequat mauris nunc. Eget nullam non nisi est sit amet. Et leo duis ut diam quam. Tincidunt arcu non sodales neque sodales ut. Auctor elit sed vulputate mi sit amet. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus. Cras adipiscing enim eu turpis. Placerat in egestas erat imperdiet. Egestas tellus rutrum tellus pellentesque eu tincidunt tortor.
 
