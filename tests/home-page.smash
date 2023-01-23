@@ -10,8 +10,8 @@
 
                     On Home Page {
                         props({
-                            'Bottom Links': `ul.photostream a img`,
-                            'Photostream': `ul.bottomlinks li a`,
+                            'Bottom Links': `ul.bottomlinks li a`,
+                            'Photostream': `ul.photostream a img`,
                             'Simple CSS Link': `'Simple.css'`
                         })
                     }
