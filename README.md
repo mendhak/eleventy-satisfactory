@@ -28,7 +28,8 @@ An [Eleventy](https://11ty.dev) blog theme making use of [SimpleCSS](https://sim
 * Draft posts appear locally
 * UI testing (for this repo)
 * Github Actions for publishing
-* Full bleed CSS on code blocks, figures, to make it extra-wide and stand out from the text
+* Extra wide images, videos and code blocks to make it extra-wide and stand out from the text
+* Full width images and videos
 * Robots.txt
 * Favicon
 
