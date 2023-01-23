@@ -34,7 +34,6 @@
 
 .github-repo-card svg {
   fill: var(--gh-color);
-  vertical-align: top;
 }
 
 .github-repo-card .d-flex {
