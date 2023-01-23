@@ -36,7 +36,6 @@ module.exports = function (image, caption, widthName, useLightbox, markdownLibra
   }
 
   let rendered = `<figure>${linkOpen}<img src="${image}" alt="${caption}" loading="lazy" style="${width}" />${linkClose}<figcaption>${captionMarkup}</figcaption></figure>`;
-  console.log(rendered);
   if(widthName==='unconstrained'){
     //Since it's the image's 100% size anyway, there's no point in giving it a lightbox. Just wrap it in a figure tag, so it gets centered at least.
     rendered = `<figure style="${width}"><img src="${image}" alt="${caption}" loading="lazy" /><figcaption>${captionMarkup}</figcaption></figure>`;
