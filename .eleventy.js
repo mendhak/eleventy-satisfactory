@@ -117,6 +117,10 @@ module.exports = function (eleventyConfig) {
   let gallery = require('./_configs/gallery.shortcode');
   eleventyConfig.addPairedShortcode("gallery", (data) => gallery(data, markdownLibrary));
 
+  // The `video` shortcode gets a YouTube video and displays it
+  let video = require('./_configs/video.shortcode');
+  eleventyConfig.addShortcode("video", video);
+
   // Generate excerpt from first paragraph
   let excerpt = require('./_configs/excerpt.shortcode')
   eleventyConfig.addShortcode("excerpt", excerpt);
