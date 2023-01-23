@@ -73,9 +73,26 @@ Produces:
 {% figure "/assets/images/image001.jpg", "", "", false %}
 
 
+### Unconstrained full width image
+
+The `unconstrained` width option will let the image render to its full width, across the entire page.  The lightbox is disabled if the width is set to unconstrained. 
+
+```
+{% raw %}{% figure "https://live.staticflickr.com/65535/49241129673_0f0d5f2751_4k.jpg", 
+          "Photo credit [mendhak](https://www.flickr.com/photos/mendhak/49241129673/)", 
+          "unconstrained" %}{% endraw %}
+```
+
+Produces: 
+
+{% figure "https://live.staticflickr.com/65535/49241129673_0f0d5f2751_4k.jpg", 
+          "Photo credit [mendhak](https://www.flickr.com/photos/mendhak/49241129673/)", 
+          "unconstrained" %}
+
+
 ## Straight up HTML
 
-Straight up HTML can be used in Markdown.  In this example no lightbox is produced.
+HTML can be directly used in Markdown.  In this example no lightbox is produced.
 
 ```html
 {% raw %}<figure>
