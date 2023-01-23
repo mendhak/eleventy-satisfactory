@@ -1,5 +1,5 @@
 ---
-title: How to post a link to another post or external site
+title: How to post links to another post or an external site
 description: Various ways to post links to markdown files, relative URLs or absolute URLs
 date: 2022-03-01
 tags:

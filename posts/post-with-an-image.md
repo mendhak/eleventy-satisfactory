@@ -1,5 +1,5 @@
 ---
-title: Post with an image
+title: Post with various images
 description: There are different ways to post images!
 tags:
   - eleventy

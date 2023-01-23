@@ -1,5 +1,5 @@
 ---
-title: Post with an image gallery
+title: Post with image galleries
 description: This post contains an image gallery in Markdown as well as shortcodes.
 tags:
   - eleventy

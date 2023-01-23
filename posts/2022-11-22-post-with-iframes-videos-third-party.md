@@ -1,5 +1,5 @@
 ---
-title: Post with some videos, audio, third party media
+title: Post with some videos, audio, and other media
 description: This post contains sample videos using iframe
 tags:
   - eleventy

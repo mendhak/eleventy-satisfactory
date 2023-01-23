@@ -1,5 +1,6 @@
 ---
 title: Set up the metadata.json 
+description: Setting up and configuring this theme. 
 ---
 
 The [metadata.json file](https://github.com/mendhak/eleventy-mendhak-blog-theme/blob/main/_data/metadata.json) contains various configuration items that are needed to set up the blog. It controls things like title, URLs, tags, feeds, and some links. The `metadata.json` file is located under [`_data/metadata.json`](https://github.com/mendhak/eleventy-mendhak-blog-theme/blob/main/_data/metadata.json)

@@ -1,5 +1,5 @@
 ---
-title: Post with a Github Repo Card
+title: Post with Github Repo Cards
 description: Widget to showcase a single repo
 
 ---
