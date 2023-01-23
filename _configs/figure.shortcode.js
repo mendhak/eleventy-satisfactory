@@ -6,7 +6,7 @@ const path = require("path");
  * But I'll keep this around in case the other way ever breaks in the future
  * Plus, this has the 'width' flexibility, and maybe more future features.
  */
-module.exports = function (image, caption, widthName, markdownLibrary) {
+module.exports = function (image, caption, widthName, useLightbox, markdownLibrary) {
 
   let width = '';
   switch (widthName) {
@@ -24,11 +24,19 @@ module.exports = function (image, caption, widthName, markdownLibrary) {
   }
 
   let captionMarkup = "";
+  let linkOpen = "", linkClose = "";
   if (caption !== undefined && caption !== "") {
     captionMarkup = markdownLibrary.renderInline(caption);
   }
 
-  let rendered = `<figure><a href="${image}"><img src="${image}" alt="${caption}" loading="lazy" style="${width}" /></a><figcaption>${captionMarkup}</figcaption></figure>`;
+  if(useLightbox){
+    // We've configure simplelightbox to render if there's a `figure > a`.
+    linkOpen = `<a href="${image}">`;
+    linkClose = `</a>`;
+  }
+
+  let rendered = `<figure>${linkOpen}<img src="${image}" alt="${caption}" loading="lazy" style="${width}" />${linkClose}<figcaption>${captionMarkup}</figcaption></figure>`;
+  console.log(rendered);
   if(widthName==='unconstrained'){
     //Since it's the image's 100% size anyway, there's no point in giving it a lightbox. Just wrap it in a figure tag, so it gets centered at least.
     rendered = `<figure style="${width}"><img src="${image}" alt="${caption}" loading="lazy" /><figcaption>${captionMarkup}</figcaption></figure>`;

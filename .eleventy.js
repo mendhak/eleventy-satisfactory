@@ -106,7 +106,7 @@ module.exports = function (eleventyConfig) {
   // But I'll keep this around in case the other way ever breaks in the future
   // Plus, this has the 'width' flexibility, and maybe more future features.
   let figure = require('./_configs/figure.shortcode');
-  eleventyConfig.addShortcode("figure", (image, caption, widthName) => figure(image, caption, widthName, markdownLibrary));
+  eleventyConfig.addShortcode("figure", (image, caption, widthName, useLightbox=true) => figure(image, caption, widthName, useLightbox, markdownLibrary));
 
   // If the post contains images, then add the Lightbox JS/CSS and render lightboxes for it.
   // Since it needs access to the `page` object, we can't use arrow notation here.
