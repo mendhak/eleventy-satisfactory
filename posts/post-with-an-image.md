@@ -49,7 +49,7 @@ Here is the output:
 
 ### Width options
 
-The image width can also be set to `half`, `third`, or `unconstrained`.  It's the third argument to pass to the shortcode. 
+The image width can also be set to `default`, `half`, `third`, or `unconstrained`.  It's the third argument to pass to the shortcode. 
 
 
 ```
