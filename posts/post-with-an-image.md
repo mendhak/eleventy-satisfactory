@@ -32,7 +32,9 @@ Which results in:
 
 ## Using the `figure` shortcode
 
-The `figure` shortcode is similar to the above, but it has some extra features. It produces a figure with an image, and a figcaption that supports Markdown.  Clicking the image displays it in a lightbox.
+The `figure` shortcode is similar to the above, but it has some extra features.  
+It produces a figure with an image, and a figcaption that supports Markdown.  
+There are some width options, and the lightbox can be disabled.
 
 Here is the code:
 
@@ -45,7 +47,7 @@ Here is the output:
 {% figure "/assets/images/image001.jpg", "Your **caption**" %}
 
 
-### `figure` with widths
+### Width options
 
 The image width can also be set to `half`, `third`, or `unconstrained`.  It's the third argument to pass to the shortcode. 
 
@@ -75,7 +77,7 @@ Produces:
 
 Straight up HTML can be used in Markdown.  In this example no lightbox is produced.
 
-```
+```html
 {% raw %}<figure>
   <img src="/assets/images/image002.jpg" alt="Image served using HTML">
   <figcaption>
@@ -100,9 +102,11 @@ Which results in:
 Adding a hyperlink to the image will make it appear in a lightbox.
 
 
-```
+```html
 {% raw %}<figure>
-  <a href="/assets/images/image002.jpg"><img src="/assets/images/image002.jpg" alt="Image served using HTML"></a>
+  <a href="/assets/images/image002.jpg">
+    <img src="/assets/images/image002.jpg" alt="Image served using HTML">
+  </a>
   <figcaption>
     An image served using HTML figure and figcaption
   </figcaption>
@@ -112,7 +116,9 @@ Adding a hyperlink to the image will make it appear in a lightbox.
 Which results in:
 
 <figure>
-  <a href="/assets/images/image002.jpg"><img src="/assets/images/image002.jpg" alt="Image served using HTML"></a>
+  <a href="/assets/images/image002.jpg">
+    <img src="/assets/images/image002.jpg" alt="Image served using HTML">
+  </a>
   <figcaption>
     An image served using HTML figure and figcaption
   </figcaption>
@@ -122,6 +128,12 @@ Which results in:
 ### Standalone `<img>`
 
 Using the `<img>` HTML tag, the image is shown as-is, no lightbox, no center alignment. 
+
+```html
+{% raw %}<img src="/assets/images/image002.jpg" alt="Image served using HTML">{% endraw %}
+```
+
+Produces:
 
 <img src="/assets/images/image002.jpg" alt="Image served using HTML">
 
