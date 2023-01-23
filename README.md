@@ -30,7 +30,7 @@ An [Eleventy](https://11ty.dev) blog theme making use of [SimpleCSS](https://sim
 * Github Actions for publishing
 * Extra wide images, videos and code blocks to make it extra-wide and stand out from the text
 * Full width images and videos
-* Robots.txt
+* Robots.txt, .well-known folder
 * Favicon
 
 

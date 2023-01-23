@@ -15,3 +15,7 @@
                             Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/feed.json'
 
                                 Verify ['https://code.mendhak.com/eleventy-mendhak-blog-theme/feed.json'] is visible
+
+                                    Navigate to '{baseUrl}/eleventy-mendhak-blog-theme/.well-known/example.json'
+
+                                        Verify ['world'] is visible

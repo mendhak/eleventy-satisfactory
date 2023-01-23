@@ -22,6 +22,7 @@ module.exports = function (eleventyConfig) {
   // Copy the `assets` (includes images, fonts) folders to the output
   eleventyConfig.addPassthroughCopy("assets/fonts");
   eleventyConfig.addPassthroughCopy("assets/images");
+  eleventyConfig.addPassthroughCopy({"assets/.well-known": ".well-known"});
   eleventyConfig.addPassthroughCopy({ "node_modules/simplelightbox/dist/simple-lightbox.min.css": "simplelightbox/simple-lightbox.min.css" });
   eleventyConfig.addPassthroughCopy({ "node_modules/simplelightbox/dist/simple-lightbox.min.js": "simplelightbox/simple-lightbox.min.js" });
 
