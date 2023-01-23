@@ -99,6 +99,7 @@ The posts go in the `posts` folder.  Drafts can go in the `drafts` folder and wi
 - [Add a Github Gist](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-with-github-gists/)
 - [Add a Github Repo Card](https://code.mendhak.com/eleventy-mendhak-blog-theme/github-repo-card/)   
 - [Add videos and audio](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-with-iframes-videos-third-party/)
+- [Controlling extra-wide images, videos, code blocks](https://code.mendhak.com/eleventy-mendhak-blog-theme/extra-wide-full-width-images-videos/)
 - [Set Opengraph preview image and metadata](https://code.mendhak.com/eleventy-mendhak-blog-theme/opengraph-preview-data/)
 
 
