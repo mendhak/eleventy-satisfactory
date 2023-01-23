@@ -6,7 +6,7 @@ tags:
   - iframe
   - videos
   - third-party
-fullBleedMedia: true
+extraWideMedia: true
 
 ---
 

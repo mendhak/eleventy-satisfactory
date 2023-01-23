@@ -16,7 +16,8 @@ div.video
   --border: #ffffff1a;
 }
 article > figure,
-div.gallery
+div.gallery,
+div.video
  {
   box-shadow: none;
 }

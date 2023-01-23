@@ -1,5 +1,6 @@
 ---
 title: Set footer images and links
+extraWideMedia: false
 ---
 
 How to set the links in the footer as well as the small thumbnails that appear. 
