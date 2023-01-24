@@ -41,13 +41,32 @@
   <meta property="og:image" content="{{ (opengraph.image or metadata.opengraph.image) | htmlBaseUrl(metadata.url) }}" />
   <meta property="og:type" content="{{ metadata.opengraph.type }}" />
   <meta property="og:article:author" content="{{ metadata.author.name }}" />
-  <meta property="og:article:tag" content="{{ tags or metadata.tags }}" />
+  <meta property="og:article:tag" content="{{ (tags or metadata.tags) | filterTagList }}" />
   <meta name="description" content="{{ description or metadata.description }}">
-  <meta name="keywords" content="{{ tags or metadata.tags | filterTagList }}">
+  <meta name="keywords" content="{{ (tags or metadata.tags) | filterTagList }}">
 
   <meta name="generator" content="{{ eleventy.generator }}">
 
   <link href="{{ metadata.favicon }}" rel="icon" type="image/x-icon" />
+
+  {% if includeLdJson %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{ title or metadata.title }}",
+    "description": "{{ description or metadata.description }}",
+    "image": "{{ (opengraph.image or metadata.opengraph.image) | htmlBaseUrl(metadata.url) }}",
+    "keywords": "{{ (tags or metadata.tags) | filterTagList }}",
+    "url": "{{ page.url | htmlBaseUrl(metadata.url) }}",
+    "dateModified": "{{ page.date | htmlDateString }}",
+    "author": {
+        "@type": "Person",
+        "name": "{{ metadata.author.name }}"
+    }
+  }
+  </script>
+  {% endif %}
 
 </head>
 

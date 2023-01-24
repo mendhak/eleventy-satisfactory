@@ -3,5 +3,6 @@
   "tags": [
     "posts"
   ],
+  "includeLdJson": true,
   "layout": "layouts/post.njk"
 }
