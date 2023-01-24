@@ -1,7 +1,7 @@
 {
-  "title": "Mendhak's Eleventy Theme",
-  "url": "https://code.mendhak.com/eleventy-mendhak-blog-theme/",
-  "pathPrefix": "/eleventy-mendhak-blog-theme/",
+  "title": "Eleventy Satisfactory",
+  "url": "https://code.mendhak.com/eleventy-satisfactory/",
+  "pathPrefix": "/eleventy-satisfactory/",
   "language": "en",
   "paginationSize": 4,
   "favicon": "/assets/images/favicon.png",
