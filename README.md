@@ -19,7 +19,7 @@ An [Eleventy](https://11ty.dev) blog theme making use of [SimpleCSS](https://sim
 * Adjust number of post listings
 * Post excerpts below post listings
 * Links, year, copyright, and photos in footer
-* Opengraph metadata for posts including preview image
+* Opengraph and JSON+LD metadata for posts including preview image
 * Code blocks rendered using Prism syntax highlighting
 * Notice boxes such as info, warning, success
 * Seamless gist integration as code blocks
