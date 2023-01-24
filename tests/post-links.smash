@@ -1,22 +1,22 @@
 * Test Post Relative links
 
-    Navigate to '{baseUrl}/eleventy-mendhak-blog-theme/posting-links/'
+    Navigate to '{baseUrl}/eleventy-satisfactory/posting-links/'
 
         Click [a, 'Link using Markdown path']
 
-            Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/customary-lorem-ipsum/'
+            Verify at page '{baseUrl}/eleventy-satisfactory/customary-lorem-ipsum/'
 
                 Go Back
 
                     Click [a, 'Link using Markdown path and heading anchor']
 
-                        Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/customary-lorem-ipsum/#tincidunt-arcu-non-sodales'
+                        Verify at page '{baseUrl}/eleventy-satisfactory/customary-lorem-ipsum/#tincidunt-arcu-non-sodales'
 
                             Go Back
 
                                 Click [a, 'Link using root-relative URL']
 
-                                    Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/customary-lorem-ipsum/'
+                                    Verify at page '{baseUrl}/eleventy-satisfactory/customary-lorem-ipsum/'
 
                                         Go Back
 

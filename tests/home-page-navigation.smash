@@ -4,7 +4,7 @@
 
         Click ['More']
 
-            Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/2/'
+            Verify at page '{baseUrl}/eleventy-satisfactory/2/'
 
                 Verify ['Previous'] is visible
 
@@ -12,6 +12,6 @@
 
                         Click ['Previous']
 
-                            Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/'
+                            Verify at page '{baseUrl}/eleventy-satisfactory/'
 
 

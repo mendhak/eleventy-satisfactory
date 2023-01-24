@@ -2,11 +2,11 @@
 
     Navigate to {baseUrl}
 
-        Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/'
+        Verify at page '{baseUrl}/eleventy-satisfactory/'
 
-            Click ["Mendhak's Eleventy Theme"]
+            Click ["Eleventy Satisfactory"]
 
-                Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/'
+                Verify at page '{baseUrl}/eleventy-satisfactory/'
 
                     On Home Page {
                         props({

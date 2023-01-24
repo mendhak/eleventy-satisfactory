@@ -1,5 +1,5 @@
 {
-  "name": "eleventy-mendhak-blog-theme",
+  "name": "eleventy-satisfactory",
   "version": "1.0.0",
   "description": "My simplified opinionated eleventy theme, the focus is on content first, and less on other things.",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mendhak/eleventy-mendhak-blog-theme.git"
+    "url": "https://github.com/mendhak/eleventy-satisfactory.git"
   },
   "author": {
     "name": "mendhak",
@@ -21,9 +21,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mendhak/eleventy-mendhak-blog-theme/issues"
+    "url": "https://github.com/mendhak/eleventy-satisfactory/issues"
   },
-  "homepage": "https://code.mendhak.com/eleventy-mendhak-blog-theme/",
+  "homepage": "https://code.mendhak.com/eleventy-satisfactory/",
   "dependencies": {
     "@11ty/eleventy": "^2.0.0-beta.1",
     "@11ty/eleventy-plugin-rss": "^1.2.0",

@@ -1,5 +1,5 @@
-# Mendhak's Eleventy Blog Theme 
-[![Build and Publish Github Pages](https://github.com/mendhak/eleventy-mendhak-blog-theme/actions/workflows/staticsite.yml/badge.svg?branch=main)](https://github.com/mendhak/eleventy-mendhak-blog-theme/actions/workflows/staticsite.yml) [![Smashtests](https://github.com/mendhak/eleventy-mendhak-blog-theme/actions/workflows/smashtests.yml/badge.svg)](https://github.com/mendhak/eleventy-mendhak-blog-theme/actions/workflows/smashtests.yml)
+# Eleventy Satisfactory Blog Theme 
+[![Build and Publish Github Pages](https://github.com/mendhak/eleventy-satisfactory/actions/workflows/staticsite.yml/badge.svg?branch=main)](https://github.com/mendhak/eleventy-satisfactory/actions/workflows/staticsite.yml) [![Smashtests](https://github.com/mendhak/eleventy-satisfactory/actions/workflows/smashtests.yml/badge.svg)](https://github.com/mendhak/eleventy-satisfactory/actions/workflows/smashtests.yml)
 
 An [Eleventy](https://11ty.dev) blog theme making use of [SimpleCSS](https://simplecss.org/), with inspiration from [Hylia](https://hylia.website) and [minimal-mistakes](https://mmistakes.github.io/minimal-mistakes/).  
 
@@ -84,24 +84,24 @@ npm test
 
 ### Configuration
 
-- [Set your values in the metadata.json file](https://code.mendhak.com/eleventy-mendhak-blog-theme/edit-the-metadata/)
-- [Set the footer links and images](https://code.mendhak.com/eleventy-mendhak-blog-theme/set-footer-links/)
+- [Set your values in the metadata.json file](https://code.mendhak.com/eleventy-satisfactory/edit-the-metadata/)
+- [Set the footer links and images](https://code.mendhak.com/eleventy-satisfactory/set-footer-links/)
 
 ### Write a post
 
 The posts go in the `posts` folder.  Drafts can go in the `drafts` folder and will only appear when running locally (`npm run start` or `docker-compose up`) but not when building (`npm run build`). 
 
-- [Set the date of a post](https://code.mendhak.com/eleventy-mendhak-blog-theme/set-date-of-post/)
-- [Add an image](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-with-an-image/) 
-- [Add an image gallery](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-with-a-gallery/)
-- [Link to another post or URL](https://code.mendhak.com/eleventy-mendhak-blog-theme/posting-links/)
-- [Add a notice panel with info, warning, success, danger](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-notice/)
-- [Add a code block with syntax highlighting](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-with-code/)
-- [Add a Github Gist](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-with-github-gists/)
-- [Add a Github Repo Card](https://code.mendhak.com/eleventy-mendhak-blog-theme/github-repo-card/)   
-- [Add videos and audio](https://code.mendhak.com/eleventy-mendhak-blog-theme/post-with-iframes-videos-third-party/)
-- [Controlling extra-wide images, videos, code blocks](https://code.mendhak.com/eleventy-mendhak-blog-theme/extra-wide-full-width-images-videos/)
-- [Set Opengraph preview image and metadata](https://code.mendhak.com/eleventy-mendhak-blog-theme/opengraph-preview-data/)
+- [Set the date of a post](https://code.mendhak.com/eleventy-satisfactory/set-date-of-post/)
+- [Add an image](https://code.mendhak.com/eleventy-satisfactory/post-with-an-image/) 
+- [Add an image gallery](https://code.mendhak.com/eleventy-satisfactory/post-with-a-gallery/)
+- [Link to another post or URL](https://code.mendhak.com/eleventy-satisfactory/posting-links/)
+- [Add a notice panel with info, warning, success, danger](https://code.mendhak.com/eleventy-satisfactory/post-notice/)
+- [Add a code block with syntax highlighting](https://code.mendhak.com/eleventy-satisfactory/post-with-code/)
+- [Add a Github Gist](https://code.mendhak.com/eleventy-satisfactory/post-with-github-gists/)
+- [Add a Github Repo Card](https://code.mendhak.com/eleventy-satisfactory/github-repo-card/)   
+- [Add videos and audio](https://code.mendhak.com/eleventy-satisfactory/post-with-iframes-videos-third-party/)
+- [Controlling extra-wide images, videos, code blocks](https://code.mendhak.com/eleventy-satisfactory/extra-wide-full-width-images-videos/)
+- [Set Opengraph preview image and metadata](https://code.mendhak.com/eleventy-satisfactory/opengraph-preview-data/)
 
 
 ## Notes
@@ -112,7 +112,7 @@ The posts go in the `posts` folder.  Drafts can go in the `drafts` folder and wi
 - Can the Github CSS be included just once, instead of once per card
 - Should the gallery behave the same for gallery + markdown and gallery + shortcode? 
 - In galleries should caption be below the images or only appear in the lightbox?
-- There isn't an easy way to give users the ability to [toggle light and dark mode](https://github.com/mendhak/eleventy-mendhak-blog-theme/issues/2)
+- There isn't an easy way to give users the ability to [toggle light and dark mode](https://github.com/mendhak/eleventy-satisfactory/issues/2)
 - I need some buttons, should I just use the button HTML
 
 **References**
