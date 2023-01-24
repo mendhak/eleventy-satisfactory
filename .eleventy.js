@@ -102,6 +102,10 @@ module.exports = function (eleventyConfig) {
   let notice = require('./_configs/notice.shortcode');
   eleventyConfig.addPairedShortcode("notice", (data, noticeType) => notice(data, noticeType, markdownLibrary));
 
+  //Shortcode to render a button, optionally with a link
+  let button = require('./_configs/button.shortcode');
+  eleventyConfig.addShortcode("button", button);
+
   // Paired shortcode to display a figure with caption.
   // This is very similar to the regular Markdown image,
   // But I'll keep this around in case the other way ever breaks in the future

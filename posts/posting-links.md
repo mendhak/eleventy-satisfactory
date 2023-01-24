@@ -66,3 +66,19 @@ Produces:
 Produces:
 
 [Link with a title](https://example.com "title text!")
+
+
+## Buttons
+
+It's also possible to use a button as a link. 
+
+```
+{% raw %}{% button "Button with a link", "/" %}{% endraw %}
+```
+
+Produces:
+
+{% button "Button with a link", "/" %}
+
+
+
