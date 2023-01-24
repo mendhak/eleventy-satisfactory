@@ -17,3 +17,9 @@
                                 Click [a, 'Link using root-relative URL']
 
                                     Verify at page '{baseUrl}/eleventy-mendhak-blog-theme/customary-lorem-ipsum/'
+
+                                        Go Back
+
+                                            Click [button, 'Button with a link']
+
+                                                Verify at page '{baseUrl}'
