@@ -30,7 +30,7 @@ Current value: `{{ metadata.pathPrefix }}`
 
 ### url
 
-The Base URL where this site will be published. It gets used to construct the full URL to content, in the [sitemap.xml](/sitemap.xml), [feed.xml](/feed.xml), [feed.json](/feed.json), and the OpenGraph headers in the HTML `<head>`.  
+The Base URL where this site will be published. It gets used to construct the full URL to content, in the [sitemap.xml](/sitemap.xml), [feed.xml](/feed.xml), [feed.json](/feed.json), and the OpenGraph and JSON-LD headers in the HTML `<head>`.  
 
 Examples: 
 
@@ -57,7 +57,7 @@ Current value: `{{ metadata.paginationSize }}`
 
 ### description
 
-Sets the site description in the HTML head's meta and OpenGraph descriptions, as well as the JSON and Atom feed. 
+Sets the site description in the HTML head's meta and OpenGraph/JSON-LD descriptions, as well as the JSON and Atom feed. 
 If a blog post doesn't contain a `description:` frontmatter, this value gets used as a default in the HTML head. 
 
 {% notice "info" %}
@@ -66,7 +66,7 @@ Current value: `{{ metadata.description }}`
 
 ### tags
 
-Sets the site's tags in the HTML head's meta keywords and OpenGraph tags. 
+Sets the site's tags in the HTML head's meta keywords and OpenGraph/JSON-LD tags. 
 If a blog post doesn't contain a `tags:` frontmatter, these values get used as a default in the HTML head. 
 
 {% notice "info" %}
@@ -119,7 +119,7 @@ Current value: `{{ metadata.author | dump | safe }}`
 
 Some opengraph settings. 
 
-`image`: The image to use when an OpenGraph preview is being made for a URL on this site.  If a blog post doesn't have a `opengraph.image` frontmatter, then this default image gets used instead.  
+`image`: The image to use when an OpenGraph preview is being made for a URL on this site.  If a blog post doesn't have a `opengraph.image` frontmatter, then this default image gets used instead.  This value is also used in the JSON-LD data. 
 `type`: The OpenGraph content type of this content.  It's a blog so, it's an article.  
 
 {% notice "info" %}
