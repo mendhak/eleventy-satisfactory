@@ -14,7 +14,9 @@ opengraph:
 
 ---
 
-To display a set of images (minimum 2) in a gallery, just surround the images, written as Markdown, with the `gallery` shortcode. Clicking the image shows the image in lightbox, with the title as the caption (a little Markdown might in the caption might also work).
+To display a set of images in a gallery, just surround the images, written as Markdown, with the `gallery` shortcode. 
+
+Clicking the image shows the image in lightbox, with the title as the caption (a little Markdown might in the caption might also work).
 
 ```
 {% raw %}{% gallery %}
@@ -24,7 +26,7 @@ To display a set of images (minimum 2) in a gallery, just surround the images, w
 {% endgallery %}{% endraw %}
 ```
 
-Produces this: calc(33% - 0.5em)
+Produces this: 
 
 {% gallery %}
 ![First image](/assets/images/image001.jpg)
@@ -33,5 +35,24 @@ Produces this: calc(33% - 0.5em)
 {% endgallery %}
 
 
+The image's own titles appear as captions in the lightbox, but not on the page, as it could get too crowded.
 
+### Gallery with caption
 
+To set a caption for the gallery as a whole, pass it to the shortcode. 
+
+```
+{% raw %}{% gallery "Two images side by side" %}
+![First image](/assets/images/image001.jpg)
+![**Second** image](/assets/images/image002.jpg)
+{% endgallery %}{% endraw %}
+```
+
+Produces:
+
+{% gallery "Two images side by side" %}
+![First image](/assets/images/image001.jpg)
+![**Second** image](/assets/images/image002.jpg)
+{% endgallery %}
+
+The gallery's caption appears on the page.  The image's own captions still appear in the lightbox, just not on the page.

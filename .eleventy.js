@@ -120,7 +120,7 @@ module.exports = function (eleventyConfig) {
 
   // The `gallery` paired shortcode shows a set of images and displays it in a grid.
   let gallery = require('./_configs/gallery.shortcode');
-  eleventyConfig.addPairedShortcode("gallery", (data) => gallery(data, markdownLibrary));
+  eleventyConfig.addPairedShortcode("gallery", (data, caption) => gallery(data, caption, markdownLibrary));
 
   // The `video` shortcode gets a YouTube video and displays it
   let video = require('./_configs/video.shortcode');
