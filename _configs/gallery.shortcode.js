@@ -9,7 +9,7 @@ module.exports = function gallery(data, caption="", markdownLibrary) {
   let evenItems = (data.trim().split('\n').length % 2) == 0;
 
   const galleryContent = markdownLibrary.renderInline(data, { 'inGallery': true, 'evenItems': evenItems });
-  return `<figure>${galleryContent}<figcaption>${caption}</figcaption></figure>`;
+  return `<figure>${galleryContent}<figcaption>${markdownLibrary.renderInline(caption)}</figcaption></figure>`;
 }
 
 

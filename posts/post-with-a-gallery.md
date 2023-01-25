@@ -42,7 +42,7 @@ The image's own titles appear as captions in the lightbox, but not on the page, 
 To set a caption for the gallery as a whole, pass it to the shortcode. 
 
 ```
-{% raw %}{% gallery "Two images side by side" %}
+{% raw %}{% gallery "~~Three~~ Two images side by side" %}
 ![First image](/assets/images/image001.jpg)
 ![**Second** image](/assets/images/image002.jpg)
 {% endgallery %}{% endraw %}
@@ -50,7 +50,7 @@ To set a caption for the gallery as a whole, pass it to the shortcode.
 
 Produces:
 
-{% gallery "Two images side by side" %}
+{% gallery "~~Three~~ Two images side by side" %}
 ![First image](/assets/images/image001.jpg)
 ![**Second** image](/assets/images/image002.jpg)
 {% endgallery %}

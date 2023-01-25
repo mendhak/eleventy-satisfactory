@@ -118,7 +118,7 @@ module.exports = function (eleventyConfig) {
   let lightbox = require('./_configs/lightboxref.shortcode');
   eleventyConfig.addShortcode("addLightBoxRefIfNecessary", function () { return lightbox(this.page); });
 
-  // The `gallery` paired shortcode shows a set of images and displays it in a grid.
+  // The `gallery` paired shortcode shows a set of images and displays it in a row together.
   let gallery = require('./_configs/gallery.shortcode');
   eleventyConfig.addPairedShortcode("gallery", (data, caption) => gallery(data, caption, markdownLibrary));
 
