@@ -7,4 +7,4 @@ layout: layouts/base.njk
 {{ content | safe }}
 </article>
 
-<p><time datetime="{{ page.date | htmlDateString }}">Updated: {{ page.date | readableDate }}</time></p>
+<p><time datetime="{{ (last_modified_at or page.date) | htmlDateString }}">Updated: {{ (last_modified_at or page.date) | readableDate }}</time></p>

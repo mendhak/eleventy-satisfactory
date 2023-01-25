@@ -59,7 +59,7 @@
     "image": "{{ (opengraph.image or metadata.opengraph.image) | htmlBaseUrl(metadata.url) }}",
     "keywords": "{{ (tags or metadata.tags) | filterTagList }}",
     "url": "{{ page.url | htmlBaseUrl(metadata.url) }}",
-    "dateModified": "{{ page.date | htmlDateString }}",
+    "dateModified": "{{ (last_modified_at or page.date) | htmlDateString }}",
     "author": {
         "@type": "Person",
         "name": "{{ metadata.author.name }}",

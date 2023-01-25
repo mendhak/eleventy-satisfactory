@@ -1,8 +1,9 @@
 ---
 title: How to set the date of a post
+last_modified_at: 2022-08-17
 ---
 
-When writing a new post, you can set the date of the post in a few different ways.  
+When writing a new post, you can set the date of the post in a few different ways.  The date of the post determines the order it appears in the post listings. 
 
 ### In the filename
 
@@ -21,7 +22,19 @@ date: 2022-02-02
 
 ### Both the file name _and_ the frontmatter
 
-If the date is set both in the file name as well as the frontmatter, the frontmatter date takes precedence.  This is a good way of 'updating' a post.  The file name is the original date, and the frontmatter is the latest.  
+If the date is set both in the file name as well as the frontmatter, the frontmatter date takes precedence. 
+
+
+### Setting a last modified date for a post
+
+Setting the `last_modified_at` in the frontmatter modifies the display and metadata date, but without changing its order in the listing.  
+
+```
+---
+title: How to set the date of a post
+last_modified_at: 2022-08-17
+---
+```
 
 
 ### Posts without a date
