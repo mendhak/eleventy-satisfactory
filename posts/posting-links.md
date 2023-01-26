@@ -33,6 +33,10 @@ Produces:
 
 [Link using Markdown path and heading anchor](./customary-lorem-ipsum.md#tincidunt-arcu-non-sodales)
 
+{% notice "warning" %}
+Sorry, these 'direct to .md' links don't work inside shortcodes, such as `notice` and `figure`.  
+Use the normal method below for those. 
+{% endnotice %}
 
 ### Link to another post by URL
 
