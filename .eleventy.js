@@ -93,6 +93,12 @@ module.exports = function (eleventyConfig) {
     return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
   });
 
+  // filter to convert content to Markdown.
+  // Useful for allowing `code` in the h1
+  eleventyConfig.addFilter("markdown", (content) => {
+    return markdownLibrary.renderInline(content);
+  });
+
   // Paired shortcode that takes a JSON array of CSS file paths
   // It then combines them, which includes reconciles overriden values!
   // And returns the output.
@@ -121,6 +127,7 @@ module.exports = function (eleventyConfig) {
   // The `gallery` paired shortcode shows a set of images and displays it in a row together.
   let gallery = require('./_configs/gallery.shortcode');
   eleventyConfig.addPairedShortcode("gallery", (data, caption) => gallery(data, caption, markdownLibrary));
+
 
   // The `video` shortcode gets a YouTube video and displays it
   let video = require('./_configs/video.shortcode');

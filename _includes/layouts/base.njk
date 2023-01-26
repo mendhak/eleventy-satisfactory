@@ -76,7 +76,7 @@
     <a href="/">{{ metadata.title }}</a>
   </header>
   <main>
-    <h1><a href="">{%- if title %}{{ title }}{%- endif %}</a></h1>
+    <h1><a href="">{%- if title %}{{ title | markdown | safe }}{%- endif %}</a></h1>
     {{ content | safe }}
   </main>
 

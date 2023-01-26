@@ -1,5 +1,5 @@
 ---
-title: Showcase of various Markdown features
+title: Showcase of various `Markdown` features
 description: Trying out various Markdown features on a post
 date: 2018-07-04
 tags:
