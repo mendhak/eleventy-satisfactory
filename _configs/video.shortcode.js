@@ -12,6 +12,7 @@ module.exports = function(url, width) {
   }
 
   let youTubeId = getVideoIdFromYouTubeURL(url);
+
   if(youTubeId){
     iframeUrl = `https://www.youtube.com/embed/${youTubeId}`;
   }
