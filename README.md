@@ -1,8 +1,7 @@
 # Eleventy Satisfactory Blog Theme 
 [![Build and Publish Github Pages](https://github.com/mendhak/eleventy-satisfactory/actions/workflows/staticsite.yml/badge.svg?branch=main)](https://github.com/mendhak/eleventy-satisfactory/actions/workflows/staticsite.yml) [![Smashtests](https://github.com/mendhak/eleventy-satisfactory/actions/workflows/smashtests.yml/badge.svg)](https://github.com/mendhak/eleventy-satisfactory/actions/workflows/smashtests.yml)
 
-An [Eleventy](https://11ty.dev) blog theme making use of [SimpleCSS](https://simplecss.org/), with inspiration from [Hylia](https://hylia.website) and [minimal-mistakes](https://mmistakes.github.io/minimal-mistakes/).  
-
+An [Eleventy](https://11ty.dev) blog theme making use of [SimpleCSS](https://simplecss.org/), with inspiration from [Hylia](https://hylia.website) and [minimal-mistakes](https://mmistakes.github.io/minimal-mistakes/).  I developed it for my blog, https://code.mendhak.com
 
 
 **Features**
