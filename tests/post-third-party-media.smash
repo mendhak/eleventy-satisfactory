@@ -2,4 +2,4 @@
 
     Navigate to '{baseUrl}/eleventy-satisfactory/post-with-iframes-videos-third-party/'
 
-        Verify 'iframe[src="//www.youtube.com/embed/9qOvG9KeJ6c"]' is visible
+        Verify 'iframe[src="https://www.youtube.com/embed/9qOvG9KeJ6c"]' is visible
