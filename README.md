@@ -79,12 +79,17 @@ npm test
 ```
 
 
-## How to use this blog
+## How to use this blog theme
+
+Generate a repo from this public template, or fork it.   
+Delete the `tests/` folder and `.github/workflows/smashtests.yml`   
+Run the site using docker-compose/npm as shown above.  
 
 ### Configuration
 
 - [Set your values in the metadata.json file](https://code.mendhak.com/eleventy-satisfactory/edit-the-metadata/)
 - [Set the footer links and images](https://code.mendhak.com/eleventy-satisfactory/set-footer-links/)
+
 
 ### Write a post
 
