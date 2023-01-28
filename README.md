@@ -112,12 +112,11 @@ The posts go in the `posts` folder.  Drafts can go in the `drafts` folder and wi
 
 **TODO/Investigate**
 
-- Can the cssmin shortcode adjust the inline url() paths? 
-- Can the Github CSS be included just once, instead of once per card
+- Can the cssmin shortcode adjust the inline url() paths? That could allow putting the font lines into its own CSS file. 
+- Can the Github CSS be included just once, instead of once per card? This could be done using WebC, have to wrap my head around it. 
 - Should the gallery behave the same for gallery + markdown and gallery + shortcode? 
-- In galleries should caption be below the images or only appear in the lightbox?
 - There isn't an easy way to give users the ability to [toggle light and dark mode](https://github.com/mendhak/eleventy-satisfactory/issues/2)
-- I need some buttons, should I just use the button HTML
+
 
 **References**
 
@@ -129,3 +128,4 @@ The posts go in the `posts` folder.  Drafts can go in the `drafts` folder and wi
 - [Shortcode with image gallery](https://www.markllobrera.com/posts/eleventy-building-image-gallery-photoswipe/)
 - [Customizing markdown-it](https://publishing-project.rivendellweb.net/customizing-markdown-it/)
 
+(these tests only wor)
