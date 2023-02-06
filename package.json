@@ -40,6 +40,6 @@
     "node": ">=18.0.0"
   },
   "devDependencies": {
-    "smashtest": "^1.7.0"
+    "smashtest": "^1.8.0"
   }
 }
