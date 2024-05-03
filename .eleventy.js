@@ -1,24 +1,30 @@
 const fs = require("fs");
 
-const { DateTime } = require("luxon");
+
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
 const metadata = require('./_data/metadata.json');
 // Change this to match the actual path prefix.
 const pathPrefix = process.env.PATH_PREFIX || metadata.pathPrefix;
 
-const UserConfig = require("@11ty/eleventy/src/UserConfig");
 
 /**
  * @param {UserConfig} eleventyConfig
  */
-module.exports = function (eleventyConfig) {
+module.exports = async function (eleventyConfig) {
+
+  // https://www.11ty.dev/blog/canary-eleventy-v3/#how-to-require(@11ty/eleventy)-in-commonjs
+  // Continue using commonjs for now
+  const { UserConfig } = await import("@11ty/eleventy");
+  const { InputPathToUrlTransformPlugin, EleventyHtmlBasePlugin } = await import("@11ty/eleventy");
+  const { DateTime } = await import("luxon");
+
+
   // Copy the `assets` (includes images, fonts) folders to the output
   eleventyConfig.addPassthroughCopy("assets/fonts");
   eleventyConfig.addPassthroughCopy("assets/images");
@@ -48,9 +54,9 @@ module.exports = function (eleventyConfig) {
   let imageRenderer = require('./_configs/markdownlibrary.renderer.image');
   markdownLibrary.renderer.rules.image = (tokens, idx, options, env, slf) => imageRenderer(tokens, idx, options, env, slf, markdownLibrary);
 
-  // If a Markdown link points at an .md file, convert it to its corresponding post URL
-  let linkRenderer = require('./_configs/markdownlibrary.renderer.links');
-  markdownLibrary.renderer.rules.link_open = linkRenderer;
+  // // If a Markdown link points at an .md file, convert it to its corresponding post URL
+  // let linkRenderer = require('./_configs/markdownlibrary.renderer.links');
+  // markdownLibrary.renderer.rules.link_open = linkRenderer;
 
   eleventyConfig.setLibrary("md", markdownLibrary);
   // Re-enable the indented code block feature
@@ -63,6 +69,8 @@ module.exports = function (eleventyConfig) {
 
   //Converts most URLs to URLs with pathPrefix
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+  // Automatically convert links pointing at .md to corresponding URL.
+  eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
 
   // Date used below posts
   eleventyConfig.addFilter("readableDate", dateObj => {

@@ -13,7 +13,7 @@ When sharing a URL, some sites will generate a preview with a title, description
 
 ### Set the preview image
 
-A default Opengraph preview image for all posts is set in the [metadata.json](./2022-01-01-edit-the-metadata.md#opengraph), which looks like:
+A default Opengraph preview image for all posts is set in the [metadata.json](/posts/2022-01-01-edit-the-metadata.md#opengraph), which looks like:
 
 {% figure metadata.opengraph.image, "Default opengraph image", "third" %}
 
@@ -45,7 +45,7 @@ opengraph:
 ---
 ```
 
-If missing, the defaults are taken from the [metadata.json](./2022-01-01-edit-the-metadata.md#optional-but-useful) again. 
+If missing, the defaults are taken from the [metadata.json](/posts/2022-01-01-edit-the-metadata.md#optional-but-useful) again. 
 
 
 ### Author and type

@@ -12,30 +12,29 @@ Various ways to post links to other posts in the same blog, and external links t
 
 ### Link to another post by its file name
 
-This is a local editor friendly way, just link straight to the Markdown file.  
-If the link ends with `.md`, the renderer will try to find and convert it to the matching output URL. 
+This is a local editor friendly way, just link straight to the Markdown file. 
+The link must start at the project root, and end in `.md`.  
 
 ```markdown
-[Link using Markdown path](./customary-lorem-ipsum.md)
+[Link using Markdown path](/posts/customary-lorem-ipsum.md)
 ```
 
 Produces:
 
-[Link using Markdown path](./customary-lorem-ipsum.md)
+[Link using Markdown path](/posts/customary-lorem-ipsum.md)  
 
 You can also link to an anchor in the target file. 
 
 ```markdown
-[Link using Markdown path and heading anchor](./customary-lorem-ipsum.md#tincidunt-arcu-non-sodales)
+[Link using Markdown path and heading anchor](/posts/customary-lorem-ipsum.md#tincidunt-arcu-non-sodales)
 ```
 
 Produces:
 
-[Link using Markdown path and heading anchor](./customary-lorem-ipsum.md#tincidunt-arcu-non-sodales)
+[Link using Markdown path and heading anchor](/posts/customary-lorem-ipsum.md#tincidunt-arcu-non-sodales)
 
 {% notice "warning" %}
-Sorry, these 'direct to .md' links don't work inside shortcodes, such as `notice` and `figure`.  
-Use the normal method below for those. 
+You can also link inside shortcodes such as `notice` and `figure`, like [this](/posts/customary-lorem-ipsum.md). But you can't link to an anchor yet, it [will fail](/posts/customary-lorem-ipsum.md#tincidunt-arcu-non-sodales) until [this PR is accepted](https://github.com/11ty/eleventy/pull/3276).
 {% endnotice %}
 
 ### Link to another post by URL
