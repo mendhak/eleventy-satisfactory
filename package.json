@@ -25,7 +25,7 @@
   },
   "homepage": "https://code.mendhak.com/eleventy-satisfactory/",
   "dependencies": {
-    "@11ty/eleventy": "^2.0.0-beta.1",
+    "@11ty/eleventy": "3.0.0-alpha.10",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "clean-css": "^5.3.2",
