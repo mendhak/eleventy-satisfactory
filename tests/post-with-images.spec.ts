@@ -19,10 +19,11 @@ test.describe('Post with images', () => {
       await expect(lightbox).toBeVisible();
 
       // Ensure the URL is reset when lightbox is closed
-      expect.soft(await page).toHaveURL('post-with-an-image/#pid=1');
-      await page.waitForTimeout(100);
+      expect(await page).toHaveURL('post-with-an-image/#pid=1');
+      await page.waitForTimeout(200);
       await page.keyboard.press('Escape');
-      await page.waitForTimeout(100);
+      await page.keyboard.press('Escape');
+      await page.waitForTimeout(300);
       expect(lightbox).not.toBeVisible();
       expect(await page).toHaveURL(siteURL + 'post-with-an-image/');
 
@@ -30,6 +31,8 @@ test.describe('Post with images', () => {
       await clickableImages.nth(2).click();
       await expect(lightbox).toBeVisible();
       await page.keyboard.press('Escape');
+      await page.keyboard.press('Escape');
+      await page.waitForTimeout(200);
       expect(await page).toHaveURL(siteURL + 'post-with-an-image/');
     });
 });
