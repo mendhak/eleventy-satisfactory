@@ -73,6 +73,8 @@ npm run build
 
 **Running Smashtests**
 
+Make sure Firefox is installed. `sudo apt install firefox`
+
 ```
 docker-compose up -d
 npm test
