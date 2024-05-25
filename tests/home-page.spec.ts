@@ -1,7 +1,10 @@
 import { test, expect, Page } from '@playwright/test';
 
-test.beforeEach(async ({page}) => {
-    await page.goto('http://localhost:8080/eleventy-satisfactory/');
+let siteURL;
+
+test.beforeEach(async ({page, baseURL}) => {
+    await page.goto('/');
+    siteURL = baseURL;
 });
 
 
@@ -10,8 +13,7 @@ test.describe('Home Page Tests', () => {
     test('Verify Location and Title', async ({ page}) => {
         await page.waitForSelector('header a');
         const header = await page.locator('header a').innerText();
-        const pageUrl = page.url();
-        expect(pageUrl).toBe('http://localhost:8080/eleventy-satisfactory/');
+        expect(page).toHaveURL(siteURL);
         expect(header).toBe('Eleventy Satisfactory');
     });
 
@@ -27,12 +29,12 @@ test.describe('Home Page Tests', () => {
       const simpleCssLink = await page.locator('footer').first().locator("a").nth(2).getAttribute('href');
       expect(simpleCssLink).toBe('https://simplecss.org/');
 
-      const rssFeedLink = await page.locator('footer').first().locator("a").nth(3).getAttribute('href');
-      expect(rssFeedLink).toBe('/eleventy-satisfactory/feed.xml');
-
+      const rssFeedLink = await page.getByText('FEED').nth(0);
+      await rssFeedLink.click();
+      expect(page).toHaveURL(siteURL + 'feed.xml');
     });
 
-    test.only('Verify Flickr Photos', async ({ page }) => {
+    test('Verify Flickr Photos', async ({ page }) => {
         await page.waitForSelector('ul.photostream a img');
         const photos = await page.locator('ul.photostream').locator('a img');
         expect(await photos.count()).toBe(5);
