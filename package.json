@@ -40,6 +40,8 @@
     "node": ">=18.0.0"
   },
   "devDependencies": {
-    "smashtest": "^1.8.4"
+    "smashtest": "^1.8.4",
+    "@playwright/test": "^1.44.1",
+    "@types/node": "^20.12.12"
   }
 }
