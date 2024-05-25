@@ -18,7 +18,7 @@ test.describe('Post with image gallery', () => {
       clickableImages.nth(1).click();
       await expect(page.getByText('Second Image')).toBeVisible();
 
-      page.keyboard.press('Escape');
+      await page.keyboard.press('Escape');
 
       await expect(page.getByText('Three Two images side by side')).toBeVisible();
 
@@ -28,7 +28,7 @@ test.describe('Post with image gallery', () => {
       await expect(nearestImage).toBeVisible();
       await nearestImage.click();
       await expect(page.getByText('Second image')).toBeVisible();
-      page.keyboard.press('Escape');
+      await page.keyboard.press('Escape');
       await expect(page.getByText('Second image')).not.toBeVisible();
 
     });
