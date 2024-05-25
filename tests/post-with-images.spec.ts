@@ -20,6 +20,7 @@ test.describe('Post with images', () => {
 
       // Ensure the URL is reset when lightbox is closed
       expect.soft(await page).toHaveURL('post-with-an-image/#pid=1');
+      await page.waitForTimeout(100);
       await page.keyboard.press('Escape');
       await page.waitForTimeout(100);
       expect(lightbox).not.toBeVisible();
