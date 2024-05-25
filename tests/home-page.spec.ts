@@ -17,11 +17,22 @@ test.afterEach(async ({page}, testInfo) => {
 
 test.describe('Home Page Tests', () => {
 
-    test('Verify Title', async ({ page}) => {
+    test('Verify Location and Title', async ({ page}) => {
         await page.waitForSelector('header a');
         const header = await page.locator('header a').innerText();
         const pageUrl = page.url();
         expect(pageUrl).toBe('http://localhost:8080/eleventy-satisfactory/');
         expect(header).toBe('Eleventy Satisfactory');
+    });
+
+    test('Verify Footer Links', async ({ page }) => {
+      await page.waitForSelector('footer');
+
+      const githubLink = await page.locator('footer').first().locator("a").nth(0).getAttribute('href');
+      expect(githubLink).toBe('https://github.com/mendhak/eleventy-satisfactory');
+      const eleventyLink = await page.locator('footer').first().locator("a").nth(1).getAttribute('href');
+      expect(eleventyLink).toBe('https://11ty.dev');
+
+
     });
 });
