@@ -12,7 +12,7 @@ test.beforeEach(async ({page, baseURL}) => {
 test.describe('Draft Post Tests', () => {
 
       test('Verify Draft Post is only visible locally', async ({ page }) => {
-          await page.click('text=This draft post should only appear locally');
+          await page.getByRole('link', {name: 'This draft post should only appear locally', exact: true} ).click();
           expect(page).toHaveURL(siteURL + 'a-draft-post/');
 
           // Ensure the draft post is not visible on the live site
