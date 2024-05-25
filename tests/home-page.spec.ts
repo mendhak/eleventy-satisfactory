@@ -4,16 +4,6 @@ test.beforeEach(async ({page}) => {
     await page.goto('http://localhost:8080/eleventy-satisfactory/');
 });
 
-test.afterEach(async ({page}, testInfo) => {
-
-    // Take a screenshot if the test failed
-    if (testInfo.status !== testInfo.expectedStatus){
-        const screenshotPath = testInfo.outputPath(`failure.png`);
-        testInfo.attachments.push({name: 'Failure Screenshot', path: screenshotPath, contentType: 'image/png'});
-        await page.screenshot({path: screenshotPath});
-    }
-
-});
 
 test.describe('Home Page Tests', () => {
 
@@ -42,9 +32,10 @@ test.describe('Home Page Tests', () => {
 
     });
 
-    test('Flickr Photos', async ({ page }) => {
+    test.only('Verify Flickr Photos', async ({ page }) => {
         await page.waitForSelector('ul.photostream a img');
-        const photos = await page.locator('ul.photostream').locator('a img').count();
-        expect(photos).toBe(5);
+        const photos = await page.locator('ul.photostream').locator('a img');
+        expect(await photos.count()).toBe(5);
+        expect(await photos.nth(0)).toBeVisible();
     });
 });
