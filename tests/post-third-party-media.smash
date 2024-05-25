@@ -1,5 +1,0 @@
-* Test third party media page
-
-    Navigate to '{baseUrl}/eleventy-satisfactory/post-with-iframes-videos-third-party/'
-
-        Verify 'iframe[src="https://www.youtube.com/embed/9qOvG9KeJ6c"]' is visible

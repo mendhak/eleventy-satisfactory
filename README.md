@@ -1,5 +1,5 @@
 # Eleventy Satisfactory Blog Theme 
-[![Build and Publish Github Pages](https://github.com/mendhak/eleventy-satisfactory/actions/workflows/staticsite.yml/badge.svg?branch=main)](https://github.com/mendhak/eleventy-satisfactory/actions/workflows/staticsite.yml) [![Smashtests](https://github.com/mendhak/eleventy-satisfactory/actions/workflows/smashtests.yml/badge.svg)](https://github.com/mendhak/eleventy-satisfactory/actions/workflows/smashtests.yml)
+[![Build and Publish Github Pages](https://github.com/mendhak/eleventy-satisfactory/actions/workflows/staticsite.yml/badge.svg?branch=main)](https://github.com/mendhak/eleventy-satisfactory/actions/workflows/staticsite.yml) [![Playwright Tests](https://github.com/mendhak/eleventy-satisfactory/actions/workflows/playwright.yml/badge.svg)](https://github.com/mendhak/eleventy-satisfactory/actions/workflows/playwright.yml)
 
 An [Eleventy](https://11ty.dev) blog theme making use of [SimpleCSS](https://simplecss.org/), with inspiration from [Hylia](https://hylia.website) and [minimal-mistakes](https://mmistakes.github.io/minimal-mistakes/).  I developed it for my blog, https://code.mendhak.com
 
@@ -71,12 +71,13 @@ npm install
 npm run build
 ```
 
-**Running Smashtests**
+**Running Tests**
 
 Make sure Firefox is installed. `sudo apt install firefox`
 
+Run Playwright tests, this should automatically do an npm start first. 
+
 ```
-docker-compose up -d
 npm test
 ```
 
@@ -92,7 +93,7 @@ npx playwright test --headed
 ## How to use this blog theme
 
 Generate a repo from this public template, or fork it.   
-Delete the `tests/` folder and `.github/workflows/smashtests.yml`   
+Delete the `tests/` folder and `.github/workflows/playwright.yml`   
 Run the site using docker-compose/npm as shown above.  
 
 ### Configuration

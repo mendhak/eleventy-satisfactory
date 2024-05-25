@@ -1,9 +1,0 @@
-* Test Draft Post Only Visible Locally
-
-    Navigate to '{baseUrl}/eleventy-satisfactory/a-draft-post/'
-
-        Click ['This draft post should only appear locally']
-
-            Navigate to 'https://code.mendhak.com/eleventy-satisfactory/a-draft-post/'
-
-                Verify ['Content not found.'] is visible

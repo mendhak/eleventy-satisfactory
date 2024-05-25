@@ -1,7 +1,6 @@
 _site/
 node_modules/
 .cache
-smashtest/
 /test-results/
 /playwright-report/
 /blob-report/

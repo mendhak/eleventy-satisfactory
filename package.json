@@ -7,7 +7,7 @@
     "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
     "start": "ELEVENTY_ENV=development npx @11ty/eleventy --serve --watch --incremental",
     "debug": "DEBUG=* npx @11ty/eleventy",
-    "test": "cd tests;npx smashtest",
+    "test": "playwright test",
     "stop": "kill -9 $(lsof -t -i :8080)"
   },
   "repository": {
@@ -40,7 +40,6 @@
     "node": ">=18.0.0"
   },
   "devDependencies": {
-    "smashtest": "^1.8.4",
     "@playwright/test": "^1.44.1",
     "@types/node": "^20.12.12"
   }
