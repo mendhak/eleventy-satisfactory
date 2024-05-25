@@ -81,13 +81,6 @@ Run Playwright tests, this should automatically do an npm start first.
 npm test
 ```
 
-**Running Playwright Tests**
-
-Make sure Firefox is installed. `sudo apt install firefox`
-
-```
-npx playwright test --headed
-```
 
 
 ## How to use this blog theme
