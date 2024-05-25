@@ -1,4 +1,4 @@
 README.md
 .github
 tests/
-smashtest/
+playwright-report/

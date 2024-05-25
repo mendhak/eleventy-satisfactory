@@ -7,7 +7,7 @@
     "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
     "start": "ELEVENTY_ENV=development npx @11ty/eleventy --serve --watch --incremental",
     "debug": "DEBUG=* npx @11ty/eleventy",
-    "test": "cd tests;npx smashtest",
+    "test": "playwright test",
     "stop": "kill -9 $(lsof -t -i :8080)"
   },
   "repository": {
@@ -34,12 +34,13 @@
     "markdown-it-anchor": "^8.6.7",
     "prism-themes": "^1.9.0",
     "simpledotcss": "2.1.1",
-    "simplelightbox": "^2.14.1"
+    "simplelightbox": "^2.14.3"
   },
   "engines": {
     "node": ">=18.0.0"
   },
   "devDependencies": {
-    "smashtest": "^1.8.4"
+    "@playwright/test": "^1.44.1",
+    "@types/node": "^20.12.12"
   }
 }

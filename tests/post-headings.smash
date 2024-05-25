@@ -1,5 +1,0 @@
-* Test various headings
-
-    Navigate to '{baseUrl}/eleventy-satisfactory/post-with-various-headings/'
-
-        Verify 'h6' is visible

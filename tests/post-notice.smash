@@ -1,5 +1,0 @@
-* Test notice panels
-
-    Navigate to '{baseUrl}/eleventy-satisfactory/post-notice/'
-
-        Verify '.notice.success' is visible

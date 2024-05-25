@@ -7,7 +7,7 @@ on:
     branches: [ "main", "master" ]
     paths-ignore:
       - '**/README.md'
-      - '.github/workflows/smashtests.yml'
+      - '.github/workflows/playwright.yml'
       - 'tests/**'
 
 
