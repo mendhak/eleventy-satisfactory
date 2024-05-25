@@ -30,9 +30,21 @@ test.describe('Home Page Tests', () => {
 
       const githubLink = await page.locator('footer').first().locator("a").nth(0).getAttribute('href');
       expect(githubLink).toBe('https://github.com/mendhak/eleventy-satisfactory');
+
       const eleventyLink = await page.locator('footer').first().locator("a").nth(1).getAttribute('href');
       expect(eleventyLink).toBe('https://11ty.dev');
 
+      const simpleCssLink = await page.locator('footer').first().locator("a").nth(2).getAttribute('href');
+      expect(simpleCssLink).toBe('https://simplecss.org/');
 
+      const rssFeedLink = await page.locator('footer').first().locator("a").nth(3).getAttribute('href');
+      expect(rssFeedLink).toBe('/eleventy-satisfactory/feed.xml');
+
+    });
+
+    test('Flickr Photos', async ({ page }) => {
+        await page.waitForSelector('ul.photostream a img');
+        const photos = await page.locator('ul.photostream').locator('a img').count();
+        expect(photos).toBe(5);
     });
 });
