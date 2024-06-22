@@ -1,6 +1,5 @@
 import fs from "fs";
 import nunjucks from "nunjucks";
-import path from "path";
 
 /**
  * If the given post contains a figure shortcode or a markdown image, this function adds the SimpleLightbox JS and CSS so images are displayed with a lightbox.
