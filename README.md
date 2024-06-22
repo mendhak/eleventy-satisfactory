@@ -111,6 +111,28 @@ Run Playwright tests, this should automatically do an npm start first.
 npm test
 ```
 
+## Updating
+
+Once you've forked this repo, coyping new features and updates from this repo to yours shouldn't be done wholesale. Instead, a diff tool like meld or Beyond Compare is recommended. 
+
+For commandline, here's a useful rsync command which copies most files and excludes some unnecessary ones.  At least it's a starting point:   
+
+```
+cd your-blog-repo  
+rsync -av --progress ../eleventy-satisfactory/ ./ \
+--exclude '.git' \
+--exclude 'tests'  \
+--exclude '_site'  \
+--exclude 'node_modules'  \
+--exclude 'posts' --include 'posts/posts.json'  \
+--exclude 'drafts' --include 'drafts.11tydata.js'  \
+--exclude 'playwright*'  \
+--exclude 'test*'  \
+--exclude 'bottomlinks.json'
+```
+
+After the rsync, it's still worth doing a git diff to see what's changed, or if there are any conflicts.  
+
 
 ## Notes
 
