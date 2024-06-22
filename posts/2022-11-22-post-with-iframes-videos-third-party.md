@@ -65,14 +65,14 @@ Here is an example from Twitch.tv.  Remember to remove the height and width, and
 
 ```html
 <div class="video">
-<iframe src="https://clips.twitch.tv/embed?clip=ManlyFamousBananaStoneLightning&parent=code.mendhak.com&parent=localhost" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+<iframe src="https://www.youtube.com/embed/VnT7pT6zCcA?si=RrOWxPtXQxtxaLG-" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
 </div>
 ```
 
 Produces:
 
 <div class="video">
-<iframe src="https://clips.twitch.tv/embed?clip=ManlyFamousBananaStoneLightning&parent=code.mendhak.com&parent=localhost" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+<iframe src="https://www.youtube.com/embed/VnT7pT6zCcA?si=RrOWxPtXQxtxaLG-" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
 </div>
 
 
