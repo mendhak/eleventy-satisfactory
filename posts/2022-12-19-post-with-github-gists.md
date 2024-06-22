@@ -28,9 +28,12 @@ The Gist description appears first, followed by each file name and the contents 
 
 ### Github Gists with Markdown
 
-If a Github Gist file [contains Markdown like this one](https://gist.github.com/mendhak/770907f98223b22b422be8b5e09803ab), it'll be rendered directly onto the page.
+If a Github Gist file [contains Markdown like this one](https://gist.github.com/mendhak/770907f98223b22b422be8b5e09803ab), it'll be rendered directly onto the page. 
+
+---
 
 {% gist "770907f98223b22b422be8b5e09803ab" %}
+
 
 
 ### Special note about Github Gists and rate limits
@@ -48,3 +51,11 @@ If not running on Github Actions, you'll need to [generate a token on Github](ht
 ```bash
 npm run serve --gisttoken=xxxxxxxxxxxxxxxxx
 ```
+
+Or set it as an environment variable:
+
+```bash
+export GH_GIST_TOKEN=xxxxxxxxxxxxxxxxx
+npm run serve
+```
+

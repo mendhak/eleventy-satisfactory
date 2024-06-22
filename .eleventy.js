@@ -1,3 +1,4 @@
+import "dotenv/config";
 import markdownIt from "markdown-it";
 import markdownItAnchor from "markdown-it-anchor";
 

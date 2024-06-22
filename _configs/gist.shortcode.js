@@ -15,9 +15,11 @@ export default async function getGist(gistId, markdownLibrary) {
 
   // If we're running in a Github Action, the token can be used to make Github API calls with better rate limits.
   // Otherwise, without this, sometimes the API call fails due to a low rate limit.
-  // To pass the token, npm run build --gisttoken=${{ secrets.GITHUB_TOKEN }}
-  if (process.env.npm_config_gisttoken) {
-    fetchOptions.headers = { 'Authorization': `Bearer ${process.env.npm_config_gisttoken}` }
+  // To pass the token, npm run build --gisttoken=${{ secrets.GH_GIST_TOKEN }}
+  if (process.env.npm_config_gisttoken || process.env.GH_GIST_TOKEN) {
+    let token = process.env.npm_config_gisttoken || process.env.GH_GIST_TOKEN;
+    console.log(`Using token ${token}`);
+    fetchOptions.headers = { 'Authorization': `Bearer ${token}` }
   }
 
   /* fetch() returns a promise, but await can be used inside addNunjucksAsyncShortcode */
