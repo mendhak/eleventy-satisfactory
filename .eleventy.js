@@ -33,6 +33,7 @@ import ghRepoCard from './_configs/githubrepocard.shortcode.js';
 import gist from './_configs/gist.shortcode.js';
 
 
+/** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function (eleventyConfig) {
 
   // Copy the `assets` (includes images, fonts) folders to the output
