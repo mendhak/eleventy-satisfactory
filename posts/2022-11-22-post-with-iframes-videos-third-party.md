@@ -59,9 +59,9 @@ Produces:
 
 ## Straight up HTML 
 
-It is possible to paste the iframe code directly in Markdown.  This works with YouTube, Vimeo and any other video sources.  
+It is possible to paste the iframe code directly in Markdown.  This works with YouTube, Vimeo, Twitch and any other video sources that provide HTML embed code.  
 
-Here is an example from Twitch.tv.  Remember to remove the height and width, and wrap the iframe code in a div with class="video" as shown here.  
+Remember to remove the height and width, and wrap the iframe code in a div with class="video" as shown here.  
 
 ```html
 <div class="video">
