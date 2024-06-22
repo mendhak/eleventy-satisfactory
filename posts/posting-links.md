@@ -33,8 +33,19 @@ Produces:
 
 [Link using Markdown path and heading anchor](/posts/customary-lorem-ipsum.md#tincidunt-arcu-non-sodales)
 
+#### Links inside `notice` and `figure`
+
+```markdown
+{% raw %}{% notice "warning" %}{% endraw %}
+You can also link inside shortcodes such as `notice` and `figure`, [pointing at the file](/posts/customary-lorem-ipsum.md).  
+You can also link to a heading anchor in the file [like this](/posts/customary-lorem-ipsum.md#tincidunt-arcu-non-sodales).
+{% raw %}{% endnotice %}{% endraw %}
+```
+Produces:
+
 {% notice "warning" %}
-You can also link inside shortcodes such as `notice` and `figure`, like [this](/posts/customary-lorem-ipsum.md). But you can't link to an anchor yet, it [will fail](/posts/customary-lorem-ipsum.md#tincidunt-arcu-non-sodales) until [this PR is accepted](https://github.com/11ty/eleventy/pull/3276).
+You can also link inside shortcodes such as `notice` and `figure`, [pointing at the file](/posts/customary-lorem-ipsum.md).  
+You can also link to a heading anchor in the file [like this](/posts/customary-lorem-ipsum.md#tincidunt-arcu-non-sodales).
 {% endnotice %}
 
 ### Link to another post by URL

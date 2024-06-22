@@ -54,10 +54,6 @@ module.exports = async function (eleventyConfig) {
   let imageRenderer = require('./_configs/markdownlibrary.renderer.image');
   markdownLibrary.renderer.rules.image = (tokens, idx, options, env, slf) => imageRenderer(tokens, idx, options, env, slf, markdownLibrary);
 
-  // If a Markdown link points at an .md file, convert it to its corresponding post URL
-  // Keep enabled until https://github.com/11ty/eleventy/pull/3276 is merged 🤞
-  let linkRenderer = require('./_configs/markdownlibrary.renderer.links');
-  markdownLibrary.renderer.rules.link_open = linkRenderer;
 
   eleventyConfig.setLibrary("md", markdownLibrary);
   // Re-enable the indented code block feature
