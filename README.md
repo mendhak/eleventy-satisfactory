@@ -113,7 +113,7 @@ npm test
 
 ## Updating
 
-Once you've forked this repo, coyping new features and updates from this repo to yours shouldn't be done wholesale. Instead, a diff tool like meld or Beyond Compare is recommended. 
+Once you've forked this repo, copying new features and updates from this repo to yours shouldn't be done wholesale. Instead, a diff tool like meld or Beyond Compare is recommended. 
 
 For commandline, here's a useful rsync command which copies most files and excludes some unnecessary ones.  At least it's a starting point:   
 
