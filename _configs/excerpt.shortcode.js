@@ -2,7 +2,7 @@
 /**
  * Gets the first 30 words as the excerpt or until the newline, whichever comes first.
  */
-module.exports = function (article) {
+export default function (article) {
   if (!Object.prototype.hasOwnProperty.call(article, "templateContent")) {
     console.warn(
       'Failed to extract excerpt: Document has no property "templateContent".'

@@ -1,4 +1,4 @@
-module.exports = function(text, url) {
+export default function(text, url) {
 
   let buttonHtml = `<button>${text}</button>`;
   if(url){

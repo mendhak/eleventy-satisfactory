@@ -1,5 +1,4 @@
-const MarkdownIt = require("markdown-it");
-
+import MarkdownIt from "markdown-it";
 
 /**
  * For a given Github Gist, render the gist's files as code blocks
@@ -7,7 +6,7 @@ const MarkdownIt = require("markdown-it");
  * @param {MarkdownIt} markdownLibrary - the instance of the markdown-it object to use to render the contents
  * @returns
  */
-module.exports = async function getGist(gistId, markdownLibrary) {
+export default async function getGist(gistId, markdownLibrary) {
   let url = `https://api.github.com/gists/${gistId}`;
   let fetchOptions = {};
 

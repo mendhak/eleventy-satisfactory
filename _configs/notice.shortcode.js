@@ -1,4 +1,4 @@
-module.exports = function (data, noticeType, markdownLibrary) {
+export default function (data, noticeType, markdownLibrary) {
   if (!noticeType) {
     noticeType = "";
   }

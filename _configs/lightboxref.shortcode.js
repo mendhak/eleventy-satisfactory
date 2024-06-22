@@ -1,13 +1,13 @@
-const fs = require("fs");
-const path = require("path");
-const nunjucks = require("nunjucks");
+import fs from "fs";
+import nunjucks from "nunjucks";
+import path from "path";
 
 /**
  * If the given post contains a figure shortcode or a markdown image, this function adds the SimpleLightbox JS and CSS so images are displayed with a lightbox.
  * @param {JSON} page - the eleventy page object, from which the `.inputPath` to the page will be read.
  * @returns
  */
-module.exports = function getLightBoxIfNecessary(page){
+export default function getLightBoxIfNecessary(page){
 
   const str = fs.readFileSync(page.inputPath, 'utf8');
 

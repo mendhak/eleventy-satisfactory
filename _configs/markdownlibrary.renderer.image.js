@@ -1,12 +1,10 @@
-const path = require("path");
-
 /**
  * Wrap images in a figure, a, and figcaption.
  * This lets the simplelightbox code serve it up too!
  * Also adds loading lazy attribute
  */
 
-module.exports = function (tokens, idx, options, env, slf, markdownLibrary) {
+export default function (tokens, idx, options, env, slf, markdownLibrary) {
 
   const token = tokens[idx];
   // Set the loading=lazy attribute

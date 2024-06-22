@@ -2,6 +2,7 @@
   "name": "eleventy-satisfactory",
   "version": "1.0.0",
   "description": "My simplified opinionated eleventy theme, the focus is on content first, and less on other things.",
+  "type": "module",
   "scripts": {
     "build": "npx @11ty/eleventy",
     "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",

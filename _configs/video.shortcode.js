@@ -1,10 +1,8 @@
-const path = require("path");
-
 /**
  * Paired shortcode to display an iframe video. Detects YouTube or Vimeo.
  */
 
-module.exports = function(url, width) {
+export default function(url, width) {
   let style = '';
   let iframeUrl = '';
   if(width==="unconstrained"){

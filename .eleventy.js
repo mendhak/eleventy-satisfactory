@@ -1,29 +1,38 @@
-const fs = require("fs");
+import markdownIt from "markdown-it";
+import markdownItAnchor from "markdown-it-anchor";
 
+import pluginRss from "@11ty/eleventy-plugin-rss";
+import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 
-const markdownIt = require("markdown-it");
-const markdownItAnchor = require("markdown-it-anchor");
+import { readFile } from 'fs/promises';
+const metadata = JSON.parse(
+  await readFile(
+    new URL('./_data/metadata.json', import.meta.url)
+  )
+);
 
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-
-
-const metadata = require('./_data/metadata.json');
 // Change this to match the actual path prefix.
 const pathPrefix = process.env.PATH_PREFIX || metadata.pathPrefix;
 
 
-/**
- * @param {UserConfig} eleventyConfig
- */
-module.exports = async function (eleventyConfig) {
+import { InputPathToUrlTransformPlugin, EleventyHtmlBasePlugin } from "@11ty/eleventy";
+import { DateTime } from "luxon";
 
-  // https://www.11ty.dev/blog/canary-eleventy-v3/#how-to-require(@11ty/eleventy)-in-commonjs
-  // Continue using commonjs for now
-  const { UserConfig } = await import("@11ty/eleventy");
-  const { InputPathToUrlTransformPlugin, EleventyHtmlBasePlugin } = await import("@11ty/eleventy");
-  const { DateTime } = await import("luxon");
+// Various custom shortcodes and filters
+import imageRenderer from "./_configs/markdownlibrary.renderer.image.js";
+import cssminification from './_configs/cssminification.shortcode.js';
+import notice from './_configs/notice.shortcode.js';
+import button from './_configs/button.shortcode.js';
+import figure from './_configs/figure.shortcode.js';
+import lightbox from './_configs/lightboxref.shortcode.js';
+import gallery from './_configs/gallery.shortcode.js';
+import video from './_configs/video.shortcode.js';
+import excerpt from './_configs/excerpt.shortcode.js';
+import ghRepoCard from './_configs/githubrepocard.shortcode.js';
+import gist from './_configs/gist.shortcode.js';
 
+
+export default async function (eleventyConfig) {
 
   // Copy the `assets` (includes images, fonts) folders to the output
   eleventyConfig.addPassthroughCopy("assets/fonts");
@@ -51,7 +60,6 @@ module.exports = async function (eleventyConfig) {
   // Wrap images in a figure, a, and figcaption.
   // This lets the simplelightbox code serve it up too!
   // Also adds loading lazy attribute
-  let imageRenderer = require('./_configs/markdownlibrary.renderer.image');
   markdownLibrary.renderer.rules.image = (tokens, idx, options, env, slf) => imageRenderer(tokens, idx, options, env, slf, markdownLibrary);
 
 
@@ -107,55 +115,43 @@ module.exports = async function (eleventyConfig) {
   // Paired shortcode that takes a JSON array of CSS file paths
   // It then combines them, which includes reconciles overriden values!
   // And returns the output.
-  eleventyConfig.addPairedShortcode("cssminification", require('./_configs/cssminification.shortcode'));
+  eleventyConfig.addPairedShortcode("cssminification", cssminification);
 
   //Paired shortcode to display a notice panel like standard, error, warning, etc.
-  let notice = require('./_configs/notice.shortcode');
   eleventyConfig.addPairedShortcode("notice", (data, noticeType) => notice(data, noticeType, markdownLibrary));
 
   //Shortcode to render a button, optionally with a link
-  let button = require('./_configs/button.shortcode');
   eleventyConfig.addShortcode("button", button);
 
   // Paired shortcode to display a figure with caption.
   // This is very similar to the regular Markdown image,
   // But I'll keep this around in case the other way ever breaks in the future
   // Plus, this has the 'width' flexibility, and maybe more future features.
-  let figure = require('./_configs/figure.shortcode');
   eleventyConfig.addShortcode("figure", (image, caption, widthName, useLightbox=true) => figure(image, caption, widthName, useLightbox, markdownLibrary));
 
   // If the post contains images, then add the Lightbox JS/CSS and render lightboxes for it.
   // Since it needs access to the `page` object, we can't use arrow notation here.
-  let lightbox = require('./_configs/lightboxref.shortcode');
   eleventyConfig.addShortcode("addLightBoxRefIfNecessary", function () { return lightbox(this.page); });
 
   // The `gallery` paired shortcode shows a set of images and displays it in a row together.
-  let gallery = require('./_configs/gallery.shortcode');
   eleventyConfig.addPairedShortcode("gallery", (data, caption) => gallery(data, caption, markdownLibrary));
 
 
   // The `video` shortcode gets a YouTube video and displays it
-  let video = require('./_configs/video.shortcode');
   eleventyConfig.addShortcode("video", video);
 
   // Generate excerpt from first paragraph
-  let excerpt = require('./_configs/excerpt.shortcode')
   eleventyConfig.addShortcode("excerpt", excerpt);
 
   // Show the current year using a shortcode
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
   // Shortcode for Github Repo Card
-  let ghRepoCard = require('./_configs/githubrepocard.shortcode');
   eleventyConfig.addShortcode("githubrepocard", ghRepoCard);
 
   // The `gist` shortcode renders the gist's files as code blocks
   // For some reason calling the method directly isn't possible, I have to wrap it.
-  let gist = require('./_configs/gist.shortcode');
   eleventyConfig.addShortcode("gist", async (gistId) => gist(gistId, markdownLibrary));
-
-
-
 
 
   return {
