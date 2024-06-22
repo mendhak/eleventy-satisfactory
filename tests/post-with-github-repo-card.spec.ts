@@ -10,7 +10,7 @@ test.beforeEach(async ({page, baseURL}) => {
 
 test.describe('Post with Github Repo Card', () => {
 
-  test.only('Repo Card is rendered with description', async ({ page }) => {
+  test('Repo Card is rendered with description', async ({ page }) => {
 
     await expect(page.getByText('Lightweight GPS Logging Application For Android')).toBeVisible();
 
