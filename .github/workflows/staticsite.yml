@@ -33,20 +33,16 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - name: Set up Docker Layer caching
-        uses: jpribyl/action-docker-layer-caching@v0.1.1
-        # Ignore the failure of a step and avoid terminating the job.
-        continue-on-error: true
-
-      - name: Use Node.js 18
+      - name: Use Node.js 20
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
 
       - name: Build the static site
-        # If GH_GIST_TOKEN doesn't exist, empty value gets passed.
-        # Unauthenticated call gets made to Gist API which can result in rate limits,
-        # Especially in Github Actions
+        # If you use gists, generate a GH_GIST_TOKEN and add to repository action secrets.
+        # If GH_GIST_TOKEN doesn't exist, it's an unauthenticated call to Gist API...
+        # Unauthenticated call gets made to Gist API from Github Actions will result in rate limits and gists will fail to load.
+        # You can't use secrets.GITHUB_TOKEN either, as it's scoped to the repository and not the gists!
         run: /bin/bash -c 'npm install;npm run build --gisttoken=${{ secrets.GH_GIST_TOKEN }} --githubtoken=${{ secrets.GITHUB_TOKEN }}'
 
       - name: Setup Github Pages
