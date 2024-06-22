@@ -18,7 +18,6 @@ export default async function getGist(gistId, markdownLibrary) {
   // To pass the token, npm run build --gisttoken=${{ secrets.GH_GIST_TOKEN }}
   if (process.env.npm_config_gisttoken || process.env.GH_GIST_TOKEN) {
     let token = process.env.npm_config_gisttoken || process.env.GH_GIST_TOKEN;
-    console.log(`Using token ${token}`);
     fetchOptions.headers = { 'Authorization': `Bearer ${token}` }
   }
 
