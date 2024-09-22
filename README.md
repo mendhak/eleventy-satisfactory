@@ -3,6 +3,10 @@
 
 An [Eleventy](https://11ty.dev) blog theme making use of [SimpleCSS](https://simplecss.org/), with inspiration from [Hylia](https://hylia.website) and [minimal-mistakes](https://mmistakes.github.io/minimal-mistakes/).  I developed it for my blog, https://code.mendhak.com
 
+|![screenshot](./screenshots/01.png)|![screenshot](./screenshots/02.png)|
+|:--|:--|
+
+
 
 **Features**
 
