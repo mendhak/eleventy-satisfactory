@@ -133,7 +133,8 @@ rsync -av --progress ../eleventy-satisfactory/ ./ \
 --exclude 'drafts' --include 'drafts.11tydata.js'  \
 --exclude 'playwright*'  \
 --exclude 'test*'  \
---exclude 'bottomlinks.json'
+--exclude 'bottomlinks.json' \
+--exclude 'screenshots'
 ```
 
 After the rsync, it's still worth doing a git diff to see what's changed, or if there are any conflicts.  
