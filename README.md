@@ -1,7 +1,7 @@
 # Eleventy Satisfactory Blog Theme 
 [![Build and Publish Github Pages](https://github.com/mendhak/eleventy-satisfactory/actions/workflows/staticsite.yml/badge.svg?branch=main)](https://github.com/mendhak/eleventy-satisfactory/actions/workflows/staticsite.yml) [![Playwright Tests](https://github.com/mendhak/eleventy-satisfactory/actions/workflows/playwright.yml/badge.svg)](https://github.com/mendhak/eleventy-satisfactory/actions/workflows/playwright.yml)
 
-An Eleventy blog theme focused on content, and less on everything else. [Demo](https://code.mendhak.com/eleventy-satisfactory/). 
+An Eleventy blog theme focused on content, and various convenience features. [Demo](https://code.mendhak.com/eleventy-satisfactory/). 
 
 Makes use of SimpleCSS, with inspiration from Hylia and minimal-mistakes. I developed it for [my blog](https://code.mendhak.com).
 
