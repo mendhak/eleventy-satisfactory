@@ -41,9 +41,9 @@ body > header > a {
   padding-left: 0.5rem;
 }
 
-@view-transition {
+/* @view-transition {
   navigation: auto;
-}
+} */
 
 
 /* No underlines for hyperlinks */
