@@ -8,7 +8,7 @@ test.beforeEach(async ({page, baseURL}) => {
 });
 
 
-test.only('Light and Dark Theme', async ({ page }) => {
+test('Light and Dark Theme', async ({ page }) => {
 
   let articleContainer = await page.locator('body');
   await expect(articleContainer).toHaveCSS('background-color', 'rgb(255, 255, 255)');
