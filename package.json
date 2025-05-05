@@ -31,7 +31,7 @@
     "@11ty/eleventy-plugin-rss": "^2.0.3",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "clean-css": "^5.3.3",
-    "dotenv": "^16.4.7",
+    "dotenv": "^16.5.0",
     "luxon": "^3.6.1",
     "markdown-it": "^14.1.0",
     "markdown-it-anchor": "^9.0.1",
@@ -43,7 +43,7 @@
     "node": ">=18.0.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.50.1",
-    "@types/node": "^22.13.1"
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.3"
   }
 }
