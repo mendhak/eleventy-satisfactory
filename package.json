@@ -28,8 +28,8 @@
   "homepage": "https://code.mendhak.com/eleventy-satisfactory/",
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "@11ty/eleventy-plugin-rss": "^2.0.3",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@11ty/eleventy-plugin-rss": "^2.0.4",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.1",
     "clean-css": "^5.3.3",
     "dotenv": "^16.5.0",
     "luxon": "^3.6.1",
@@ -44,6 +44,6 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.52.0",
-    "@types/node": "^22.15.3"
+    "@types/node": "^22.15.17"
   }
 }
