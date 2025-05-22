@@ -10,9 +10,10 @@ export default function(url, width) {
   }
 
   let youTubeId = getVideoIdFromYouTubeURL(url);
+  let timeStamp = getYouTubeTimeStampFromURL(url);
 
   if(youTubeId){
-    iframeUrl = `https://www.youtube.com/embed/${youTubeId}`;
+    iframeUrl = `https://www.youtube.com/embed/${youTubeId}${timeStamp}`;
   }
   else {
     let vimeoId = getVideoIdFromVimeoURL(url);
@@ -28,6 +29,14 @@ export default function(url, width) {
 
 };
 
+function getYouTubeTimeStampFromURL(url) {
+  let regExp = /[?&]t=(?:(\d+)m(\d+)s|(\d+)s)/;
+
+  let match = url.match(regExp);
+  return match ?
+  (match[1] && match[2] ? `?start=${match[1]*60 + parseInt(match[2])}` :
+   match[3] ? `?start=${match[3]}` : '') : '';
+}
 
 function getVideoIdFromYouTubeURL(url) {
 	let regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
