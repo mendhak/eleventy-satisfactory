@@ -1,12 +1,10 @@
 ---
 title: Page list
-
 pagination:
   data: collections.all
   size: 10
   alias: entries
   reverse: true
-
 layout: layouts/home.njk
 permalink: /page-list/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber }}/{% endif %}
 ---
