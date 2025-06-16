@@ -130,7 +130,7 @@ rsync -av --progress ../eleventy-satisfactory/ ./ \
 --exclude '_site'  \
 --exclude 'node_modules'  \
 --exclude 'posts' --include 'posts/posts.json'  \
---exclude 'drafts' --include 'drafts.11tydata.js'  \
+--exclude 'drafts' --include 'drafts.11tydata.js' --include 'drafts.json'  \
 --exclude 'playwright*'  \
 --exclude 'test*'  \
 --exclude 'bottomlinks.json' \
