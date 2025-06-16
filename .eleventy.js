@@ -102,6 +102,11 @@ export default async function (eleventyConfig) {
     return array.slice(0, n);
   });
 
+  eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
+		if(data.draft && process.env.ELEVENTY_RUN_MODE === "build") {
+			return false;
+		}
+	});
 
   // Filters out irrelevant tags that aren't really related to content, only used for organising things
   eleventyConfig.addFilter("filterTagList", function (tags) {
