@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npx @11ty/eleventy",
     "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
-    "start": "ELEVENTY_ENV=development npx @11ty/eleventy --serve --watch --incremental",
+    "start": "npx @11ty/eleventy --serve --watch --incremental",
     "debug": "DEBUG=* npx @11ty/eleventy",
     "pretest": "playwright install",
     "test": "playwright test --headed",
