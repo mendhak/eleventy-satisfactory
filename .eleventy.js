@@ -105,10 +105,10 @@ export default async function (eleventyConfig) {
   // Ensures that draft postts only show up when doing a --watch or --serve
   // https://www.11ty.dev/docs/config-preprocessors/#example-drafts
   eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
-		if(data.draft && process.env.ELEVENTY_RUN_MODE === "build") {
-			return false;
-		}
-	});
+    if (data.draft && process.env.ELEVENTY_RUN_MODE === "build") {
+      return false;
+    }
+  });
 
   // Filters out irrelevant tags that aren't really related to content, only used for organising things
   eleventyConfig.addFilter("filterTagList", function (tags) {
