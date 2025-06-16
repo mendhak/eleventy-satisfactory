@@ -102,6 +102,7 @@ export default async function (eleventyConfig) {
     return array.slice(0, n);
   });
 
+  // Ensures that draft postts only show up when doing a --watch or --serve
   eleventyConfig.addPreprocessor("drafts", "*", (data, content) => {
 		if(data.draft && process.env.ELEVENTY_RUN_MODE === "build") {
 			return false;
