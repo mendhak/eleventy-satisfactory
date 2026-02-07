@@ -43,16 +43,16 @@ To set a caption for the gallery as a whole, pass it to the shortcode.
 
 ```
 {% raw %}{% gallery "~~Three~~ Two images side by side" %}
-![First image](/assets/images/image001.jpg)
-![**Second** image](/assets/images/image002.jpg)
+![Road in Netherlands](/assets/images/image001.jpg)
+![Borgund Stave Church](/assets/images/image002.jpg)
 {% endgallery %}{% endraw %}
 ```
 
 Produces:
 
 {% gallery "~~Three~~ Two images side by side" %}
-![First image](/assets/images/image001.jpg)
-![**Second** image](/assets/images/image002.jpg)
+![Road in Netherlands](/assets/images/image001.jpg)
+![Borgund Stave Church](/assets/images/image002.jpg)
 {% endgallery %}
 
 The gallery's caption appears on the page.  The image's own captions still appear in the lightbox, just not on the page.
