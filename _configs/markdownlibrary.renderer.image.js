@@ -11,6 +11,7 @@ export default function (tokens, idx, options, env, slf, markdownLibrary) {
   token.attrSet('loading', 'lazy');
 
   let captionRendered = markdownLibrary.renderInline(token.content);
+  token.attrSet('alt', token.content);
 
 
   if (env.inGallery) {
@@ -18,7 +19,7 @@ export default function (tokens, idx, options, env, slf, markdownLibrary) {
     // and only return an image, because the gallery is taking care of the <figure>.
     // This is because the caption might be too long and awkward to display
     // in a crowded area.
-    token.attrSet('title', captionRendered);
+
     token.attrSet('style', "width: calc(33% - 0.5em);");
     if (env.evenItems) {
       token.attrSet('style', "width: calc(50% - 0.5em);");

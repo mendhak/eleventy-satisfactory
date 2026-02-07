@@ -65,12 +65,12 @@ Here is the output:
 The lightbox can be disabled, it is the fourth argument to pass to the shortcode. 
 
 ```
-{% raw %}{% figure "/assets/images/image001.jpg", "", "", false %}{% endraw %}
+{% raw %}{% figure "/assets/images/image001.jpg", "Your caption", "", false %}{% endraw %}
 ```
 
 Produces:
 
-{% figure "/assets/images/image001.jpg", "", "", false %}
+{% figure "/assets/images/image001.jpg", "Your caption", "", false %}
 
 
 ### Unconstrained full width image
