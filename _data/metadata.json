@@ -3,7 +3,7 @@
   "url": "https://code.mendhak.com/eleventy-satisfactory/",
   "pathPrefix": "/eleventy-satisfactory/",
   "language": "en",
-  "paginationSize": 4,
+  "paginationSize": 5,
   "favicon": "/assets/images/favicon.png",
   "description": "Blog theme for Eleventy with various new features",
   "tags": ["eleventy", "blog", "theme", "template", "starter"],
