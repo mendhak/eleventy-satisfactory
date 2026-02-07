@@ -37,7 +37,7 @@ Produces this:
 
 The image's own titles appear as captions in the lightbox, but not on the page, as it could get too crowded.
 
-### Gallery with caption
+## Gallery with caption
 
 To set a caption for the gallery as a whole, pass it to the shortcode. 
 

@@ -11,7 +11,7 @@ opengraph:
 
 When sharing a URL, some sites will generate a preview with a title, description and image using certain [OpenGraph](https://ogp.me/) metadata. 
 
-### Set the preview image
+## Set the preview image
 
 A default Opengraph preview image for all posts is set in the [metadata.json](/posts/2022-01-01-edit-the-metadata.md#opengraph), which looks like:
 
@@ -28,7 +28,7 @@ opengraph:
 ---
 ```
 
-### Title, description, and tags
+## Title, description, and tags
 
 All three of these are taken from the post's frontmatter's title, description, and tags.  
 
@@ -48,6 +48,6 @@ opengraph:
 If missing, the defaults are taken from the [metadata.json](/posts/2022-01-01-edit-the-metadata.md#optional-but-useful) again. 
 
 
-### Author and type
+## Author and type
 
 The author and type are always taken from the metadata.json author and type.  

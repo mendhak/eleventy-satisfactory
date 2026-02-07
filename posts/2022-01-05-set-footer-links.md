@@ -5,7 +5,7 @@ extraWideMedia: false
 
 How to set the links in the footer as well as the small thumbnails that appear. 
 
-### Links
+## Links in the footer
 
 The links are controlled via the `_data/bottomlinks.json` file.  It's just an array of link URLs and the text to display.  
 
@@ -25,7 +25,7 @@ You can also link to relative paths.
 To remove the links in the footer, empty the array, or empty the file, or delete the file.  
 
 
-### Photos
+## Photos in the footer
 
 The photos are controlled in the `_data/photostream.json` file.  It's an array of thumbnails and the URL to link to.  
 

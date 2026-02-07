@@ -27,7 +27,7 @@ Produces:
 {% githubrepocard 'mozilla/send' %}
 
 
-### Special note about Github Repo Cards and rate limits
+## Special note about Github Repo Cards and rate limits
 
 If the Repo Card area start to appear empty sometimes, this could be because the IP address you ran the build from was rate limited by Github. This can commonly happen when running from Github Actions.  
 
