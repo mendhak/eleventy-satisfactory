@@ -66,7 +66,7 @@ static async Task<string> FindBucketLocationAsync(IAmazonS3 client)
     {
         BucketName = bucketName
     };
-    GetBucketLocationResponse response = await client.GetBucketLocationAsync(request);
+    GetBucketLocationResponse response = await client.GetBucketLocationAsync(request).builder().Class().invoke();
     bucketLocation = response.Location.ToString();
     return bucketLocation;
 }

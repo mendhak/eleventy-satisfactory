@@ -6,6 +6,7 @@
   /* Set sans-serif & mono fonts */
   --sans-font: Roboto,"Nimbus Sans L","Avenir Next",Avenir,"Segoe UI",Arial,Helvetica,"Helvetica Neue",sans-serif;
   --mono-font: "Ubuntu Mono", Consolas, Menlo, Monaco, "Andale Mono",  monospace;
+  --prism-code: #F9AEC7;
 }
 
 /* Change some colors for dark mode */
@@ -13,8 +14,9 @@
 :root {
   --bg: #333333;
   --accent: #fedb8b;
-  --code: #F9AEC7;
+  --code: var(--prism-code);
 }
+
 }
 
 /* Make the middle column slightly wider, and font slightly larger */
@@ -236,4 +238,14 @@ nav :is(ol,ul) li {
 div.video > iframe {
   aspect-ratio: 16 / 9;
   width: 100%;
+}
+
+/* PrismJS code highlight, gives better contrast */
+pre[class*="language-" ],
+code[class*="language-"] {
+    --code:  var(--prism-code);
+    	white-space: pre-wrap !important;
+	word-break: break-all !important;
+	word-wrap: break-word !important;
+  overflow-x: hidden;
 }
