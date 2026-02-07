@@ -59,6 +59,7 @@ blockquote {
 /* H1s should have the accent color, to make it stand out */
 h1 {
   color: var(--accent);
+  font-size: 2rem;
 }
 
 /* Use the nice Lora font for headings */
