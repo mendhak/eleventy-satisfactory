@@ -61,7 +61,15 @@ blockquote {
 /* H1s should have the accent color, to make it stand out */
 h1 {
   color: var(--accent);
+  font-size: 2.25rem;
+}
+
+h2 {
   font-size: 2rem;
+}
+
+h3,h4,h5,h6 {
+  font-size: 1.75rem;
 }
 
 /* Use the nice Lora font for headings */
@@ -239,7 +247,9 @@ div.video > iframe {
   width: 100%;
 }
 
-/* PrismJS code highlight, gives better contrast */
+/* PrismJS code highlight, gives better contrast. 
+I have a PR open for the color here. Once this is merged: https://github.com/PrismJS/prism-themes/pull/165
+then the --code line isn't needed */
 pre[class*="language-"],
 code[class*="language-"] {
   --code: #ffd700;

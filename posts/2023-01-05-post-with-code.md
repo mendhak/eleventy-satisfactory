@@ -12,13 +12,13 @@ tags:
 A post with some code samples. These are using the Prism CSS library.
 
 
-### Basic code blocks using indents
+## Basic code blocks using indents
 
 Any text that is indented by 4 spaces will be treated as a preformatted block.
 
     console.log("hello");
 
-### Basic code blocks using backticks
+## Basic code blocks using backticks
 
 Another way to do the same thing is surround the code with 3 backticks. 
 
@@ -33,7 +33,7 @@ Produces:
 console.log('hello');
 ```
 
-### Code blocks with syntax highlighting
+## Code blocks with syntax highlighting
 
 To get colorful syntax highlighting, follow the 3 backtickes with a [language name](https://prismjs.com/#languages-list).  
 
