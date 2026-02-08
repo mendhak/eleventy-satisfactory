@@ -3,8 +3,10 @@ import * as path from 'path'
 /**
  * Paired shortcode to display a figure with caption.
  * This is very similar to the regular Markdown image,
- * But I'll keep this around in case the other way ever breaks in the future
- * Plus, this has the 'width' flexibility, and maybe more future features.
+ * But I'll keep this around:
+ * in case the other way ever breaks in the future,
+ * this has the 'width' flexibility, and maybe more future features.
+ * combining them made the code more complex.
  */
 export default function (image, caption, widthName, useLightbox, altText, pathPrefix, markdownLibrary) {
 
