@@ -15,11 +15,11 @@ test.describe('Post with image gallery', () => {
         await page.goto('post-with-a-gallery/');
         let clickableImages = await page.locator('figure span');
         clickableImages.nth(1).click();
-        await expect(page.locator("div.sl-caption").getByText('Second image')).toBeVisible();
+        await expect(page.locator("div.sl-caption").getByText('Second alt text')).toBeVisible();
         
         await page.keyboard.press('Escape');
         await page.waitForTimeout(1000);
-        await expect(page.locator("div.sl-caption").getByText('Second image')).not.toBeVisible();
+        await expect(page.locator("div.sl-caption").getByText('Second alt text')).not.toBeVisible();
     });
 
     test('Gallery with caption shows caption and lightbox', async ({ page }) => {
@@ -32,10 +32,10 @@ test.describe('Post with image gallery', () => {
         nearestImage.scrollIntoViewIfNeeded();
         await expect(nearestImage).toBeVisible();
         await nearestImage.click();
-        await expect(page.locator('div').getByText('Borgund Stave Church')).toBeVisible();
+        await expect(page.locator('div').getByText('Photo of a dark stave church in Norway')).toBeVisible();
         
         await page.keyboard.press('Escape');
-        await expect(page.locator('div').getByText('Borgund Stave Church')).not.toBeVisible();
+        await expect(page.locator('div').getByText('Photo of a dark stave church in Norway')).not.toBeVisible();
     });
 
 });
