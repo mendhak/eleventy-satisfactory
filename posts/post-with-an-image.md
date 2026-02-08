@@ -146,9 +146,23 @@ Produces:
 
 
 
-## Straight up HTML
 
-HTML can be directly used in Markdown.  In this example no lightbox is produced.
+
+## Raw HTML
+
+In Markdown it's possible to us the `<img>` HTML tag; the image is shown as-is, no lightbox, no center alignment. 
+
+```html
+{% raw %}<img src="/assets/images/image002.jpg" alt="Image served using HTML">{% endraw %}
+```
+
+Produces:
+
+<img src="/assets/images/image002.jpg" alt="Image served using HTML">
+
+### Figure and caption
+
+It's possible to show a figure and a caption, with the image centered, without a lightbox.  
 
 ```html
 {% raw %}<figure>
@@ -172,14 +186,16 @@ Which results in:
 
 ### ...with a lightbox
 
-Adding a hyperlink to the image will make it appear in a lightbox.
+This almost certainly isn't worth doing and can break as the lightbox implementation keeps changing across releases. It really isn't worth doing. 
+
+Anyway: adding a span with class `lightbox-image` and a `data-src` to the image will make it appear in a lightbox. Note that the data-src needs curly braces around it to resolve properly. Did I mention this isn't worth doing?
 
 
 ```html
 {% raw %}<figure>
-  <a href="/assets/images/image002.jpg">
-    <img src="/assets/images/image002.jpg" alt="An image of a dark, wooden church in the Norwegian countryside">
-  </a>
+  <span class="lightbox-image" data-src="{{ '/assets/images/image002.jpg' | url }}">
+     <img src="/assets/images/image002.jpg" alt="An image of a dark, wooden church in the Norwegian countryside
+  </span>
   <figcaption>
     An image served using HTML figure and figcaption
   </figcaption>
@@ -189,24 +205,10 @@ Adding a hyperlink to the image will make it appear in a lightbox.
 Which results in:
 
 <figure>
-  <a href="/assets/images/image002.jpg">
+  <span class="lightbox-image" data-src="{{ '/assets/images/image002.jpg' | htmlBaseUrl }}">
     <img src="/assets/images/image002.jpg" alt="An image of a dark, wooden church in the Norwegian countryside">
-  </a>
+  </span>
   <figcaption>
     An image served using HTML figure and figcaption
   </figcaption>
 </figure>
-
-
-### Standalone `<img>`
-
-Using the `<img>` HTML tag, the image is shown as-is, no lightbox, no center alignment. 
-
-```html
-{% raw %}<img src="/assets/images/image002.jpg" alt="Image served using HTML">{% endraw %}
-```
-
-Produces:
-
-<img src="/assets/images/image002.jpg" alt="Image served using HTML">
-
