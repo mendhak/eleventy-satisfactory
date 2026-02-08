@@ -12,7 +12,7 @@ test.describe('Post with images', () => {
 
     test('Clicking an image produces a lightbox', async ({ page }) => {
       await page.goto('post-with-an-image/');
-      let clickableImages = await page.locator('figure a');
+      let clickableImages = await page.locator('figure span');
       clickableImages.nth(0).scrollIntoViewIfNeeded();
       await clickableImages.nth(0).click();
       let lightbox = await page.locator('.sl-wrapper');

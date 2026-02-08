@@ -18,30 +18,47 @@ There are a few different ways to display an image in a post.
 
 ## Using regular Markdown syntax
 
-Using regular Markdown syntax is possible. The image gets rendered as a figure with alt text. Clicking the image displays it in a lightbox.
+Using regular Markdown syntax is possible. Most images will be rendered with a lightbox and a caption, taken from alt text or title. 
 
-```
-{% raw %}![This is the alt text](/assets/images/image003.jpg){% endraw %}
-```
+Here is an image with alt text and a caption. The caption appears below the image.
 
-Which results in:
-
-![This is the alt text](/assets/images/image003.jpg)
-
-You can add a caption, it will appear just below the image.  
-
-```
+```markdown
 {% raw %}![This is the alt text](/assets/images/image003.jpg "This is the caption"){% endraw %}
 ```
 
-Which results in:
+Result:
 
 ![This is the alt text](/assets/images/image003.jpg "This is the caption")
 
 
+If you just provide alt text, that will get used as the caption instead. 
+
+
+```markdown
+{% raw %}![This is the caption now](/assets/images/image003.jpg){% endraw %}
+```
+
+Result:
+
+![This is the caption now](/assets/images/image003.jpg)
+
+You can use a little **markdown** in the caption. 
+
+```markdown
+{% raw %}![This is the _alt_ text](/assets/images/image003.jpg "This is the **caption**"){% endraw %}
+```
+
+Result:
+
+![This is the _alt_ text](/assets/images/image003.jpg "This is the **caption**")
+
+
 ### Image links don't get a lightbox
 
-Image that links to example.com
+As an exception, if the image is wrapped in a link, it won't get a lightbox. 
+
+Image that links to example.com:
+
 ```markdown
 {% raw %}[![This is the alt text](/assets/images/image003.jpg "This shouldn't be a lightbox")](https://example.com){% endraw %}
 ```
@@ -52,8 +69,8 @@ Image that links to example.com
 
 ## Using the `figure` shortcode
 
-The `figure` shortcode is similar to the above, but it has some extra features.  
-It produces a figure with an image, and a figcaption that supports Markdown.  
+The `figure` shortcode is similar to the normal Markdown image syntax, but it has some extra features. 
+
 There are some width options, and the lightbox can be disabled.
 
 Here is the code:
@@ -62,7 +79,7 @@ Here is the code:
 {% raw %}{% figure "/assets/images/image001.jpg", "Your **caption**" %}{% endraw %}
 ```
 
-Here is the output:
+Result:
 
 {% figure "/assets/images/image001.jpg", "Your **caption**" %}
 
@@ -92,23 +109,6 @@ Produces:
 
 {% figure "/assets/images/image001.jpg", "Your caption", "", false %}
 
-
-### Unconstrained full width image
-
-The `unconstrained` width option will let the image render to its full width, across the entire page.  The lightbox is disabled if the width is set to unconstrained. 
-
-```
-{% raw %}{% figure "https://live.staticflickr.com/65535/49241129673_0f0d5f2751_4k.jpg", 
-          "Photo credit [mendhak](https://www.flickr.com/photos/mendhak/49241129673/)", 
-          "unconstrained" %}{% endraw %}
-```
-
-Produces: 
-
-{% figure "https://live.staticflickr.com/65535/49241129673_0f0d5f2751_4k.jpg", 
-          "Photo credit [mendhak](https://www.flickr.com/photos/mendhak/49241129673/)", 
-          "unconstrained" %}
-
 ### Alt text
 
 For accessibility, the alt text of an image should describe the contents of an image, it's not the same as a caption. 
@@ -116,12 +116,34 @@ For accessibility, the alt text of an image should describe the contents of an i
 The `figure` shortcode has an optional 5th argument, which is the alt text.  If not provided, it will be an empty string. 
 
 ```
-{% raw %}{% figure "/assets/images/image001.jpg", "Image from [flickr/mendhak](https://www.flickr.com/photos/mendhak/4079354373)", "", true, "This is the alt text" %}{% endraw %}
+{% raw %}{% figure "/assets/images/image001.jpg", "Image credit [flickr/mendhak](https://www.flickr.com/photos/mendhak/4079354373)", "", true, "This is the alt text" %}{% endraw %}
 ```
 
 Produces:
 
-{% figure "/assets/images/image001.jpg", "Image from [flickr/mendhak](https://www.flickr.com/photos/mendhak/4079354373)", "", true, "This is the alt text" %}
+{% figure "/assets/images/image001.jpg", "Image credit [flickr/mendhak](https://www.flickr.com/photos/mendhak/4079354373)", "", true, "This is the alt text" %}
+
+### Unconstrained full width image
+
+The `unconstrained` width option will let the image render to its full width, across the entire page.  The lightbox is disabled if the width is set to unconstrained. 
+
+```
+{% raw %}{% figure "https://live.staticflickr.com/65535/49241129673_0f0d5f2751_4k.jpg", 
+          "Icy cold lake", 
+          "unconstrained", 
+          true, 
+          "a cold lake with mountains in the background" %}{% endraw %}
+```
+
+Produces: 
+
+{% figure "https://live.staticflickr.com/65535/49241129673_0f0d5f2751_4k.jpg", 
+          "Icy cold lake", 
+          "unconstrained", 
+          true , 
+          "a cold lake with mountains in the background" %}
+
+
 
 
 ## Straight up HTML

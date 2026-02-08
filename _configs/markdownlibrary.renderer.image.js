@@ -8,8 +8,9 @@ import * as path from 'path'
 export default function (tokens, idx, options, env, slf, pathPrefix, markdownLibrary) {
   const token = tokens[idx];
 
-  // Not sure why I need to set the alt attribute here. Without this the alt is just empty. 
-  token.attrSet('alt', token.content);
+  // Not sure why I need to set the alt attribute here. Without this the alt is just empty.
+  // Anyway render the alt text as plain. 
+  token.attrSet('alt', markdownLibrary.renderer.renderInlineAsText(tokens[idx].children));
 
   // Set the loading=lazy attribute
   token.attrSet('loading', 'lazy');

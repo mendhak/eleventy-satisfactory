@@ -261,5 +261,5 @@ pre code {
 }
 
 .lightbox-image {
-  cursor: zoom-in;
+  cursor: pointer;
 }

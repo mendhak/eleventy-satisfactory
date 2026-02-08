@@ -39,11 +39,11 @@ export default function (image, caption, widthName, useLightbox, altText, pathPr
     spanClose = `</span>`;
   }
 
-  let rendered = `<figure>${spanOpen}<img src="${image}" alt="${altText}" loading="lazy" style="${width}" />${spanClose}<figcaption>${captionMarkup}</figcaption></figure>`;
+  let rendered = `<figure>${spanOpen}<img src="${image}" alt="${altText || ''}" loading="lazy" style="${width}" />${spanClose}<figcaption>${captionMarkup}</figcaption></figure>`;
 
   if(widthName==='unconstrained'){
     //Since it's the image's 100% size anyway, there's no point in giving it a lightbox. Just wrap it in a figure tag, so it gets centered at least.
-    rendered = `<figure style="${width}"><img src="${image}" loading="lazy" /><figcaption>${captionMarkup}</figcaption></figure>`;
+    rendered = `<figure style="${width}"><img src="${image}" alt="${altText || ''}" loading="lazy" /><figcaption>${captionMarkup}</figcaption></figure>`;
   }
 
   return rendered;
