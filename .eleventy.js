@@ -62,7 +62,7 @@ export default async function (eleventyConfig) {
   // Wrap images in a figure, a, and figcaption.
   // This lets the simplelightbox code serve it up too!
   // Also adds loading lazy attribute
-  markdownLibrary.renderer.rules.image = (tokens, idx, options, env, slf) => imageRenderer(tokens, idx, options, env, slf, markdownLibrary);
+  markdownLibrary.renderer.rules.image = (tokens, idx, options, env, slf, pathPrefix) => imageRenderer(tokens, idx, options, env, slf, eleventyConfig.pathPrefix, markdownLibrary);
 
 
   eleventyConfig.setLibrary("md", markdownLibrary);
@@ -136,7 +136,7 @@ export default async function (eleventyConfig) {
   // This is very similar to the regular Markdown image,
   // But I'll keep this around in case the other way ever breaks in the future
   // Plus, this has the 'width' flexibility, and maybe more future features.
-  eleventyConfig.addShortcode("figure", (image, caption, widthName, useLightbox=true) => figure(image, caption, widthName, useLightbox, markdownLibrary));
+  eleventyConfig.addShortcode("figure", (image, caption, widthName, useLightbox=true, altText, pathPrefix) => figure(image, caption, widthName, useLightbox, altText, eleventyConfig.pathPrefix, markdownLibrary));
 
   // If the post contains images, then add the Lightbox JS/CSS and render lightboxes for it.
   // Since it needs access to the `page` object, we can't use arrow notation here.

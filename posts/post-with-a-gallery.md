@@ -56,3 +56,19 @@ Produces:
 {% endgallery %}
 
 The gallery's caption appears on the page.  The image's own captions still appear in the lightbox, just not on the page.
+
+Now actually, you're technically using the alt text as the caption. But you can have both, alt text and caption in a gallery. 
+
+```
+{% raw %}{% gallery "Let's do both" %}
+![Road in Netherlands](/assets/images/image001.jpg "This is the caption for the first image")
+![Borgund Stave Church](/assets/images/image002.jpg "This is the caption for the second image")
+{% endgallery %}{% endraw %}
+```
+
+Produces:
+
+{% gallery "Let's do both" %}
+![Road in Netherlands](/assets/images/image001.jpg "This is the caption for the first image")
+![Borgund Stave Church](/assets/images/image002.jpg "This is the caption for the second image")
+{% endgallery %}

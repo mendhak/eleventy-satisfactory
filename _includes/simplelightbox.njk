@@ -2,9 +2,11 @@
 <script src="/simplelightbox/simple-lightbox.min.js"></script>
 <script>
   (function () {
-    var $gallery = new SimpleLightbox('figure a', {
+    var $gallery = new SimpleLightbox('figure .lightbox-image', {
       'overlayOpacity': 0.6,
-      'uniqueImages': false
+      'uniqueImages': false,
+      'sourceAttr': 'data-src',
+      'captionsData': 'data-caption'
     });
   })();
 </script>

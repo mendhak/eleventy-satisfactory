@@ -259,3 +259,7 @@ pre code {
   word-wrap: break-word !important;
   overflow-x: hidden;
 }
+
+.lightbox-image {
+  cursor: zoom-in;
+}

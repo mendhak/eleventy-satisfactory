@@ -16,18 +16,38 @@ opengraph:
 There are a few different ways to display an image in a post.
 
 
-
 ## Using regular Markdown syntax
 
-Using regular Markdown syntax is possible. The image gets rendered as a figure with a caption. Clicking the image displays it in a lightbox.
+Using regular Markdown syntax is possible. The image gets rendered as a figure with alt text. Clicking the image displays it in a lightbox.
 
 ```
-{% raw %}![A little `markdown` can work be used _here_](/assets/images/image003.jpg){% endraw %}
+{% raw %}![This is the alt text](/assets/images/image003.jpg){% endraw %}
 ```
 
 Which results in:
 
-![A little `markdown` can work be used _here_](/assets/images/image003.jpg)
+![This is the alt text](/assets/images/image003.jpg)
+
+You can add a caption, it will appear just below the image.  
+
+```
+{% raw %}![This is the alt text](/assets/images/image003.jpg "This is the caption"){% endraw %}
+```
+
+Which results in:
+
+![This is the alt text](/assets/images/image003.jpg "This is the caption")
+
+
+### Image links don't get a lightbox
+
+Image that links to example.com
+```markdown
+{% raw %}[![This is the alt text](/assets/images/image003.jpg "This shouldn't be a lightbox")](https://example.com){% endraw %}
+```
+
+[![This is the alt text](/assets/images/image003.jpg "This shouldn't be a lightbox")](https://example.com)
+
 
 
 ## Using the `figure` shortcode
@@ -89,6 +109,20 @@ Produces:
           "Photo credit [mendhak](https://www.flickr.com/photos/mendhak/49241129673/)", 
           "unconstrained" %}
 
+### Alt text
+
+For accessibility, the alt text of an image should describe the contents of an image, it's not the same as a caption. 
+
+The `figure` shortcode has an optional 5th argument, which is the alt text.  If not provided, it will be an empty string. 
+
+```
+{% raw %}{% figure "/assets/images/image001.jpg", "Image from [flickr/mendhak](https://www.flickr.com/photos/mendhak/4079354373)", "", true, "This is the alt text" %}{% endraw %}
+```
+
+Produces:
+
+{% figure "/assets/images/image001.jpg", "Image from [flickr/mendhak](https://www.flickr.com/photos/mendhak/4079354373)", "", true, "This is the alt text" %}
+
 
 ## Straight up HTML
 
@@ -96,7 +130,7 @@ HTML can be directly used in Markdown.  In this example no lightbox is produced.
 
 ```html
 {% raw %}<figure>
-  <img src="/assets/images/image002.jpg" alt="Image served using HTML">
+  <img src="/assets/images/image002.jpg" alt="An image of a dark, wooden church in the Norwegian countryside">
   <figcaption>
     An image served using HTML figure and figcaption
   </figcaption>
@@ -107,7 +141,7 @@ Which results in:
 
 
 <figure>
-  <img src="/assets/images/image002.jpg" alt="Image served using HTML">
+  <img src="/assets/images/image002.jpg" alt="An image of a dark, wooden church in the Norwegian countryside">
   <figcaption>
     An image served using HTML figure and figcaption
   </figcaption>
@@ -122,7 +156,7 @@ Adding a hyperlink to the image will make it appear in a lightbox.
 ```html
 {% raw %}<figure>
   <a href="/assets/images/image002.jpg">
-    <img src="/assets/images/image002.jpg" alt="Image served using HTML">
+    <img src="/assets/images/image002.jpg" alt="An image of a dark, wooden church in the Norwegian countryside">
   </a>
   <figcaption>
     An image served using HTML figure and figcaption
@@ -134,7 +168,7 @@ Which results in:
 
 <figure>
   <a href="/assets/images/image002.jpg">
-    <img src="/assets/images/image002.jpg" alt="Image served using HTML">
+    <img src="/assets/images/image002.jpg" alt="An image of a dark, wooden church in the Norwegian countryside">
   </a>
   <figcaption>
     An image served using HTML figure and figcaption

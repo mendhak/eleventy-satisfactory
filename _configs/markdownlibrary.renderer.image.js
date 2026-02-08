@@ -1,39 +1,54 @@
+import * as path from 'path'
 /**
  * Wrap images in a figure, a, and figcaption.
  * This lets the simplelightbox code serve it up too!
  * Also adds loading lazy attribute
  */
 
-export default function (tokens, idx, options, env, slf, markdownLibrary) {
-
+export default function (tokens, idx, options, env, slf, pathPrefix, markdownLibrary) {
   const token = tokens[idx];
+
+  // Not sure why I need to set the alt attribute here. Without this the alt is just empty. 
+  token.attrSet('alt', token.content);
+
   // Set the loading=lazy attribute
   token.attrSet('loading', 'lazy');
 
+  // If this image is wrapped in an a link, don't make it a lightbox image. Just return.
+  if (tokens[idx - 1] && tokens[idx - 1].type === 'link_open') {
+    return slf.renderToken(tokens, idx, options, env);
+  }
+
+
+  // When I put this src in a custom attribute, eleventy doesn't automatically resolve its path. 
+  // Would be nice if I could have passed the eleventy method in and done it. 
+  const dataSrc = path.join(pathPrefix, token.attrGet('src'));
+
+  // Choose the alt text (token.content) as the caption, but if a title is provided, use that instead.
   let captionRendered = markdownLibrary.renderInline(token.content);
+  if (token.attrGet('title')) {
+    captionRendered = markdownLibrary.renderInline(token.attrGet('title'));
+    token.attrSet('title', ''); // Clear the title attribute so it doesn't show up as a tooltip on hover.
+  }
 
-
-
+  // When called from the gallery shortcode.
   if (env.inGallery) {
-    // This is a gallery of images, so display the caption in the lightbox (by setting its title),
-    // and only return an image, because the gallery is taking care of the <figure>.
-    // This is because the caption might be too long and awkward to display
-    // in a crowded area.
-    token.attrSet('title', captionRendered);
+    // This is a gallery of images, so display the caption in the lightbox by setting data-caption.
+    // and return the span + image without the figure/figcaption wrapper. 
+
+    token.attrSet('data-caption', captionRendered); // This causes the caption to be displayed in the lightbox.
     token.attrSet('style', "width: calc(33% - 0.5em);");
     if (env.evenItems) {
       token.attrSet('style', "width: calc(50% - 0.5em);");
     }
 
-    return `<a href="${token.attrs[token.attrIndex('src')][1]}">${slf.renderToken(tokens, idx, options)}</a>`;
+    return `<span class="lightbox-image" data-src="${dataSrc}">${slf.renderToken(tokens, idx, options)}</span>`;
   }
 
-  token.attrSet('alt', token.content);
-
-  // This is a standalone image, so return figure with figcaption.
-  // The 'a' is the image linking to itself, which then gets picked up by simplelightbox
-  return `<figure><a href="${token.attrs[token.attrIndex('src')][1]}">
-    ${slf.renderToken(tokens, idx, options)}</a>
+  // Otherwise, this is a standalone image. Wrap it in a figure and figcaption, and make it a lightbox image.
+  return `<figure><span class="lightbox-image" data-src="${dataSrc}">
+    ${slf.renderToken(tokens, idx, options)}</span>
     <figcaption>${captionRendered}</figcaption>
   </figure>`;
+
 }
