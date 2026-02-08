@@ -60,10 +60,10 @@ As an exception, if the image is wrapped in a link, it won't get a lightbox.
 Image that links to example.com:
 
 ```markdown
-{% raw %}[![This is the alt text](/assets/images/image003.jpg "This shouldn't be a lightbox")](https://example.com){% endraw %}
+{% raw %}[![This is the alt text](/assets/images/image003.jpg "This will appear as a title")](https://example.com){% endraw %}
 ```
 
-[![This is the alt text](/assets/images/image003.jpg "This shouldn't be a lightbox")](https://example.com)
+[![This is the alt text](/assets/images/image003.jpg "This will appear as a title")](https://example.com)
 
 
 
@@ -75,7 +75,7 @@ There are some width options, and the lightbox can be disabled.
 
 Here is the code:
 
-```
+```nunjucks
 {% raw %}{% figure "/assets/images/image001.jpg", "Your **caption**" %}{% endraw %}
 ```
 
@@ -89,7 +89,7 @@ Result:
 The image width can also be set to `default`, `half`, `third`, or `unconstrained`.  It's the third argument to pass to the shortcode. 
 
 
-```
+```nunjucks
 {% raw %}{% figure "/assets/images/image001.jpg", "Your **caption**", "third" %}{% endraw %}
 ```
 
@@ -101,7 +101,7 @@ Here is the output:
 
 The lightbox can be disabled, it is the fourth argument to pass to the shortcode. 
 
-```
+```nunjucks
 {% raw %}{% figure "/assets/images/image001.jpg", "Your caption", "", false %}{% endraw %}
 ```
 
@@ -115,7 +115,7 @@ For accessibility, the alt text of an image should describe the contents of an i
 
 The `figure` shortcode has an optional 5th argument, which is the alt text.  If not provided, it will be an empty string. 
 
-```
+```nunjucks
 {% raw %}{% figure "/assets/images/image001.jpg", "Image credit [flickr/mendhak](https://www.flickr.com/photos/mendhak/4079354373)", "", true, "This is the alt text" %}{% endraw %}
 ```
 
@@ -127,7 +127,7 @@ Produces:
 
 The `unconstrained` width option will let the image render to its full width, across the entire page.  The lightbox is disabled if the width is set to unconstrained. 
 
-```
+```nunjucks
 {% raw %}{% figure "https://live.staticflickr.com/65535/49241129673_0f0d5f2751_4k.jpg", 
           "Icy cold lake", 
           "unconstrained", 
