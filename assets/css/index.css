@@ -251,7 +251,8 @@ div.video > iframe {
 I have a PR open for the color here. Once this is merged: https://github.com/PrismJS/prism-themes/pull/165
 then the --code line isn't needed */
 pre[class*="language-"],
-code[class*="language-"] {
+code[class*="language-"],
+pre code {
   --code: #ffd700;
   white-space: pre-wrap !important;
   word-break: break-all !important;
