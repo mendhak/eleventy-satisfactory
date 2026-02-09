@@ -36,6 +36,7 @@ Makes use of SimpleCSS, with inspiration from Hylia and minimal-mistakes. I deve
 * Full width images and videos
 * Robots.txt, .well-known folder
 * Favicon
+* WCAG and accessibility considerations, including page structure, image alt text, and color contrast
 
 
 ## How to use this blog theme
