@@ -49,15 +49,26 @@ async function getGithubApiRepoResponse(repoSlug){
     fetchOptions.headers = { 'Authorization': `Bearer ${token}` }
   }
 
-  let response = await fetch(url, fetchOptions);
-  let githubJson = {};
-
-  if(!response.ok){
-    console.log(await response.json());
+  let response;
+  try {
+    response = await fetch(url, fetchOptions);
+  } catch (err) {
+    console.error(`Error fetching Github repo ${repoSlug}: ${err}`);
     return null;
   }
 
-  githubJson = await response.json();
+  if (!response.ok) {
+    console.log(`Failed to fetch Github repo ${repoSlug}: ${response.status} ${response.statusText}`);
+    return null;
+  }
+
+  let githubJson;
+  try {
+    githubJson = await response.json();
+  } catch (err) {
+    console.error(`Error parsing Github repo ${repoSlug} JSON: ${err}`);
+    return null;
+  }
 
   let repo = new GithubApiRepoResponse();
   repo.repoSlug = repoSlug;

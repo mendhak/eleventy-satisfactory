@@ -22,13 +22,23 @@ export default async function getGist(gistId, markdownLibrary) {
   }
 
   /* fetch() returns a promise, but await can be used inside addNunjucksAsyncShortcode */
-  let response = await fetch(url, fetchOptions);
-
-  if (response.ok) {
-    gistJson = await response.json();
+  let response;
+  try {
+    response = await fetch(url, fetchOptions);
+  } catch (err) {
+    console.error(`Error fetching gist ${gistId}: ${err}`);
+    return '';
   }
-  else {
-    console.log(await response.json());
+
+  if (!response.ok) {
+    console.error(`Failed to fetch gist ${gistId}: ${response.status} ${response.statusText}`);
+    return '';
+  }
+
+  try {
+    gistJson = await response.json();
+  } catch (err) {
+    console.error(`Error parsing gist ${gistId} JSON: ${err}`);
     return '';
   }
 
