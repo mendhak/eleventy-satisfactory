@@ -68,14 +68,15 @@ blockquote {
 /* H1s should have the accent color, to make it stand out */
 h1 {
   color: var(--accent);
-  font-size: 2.25rem;
+  font-size: 2rem;
 }
 
-h2 { font-size: 2rem; }
-h3 { font-size: 1.74rem; }
-h4 { font-size: 1.52rem; }
-h5 { font-size: 1.32rem; }
-h6 { font-size: 1.25rem; }
+
+h2 { font-size: 1.85rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1.0rem; }
 
 /* Use the nice Lora font for headings */
 h1,h2,h3,h4,h5,h6 {

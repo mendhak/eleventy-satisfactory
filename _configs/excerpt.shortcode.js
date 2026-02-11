@@ -16,11 +16,11 @@ export default function (article) {
   let words = content.slice(0, content.indexOf("\n")).replace(/<[^>]*>?/gm, '').split(/\s+/);
   let suffix = '';
 
-  if (words.length > 30) {
+  if (words.length > 50) {
     suffix = '…';
   }
 
-  let excerpt = words.slice(0, 30).join(' ') + suffix;
+  let excerpt = words.slice(0, 50).join(' ') + suffix;
   return excerpt;
 }
 
