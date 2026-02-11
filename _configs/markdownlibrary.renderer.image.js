@@ -1,7 +1,7 @@
 import * as path from 'path'
 /**
- * Wrap images in a figure, a, and figcaption.
- * This lets the simplelightbox code serve it up too!
+ * Wrap images in a figure, span, and figcaption.
+ * This lets the simplelightbox code serve it up too! Using the data-caption and data-src attributes.
  * Also adds loading lazy attribute
  */
 
