@@ -261,9 +261,8 @@ code[class*="language-"],
 pre code {
   --code: #ffd700;
   white-space: pre-wrap !important;
-  word-break: break-all !important;
-  word-wrap: break-word !important;
-  overflow-x: hidden;
+  word-break: auto-phrase !important;
+  overflow-x: auto;
 }
 
 .lightbox-image {
