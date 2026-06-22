@@ -27,7 +27,7 @@
   },
   "homepage": "https://code.mendhak.com/eleventy-satisfactory/",
   "dependencies": {
-    "@11ty/eleventy": "^3.1.5",
+    "@11ty/eleventy": "^3.1.6",
     "@11ty/eleventy-plugin-rss": "^3.0.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
     "clean-css": "^5.3.3",
@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.11.3",
-    "@playwright/test": "^1.60.0",
-    "@types/node": "^25.9.1"
+    "@playwright/test": "^1.61.0",
+    "@types/node": "^26.0.0"
   }
 }
