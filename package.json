@@ -33,7 +33,7 @@
     "clean-css": "^5.3.3",
     "dotenv": "^17.4.2",
     "luxon": "^3.7.2",
-    "markdown-it": "^14.3.0",
+    "markdown-it": "^15.0.0",
     "markdown-it-anchor": "^9.2.1",
     "prism-themes": "^1.9.0",
     "simpledotcss": "2.3.7",
@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.12.1",
-    "@playwright/test": "^1.61.1",
-    "@types/node": "^26.1.1"
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.1.2"
   }
 }
