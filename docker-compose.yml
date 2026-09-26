@@ -1,7 +1,7 @@
 version: "3"
 services:
   eleventy:
-    image: node:18-slim
+    image: node:24-slim
     user: node
     volumes:
       - ${PWD}/node_modules
@@ -12,5 +12,5 @@ services:
       - GIST_TOKEN=${GH_GIST_TOKEN}
     #   - DEBUG=Eleventy*
     ports:
-      - 8080:8080
+      - 8011:8011
     command: /bin/bash -c "npm install && npm start"
