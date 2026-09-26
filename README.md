@@ -4,7 +4,7 @@
 An Eleventy blog theme focused on content, and various convenience features. [Demo](https://code.mendhak.com/eleventy-satisfactory/). 
 
 
-|![screenshot](./screenshots/01.png)|![screenshot](./screenshots/02.png)|
+|![screenshot](./screenshots/03.png)|![screenshot](./screenshots/04.png)|
 |:--|:--|
 
 Makes use of SimpleCSS, with inspiration from Hylia and minimal-mistakes. I developed it for [my blog](https://code.mendhak.com).
