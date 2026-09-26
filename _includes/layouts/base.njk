@@ -8,14 +8,26 @@
 
   <style>
     {# Couldn't put this into a .css file for minification, because the font URLs need the | htmlBaseUrl helper.  #}
+
+    /* lora-regular - latin */
+    @font-face {
+      font-family: 'Lora';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: local(''),
+          url('{{ "/assets/fonts/lora-v37-latin-regular.woff2" | htmlBaseUrl }}') format('woff2');
+    }
+
+
     /* lora-700 - latin */
     @font-face {
       font-family: 'Lora';
       font-style: normal;
       font-weight: 700;
+      font-display: swap;
       src: local(''),
-          url('{{ "/assets/fonts/lora-v26-latin-700.woff2" | htmlBaseUrl }}') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-          url('{{ "/assets/fonts/lora-v26-latin-700.woff" | htmlBaseUrl }}') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+          url('{{ "/assets/fonts/lora-v37-latin-700.woff2" | htmlBaseUrl }}') format('woff2');
     }
 
 
