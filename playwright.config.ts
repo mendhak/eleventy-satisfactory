@@ -29,7 +29,7 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
-    baseURL: 'http://localhost:8080/eleventy-satisfactory/',
+    baseURL: 'http://localhost:8011/eleventy-satisfactory/',
   },
 
   /* Configure projects for major browsers */
@@ -69,7 +69,7 @@ export default defineConfig({
   /* Run your local dev server before starting the tests */
   webServer: {
     command: 'npm run start',
-    url: 'http://127.0.0.1:8080',
+    url: 'http://127.0.0.1:8011',
     reuseExistingServer: !process.env.CI,
   },
 });

@@ -10,7 +10,7 @@
     "debug": "DEBUG=* npx @11ty/eleventy",
     "pretest": "playwright install",
     "test": "playwright test --headed",
-    "stop": "kill -9 $(lsof -t -i :8080)"
+    "stop": "kill -9 $(lsof -t -i :8011)"
   },
   "repository": {
     "type": "git",
