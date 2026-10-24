@@ -27,13 +27,13 @@
   },
   "homepage": "https://code.mendhak.com/eleventy-satisfactory/",
   "dependencies": {
-    "@11ty/eleventy": "^3.1.6",
-    "@11ty/eleventy-plugin-rss": "^3.0.0",
+    "@11ty/eleventy": "^3.1.7",
+    "@11ty/eleventy-plugin-rss": "^3.1.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
     "clean-css": "^5.3.3",
-    "dotenv": "^18.0.3",
+    "dotenv": "^18.0.8",
     "luxon": "^3.7.2",
-    "markdown-it": "^15.0.2",
+    "markdown-it": "^15.0.3",
     "markdown-it-anchor": "^10.0.0",
     "prism-themes": "^1.9.0",
     "simpledotcss": "2.3.7",
@@ -43,8 +43,8 @@
     "node": ">=18.0.0"
   },
   "devDependencies": {
-    "@axe-core/playwright": "^4.13.0",
-    "@playwright/test": "^1.63.0",
-    "@types/node": "^26.6.2"
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.5"
   }
 }
